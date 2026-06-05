@@ -104,7 +104,7 @@ export default function ApplicationProcessPage() {
                     <div className="lg:w-1/2 h-full w-full relative lg:translate-y-8 flex justify-center lg:block order-first lg:order-none">
                         <div className="relative w-full aspect-[4/3] lg:h-[520px] lg:aspect-auto overflow-hidden shadow-2xl">
                             <Image
-                                src="/images/admissions/how_to_apply_hero.png"
+                                src="/images/admissions/application-process-hero.jpg"
                                 alt="Application Process at Cannoga College"
                                 fill
                                 priority
