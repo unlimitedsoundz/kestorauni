@@ -108,7 +108,7 @@ export default function ApplicationProcessPage() {
                                 alt="Application Process at Cannoga College"
                                 fill
                                 priority
-                                className="object-cover object-top opacity-90"
+                                className="object-cover object-center opacity-90"
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                             />
                             {/* Bottom gradient overlay */}
