@@ -106,7 +106,17 @@ export default async function SchoolDetails({ params }: Props) {
             <Hero
                 title={school.name}
                 body={school.description}
-                backgroundColor={slug === 'science' || slug === 'school-of-science' ? '#255236' : (slug === 'technology' || slug === 'school-of-technology' ? '#3f581f' : '#6c531b')}
+                backgroundColor={
+                    slug === 'arts' ? '#d946ef' :
+                    slug === 'business' ? '#3b82f6' :
+                    slug === 'science' ? '#10b981' :
+                    slug === 'technology' ? '#f97316' :
+                    slug === 'health-community' ? '#06b6d4' :
+                    slug === 'hospitality-tourism' ? '#eab308' :
+                    slug === 'education-social-sciences' ? '#ec4899' :
+                    slug === 'transportation-aviation' ? '#6366f1' :
+                    '#5c2d91'
+                }
                 tinted
                 lightText={true}
                 breadcrumbs={[
@@ -114,10 +124,6 @@ export default async function SchoolDetails({ params }: Props) {
                     { label: 'Schools', href: '/schools' },
                     { label: school.name }
                 ]}
-                image={school.imageUrl ? {
-                    src: school.imageUrl,
-                    alt: school.name
-                } : undefined}
             >
                 <div className="flex flex-wrap gap-4">
                     <Link href="/admissions" className="text-aalto-3 font-bold underline underline-offset-8 decoration-white hover:opacity-70 transition-colors text-white inline-flex items-center gap-2">
@@ -198,7 +204,7 @@ export default async function SchoolDetails({ params }: Props) {
                                             sizes="(max-width: 768px) 100vw, 25vw"
                                         />
                                         <span className="absolute top-2 right-2 bg-white/90 text-xs font-bold px-2 py-1 rounded text-neutral-800 z-10">
-                                            {course.degreeLevel === "MASTER" ? "MSc" : "BSc"}
+                                            {course.degreeLevel === "MASTER" ? "MSc" : course.degreeLevel === "BACHELOR" ? "BSc" : course.degreeLevel === "DIPLOMA" ? "Dip" : "Cert"}
                                         </span>
                                     </div>
                                     <h3 className="font-bold text-lg leading-tight mb-1 group-hover:text-blue-700 transition-colors">{course.title}</h3>

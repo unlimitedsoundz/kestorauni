@@ -215,7 +215,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/master',
         sectionKey: 'hero_subtitle',
         label: 'Hero Subtitle',
-        defaultContent: 'Comprehensive guide for applicants to two-year Master’s programmes taught in English. Two intakes per year: September (apply Oct–Feb) and January (apply Jun–Sep).',
+        defaultContent: 'Applicants guide to two-year Master’s programmes. Two intakes per year: September (apply Oct–Feb) and January (apply Jun–Sep).',
     },
     {
         pageSlug: 'admissions/master',

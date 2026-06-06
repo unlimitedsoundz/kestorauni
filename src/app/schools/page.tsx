@@ -39,17 +39,13 @@ export default async function SchoolsPage() {
             <Hero
                 title="Our Schools"
                 body="Cannoga College is organized into specialized schools, each driving innovation in technology, business, science, and design through world-class research and English-taught Bachelor’s and Master’s programmes."
-                backgroundColor="#6c531b"
+                backgroundColor="#5c2d91"
                 tinted
                 lightText={true}
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
                     { label: 'Schools' }
                 ]}
-                image={{
-                    src: "/images/campus-welcome-v2.png",
-                    alt: "Academic Schools"
-                }}
             />
 
             <div className="container mx-auto px-4 py-16 md:py-24">

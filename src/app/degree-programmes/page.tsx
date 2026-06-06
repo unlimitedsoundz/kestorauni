@@ -69,6 +69,7 @@ export default function DegreeProgrammesPage() {
                         <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl">
                             Discover our diverse range of career-focused programs designed to prepare you for success.
                             From certificates and diplomas to undergraduate and graduate degrees, we offer world-class education in Ottawa.
+                            All academic programs at Cannoga College are eligible for the Post-Graduation Work Permit (PGWP).
                         </p>
                         <div className="flex flex-wrap gap-4 mt-8">
                             <Link href="/admissions" className="cc-btn-primary no-underline">Apply Now <ArrowRight size={14} weight="bold" /></Link>

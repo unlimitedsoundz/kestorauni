@@ -44,22 +44,24 @@ export function Hero({
             style={{ backgroundColor: backgroundColor }}
         >
             {/* Background Image */}
-            <div className="absolute inset-0 w-full h-full z-0">
-                <Image
-                    src={image?.src || (image?.srcSet ? image.srcSet[0].src : '/images/campus-welcome-v2.png')}
-                    alt={image?.alt || "Hero Image"}
-                    fill
-                    priority
-                    className={`object-cover ${imagePosition}`}
-                    sizes="100vw"
-                />
-                {/* Dark gradient overlay for readability */}
-                <div className="absolute inset-0 bg-[#000000]/55 z-10" />
-            </div>
+            {image && (
+                <div className="absolute inset-0 w-full h-full z-0">
+                    <Image
+                        src={image.src || (image.srcSet ? image.srcSet[0].src : '/images/campus-welcome-v2.png')}
+                        alt={image.alt || "Hero Image"}
+                        fill
+                        priority
+                        className={`object-cover ${imagePosition}`}
+                        sizes="100vw"
+                    />
+                    {/* Dark gradient overlay for readability */}
+                    <div className="absolute inset-0 bg-[#000000]/55 z-10" />
+                </div>
+            )}
 
             {/* Content Container */}
-            <div className="container mx-auto px-4 md:px-12 lg:px-20 h-full relative z-20 flex items-center justify-end w-full">
-                <div className="w-full lg:w-3/5 p-8 md:p-12 lg:p-16 flex flex-col space-y-6 text-white text-left items-start bg-[#000000]/35 backdrop-blur-[2px] lg:bg-transparent lg:backdrop-blur-none rounded-none">
+            <div className="container mx-auto px-4 md:px-12 lg:px-20 h-full relative z-20 flex items-center justify-start w-full">
+                <div className={`w-full lg:w-3/5 p-8 md:p-12 lg:p-16 flex flex-col space-y-6 text-white text-left items-start ${image ? 'bg-[#000000]/35 backdrop-blur-[2px] lg:bg-transparent lg:backdrop-blur-none' : 'bg-transparent backdrop-blur-none'} rounded-none`}>
                     <div className="space-y-4">
                         <h1 className="font-black text-3xl md:text-5xl lg:text-6xl leading-tight tracking-tight">
                             {title}

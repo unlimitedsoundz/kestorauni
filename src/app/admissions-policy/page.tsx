@@ -58,6 +58,10 @@ export default function AdmissionsPolicyPage() {
                                     </li>
                                     <li className="flex items-start gap-3 text-black">
                                         <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 shrink-0"></span>
+                                        All diploma and certificate programmes
+                                    </li>
+                                    <li className="flex items-start gap-3 text-black">
+                                        <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 shrink-0"></span>
                                         Domestic and international applicants
                                     </li>
                                     <li className="flex items-start gap-3 text-black">

@@ -71,7 +71,7 @@ export default function MasterAdmissionsPage() {
                     { label: 'Master' }
                 ]}
                 image={{
-                    src: "/images/admissions/master_hero_refined.jpg",
+                    src: "/images/admissions/master-hero.png",
                     alt: "Master's Application"
                 }}
             >

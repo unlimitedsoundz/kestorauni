@@ -6,6 +6,8 @@ import TuitionFAQ from '@/components/admissions/TuitionFAQ';
 import DbPageContent from '@/components/DbPageContent';
 import { getPageContentSection } from '@/lib/pageContentConfig';
 import { registerFaqPage } from '@/lib/registerFaqPage';
+import { createStaticClient } from '@/lib/supabase/static';
+import TuitionEstimator from '@/components/admissions/TuitionEstimator';
 
 export const metadata = {
     title: 'Paying the Tuition Fee | Cannoga College',
@@ -17,6 +19,7 @@ export const metadata = {
 
 const sections = [
     { id: 'fee-structure', title: 'Fee Structure', content: '' },
+    { id: 'tuition-estimator', title: 'Tuition & Fees Estimator', content: '' },
     { id: 'certificate-fees', title: 'Certificate Fees', content: '' },
     { id: 'diploma-fees', title: 'Diploma Fees', content: '' },
     { id: 'bachelor-fees', title: 'Bachelor\u2019s Fees', content: '' },
@@ -32,6 +35,12 @@ const sections = [
 ];
 
 export default async function TuitionPaymentPage() {
+    const supabase = createStaticClient();
+    const { data: courses } = await supabase
+        .from('Course')
+        .select('*')
+        .order('title');
+
     // For static build, we use empty FAQs - they will be loaded client-side
     const faqs: any[] = [];
     const pageSlug = 'admissions/tuition';
@@ -89,6 +98,14 @@ export default async function TuitionPaymentPage() {
                             <h2 className="cc-h2">How Much is the Tuition Fee?</h2>
                         </div>
                         <DbPageContent pageSlug={pageSlug} sectionKey="fee_structure_content" fallbackContent={getSectionDefault('fee_structure_content')} />
+                    </section>
+
+                    <section id="tuition-estimator" className="scroll-mt-32">
+                        <div className="cc-section-divider">
+                            <h2 className="cc-h2">Interactive Tuition &amp; Fees Estimator</h2>
+                            <p className="cc-label">Estimate your tuition and ancillary fees per semester</p>
+                        </div>
+                        <TuitionEstimator courses={courses || []} />
                     </section>
 
                     <section id="certificate-fees" className="scroll-mt-32">

@@ -44,7 +44,7 @@ export default function BachelorsGuidePage() {
                         { label: "Bachelor's Guide" }
                     ]}
                     image={{
-                        src: "/images/bachelors-group-v2.png",
+                        src: "/images/download (2).jpg",
                         alt: "Bachelor Students"
                     }}
                 />

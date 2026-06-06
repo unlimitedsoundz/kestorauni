@@ -90,7 +90,7 @@ export default function AdmissionsContactInfo() {
                             <div className="mb-16">
                                 <div className="rounded-2xl overflow-hidden aspect-[21/9] shadow-2xl relative group mb-4">
                                     <Image 
-                                        src="/images/admissions/hero-main.png" 
+                                        src="/images/cannoga technology.png" 
                                         alt="Cannoga College Campus" 
                                         width={1600}
                                         height={900}
@@ -161,19 +161,19 @@ export default function AdmissionsContactInfo() {
                                         <h2 className="text-2xl font-bold mb-6">Where to reach us</h2>
                                         <div className="space-y-6">
                                             <div className="flex flex-col">
-                                                <span className="text-xs font-bold uppercase tracking-widest text-black mb-2">Mailing Address</span>
+                                                <span className="text-xs font-bold uppercase tracking-widest text-black mb-2">Campus Address</span>
                                                 <p className="text-black leading-relaxed pl-4">
-                                                    Cannoga College Admission Services,<br />
-                                                    P.O. Box 51000,<br />
-                                                    FI-00150 Ottawa, Canada.
+                                                    Cannoga College – Ottawa Campus<br />
+                                                    2368 Midway Ave,<br />
+                                                    Ottawa, ON K2B 5J8
                                                 </p>
                                             </div>
                                             <div className="flex flex-col">
-                                                <span className="text-xs font-bold uppercase tracking-widest text-black mb-2">Street Address (Couriers)</span>
+                                                <span className="text-xs font-bold uppercase tracking-widest text-black mb-2">Mailing Address</span>
                                                 <p className="text-black leading-relaxed pl-4">
-                                                    Cannoga College Admission Services,<br />
-                                                    Pohjoisesplanadi 51,<br />
-                                                    FI-00150 Ottawa, Canada.
+                                                    Cannoga College – Ottawa Campus<br />
+                                                    2368 Midway Ave,<br />
+                                                    Ottawa, ON K2B 5J8
                                                 </p>
                                             </div>
                                         </div>

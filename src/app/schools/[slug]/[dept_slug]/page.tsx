@@ -70,6 +70,24 @@ function getEstimatedTuitionFee(schoolSlug: string, degreeLevel: string) {
     return 'Contact Admissions';
 }
 
+function getCredentialName(degreeLevel: string, duration: string) {
+    const lvl = (degreeLevel || '').toUpperCase();
+    const dur = (duration || '').toLowerCase();
+    if (lvl === 'MASTER') {
+        return "Master's Degree";
+    } else if (lvl === 'BACHELOR') {
+        return "Bachelor's Degree";
+    } else if (lvl === 'DIPLOMA') {
+        if (dur.includes('3 year')) {
+            return "Ontario College Advanced Diploma";
+        }
+        return "Ontario College Diploma";
+    } else if (lvl === 'CERTIFICATE') {
+        return "Ontario College Certificate";
+    }
+    return "College Credential";
+}
+
 export default async function DepartmentDetailPage({ params }: Props) {
     const resolvedParams = await params;
     const { slug, dept_slug } = resolvedParams;
@@ -118,24 +136,24 @@ export default async function DepartmentDetailPage({ params }: Props) {
 
     // Color Mapping
     const deptColors: Record<string, string> = {
-        'accounting-business-law': '#2F4F4F',
-        'applied-physics': '#4B0082',
-        'automation-control': '#696969',
-        'architecture': '#e31837',
-        'art-media': '#C71585',
-        'chemical-materials': '#4682B4',
-        'civil-environmental': '#A0522D',
-        'computer-science-digital': '#000080',
-        'design': '#d94f00',
-        'economics': '#4A4A4A',
-        'electrical-electronics': '#191970',
-        'energy-mechanical': '#b83b00',
-        'film-tv': '#1a1a1a',
-        'finance': '#2d3748',
-        'info-service': '#6495ED',
-        'management': '#800000',
-        'marketing': '#663399',
-        'physics-math': '#0000CD',
+        'accounting-business-law': '#2563eb', // Blue
+        'applied-physics': '#4f46e5',         // Indigo
+        'automation-control': '#0891b2',      // Cyan
+        'architecture': '#db2777',            // Pink
+        'art-media': '#ec4899',               // Rose/Pink
+        'chemical-materials': '#059669',      // Emerald
+        'civil-environmental': '#0d9488',     // Teal
+        'computer-science-digital': '#2563eb', // Blue
+        'design': '#ea580c',                  // Orange
+        'economics': '#4f46e5',               // Indigo
+        'electrical-electronics': '#0891b2',  // Cyan
+        'energy-mechanical': '#ea580c',       // Orange
+        'film-tv': '#d946ef',                 // Fuchsia
+        'finance': '#2563eb',                 // Blue
+        'info-service': '#0ea5e9',            // Sky
+        'management': '#4f46e5',              // Indigo
+        'marketing': '#ec4899',               // Pink
+        'physics-math': '#4f46e5',            // Indigo
     };
 
     // Fallback logic: Try exact slug, then check if slug contains key words
@@ -143,57 +161,25 @@ export default async function DepartmentDetailPage({ params }: Props) {
 
     // If no direct match, try to fuzzy match for new depts not in list
     if (!deptColors[dept.slug]) {
-        if (dept.slug.includes('engineering')) heroColor = '#4682B4';
-        else if (dept.slug.includes('science')) heroColor = '#000080';
-        else if (dept.slug.includes('arts')) heroColor = '#e31837';
-        else if (dept.slug.includes('business')) heroColor = '#2F4F4F';
+        if (dept.slug.includes('engineering') || dept.slug.includes('trades')) heroColor = '#0d9488'; // Teal
+        else if (dept.slug.includes('science')) heroColor = '#4f46e5'; // Indigo
+        else if (dept.slug.includes('arts') || dept.slug.includes('media')) heroColor = '#db2777'; // Pink
+        else if (dept.slug.includes('business') || dept.slug.includes('management') || dept.slug.includes('hospitality')) heroColor = '#2563eb'; // Blue
+        else if (dept.slug.includes('health') || dept.slug.includes('community')) heroColor = '#059669'; // Emerald
+        else heroColor = '#5c2d91'; // College Purple
     }
 
     return (
         <div className="min-h-screen bg-white">
-            {/* 1. HERO SECTION (Split Layout) */}
+            {/* 1. HERO SECTION (Plain Vibrant Background) */}
             <section style={{ backgroundColor: heroColor }} className="text-white overflow-hidden transition-colors duration-700">
-                <div className="container mx-auto px-0 lg:px-4 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 pt-0 md:pt-20 lg:pt-24 pb-4 lg:pb-0 lg:py-0 min-h-[500px] lg:h-[550px] relative">
-                    {/* Left Content */}
-                    <div className="lg:w-1/2 space-y-4 relative z-10 flex flex-col justify-center h-full pt-8 lg:pt-0 px-4 lg:px-0">
-
-                        <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold leading-[1.1] tracking-tight pt-0">
-                            {dept.name}
-                        </h1>
-                        <p className="text-lg md:text-xl text-white/90 max-w-xl leading-relaxed my-2">
-                            {(dept.description || "Advancing knowledge and innovation through world-class research and education.").replace(/SYKLI|College/g, 'Cannoga College')}
-                        </p>
-
-                    </div>
-
-                    {/* Right Image */}
-                    <div className="lg:w-1/2 h-full w-full relative mt-8 lg:mt-0 lg:translate-y-16 z-20 flex justify-center lg:block order-first lg:order-none hero-image-mobile">
-                        <div className="relative w-full lg:w-full lg:h-full bg-neutral-800 shadow-2xl overflow-hidden hero-mobile-height">
-                            {/* Image or Placeholder */}
-                            {dept.imageUrl ? (
-                                <Image
-                                    src={dept.imageUrl}
-                                    alt={dept.name}
-                                    fill
-                                    priority
-                                    className="object-cover object-top opacity-90"
-                                    sizes="(max-width: 1024px) 100vw, 50vw"
-                                />
-                            ) : (
-                                <div className="w-full h-full flex flex-col items-center justify-center bg-white/5 relative">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                                    {/* Text Placeholder if no image */}
-                                    {/* User requested 'image placeholder and no icons'. We can use a pattern or just a solid color with text. */}
-                                    <div className="text-center z-10 p-8 border border-white/10 p-12">
-                                        <span className="block text-6xl font-black text-white/10 mb-4 tracking-tighter">
-                                            {dept.name.substring(0, 2).toUpperCase()}
-                                        </span>
-                                        <p className="text-white/40 uppercase tracking-[0.2em] text-sm">Department Image</p>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </div>
+                <div className="container mx-auto px-4 py-16 md:py-24 max-w-6xl relative z-10 flex flex-col justify-center">
+                    <h1 className="text-3xl md:text-5xl lg:text-5xl font-black leading-[1.1] tracking-tight pt-0">
+                        {dept.name}
+                    </h1>
+                    <p className="text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed mt-4">
+                        {(dept.description || "Advancing knowledge and innovation through world-class research and education.").replace(/SYKLI|College/g, 'Cannoga College')}
+                    </p>
                 </div>
             </section>
 
@@ -257,7 +243,7 @@ export default async function DepartmentDetailPage({ params }: Props) {
                                                 </div>
                                                 <div>
                                                     <p className="text-white uppercase tracking-wider text-[10px] font-bold mb-1">Credential</p>
-                                                    <p className="font-semibold text-white text-xs">{course.degreeLevel === 'BACHELOR' ? "Bachelor's Degree" : "Master's Degree"}</p>
+                                                    <p className="font-semibold text-white text-xs">{getCredentialName(course.degreeLevel, course.duration)}</p>
                                                 </div>
                                                 <div>
                                                     <p className="text-white uppercase tracking-wider text-[10px] font-bold mb-1">Tuition (2026-2027)</p>

@@ -13,7 +13,7 @@ import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata = {
     title: 'Student Guide | Cannoga College',
-    description: 'Find all the information you need to navigate your studies and life at Cannoga College.',
+    description: 'Discover the tools, resources, and support available throughout your time at Cannoga College.',
     alternates: {
         canonical: 'https://cannogacollege.ca/student-guide/',
     },
@@ -23,9 +23,11 @@ export default function StudentGuidePage() {
     const sections = [
         {
             id: 'programmes',
-            title: 'Degree Programmes',
+            title: 'Programs & Degrees',
             content: '',
             items: [
+                { title: "Certificate Programs", href: "/degree-programmes#certificates" },
+                { title: "Diploma Programs", href: "/degree-programmes#diplomas" },
                 { title: "Bachelor's Degree", href: "/admissions/bachelor" },
                 { title: "Master's Degree", href: "/admissions/master" },
             ]
@@ -54,8 +56,8 @@ export default function StudentGuidePage() {
             title: 'Academic Calendar',
             content: '',
             items: [
-                { title: "Autumn Term", href: "#calendar" },
-                { title: "Spring Term", href: "#calendar" },
+                { title: "Fall Semester", href: "#calendar" },
+                { title: "Winter Semester", href: "#calendar" },
             ]
         },
         {
@@ -102,7 +104,7 @@ export default function StudentGuidePage() {
             {/* HERO SECTION */}
             <Hero
                 title="Student Guide"
-                body="Find all the information you need to navigate your studies and life at Cannoga College. From academic regulations to campus services, we support your journey every step of the way."
+                body="Discover the tools, resources, and support available throughout your time at Cannoga College. Whether you're navigating academics, student services, or campus life, you'll find the guidance you need every step of the way."
                 backgroundColor="#472247"
                 tinted
                 lightText={true}
@@ -111,7 +113,7 @@ export default function StudentGuidePage() {
                     { label: 'Student Guide' }
                 ]}
                 image={{
-                    src: "/images/bachelors-group-v2.png",
+                    src: "/images/student-guide-cover.png",
                     alt: "Students collaborating at Cannoga College"
                 }}
             >
@@ -135,22 +137,34 @@ export default function StudentGuidePage() {
                         {/* Degree Programmes */}
                         <section id="programmes" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">
-                                Degree Programmes at Cannoga College
+                                Programs &amp; Degrees at Cannoga College
                             </h2>
                             <p className="text-aalto-3 text-black mb-8">
-                                Cannoga College offers Bachelor’s and Master’s degree programmes taught in English across business, economics, management, finance, information systems, entrepreneurship, and interdisciplinary fields.
+                                Cannoga College offers Certificate, Diploma, Advanced Diploma, Bachelor’s, and Master’s programmes across business, economics, management, finance, information systems, entrepreneurship, and interdisciplinary fields. All academic programs at Cannoga College are eligible for the Post-Graduation Work Permit (PGWP).
                             </p>
 
                             <div className="grid md:grid-cols-2 gap-8 mb-8">
                                 <Card
+                                    title="Certificate Programs"
+                                    image={{ src: "/images/school-of-business.jpg", alt: "Certificate Programs" }}
+                                    body="Rapid, career-focused training in specific technical or business domains."
+                                    cta={{ label: "Learn more", linkComponentProps: { href: "/degree-programmes#certificates" } }}
+                                />
+                                <Card
+                                    title="Diploma Programs"
+                                    image={{ src: "/images/school-of-technology.jpg", alt: "Diploma Programs" }}
+                                    body="Comprehensive 2-year and 3-year programs combining theory with practical skills."
+                                    cta={{ label: "Learn more", linkComponentProps: { href: "/degree-programmes#diplomas" } }}
+                                />
+                                <Card
                                     title="Bachelor’s Degree"
-                                    image={{ src: "/images/bachelors-group-v2.png", alt: "Bachelor's Degree" }}
+                                    image={{ src: "/images/student-guide-bachelor.jpg", alt: "Bachelor's Degree" }}
                                     body="Structured curriculum focused on core knowledge and skills."
                                     cta={{ label: "Learn more", linkComponentProps: { href: "/admissions/bachelor" } }}
                                 />
                                 <Card
                                     title="Master’s Degree"
-                                    image={{ src: "/images/student-guide-hero.png", alt: "Master's Degree" }}
+                                    image={{ src: "/images/student-guide-master.png", alt: "Master's Degree" }}
                                     body="Advanced studies focusing on specialized expertise and research-oriented development."
                                     cta={{ label: "Learn more", linkComponentProps: { href: "/admissions/master" } }}
                                 />
@@ -268,12 +282,12 @@ export default function StudentGuidePage() {
                                             <h4 className="font-bold text-black mb-4 uppercase tracking-widest text-xs">The Academic Year</h4>
                                             <div className="space-y-6">
                                                 <div>
-                                                    <h5 className="font-bold text-black mb-1">Autumn Term</h5>
+                                                    <h5 className="font-bold text-black mb-1">Fall Semester</h5>
                                                     <p className="text-sm text-black">September — December</p>
                                                 </div>
                                                 <div>
-                                                    <h5 className="font-bold text-black mb-1">Spring Term</h5>
-                                                    <p className="text-sm text-black">January — May</p>
+                                                    <h5 className="font-bold text-black mb-1">Winter Semester</h5>
+                                                    <p className="text-sm text-black">January — April</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -305,7 +319,7 @@ export default function StudentGuidePage() {
                             <div className="grid md:grid-cols-3 gap-6">
                                 <Card
                                     title="Academic Guidance"
-                                    image={{ src: "https://i.pinimg.com/1200x/23/fa/68/23fa68a8b1f907ec254dbcd7709b06eb.jpg", alt: "Academic Guidance" }}
+                                    image={{ src: "/images/academic-guidance.jpg", alt: "Academic Guidance" }}
                                     body="Programme level advising and personal study plans."
                                     cta={{ label: "Contact Advisor", linkComponentProps: { href: "/contact" } }}
                                 />
@@ -317,7 +331,7 @@ export default function StudentGuidePage() {
                                 />
                                 <Card
                                     title="Wellbeing"
-                                    image={{ src: "/images/admissions/student_life_events.png", alt: "Wellbeing" }}
+                                    image={{ src: "/images/wellbeing.jpg", alt: "Wellbeing" }}
                                     body="Health services, accessibility, and counseling for all students."
                                     cta={{ label: "Get Support", linkComponentProps: { href: "#support" } }}
                                 />
@@ -377,7 +391,7 @@ export default function StudentGuidePage() {
                                 />
                                 <Card
                                     title="International Students"
-                                    image={{ src: "/images/international-students-hero.png", alt: "International Students" }}
+                                    image={{ src: "/images/international-students-hero.jpg", alt: "International Students" }}
                                     body="Support services, study permits, and integration into Ottawa's multicultural community."
                                     cta={{ label: "View guide", linkComponentProps: { href: "/student-guide/international" } }}
                                 />
