@@ -24,7 +24,7 @@ const slides: Slide[] = [
     {
         title: "Experience that sets you apart",
         body: "Earn while you learn. Our industry connections connect students with paid, on-the-job training in Ottawa's top tech firms and creative studios.",
-        image: "/images/campus-welcome-v2.png",
+        image: "/images/arrival-hero.png",
         btnText: "Explore programs",
         btnHref: "/studies"
     },

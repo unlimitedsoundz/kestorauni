@@ -147,7 +147,7 @@ export default async function Home() {
               type: "YouTube",
               title: "Ottawa Campus Tour",
               desc: "Watch our guided video tour highlighting the labs, digital library, and recreation areas.",
-              img: "/images/campus-welcome-v2.png",
+              img: "/images/arrival-hero.png",
               href: "/about-cannoga-college"
             }
           ].map((feed, idx) => (
