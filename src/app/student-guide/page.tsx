@@ -385,7 +385,7 @@ export default function StudentGuidePage() {
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <Card
                                     title="Chat with Students"
-                                    image={{ src: "/images/chat-with-students-hero.png", alt: "Chat with Students" }}
+                                    image={{ src: "/images/chat-with-students-hero.jpg", alt: "Chat with Students" }}
                                     body="Connect with current students and ambassadors to learn about life at Cannoga."
                                     cta={{ label: "Chat now", linkComponentProps: { href: "/student-guide/chat-with-cannoga-students" } }}
                                 />
@@ -397,7 +397,7 @@ export default function StudentGuidePage() {
                                 />
                                 <Card
                                     title="Exchange Students"
-                                    image={{ src: "/images/international-students.png", alt: "Exchange Students" }}
+                                    image={{ src: "/images/exchange-students-hero.jpg", alt: "Exchange Students" }}
                                     body="Orientation, course selection, and cultural adaptation for short-term studies."
                                     cta={{ label: "Learn more", linkComponentProps: { href: "/student-guide/exchange" } }}
                                 />
