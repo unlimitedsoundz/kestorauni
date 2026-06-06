@@ -38,7 +38,7 @@ export default function ChatWithStudentsPage() {
                         { label: 'Chat' }
                     ]}
                     image={{
-                        src: "/images/chat-with-students-hero.jpg",
+                        src: "/images/student-ambassadors.png",
                         alt: "Cannoga College Students"
                     }}
                 />
@@ -91,7 +91,7 @@ export default function ChatWithStudentsPage() {
                                 icon="users"
                                 title="Our Student Ambassadors"
                                 image={{
-                                    src: "https://i.pinimg.com/736x/c9/a2/47/c9a24746dd1007fd0c54535d5f6f1865.jpg",
+                                    src: "/images/student-ambassadors.png",
                                     alt: "Student Ambassadors"
                                 }}
                                 body={
