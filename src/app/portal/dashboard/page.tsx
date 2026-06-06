@@ -440,16 +440,7 @@ export default function DashboardPage() {
                 </div>
             )}
 
-            <div className="mt-16 pt-8 text-center">
-                <List
-                    items={[
-                        { label: "Student Handbook", linkComponentProps: { href: "/student-handbook" } },
-                        { label: "Code of Conduct", linkComponentProps: { href: "/code-of-conduct" } },
-                        { label: "Refund Policy", linkComponentProps: { href: "/refund-withdrawal-policy/" } },
-                    ]}
-                    className="flex flex-wrap justify-center gap-6 space-y-0"
-                />
-            </div>
+
         </div>
     );
 }
