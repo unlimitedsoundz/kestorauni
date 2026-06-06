@@ -149,13 +149,6 @@ export default async function SchoolDetails({ params }: Props) {
                             <Card
                                 key={dept.id}
                                 title={`Department of ${dept.name.startsWith('Department of') ? dept.name.replace('Department of', '').trim() : dept.name}`}
-                                image={dept.imageUrl ? {
-                                    src: dept.imageUrl,
-                                    alt: dept.name
-                                } : {
-                                    src: `/images/placeholders/${dept.slug}.png`,
-                                    alt: dept.name
-                                }}
                                 body={
                                     <div className="space-y-4">
                                         <p className="line-clamp-3">
