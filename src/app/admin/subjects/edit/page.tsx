@@ -135,7 +135,7 @@ function SubjectEditorContent() {
                             <input
                                 name="creditUnits"
                                 type="number"
-                                defaultValue={subject?.creditUnits || 5}
+                                defaultValue={subject?.creditUnits !== undefined ? subject.creditUnits : 3}
                                 className="w-full p-3 bg-neutral-50 border border-neutral-200 rounded-xl outline-none"
                             />
                         </div>

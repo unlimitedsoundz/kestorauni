@@ -92,7 +92,7 @@ export default function SubjectsClient({ subjects }: SubjectsClientProps) {
                                     <span className="text-sm font-medium text-neutral-600">{subject.course?.title || 'Unassigned'}</span>
                                 </td>
                                 <td className="p-4 text-sm font-bold text-neutral-900">
-                                    {subject.creditUnits} ECTS
+                                    {subject.creditUnits} Credits
                                 </td>
                                 <td className="p-4">
                                     <span className="px-2 py-1 bg-neutral-100 rounded text-xs font-bold text-neutral-600">SEM {subject.semester}</span>
