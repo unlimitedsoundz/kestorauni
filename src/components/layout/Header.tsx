@@ -118,7 +118,7 @@ const navigation: NavItem[] = [
         href: "/portal",
         children: [
             { name: "IT Support", href: "/portal/support" },
-            { name: "Student Portal Login", href: "/login" },
+            { name: "Student Portal Login", href: "/portal/account/login" },
         ]
     },
     {
