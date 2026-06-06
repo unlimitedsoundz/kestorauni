@@ -189,6 +189,38 @@ export default async function AboutPage() {
                                 linkComponentProps: { href: "/schools/science" }
                             }}
                         />
+                        <Card
+                            title="School of Health & Community Services"
+                            body="Preparing compassionate healthcare and community professionals through practical nursing, pharmacy, and support pathways."
+                            cta={{
+                                label: "Explore Campus",
+                                linkComponentProps: { href: "/schools/health-community" }
+                            }}
+                        />
+                        <Card
+                            title="School of Hospitality & Tourism"
+                            body="Fostering excellence in event planning, culinary management, hotel operations, and global tourism."
+                            cta={{
+                                label: "Explore Campus",
+                                linkComponentProps: { href: "/schools/hospitality-tourism" }
+                            }}
+                        />
+                        <Card
+                            title="School of Education & Social Sciences"
+                            body="Developing future educators and social service leaders through hands-on teaching, youth care, and justice programs."
+                            cta={{
+                                label: "Explore Campus",
+                                linkComponentProps: { href: "/schools/education-social-sciences" }
+                            }}
+                        />
+                        <Card
+                            title="School of Transportation & Aviation"
+                            body="Specializing in flight services, aviation management, and advanced aircraft and automotive maintenance."
+                            cta={{
+                                label: "Explore Campus",
+                                linkComponentProps: { href: "/schools/transportation-aviation" }
+                            }}
+                        />
                     </div>
                 </div>
             </div>
