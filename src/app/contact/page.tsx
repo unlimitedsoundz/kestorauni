@@ -150,7 +150,11 @@ export default function ContactPage() {
                                 { name: "School of Arts, Design and Architecture", href: "/schools/arts" },
                                 { name: "School of Science", href: "/schools/science" },
                                 { name: "School of Technology", href: "/schools/technology" },
-                                { name: "School of Business", href: "/schools/business" }
+                                { name: "School of Business", href: "/schools/business" },
+                                { name: "School of Health and Community Services", href: "/schools/health-community" },
+                                { name: "School of Transportation and Aviation", href: "/schools/transportation-aviation" },
+                                { name: "School of Education and Social Sciences", href: "/schools/education-social-sciences" },
+                                { name: "School of Hospitality and Tourism", href: "/schools/hospitality-tourism" }
                             ].map((school) => (
                                 <Link 
                                     key={school.name} 
