@@ -136,7 +136,7 @@ export default function CareersPage() {
                     <section>
                         <Highlight 
                             body="Working here means being part of a team that doesn't just teach the future; we build it. Every day is an opportunity to innovate."
-                            source="Dr. Anna Virtanen, Rector"
+                            source="Dr. Luke Schriffer, Rector"
                             alignment="right"
                         />
                     </section>
