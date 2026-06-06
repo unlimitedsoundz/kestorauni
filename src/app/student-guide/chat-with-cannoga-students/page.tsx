@@ -38,7 +38,7 @@ export default function ChatWithStudentsPage() {
                         { label: 'Chat' }
                     ]}
                     image={{
-                        src: "/images/chat-with-students-hero.png",
+                        src: "/images/chat-with-students-hero.jpg",
                         alt: "Cannoga College Students"
                     }}
                 />

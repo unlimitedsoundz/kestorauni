@@ -41,7 +41,7 @@ export default function ExchangeStudentsPage() {
                     { label: 'Exchange Students' }
                 ]}
                 image={{
-                    src: "/images/news/helsinki_study_hero_1771086684833.png",
+                    src: "/images/exchange-students-hero.jpg",
                     alt: "Exchange Students"
                 }}
             />
