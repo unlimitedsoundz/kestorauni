@@ -421,11 +421,11 @@ export default function HousingManagementClient({
                                         </div>
                                         <div>
                                             <p className="text-[10px] font-black uppercase text-neutral-400 mb-1">Monthly Rate</p>
-                                            <p className="font-bold">€{(app.total_contract_value / (app.lease_duration || 1)).toFixed(2)}</p>
+                                            <p className="font-bold">${((app.total_contract_value && app.total_contract_value > 0) ? (app.total_contract_value / (app.lease_duration || 1)) : (app.preferred_room?.monthly_rate || 0)).toFixed(2)}</p>
                                         </div>
                                         <div>
                                             <p className="text-[10px] font-black uppercase text-neutral-400 mb-1">Total Contract</p>
-                                            <p className="font-bold text-lg">€{app.total_contract_value || 'N/A'}</p>
+                                            <p className="font-bold text-lg">${app.total_contract_value > 0 ? app.total_contract_value : 'N/A'}</p>
                                         </div>
                                         <div>
                                             <p className="text-[10px] font-black uppercase text-neutral-400 mb-1">Preferred Building</p>
@@ -705,7 +705,7 @@ export default function HousingManagementClient({
                                                         className="px-1 py-0.5 border border-neutral-300 outline-none"
                                                         value={editRoomData.monthly_rate}
                                                         onChange={(e) => setEditRoomData({ ...editRoomData, monthly_rate: Number(e.target.value) })}
-                                                        placeholder="€"
+                                                        placeholder="$"
                                                     />
                                                 </div>
                                             ) : (
@@ -713,7 +713,7 @@ export default function HousingManagementClient({
                                                     <p className="font-bold text-blue-600 uppercase text-[10px]">{room.room_type || 'Room'}</p>
                                                     <p className="font-bold uppercase text-neutral-500">Size: {room.size || 'N/A'}</p>
                                                     <p className="font-bold uppercase text-neutral-500">Capacity: {room.capacity}</p>
-                                                    <p className="font-bold uppercase text-neutral-500">Rate: €{room.monthly_rate}/mo</p>
+                                                    <p className="font-bold uppercase text-neutral-500">Rate: ${room.monthly_rate}/mo</p>
                                                 </>
                                             )}
                                         </div>
@@ -778,7 +778,7 @@ export default function HousingManagementClient({
                                         <div>
                                             <p className="font-black">{room.building?.name} - Room {room.room_number}</p>
                                             <p className="font-black text-blue-600 uppercase text-[10px] mt-1">{room.room_type || 'Room'}</p>
-                                            <p className="text-xs text-neutral-500 mt-1">Size: {room.size || 'N/A'} | Capacity: {room.capacity} | €{room.monthly_rate}/month</p>
+                                            <p className="text-xs text-neutral-500 mt-1">Size: {room.size || 'N/A'} | Capacity: {room.capacity} | ${room.monthly_rate}/month</p>
                                         </div>
                                         <Bed className="text-neutral-400" size={24} weight="regular" />
                                     </div>
@@ -917,7 +917,7 @@ export default function HousingManagementClient({
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Rate (€/mo)</label>
+                                    <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Rate ($/mo)</label>
                                     <input
                                         type="number"
                                         className="w-full px-4 py-2 border-2 border-black font-bold outline-none"

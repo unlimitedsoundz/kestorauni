@@ -768,7 +768,7 @@ export default function RegistrarClient({
                                                 {payment.transaction_reference || 'N/A'}
                                             </td>
                                             <td className="p-4 text-sm font-bold text-neutral-900">
-                                                €{payment.amount?.toLocaleString()}
+                                                ${payment.amount?.toLocaleString()}
                                             </td>
                                             <td className="p-4">
                                                 <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest bg-neutral-100 px-2 py-1 rounded">

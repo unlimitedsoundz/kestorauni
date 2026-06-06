@@ -83,9 +83,9 @@ export default function HousingDashboardClient({ student, application, assignmen
         const b = BUILDINGS_CATALOG.find(x => x.id === catalogBuildingId);
         const a = b?.apartments.find(x => x.id === catalogApartmentId);
         totalContractValue = (a?.price || 0) * catalogLeaseDuration;
-        formattedNotes += `\nSelected Property: ${b?.name} - ${a?.type} (${a?.size}, ${a?.price}€/mo)`;
+        formattedNotes += `\nSelected Property: ${b?.name} - ${a?.type} (${a?.size}, ${a?.price}$/mo)`;
         formattedNotes += `\nLease Duration: ${catalogLeaseDuration} months`;
-        formattedNotes += `\nTotal Contract Value: ${totalContractValue}€`;
+        formattedNotes += `\nTotal Contract Value: ${totalContractValue}$`;
 
         const baseNotes = formData.get('notes') as string;
         if (baseNotes) {
@@ -208,7 +208,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                                 You have a pending invoice: <strong>{pendingInvoice.reference_number}</strong>
                             </p>
                             <div className="text-2xl font-black text-black mb-4">
-                                €{(pendingInvoice.total_amount - (pendingInvoice.paid_amount || 0)).toFixed(2)}
+                                ${(pendingInvoice.total_amount - (pendingInvoice.paid_amount || 0)).toFixed(2)}
                             </div>
 
                             <button
@@ -239,7 +239,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                         <div className="p-6 md:p-10">
                             <PayGoWireCheckout
                                 amount={checkoutAmount}
-                                currency="EUR"
+                                currency="USD"
                                 onPaymentComplete={handlePayGoWireComplete}
                                 isProcessing={paying}
                                 paymentReference={selectedInvoice.reference_number}
@@ -309,11 +309,11 @@ export default function HousingDashboardClient({ student, application, assignmen
                                     <div className="space-y-3 print:space-y-1">
                                         <div className="flex justify-between items-center text-sm">
                                             <span className="font-bold uppercase text-black">Verified Payments Received</span>
-                                            <span className="font-black text-black">€{totalPaid.toFixed(2)}</span>
+                                            <span className="font-black text-black">${totalPaid.toFixed(2)}</span>
                                         </div>
                                         <div className="flex justify-between items-center text-[11px]">
                                             <span className="font-bold uppercase text-black opacity-60">Balance Due</span>
-                                            <span className="font-black text-black">€0.00</span>
+                                            <span className="font-black text-black">$0.00</span>
                                         </div>
                                     </div>
                                 </div>
@@ -325,8 +325,8 @@ export default function HousingDashboardClient({ student, application, assignmen
                                             <p className="text-[10px] font-black uppercase text-black">Confirmed & Verified by Finance Office</p>
                                         </div>
                                         <div className="text-right">
-                                            <p className="text-3xl font-black text-black">€{totalPaid.toFixed(2)}</p>
-                                            <p className="text-[9px] font-black uppercase text-black opacity-40">Currency: EUR</p>
+                                            <p className="text-3xl font-black text-black">${totalPaid.toFixed(2)}</p>
+                                            <p className="text-[9px] font-black uppercase text-black opacity-40">Currency: USD</p>
                                         </div>
                                     </div>
                                 </div>
@@ -399,7 +399,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                                     </div>
                                     <div className="flex justify-between">
                                         <span className="text-[10px] font-bold uppercase text-black">Monthly Rent</span>
-                                        <span className="text-xs font-black">€{assignment.room?.monthly_rate}</span>
+                                        <span className="text-xs font-black">{assignment.room?.monthly_rate > 0 ? `$${assignment.room.monthly_rate}` : 'See Admin'}</span>
                                     </div>
                                     <div className="flex justify-between items-center">
                                         <span className="text-[10px] font-bold uppercase text-black">Status</span>

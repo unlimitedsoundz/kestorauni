@@ -454,7 +454,7 @@ export default function HousingCatalogView({ onSelectBuilding, onSelectApartment
                                                 </div>
                                                 <div className="flex justify-between text-sm text-black">
                                                     <span className="text-neutral-500">Rent</span>
-                                                    <span className="font-bold">{apt.price} €</span>
+                                                    <span className="font-bold">{apt.price} $</span>
                                                 </div>
                                             </div>
 
@@ -525,13 +525,13 @@ export default function HousingCatalogView({ onSelectBuilding, onSelectApartment
                                             <div>
                                                 <p className="text-[10px] font-black uppercase text-neutral-400 mb-1">Monthly Rent</p>
                                                 <p className="text-2xl font-black text-black">
-                                                    {selectedBuilding.apartments.find(a => a.id === selectedApt)?.price} €
+                                                    {selectedBuilding.apartments.find(a => a.id === selectedApt)?.price} $
                                                 </p>
                                             </div>
                                             <div className="text-right">
                                                 <p className="text-[10px] font-black uppercase text-neutral-400 mb-1">Total Contract Value ({leaseDuration} months)</p>
                                                 <p className="text-4xl font-black text-black">
-                                                    {(selectedBuilding.apartments.find(a => a.id === selectedApt)?.price || 0) * leaseDuration} €
+                                                    {(selectedBuilding.apartments.find(a => a.id === selectedApt)?.price || 0) * leaseDuration} $
                                                 </p>
                                             </div>
                                         </div>

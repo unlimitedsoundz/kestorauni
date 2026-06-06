@@ -230,7 +230,7 @@ export default function DashboardPage() {
                                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
                                                     <div>
                                                         <h4 className="font-normal text-[11px] flex items-center gap-2 text-black">
-                                                            <CreditCard size={14} weight="bold" /> {invoiceType} Required: €{tuitionFee}
+                                                            <CreditCard size={14} weight="bold" /> {invoiceType} Required: ${tuitionFee}
                                                         </h4>
                                                         <p className="text-black text-[11px] font-bold mt-1">
                                                             Your invoice has been generated. Complete your {invoiceType.toLowerCase()} payment to secure enrollment.

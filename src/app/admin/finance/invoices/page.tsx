@@ -11,6 +11,7 @@ export default function AdminInvoicesPage() {
     const [actionLoading, setActionLoading] = useState<string | null>(null);
     const [customFee, setCustomFee] = useState<Record<string, number>>({});
     const [customInvoiceType, setCustomInvoiceType] = useState<Record<string, string>>({});
+    const [overrideSettled, setOverrideSettled] = useState<Record<string, boolean>>({});
 
     // Default global fees reference, we could fetch from DB but keeping simple for now
     // A production scenario would fetch these from tuition_rates table
@@ -193,6 +194,20 @@ export default function AdminInvoicesPage() {
                                                         <Clock size={10} weight="bold" /> Wait
                                                     </span>
                                                 )}
+                                                {isEnrolledOrPaid && (
+                                                    <label className="flex items-center gap-1.5 text-[10px] text-neutral-500 font-bold uppercase cursor-pointer select-none">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={!!overrideSettled[app.id]}
+                                                            onChange={(e) => setOverrideSettled(prev => ({
+                                                                ...prev,
+                                                                [app.id]: e.target.checked
+                                                            }))}
+                                                            className="rounded border-neutral-300 text-emerald-600 focus:ring-emerald-500 h-3.5 w-3.5"
+                                                        />
+                                                        Always Issue
+                                                    </label>
+                                                )}
                                             </div>
                                         </td>
                                         <td className="block md:table-cell py-2 md:p-4">
@@ -201,7 +216,7 @@ export default function AdminInvoicesPage() {
                                                     className="border border-neutral-300 rounded-none px-2 py-1.5 text-xs w-full disabled:opacity-50"
                                                     value={customInvoiceType[app.id] || app.offer.invoice_type || 'TUITION_DEPOSIT'}
                                                     onChange={(e) => handleInvoiceTypeChange(app.id, e.target.value)}
-                                                    disabled={isEnrolledOrPaid || actionLoading === app.id}
+                                                    disabled={(isEnrolledOrPaid && !overrideSettled[app.id]) || actionLoading === app.id}
                                                 >
                                                     <option value="TUITION_DEPOSIT">Deposit</option>
                                                     <option value="FIRST_YEAR_TUITION">1st Year</option>
@@ -214,7 +229,7 @@ export default function AdminInvoicesPage() {
                                                         className="border border-neutral-300 rounded-none px-2 py-1.5 w-full md:w-24 text-sm disabled:opacity-50 font-bold"
                                                         value={feeValue}
                                                         onChange={(e) => handleFeeChange(app.id, e.target.value)}
-                                                        disabled={isEnrolledOrPaid || actionLoading === app.id}
+                                                        disabled={(isEnrolledOrPaid && !overrideSettled[app.id]) || actionLoading === app.id}
                                                     />
                                                 </div>
                                             </div>
@@ -227,8 +242,8 @@ export default function AdminInvoicesPage() {
                                         <td className="block md:table-cell pt-4 pb-2 md:p-4 text-right">
                                             <button
                                                 onClick={() => handlePushInvoice(app.id, app.defaultFee)}
-                                                disabled={actionLoading === app.id || isEnrolledOrPaid}
-                                                className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-none text-xs font-bold uppercase tracking-widest transition-colors ${isEnrolledOrPaid
+                                                disabled={actionLoading === app.id || (isEnrolledOrPaid && !overrideSettled[app.id])}
+                                                className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-none text-xs font-bold uppercase tracking-widest transition-colors ${(isEnrolledOrPaid && !overrideSettled[app.id])
                                                         ? 'bg-neutral-200 text-neutral-400 cursor-not-allowed'
                                                         : isPushed
                                                             ? 'bg-neutral-900 text-white hover:bg-neutral-700'
@@ -240,7 +255,7 @@ export default function AdminInvoicesPage() {
                                                 ) : (
                                                     <FileText size={14} weight="bold" />
                                                 )}
-                                                {isEnrolledOrPaid ? 'Settled' : (isPushed ? 'Resend' : 'Push')}
+                                                {isEnrolledOrPaid && !overrideSettled[app.id] ? 'Settled' : (isPushed ? 'Resend' : 'Push')}
                                             </button>
                                         </td>
                                     </tr>

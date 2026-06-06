@@ -177,7 +177,7 @@ export default function FinanceManagementClient({
                         <span className="text-[8px] font-black uppercase text-green-600 bg-green-50 px-2 py-0.5 rounded-full">+12% vs last mo</span>
                     </div>
                     <p className="text-[10px] font-black uppercase text-neutral-400 mb-1">Total Revenue</p>
-                    <p className="text-2xl font-black">€{stats.totalRevenue.toLocaleString()}</p>
+                    <p className="text-2xl font-black">${stats.totalRevenue.toLocaleString()}</p>
                 </div>
 
                 <div className="bg-white border-2 border-black p-6 rounded-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]">
@@ -189,7 +189,7 @@ export default function FinanceManagementClient({
                 <div className="bg-white border-2 border-black p-6 rounded-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]">
                     <FileText size={20} weight="bold" className="text-neutral-400 mb-2" />
                     <p className="text-[10px] font-black uppercase text-neutral-400 mb-1">Total Invoiced</p>
-                    <p className="text-2xl font-black">€{stats.totalInvoiced.toLocaleString()}</p>
+                    <p className="text-2xl font-black">${stats.totalInvoiced.toLocaleString()}</p>
                 </div>
 
                 <div className="bg-white border-2 border-black p-6 rounded-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]">
@@ -268,7 +268,7 @@ export default function FinanceManagementClient({
                                         <p className="text-[8px] font-bold text-neutral-400 uppercase">ID: {inv.student?.id}</p>
                                     </td>
                                     <td className="py-4 px-2">
-                                        <p className="font-black">€{Number(inv.total_amount).toLocaleString()}</p>
+                                        <p className="font-black">${Number(inv.total_amount).toLocaleString()}</p>
                                     </td>
                                     <td className="py-4 px-2">
                                         <span className={`px-2 py-1 border-2 rounded-sm text-[8px] font-black uppercase ${getStatusColor(inv.status)}`}>
@@ -315,7 +315,7 @@ export default function FinanceManagementClient({
                                         <p className="text-[8px] font-bold text-neutral-400 uppercase">Method: {pay.payment_method}</p>
                                     </td>
                                     <td className="py-4 px-2">
-                                        <p className="font-black">€{Number(pay.amount).toLocaleString()}</p>
+                                        <p className="font-black">${Number(pay.amount).toLocaleString()}</p>
                                     </td>
                                     <td className="py-4 px-2">
                                         <div className="flex items-center gap-2">
@@ -518,7 +518,7 @@ export default function FinanceManagementClient({
 
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Amount (€)</label>
+                                    <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Amount ($)</label>
                                     <input
                                         type="number"
                                         className="w-full px-4 py-3 border-2 border-black font-bold outline-none"
@@ -612,7 +612,7 @@ export default function FinanceManagementClient({
 
                         <div className="space-y-4 mb-8">
                             <div>
-                                <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Amount Received (€)</label>
+                                <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Amount Received ($)</label>
                                 <input
                                     type="number"
                                     className="w-full px-4 py-3 border-2 border-black font-bold outline-none"

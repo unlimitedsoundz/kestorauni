@@ -57,7 +57,7 @@ export async function pushInvoice(applicationId: string, customFee: number, invo
                 type: 'INVOICE_READY',
                 additionalData: {
                     amount: customFee,
-                    currency: 'EUR',
+                    currency: 'USD',
                     invoiceType: invoiceType
                 }
             }
