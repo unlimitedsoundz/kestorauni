@@ -37,7 +37,7 @@ export default function AlumniPage() {
                     { label: 'Alumni' }
                 ]}
                 image={{
-                    src: "/images/1780762709762-019e9db9-8f3e-7c0f-a924-505811909df6.png",
+                    src: "/images/alumni-hero.png",
                     alt: "Cannoga Alumni"
                 }}
                 imagePosition="object-top"
