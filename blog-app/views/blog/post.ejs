@@ -12,7 +12,7 @@
                         <%= post.title %>
                     </h1>
                     <p class="text-xl md:text-2xl text-white max-w-xl leading-relaxed">
-                        <%= post.excerpt || 'Read this insightful blog post from Penkka University student ambassadors.' %>
+                        <%= post.excerpt || 'Read this insightful blog post from Kestora University student ambassadors.' %>
                     </p>
                     <p class="text-sm text-neutral-300">
                         Published on <%= formatToDDMMYYYY(post.publishDate) %>
@@ -25,7 +25,7 @@
                 <div class="h-full w-full relative">
                     <div class="relative w-full h-full bg-neutral-100 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-black/10 after:mix-blend-multiply">
                         <img
-                            src="<%= post.imageUrl || '/images/penkka hero.png' %>"
+                            src="<%= post.imageUrl || '/images/logo-kestora.png' %>"
                             alt="<%= post.title %>"
                             class="object-cover w-full h-full object-center"
                         />
