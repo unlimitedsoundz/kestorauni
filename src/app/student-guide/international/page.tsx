@@ -108,15 +108,15 @@ export default function InternationalGuidePage() {
                                     <Link href="https://www.businesshelsinki.com" target="_blank" className="cc-btn-primary text-sm">Invest Helsinki →</Link>
                                 </div>
                             </div>
-<div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
-                                    <Image
-                                        src="/images/46d9590a0798520f2880dbd7b836b79c.jpg"
-                                        alt="Helsinki Market Square"
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 1024px) 100vw, 50vw"
-                                    />
-                                  </div>
+                            <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
+                                <Image
+                                    src="/images/helsinki-market square.jpg"
+                                    alt="Helsinki Market Square"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                />
+                            </div>
                         </div>
                     </section>
 
