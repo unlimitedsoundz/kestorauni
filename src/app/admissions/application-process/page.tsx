@@ -35,7 +35,7 @@ export default function ApplicationProcessPage() {
             {/* ── HERO – Home-page style ── */}
             <section
                 className="relative overflow-hidden text-white"
-                style={{ background: 'linear-gradient(135deg, #000000 0%, #000000 55%, #7c3aed 100%)' }}
+                style={{ background: '#000000' }}
             >
                 {/* Decorative blobs */}
                 <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
@@ -90,7 +90,7 @@ export default function ApplicationProcessPage() {
                             {[
                                 { label: 'Sept intake apply', value: 'Oct – Feb' },
                                 { label: 'Jan intake apply', value: 'Jun – Sep' },
-                                { label: 'Decision time', value: '4–6 weeks' },
+                                { label: 'Decision time', value: '1–4 weeks' },
                             ].map(({ label, value }) => (
                                 <div key={label}>
                                     <p className="text-white font-bold text-lg">{value}</p>

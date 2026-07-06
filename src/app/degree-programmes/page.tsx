@@ -5,7 +5,6 @@ import GuideSidebarLayout from '@/components/layout/StudentGuideLayout';
 const sections = [
     { id: 'certificates', title: 'Certificate Programs', content: '' },
     { id: 'diplomas', title: 'Diploma Programs', content: '' },
-    { id: 'advanced-diplomas', title: 'Advanced Diplomas', content: '' },
     { id: 'bachelor', title: 'Bachelor\u2019s Degrees', content: '' },
     { id: 'master', title: 'Master\u2019s Degrees', content: '' },
     { id: 'admission', title: 'Admission Requirements', content: '' },
@@ -79,7 +78,7 @@ export default function DegreeProgrammesPage() {
 
                     <ProgramCard
                         id="certificates"
-                        duration="6 Months – 1 Year"
+                        duration="1 Year"
                         title="Certificate Programs"
                         overview="Our certificate programs provide rapid, focused training in specific technical or business domains. Perfect for professionals looking to upskill, transition careers, or gain fundamental entry-level knowledge. These programs emphasize hands-on, practical skills directly aligned with immediate industry needs in Helsinki's job market."
                         requirements={[
@@ -104,21 +103,8 @@ export default function DegreeProgrammesPage() {
                     />
 
                     <ProgramCard
-                        id="advanced-diplomas"
-                        duration="3 Years"
-                        title="Advanced Diploma Programs"
-                        overview="Advanced diploma programs provide an in-depth, multi-year exploration of engineering, technology, or business fields. They feature extensive hands-on laboratory work, advanced technical concepts, and industry-integrated co-op semesters. Graduates gain the senior-level competencies required to design, implement, and manage complex systems."
-                        requirements={[
-                            "High school diploma with strong academic standing",
-                            "English language proficiency (IELTS 6.5 or equivalent)",
-                            "Portfolio review or entrance assessment (specific tracks)",
-                        ]}
-                        admissionHref="/admissions"
-                    />
-
-                    <ProgramCard
                         id="bachelor"
-                        duration="4 Years"
+                        duration="3 Years"
                         title="Bachelor's Degree Programs"
                         overview="Our 4-year undergraduate degree programs offer rigorous academic instruction combined with professional training. Fusing analytical thinking, research methodologies, and leadership skills, these degrees prepare students for high-level careers or postgraduate research. Program structures include comprehensive co-op semesters in Helsinki's public and private sectors."
                         requirements={[
@@ -177,16 +163,16 @@ export default function DegreeProgrammesPage() {
                     <section id="fees" className="scroll-mt-32">
                         <div className="cc-section-divider">
                             <h2 className="cc-h2">Tuition &amp; Fees</h2>
-                            <p className="cc-label">All amounts in Canadian Dollars (CAD)</p>
+                            <p className="cc-label">All amounts in Euros (EUR)</p>
                         </div>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="cc-card cc-card-body">
                                 <h3 className="cc-h3 mb-6">Domestic Students</h3>
                                 <div className="space-y-4">
                                     {[
-                                        ["Certificate & Diploma programs", "$3,500/year"],
-                                        ["Bachelor's degree programs", "$6,200/year"],
-                                        ["Master's degree programs", "$8,500/year"],
+                                        ["Certificate & Diploma programs", "€1,500/year"],
+                                        ["Bachelor's degree programs", "€2,500/year"],
+                                        ["Master's degree programs", "€3,500/year"],
                                     ].map(([label, price]) => (
                                         <div key={label} className="flex justify-between items-center border-b border-neutral-100 pb-3">
                                             <span className="text-neutral-600 text-sm">{label}</span>
@@ -199,9 +185,9 @@ export default function DegreeProgrammesPage() {
                                 <h3 className="cc-h3 mb-6">International Students</h3>
                                 <div className="space-y-4">
                                     {[
-                                        ["Certificate & Diploma programs", "$9,500/year"],
-                                        ["Bachelor's degree programs", "$12,500/year"],
-                                        ["Master's degree programs", "$18,000/year"],
+                                        ["Certificate & Diploma programs", "€2,500/year"],
+                                        ["Bachelor's degree programs", "€4,000/year"],
+                                        ["Master's degree programs", "€6,000/year"],
                                     ].map(([label, price]) => (
                                         <div key={label} className="flex justify-between items-center border-b border-neutral-100 pb-3">
                                             <span className="text-neutral-600 text-sm">{label}</span>

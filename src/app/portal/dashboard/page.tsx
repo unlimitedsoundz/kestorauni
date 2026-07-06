@@ -58,7 +58,7 @@ export default function DashboardPage() {
 
             const admissionsMap = new Map((admissionRes.data as any[] || []).map(a => [a.program, a]));
 
-            if (profileRes.data) setProfile(profileRes.data);
+            if (profileRes.data) setProfile({ ...profileRes.data });
             if (appsRes.data) {
                 // Enrich apps with admission letter info
                 const enrichedApps = appsRes.data.map(app => ({
@@ -67,7 +67,7 @@ export default function DashboardPage() {
                 }));
                 setApplications(enrichedApps);
             }
-            if (studentRes.data) setStudent(studentRes.data);
+            if (studentRes.data) setStudent({ ...studentRes.data });
 
             // AUTO-ENSURE STUDENT ID IF MISSING
             if (profileRes.data && !profileRes.data.student_id) {

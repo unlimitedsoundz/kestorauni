@@ -78,10 +78,7 @@ export function Footer() {
                                     <span className="block text-xs">00150 Helsinki, Uusimaa</span>
                                 </div>
                             </li>
-                            <li className="flex items-center gap-3 text-neutral-300 text-sm">
-                                <Phone size={16} className="shrink-0 text-neutral-400" />
-                                <a href="tel:+16137274723" className="hover:text-white transition-colors no-underline">+1 (613) 727-4723</a>
-                            </li>
+                            
                             <li className="flex items-center gap-3 text-neutral-300 text-sm">
                                 <EnvelopeSimple size={16} className="shrink-0 text-neutral-400" />
                                 <a href="mailto:info@kestora.online" className="hover:text-white transition-colors no-underline">info@kestora.online</a>
@@ -112,3 +109,8 @@ export function Footer() {
         </>
     )
 }
+
+
+
+
+
