@@ -25,13 +25,11 @@ export async function pushInvoice(applicationId: string, customFee: number, invo
         throw new Error('Admission offer not found for this application');
     }
 
-    const totalWithAncillary = customFee + ANCILLARY_FEES_TOTAL;
-
     // Update the offer with new custom fee and mark as invoiced
     const { error: updateError } = await supabase
         .from('admission_offers')
         .update({
-            tuition_fee: totalWithAncillary,
+            tuition_fee: customFee,
             invoice_type: invoiceType,
             invoice_pushed: true,
             invoice_sent_at: new Date().toISOString()

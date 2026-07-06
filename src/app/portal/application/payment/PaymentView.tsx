@@ -49,7 +49,7 @@ export default function TuitionPaymentPage({ admissionOffer, application }: {
                 body: {
                     offerId: admissionOffer.id,
                     applicationId: application.id,
-                    amount: finalAmount,
+                    amount: invoiceTotal,
                     invoiceType: rawInvoiceType,
                     details: {
                         method: details.method,
