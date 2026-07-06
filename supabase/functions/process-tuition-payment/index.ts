@@ -73,6 +73,15 @@ Deno.serve(async (req) => {
 
         // 4. Notify Admin
         try {
+            const ancillaryFees = [
+                { name: 'Student Activity Fee', amount: 100 },
+                { name: 'Technology Fee', amount: 100 },
+                { name: 'Athletics and Recreation Fee', amount: 100 },
+                { name: 'Convocation Fee', amount: 100 },
+                { name: 'Student Counselling Fee', amount: 100 },
+                { name: 'Program Transcript Fee', amount: 100 },
+                { name: 'Student Experience Fee', amount: 100 }
+            ];
             await adminClient.functions.invoke('send-notification', {
                 body: {
                     type: 'PAYMENT_RECEIVED',
@@ -81,7 +90,8 @@ Deno.serve(async (req) => {
                         amount: amount,
                         currency: details.currency,
                         reference: reference,
-                        paymentType: invoiceType || 'TUITION'
+                        paymentType: invoiceType || 'TUITION',
+                        ancillaryFees: ancillaryFees
                     }
                 }
             });

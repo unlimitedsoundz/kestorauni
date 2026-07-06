@@ -360,18 +360,42 @@ serve(async (req) => {
             case 'PAYMENT_RECEIVED':
                 studentSubject = "Payment Received - Pending Verification";
                 const isHousingRec = additionalData?.paymentType === 'HOUSING';
+                const ancillaryFees = additionalData?.ancillaryFees || [];
+                const totalAncillary = ancillaryFees.reduce((acc: number, item: any) => acc + (item.amount || 0), 0);
+                const totalPaid = (additionalData?.amount || 0) + totalAncillary;
+                const formattedTotal = new Intl.NumberFormat('en-IE', { style: 'currency', currency: additionalData?.currency || 'EUR', maximumFractionDigits: 0 }).format(totalPaid);
+                
                 studentHtml = `
                     <img src="https://kestora.online/images/scholarships.png" alt="Kestora University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
                     <h1>Payment Received</h1>
-                    <p>Hello ${firstName}, we have received your payment of <strong>${additionalData?.amount} ${additionalData?.currency || 'EUR'}</strong>.</p>
+                    <p>Hello ${firstName}, we have received your payment of <strong>${formattedTotal}</strong>.</p>
                     <p><strong>Reference:</strong> ${additionalData?.reference || 'N/A'}</p>
+                    ${!isHousingRec && ancillaryFees.length > 0 ? `
+                    <div style="background-color: #f9fafb; border-radius: 8px; padding: 15px; margin: 20px 0; border: 1px solid #f3f4f6;">
+                        <p style="font-weight: bold; margin-bottom: 10px; font-size: 13px; text-transform: uppercase; color: #6b7280;">Payment Breakdown:</p>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span style="font-size: 13px; color: #4b5563;">Base Amount</span>
+                            <span style="font-size: 13px; font-weight: 600; color: #111827;">${new Intl.NumberFormat('en-IE', { style: 'currency', currency: additionalData?.currency || 'EUR', maximumFractionDigits: 0 }).format(additionalData?.amount || 0)}</span>
+                        </div>
+                        ${ancillaryFees.map((fee: any) => `
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span style="font-size: 13px; color: #4b5563;">${fee.name}</span>
+                            <span style="font-size: 13px; font-weight: 600; color: #111827;">€ ${fee.amount.toLocaleString()}</span>
+                        </div>
+                        `).join('')}
+                        <div style="display: flex; justify-content: space-between; padding-top: 8px; margin-top: 8px; border-top: 1px solid #e5e7eb;">
+                            <span style="font-size: 14px; font-weight: 900; color: #111827; text-transform: uppercase;">Total</span>
+                            <span style="font-size: 14px; font-weight: 900; color: #111827;">${formattedTotal}</span>
+                        </div>
+                    </div>
+                    ` : ''}
                     <p>Our team is now verifying the transaction. This usually takes 1-2 business days. You will receive another email once your ${isHousingRec ? 'housing' : 'enrollment'} is confirmed.</p>
                 `;
                 adminSubject = `New Payment (Pending): ${fullName}`;
                 adminHtml = `
                     <h2>Payment Verification Required</h2>
                     <p><strong>From:</strong> ${fullName}</p>
-                    <p><strong>Amount:</strong> ${additionalData?.amount} ${additionalData?.currency || 'EUR'}</p>
+                    <p><strong>Amount:</strong> ${formattedTotal}</p>
                     <p><strong>Ref:</strong> ${additionalData?.reference || 'N/A'}</p>
                     <p><strong>Type:</strong> ${additionalData?.paymentType || 'TUITION'}</p>
                     <a href="https://kestora.online/admin/registrar" style="display:inline-block;background:#000;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Verify in Registrar Panel</a>
@@ -490,6 +514,18 @@ serve(async (req) => {
                 ).join(' ');
                 const invAmt = additionalData?.amount ? new Intl.NumberFormat('en-IE', { style: 'currency', currency: additionalData?.currency || 'EUR', maximumFractionDigits: 0 }).format(additionalData.amount) : 'TBD';
                 const invHero = "https://kestora.online/images/scholarships.png";
+                const ancillaryFees = additionalData?.ancillaryFees || [
+                    { name: 'Student Activity Fee', amount: 100 },
+                    { name: 'Technology Fee', amount: 100 },
+                    { name: 'Athletics and Recreation Fee', amount: 100 },
+                    { name: 'Convocation Fee', amount: 100 },
+                    { name: 'Student Counselling Fee', amount: 100 },
+                    { name: 'Program Transcript Fee', amount: 100 },
+                    { name: 'Student Experience Fee', amount: 100 }
+                ];
+                const totalAncillary = ancillaryFees.reduce((acc: number, item: any) => acc + (item.amount || 0), 0);
+                const invoiceTotal = (additionalData?.amount || 0) + totalAncillary;
+                const formattedTotal = new Intl.NumberFormat('en-IE', { style: 'currency', currency: additionalData?.currency || 'EUR', maximumFractionDigits: 0 }).format(invoiceTotal);
 
                 studentSubject = `${invType} Invoice Ready for Payment - Kestora University`;
                 studentHtml = `
@@ -508,9 +544,19 @@ serve(async (req) => {
                             <p style="color: #6b7280; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; margin: 0;">Invoice Type</p>
                             <p style="color: #111827; font-size: 14px; font-weight: bold; margin: 0;">${invType}</p>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 4px;">
-                            <p style="color: #6b7280; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; margin: 0;">Amount Due</p>
-                            <p style="color: #111827; font-size: 20px; font-weight: 900; margin: 0;">${invAmt}</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 4px; margin-bottom: 10px;">
+                            <p style="color: #6b7280; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; margin: 0;">Base Tuition</p>
+                            <p style="color: #111827; font-size: 14px; font-weight: bold; margin: 0;">${invAmt}</p>
+                        </div>
+                        ${ancillaryFees.map((fee: any) => `
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 0;">
+                            <p style="color: #6b7280; font-size: 12px; margin: 0;">${fee.name}</p>
+                            <p style="color: #111827; font-size: 12px; font-weight: 600; margin: 0;">€ ${fee.amount.toLocaleString()}</p>
+                        </div>
+                        `).join('')}
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 10px; margin-top: 10px; border-top: 2px solid #e5e7eb;">
+                            <p style="color: #111827; font-size: 14px; font-weight: 900; margin: 0; text-transform: uppercase;">Total Due</p>
+                            <p style="color: #111827; font-size: 20px; font-weight: 900; margin: 0;">${formattedTotal}</p>
                         </div>
                     </div>
                     
@@ -526,7 +572,9 @@ serve(async (req) => {
                     <h2>Invoice Notification Sent</h2>
                     <p><strong>Student:</strong> ${fullName}</p>
                     <p><strong>Type:</strong> ${invType}</p>
-                    <p><strong>Amount:</strong> ${invAmt}</p>
+                    <p><strong>Base Amount:</strong> ${invAmt}</p>
+                    <p><strong>Ancillary Fees:</strong> €${totalAncillary.toLocaleString()}</p>
+                    <p><strong>Total:</strong> ${formattedTotal}</p>
                     <p>An email notification has been sent to the student regarding their ready invoice.</p>
                 `;
                 break;

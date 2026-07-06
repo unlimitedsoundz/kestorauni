@@ -4,6 +4,15 @@ import { createClient } from '@/utils/supabase/client';
 export async function pushInvoice(applicationId: string, customFee: number, invoiceType: string) {
     const supabase = createClient();
     const ANCILLARY_FEES_TOTAL = 700;
+    const ANCILLARY_FEES = [
+        { name: 'Student Activity Fee', amount: 100 },
+        { name: 'Technology Fee', amount: 100 },
+        { name: 'Athletics and Recreation Fee', amount: 100 },
+        { name: 'Convocation Fee', amount: 100 },
+        { name: 'Student Counselling Fee', amount: 100 },
+        { name: 'Program Transcript Fee', amount: 100 },
+        { name: 'Student Experience Fee', amount: 100 }
+    ];
 
     // Verify application exists and is in a valid state
     const { data: offer, error: offerError } = await supabase
@@ -59,9 +68,10 @@ export async function pushInvoice(applicationId: string, customFee: number, invo
                 applicationId: applicationId,
                 type: 'INVOICE_READY',
                 additionalData: {
-                    amount: totalWithAncillary,
+                    amount: customFee,
                     currency: 'EUR',
-                    invoiceType: invoiceType
+                    invoiceType: invoiceType,
+                    ancillaryFees: ANCILLARY_FEES
                 }
             }
         });
