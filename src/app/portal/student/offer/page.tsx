@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { createClient } from '@/utils/supabase/client';
@@ -66,6 +66,18 @@ export default function StudentOfferPage() {
                 const appStatus = app?.status || null;
                 const applicationId = app?.id || null;
 
+                // 4. Fetch Profile to get the current student_id (source of truth)
+                const { data: profile } = await supabase
+                    .from('profiles')
+                    .select('student_id')
+                    .eq('id', currentUserId || '')
+                    .single();
+
+                // If we have a profile with a student_id, use it to update the admission's student_id
+                if (profile && profile.student_id) {
+                    admission.student_id = profile.student_id;
+                }
+
                 setData({ admission: { ...admission, application_status: appStatus, application_id: applicationId }, appStatus });
             } catch (err) {
                 console.error('CRITICAL: Fetching offer data failed', err);
@@ -93,7 +105,7 @@ export default function StudentOfferPage() {
                 <div className="min-h-screen bg-neutral-50 flex items-center justify-center p-4">
                     <div className="bg-white p-8 rounded-xl shadow-sm border border-neutral-100 text-center max-w-sm">
                         <div className="w-12 h-12 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span className="animate-pulse text-xl">📝</span>
+                            <span className="animate-pulse text-xl">ðŸ“</span>
                         </div>
                         <h1 className="text-xl font-black uppercase mb-2 text-blue-600">Offer Processing</h1>
                         <p className="text-neutral-500 text-xs font-bold uppercase tracking-tight">
