@@ -197,17 +197,7 @@ export default function TuitionPaymentPage({ admissionOffer, application }: {
                         <div className="space-y-4 mb-8">
                             <div className="flex justify-between text-sm">
                                 <span className="text-black font-normal uppercase tracking-wider">{invoiceTypeLabel}</span>
-                                <span className="font-normal text-black text-right">€ {finalAmount.toLocaleString()}</span>
-                            </div>
-                            {ancillaryFees.map((fee) => (
-                                <div key={fee.name} className="flex justify-between text-sm">
-                                    <span className="text-black font-normal uppercase tracking-wider">{fee.name}</span>
-                                    <span className="font-normal text-black">€ {fee.amount.toLocaleString()}</span>
-                                </div>
-                            ))}
-                            <div className="flex justify-between text-sm">
-                                <span className="text-black font-normal uppercase tracking-wider">Services Fee</span>
-                                <span className="font-normal text-black">€ 0.00</span>
+                                <span className="font-normal text-black text-right">€ {invoiceTotal.toLocaleString()}</span>
                             </div>
                             <div className="flex justify-between pt-2 font-normal text-lg text-black">
                                 <span>TOTAL</span>
