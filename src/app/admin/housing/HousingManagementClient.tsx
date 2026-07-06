@@ -705,7 +705,7 @@ export default function HousingManagementClient({
                                                         className="px-1 py-0.5 border border-neutral-300 outline-none"
                                                         value={editRoomData.monthly_rate}
                                                         onChange={(e) => setEditRoomData({ ...editRoomData, monthly_rate: Number(e.target.value) })}
-                                                        placeholder="$"
+                                                        placeholder="€"
                                                     />
                                                 </div>
                                             ) : (
@@ -821,7 +821,7 @@ export default function HousingManagementClient({
                                     className="w-full px-4 py-2 border-2 border-black font-bold outline-none"
                                     value={newBuilding.campus_location}
                                     onChange={(e) => setNewBuilding({ ...newBuilding, campus_location: e.target.value })}
-                                    placeholder="e.g. Ottawa Campus"
+                                    placeholder="e.g. Helsinki Campus"
                                 />
                             </div>
                         </div>
@@ -917,7 +917,7 @@ export default function HousingManagementClient({
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Rate ($/mo)</label>
+                                    <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Rate (€/mo)</label>
                                     <input
                                         type="number"
                                         className="w-full px-4 py-2 border-2 border-black font-bold outline-none"

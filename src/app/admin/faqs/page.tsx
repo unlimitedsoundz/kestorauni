@@ -354,6 +354,7 @@ function FAQForm({ faq, onClose, onSave, pages }: FAQFormProps) {
                             type="checkbox"
                             checked={isPublished}
                             onChange={(e) => setIsPublished(e.target.checked)}
+                            className="border-2 border-neutral-300 rounded-sm checked:bg-black checked:border-black w-4 h-4"
                         />
                         Published
                     </label>

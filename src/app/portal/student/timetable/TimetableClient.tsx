@@ -69,7 +69,7 @@ export default function TimetableClient({ sessions }: TimetableClientProps) {
                                                     className={`p-2 rounded-sm border-l-4 h-full shadow-sm transition-all hover:scale-[1.02] cursor-default
                                                         ${session.location_type === 'ONLINE'
                                                             ? 'bg-blue-50 border-blue-600 text-blue-900'
-                                                            : 'bg-emerald-50 border-emerald-600 text-emerald-900'}`}
+                                                            : 'bg-neutral-50 border-neutral-600 text-neutral-900'}`}
                                                 >
                                                     <div className="flex items-center justify-between gap-1">
                                                         <span className="text-[9px] font-black uppercase truncate">{session.module.code}</span>
@@ -98,7 +98,7 @@ export default function TimetableClient({ sessions }: TimetableClientProps) {
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mt-3 p-3 border-2 border-black bg-neutral-50 rounded-sm">
                 <div className="flex flex-wrap items-center gap-4">
                     <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 bg-emerald-50 border-l-4 border-emerald-600"></div>
+                        <div className="w-3 h-3 bg-neutral-50 border-l-4 border-neutral-600"></div>
                         <span className="text-[9px] font-black uppercase tracking-tight text-neutral-600">On Campus</span>
                     </div>
                     <div className="flex items-center gap-2">

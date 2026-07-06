@@ -69,7 +69,7 @@ export default function FinanceSettingsPage() {
 
             {message && (
                 <div className={`p-4 rounded-xl flex items-center gap-3 animate-in slide-in-from-top-2 ${
-                    message.type === 'success' ? 'bg-emerald-50 text-emerald-700 border border-emerald-100' : 'bg-red-50 text-red-700 border border-red-100'
+                    message.type === 'success' ? 'bg-neutral-50 text-neutral-700 border border-neutral-100' : 'bg-red-50 text-red-700 border border-red-100'
                 }`}>
                     {message.type === 'success' ? <CheckCircle size={20} weight="bold" /> : <XCircle size={20} weight="bold" />}
                     <span className="text-sm font-bold uppercase tracking-wide">{message.text}</span>

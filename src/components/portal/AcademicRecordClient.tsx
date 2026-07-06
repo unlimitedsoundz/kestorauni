@@ -46,7 +46,7 @@ export default function AcademicRecordClient({ enrollments }: AcademicRecordClie
                         <Award className="text-black" size={20} weight="regular" />
                     </div>
                     <div className="text-4xl font-black tracking-tighter">{gpa}</div>
-                    <div className="mt-2 flex items-center gap-1 text-[10px] font-bold text-emerald-600">
+                    <div className="mt-2 flex items-center gap-1 text-[10px] font-bold text-neutral-600">
                         <TrendingUp size={12} weight="bold" /> Top 15% of Cohort
                     </div>
                 </div>
@@ -121,11 +121,11 @@ export default function AcademicRecordClient({ enrollments }: AcademicRecordClie
                                         <td className="p-4 flex items-center gap-2">
                                             <span className={`px-2 py-1 rounded-full text-[8px] font-black uppercase tracking-widest border
                                                 ${e.grade_status === 'FINAL'
-                                                    ? 'bg-emerald-50 border-emerald-500 text-emerald-700'
+                                                    ? 'bg-neutral-50 border-neutral-500 text-neutral-700'
                                                     : 'bg-amber-50 border-amber-500 text-amber-700'}`}>
                                                 {e.grade_status}
                                             </span>
-                                            {e.grade_status === 'FINAL' && <CheckCircle size={12} weight="bold" className="text-emerald-500" />}
+                                            {e.grade_status === 'FINAL' && <CheckCircle size={12} weight="bold" className="text-neutral-500" />}
                                         </td>
                                     </tr>
                                 ))

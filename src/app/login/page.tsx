@@ -68,7 +68,7 @@ export default function LoginPage() {
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="w-full p-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"
+                            className="w-full p-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-neutral-500 outline-none"
                             required
                         />
                     </div>
@@ -79,7 +79,7 @@ export default function LoginPage() {
                                 type={showPassword ? 'text' : 'password'}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="w-full p-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none pr-12"
+                                className="w-full p-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-neutral-500 outline-none pr-12"
                                 required
                             />
                             <button
@@ -95,7 +95,7 @@ export default function LoginPage() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg hover:bg-emerald-700 transition-colors disabled:opacity-50"
+                        className="w-full bg-neutral-600 text-white font-bold py-3 rounded-lg hover:bg-neutral-700 transition-colors disabled:opacity-50"
                     >
                         {loading ? 'Processing...' : 'Log In'}
                     </button>

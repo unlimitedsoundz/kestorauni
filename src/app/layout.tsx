@@ -16,15 +16,15 @@ const playfair = { variable: "font-playfair-var" };
 
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://cannogacollege.ca'),
+    metadataBase: new URL('https://kestora.online'),
     title: {
-        default: "Cannoga College – Ottawa, Canada",
-        template: "%s | Cannoga College"
+        default: "Kestora University – Helsinki, Finland",
+        template: "%s | Kestora University"
     },
-    description: "Cannoga College is a dynamic and career-focused institution located in Ottawa, Canada's capital city. The college is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
-    applicationName: "Cannoga College",
+    description: "Kestora University is a dynamic and career-focused institution located in Helsinki, Finland. The university is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
+    applicationName: "Kestora University",
     appleWebApp: {
-        title: "Cannoga College",
+        title: "Kestora University",
         statusBarStyle: "default",
         capable: true,
     },
@@ -40,24 +40,24 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://cannogacollege.ca',
-        siteName: 'Cannoga College',
-        title: 'Cannoga College – Ottawa, Canada',
-        description: "Cannoga College is a dynamic and career-focused institution located in Ottawa, Canada's capital city. The college is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
+        url: 'https://kestora.online',
+        siteName: 'Kestora University',
+        title: 'Kestora University – Helsinki, Finland',
+        description: "Kestora University is a dynamic and career-focused institution located in Helsinki, Finland. The university is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
         images: [
             {
-                url: '/logo-cannoga.png',
+                url: '/logo-kestora.png',
                 width: 800,
                 height: 600,
-                alt: 'Cannoga College Logo',
+                alt: 'Kestora University Logo',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Cannoga College – Ottawa, Canada',
-        description: "Cannoga College is a dynamic and career-focused institution located in Ottawa, Canada's capital city. The college is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
-        images: ['/logo-cannoga.png'],
+        title: 'Kestora University – Helsinki, Finland',
+        description: "Kestora University is a dynamic and career-focused institution located in Helsinki, Finland. The university is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
+        images: ['/logo-kestora.png'],
     }
 };
 
@@ -85,31 +85,31 @@ export default function RootLayout({
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "UniversityOrUniversity",
-                            "name": "Cannoga College",
-                            "description": "Cannoga College is a dynamic and career-focused institution located in Ottawa, Canada’s capital city.",
-                            "alternateName": "Cannoga College Ottawa",
-                            "url": "https://www.cannogacollege.ca",
-                            "logo": "https://www.cannogacollege.ca/logo-cannoga.png",
+                            "name": "Kestora University",
+                            "description": "Kestora University is a dynamic and career-focused institution located in Helsinki, Finland.",
+                            "alternateName": "Kestora University Helsinki Campus",
+                            "url": "https://www.kestora.online",
+                            "logo": "https://www.kestora.online/logo-kestora.png",
                             "address": {
                                 "@type": "PostalAddress",
-                                "streetAddress": "2368 Midway Ave",
-                                "addressLocality": "Ottawa",
-                                "postalCode": "K2B 5J8",
-                                "addressRegion": "Ontario",
-                                "addressCountry": "CA"
+                                "streetAddress": "Pohjoisesplanadi 51",
+                                "addressLocality": "Helsinki",
+                                "postalCode": "00150",
+                                "addressRegion": "Uusimaa",
+                                "addressCountry": "FI"
                             },
                             "location": {
                                 "@type": "Place",
-                                "name": "Ottawa, Canada"
+                                "name": "Helsinki, Finland"
                             },
                             "sameAs": [
-                                "https://www.linkedin.com/company/cannoga-university"
+                                "https://www.tiktok.com/@kestorauniversity"
                             ],
                             "contactPoint": {
                                 "@type": "ContactPoint",
                                 "telephone": "+1-613-727-4723",
                                 "contactType": "admissions",
-                                "email": "admissions@cannogacollege.ca"
+                                "email": "admissions@kestora.online"
                             }
                         })
                     }}

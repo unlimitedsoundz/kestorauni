@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
 export default function AboutRedirect() {
-    redirect('/about-cannoga-college/');
+    redirect('/about-kestora-university/');
 }

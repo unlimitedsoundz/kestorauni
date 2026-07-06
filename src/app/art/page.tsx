@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { Palette, Calendar, MapPin } from '@phosphor-icons/react/dist/ssr';
 
 export const metadata = {
-    title: 'Art & Exhibitions — Cannoga College | Gallery & Creative Showcase',
-    description: 'Explore art exhibitions, creative showcases, and gallery events at Cannoga College Ottawa. Featuring works by students and faculty in fine arts, design, and media.',
+    title: 'Art & Exhibitions — Kestora University | Gallery & Creative Showcase',
+    description: 'Explore art exhibitions, creative showcases, and gallery events at Kestora University Helsinki. Featuring works by students and faculty in fine arts, design, and media.',
 };
 
 export default function ArtPage() {
@@ -53,7 +53,7 @@ export default function ArtPage() {
                                     <span className="text-black text-sm hover:underline">View Gallery →</span>
                                 </div>
                             </div>
-                            <h3 className="text-2xl font-bold mb-1 group-hover:text-emerald-500 transition-colors">{ex.title}</h3>
+                            <h3 className="text-2xl font-bold mb-1 group-hover:text-neutral-500 transition-colors">{ex.title}</h3>
                             <p className="text-neutral-400 flex items-center gap-2">
                                 <Palette size={14} weight="regular" />
                                 {ex.artist}

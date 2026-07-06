@@ -16,19 +16,19 @@ const positions = [
     {
         title: 'University Lecturer, Engineering & Sustainability',
         type: 'Full-time',
-        location: 'Ottawa Campus',
+        location: 'Helsinki Campus',
         description: 'Leading research and teaching in a multi-disciplinary environment spanning engineering, science, and technology.'
     },
     {
         title: 'Admissions Coordinator',
         type: 'Part-time',
-        location: 'Remote / Ottawa',
-        description: 'Supporting international students through their application journey at Cannoga College.'
+        location: 'Remote / Helsinki',
+        description: 'Supporting international students through their application journey at Kestora University.'
     },
     {
         title: 'IT Support Specialist',
         type: 'Full-time',
-        location: 'Ottawa Campus',
+        location: 'Helsinki Campus',
         description: 'Managing campus infrastructure and supporting our digital learning environment.'
     }
 ];
@@ -44,9 +44,9 @@ export default function CareersPage() {
             <SchemaLD data={{
                 "@context": "https://schema.org",
                 "@type": "WebPage",
-                "name": "Careers at Cannoga College",
-                "description": "Explore job opportunities at Cannoga College in Ottawa.",
-                "url": "https://cannogacollege.ca/careers"
+                "name": "Careers at Kestora University",
+                "description": "Explore job opportunities at Kestora University in Helsinki.",
+                "url": "https://kestora.online/careers"
             }} />
 
             {positions.map((pos, index) => (
@@ -60,17 +60,17 @@ export default function CareersPage() {
                     "employmentType": pos.type === "Full-time" ? "FULL_TIME" : "PART_TIME",
                     "hiringOrganization": {
                         "@type": "UniversityOrUniversity",
-                        "name": "Cannoga College",
-                        "sameAs": "https://cannogacollege.ca",
-                        "logo": "https://cannogacollege.ca/logo-cannoga.png"
+                        "name": "Kestora University",
+                        "sameAs": "https://kestora.online",
+                        "logo": "https://kestora.online/logo-kestora.png"
                     },
                     "jobLocation": {
                         "@type": "Place",
                         "address": {
                             "@type": "PostalAddress",
-                            "streetAddress": "2368 Midway Ave",
-                            "addressLocality": "Ottawa",
-                            "postalCode": "K2B 5J8",
+                            "streetAddress": "Pohjoisesplanadi 51",
+                            "addressLocality": "Helsinki",
+                            "postalCode": "00150",
                             "addressCountry": "CA"
                         }
                     }
@@ -79,8 +79,8 @@ export default function CareersPage() {
 
             {/* Hero Section */}
             <Hero
-                title={<>Work at <br className="hidden md:block" /> Cannoga College</>}
-                body="Shape the future of higher education in Ottawa, Canada. We're looking for innovators, educators, and leaders to join our world-class faculty and staff."
+                title={<>Work at <br className="hidden md:block" /> Kestora University</>}
+                body="Shape the future of higher education in Helsinki, Finland. We're looking for innovators, educators, and leaders to join our world-class faculty and staff."
                 backgroundColor="#5dd089"
                 tinted
                 lightText={false}
@@ -90,11 +90,11 @@ export default function CareersPage() {
                 ]}
                 image={{
                     src: "https://i.pinimg.com/736x/5d/cc/b7/5dccb711d4b73c6b11c943856693fe52.jpg",
-                    alt: "Work at Cannoga College"
+                    alt: "Work at Kestora University"
                 }}
             >
                 <div className="flex flex-wrap gap-6">
-                    <Link href="mailto:careers@cannogacollege.ca" className="text-aalto-3 font-bold underline underline-offset-8 decoration-white hover:opacity-70 transition-colors text-white inline-flex items-center gap-2">
+                    <Link href="mailto:careers@kestora.online" className="text-aalto-3 font-bold underline underline-offset-8 decoration-white hover:opacity-70 transition-colors text-white inline-flex items-center gap-2">
                         Send your CV <ArrowRight size={20} weight="bold" />
                     </Link>
                 </div>
@@ -111,7 +111,7 @@ export default function CareersPage() {
                             body={
                                 <div className="space-y-8 text-left">
                                     <p className="text-aalto-2 text-black leading-relaxed font-medium">
-                                        Cannoga College is a dynamic and career-focused higher education institution located in Ottawa, Canada's capital city.
+                                        Kestora University is a dynamic and career-focused higher education institution located in Helsinki, Finland's capital city.
                                     </p>
                                     <div className="grid sm:grid-cols-2 gap-8">
                                         <div>
@@ -150,7 +150,7 @@ export default function CareersPage() {
                                     key={index}
                                     title={pos.title}
                                     body={pos.description}
-                                    cta={{ label: "Apply now", linkComponentProps: { href: "mailto:careers@cannogacollege.ca" } }}
+                                    cta={{ label: "Apply now", linkComponentProps: { href: "mailto:careers@kestora.online" } }}
                                 />
                             ))}
                         </div>
@@ -164,7 +164,7 @@ export default function CareersPage() {
                                 cta={{
                                     label: "Send your CV",
                                     linkComponentProps: {
-                                        href: "mailto:careers@cannogacollege.ca",
+                                        href: "mailto:careers@kestora.online",
                                     },
                                 }}
                             />

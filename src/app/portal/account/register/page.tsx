@@ -95,7 +95,7 @@ export default function RegisterPage() {
     return (
         <div className="max-w-md mx-auto mt-12 bg-white p-8 border border-neutral-100 text-black">
             <h1 className="text-2xl font-bold mb-2">Create Account</h1>
-            <p className="mb-8">Start your application to Cannoga College</p>
+            <p className="mb-8">Start your application to Kestora University</p>
 
             {message && (
                 <div className={`p-4 rounded-sm mb-6 text-xs font-bold border ${message.type === 'success' ? 'bg-neutral-50 text-black border-neutral-100' : 'bg-red-50 text-red-700 border-red-100'}`}>
@@ -138,7 +138,7 @@ export default function RegisterPage() {
                         value={formData.country}
                         onChange={handleChange}
                         className="w-full px-4 py-2 border border-neutral-200 focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all text-[#2d2d2d]"
-                        placeholder="e.g. Ottawa, Canada"
+                        placeholder="e.g. Helsinki, Finland"
                     />
                 </div>
 

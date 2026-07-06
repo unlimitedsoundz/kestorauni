@@ -97,13 +97,13 @@ export default function DocumentsForm({ applicationId, existingDocuments, reques
     return (
         <div className="space-y-8">
             {documentRequestNote && (
-                <div className="bg-purple-50 border-2 border-purple-200 p-6 rounded-sm flex items-start gap-4 shadow-sm">
-                    <div className="bg-purple-600 p-2.5 rounded-sm text-white shrink-0 shadow-lg">
+                <div className="bg-neutral-50 border-2 border-neutral-200 p-6 rounded-sm flex items-start gap-4 shadow-sm">
+                    <div className="bg-neutral-600 p-2.5 rounded-sm text-white shrink-0 shadow-lg">
                         <AlertCircle size={22} weight="bold" />
                     </div>
                     <div className="flex-1">
-                        <h4 className="text-purple-900 font-black text-[11px] leading-none mb-2">Message from Admissions Office</h4>
-                        <p className="text-purple-800 text-[13px] font-bold leading-relaxed block bg-white/50 p-3 rounded-sm border border-purple-100">
+                        <h4 className="text-neutral-900 font-black text-[11px] leading-none mb-2">Message from Admissions Office</h4>
+                        <p className="text-neutral-800 text-[13px] font-bold leading-relaxed block bg-white/50 p-3 rounded-sm border border-neutral-100">
                             "{documentRequestNote}"
                         </p>
                     </div>
@@ -129,7 +129,7 @@ export default function DocumentsForm({ applicationId, existingDocuments, reques
                     const isRequested = requestedDocuments?.includes(docType.type);
 
                     return (
-                        <div key={docType.type} className={`flex flex-col md:flex-row md:items-center justify-between p-4 bg-white gap-4 rounded-sm border transition-all ${isRequested ? 'border-purple-200 bg-purple-50/30' : 'border-neutral-100'}`}>
+                        <div key={docType.type} className={`flex flex-col md:flex-row md:items-center justify-between p-4 bg-white gap-4 rounded-sm border transition-all ${isRequested ? 'border-neutral-200 bg-neutral-50/30' : 'border-neutral-100'}`}>
                             <div className="flex-1 text-left">
                                 <div className="flex items-center gap-2 mb-1">
                                     <h3 className="text-[13px] font-semibold text-black flex items-center gap-2">
@@ -137,7 +137,7 @@ export default function DocumentsForm({ applicationId, existingDocuments, reques
                                         {doc && <CheckCircle className="text-black" size={14} weight="bold" />}
                                     </h3>
                                     {isRequested && (
-                                        <span className="bg-purple-600 text-white px-2 py-0.5 rounded-full text-[8px] font-black">Requested</span>
+                                        <span className="bg-neutral-600 text-white px-2 py-0.5 rounded-full text-[8px] font-black">Requested</span>
                                     )}
                                 </div>
                                 <p className="text-[11px] text-black font-medium">{docType.description}</p>
@@ -157,7 +157,7 @@ export default function DocumentsForm({ applicationId, existingDocuments, reques
                                         </button>
                                     </div>
                                 ) : (
-                                    <label className={`cursor-pointer border ${isRequested ? 'border-purple-600 text-purple-600 bg-white' : 'border-black text-black bg-white'} px-4 py-2 rounded-sm text-[13px] font-semibold flex items-center gap-2 hover:bg-neutral-50 transition-all ${isUploading ? 'opacity-50 pointer-events-none' : ''}`}>
+                                    <label className={`cursor-pointer border ${isRequested ? 'border-neutral-600 text-neutral-600 bg-white' : 'border-black text-black bg-white'} px-4 py-2 rounded-sm text-[13px] font-semibold flex items-center gap-2 hover:bg-neutral-50 transition-all ${isUploading ? 'opacity-50 pointer-events-none' : ''}`}>
                                         {isUploading ? <Loader2 className="animate-spin" size={14} weight="bold" /> : <Upload size={14} weight="bold" />}
                                         {isUploading ? 'Uploading...' : 'Upload'}
                                         <input

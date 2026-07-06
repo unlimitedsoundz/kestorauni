@@ -179,7 +179,7 @@ export default function ProfilePage() {
                                             value={editData.country_of_residence}
                                             onChange={(e) => setEditData(prev => ({ ...prev, country_of_residence: e.target.value }))}
                                             className="w-full bg-neutral-50 border border-neutral-100 rounded-xl px-4 py-2.5 text-sm font-bold outline-none focus:border-black transition-all"
-                                            placeholder="e.g. Ottawa, Canada"
+                                            placeholder="e.g. Helsinki, Finland"
                                         />
                                     </div>
                                 </div>
@@ -197,10 +197,10 @@ export default function ProfilePage() {
                     <div className="bg-neutral-900 p-6 text-white">
                         <h3 className="text-[10px] font-black text-white/70 mb-2">Account Security</h3>
                         <p className="text-[10px] font-bold leading-relaxed mb-4 tracking-tight text-white/90">
-                            Your account is protected by Cannoga College biometric-ready authentication.
+                            Your account is protected by Kestora University biometric-ready authentication.
                         </p>
                         <a
-                            href="mailto:cannoga@cannogacollege.ca?subject=Data Update Request"
+                            href="mailto:cannoga@kestora.online?subject=Data Update Request"
                             className="inline-block text-[9px] font-black bg-white/10 hover:bg-white/20 px-4 py-2 rounded transition-all"
                         >
                             Request Data Update

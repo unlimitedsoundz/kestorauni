@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/client';
 
 export async function pushInvoice(applicationId: string, customFee: number, invoiceType: string) {
     const supabase = createClient();
+    const ANCILLARY_FEES_TOTAL = 700;
 
     // Verify application exists and is in a valid state
     const { data: offer, error: offerError } = await supabase
@@ -15,11 +16,13 @@ export async function pushInvoice(applicationId: string, customFee: number, invo
         throw new Error('Admission offer not found for this application');
     }
 
+    const totalWithAncillary = customFee + ANCILLARY_FEES_TOTAL;
+
     // Update the offer with new custom fee and mark as invoiced
     const { error: updateError } = await supabase
         .from('admission_offers')
         .update({
-            tuition_fee: customFee,
+            tuition_fee: totalWithAncillary,
             invoice_type: invoiceType,
             invoice_pushed: true,
             invoice_sent_at: new Date().toISOString()
@@ -56,8 +59,8 @@ export async function pushInvoice(applicationId: string, customFee: number, invo
                 applicationId: applicationId,
                 type: 'INVOICE_READY',
                 additionalData: {
-                    amount: customFee,
-                    currency: 'USD',
+                    amount: totalWithAncillary,
+                    currency: 'EUR',
                     invoiceType: invoiceType
                 }
             }

@@ -1,4 +1,4 @@
-const { createClient } = require('@supabase/supabase-js');
+﻿const { createClient } = require('@supabase/supabase-js');
 const path = require('path');
 const fs = require('fs');
 require('dotenv').config({ path: '.env.local' });
@@ -28,29 +28,29 @@ function getRandomDate() {
 // Blog posts data
 const blogPosts = [
     {
-        title: "Why I Chose Penkka University Over Other European Schools",
-        excerpt: "Choosing the right university in Europe can be overwhelming. In this article, I break down the exact reasons I chose Penkka University and how it compares to other options.",
-        slug: "why-i-chose-penkka-university-europe",
-        content: `<p>As an international student from Nigeria, selecting a university in Europe was one of the most important decisions of my life. After researching dozens of options across Finland, Sweden, Germany, and the Netherlands, I chose Penkka University. Here's why it stood out.</p>
+        title: "Why I Chose Kestora University Over Other European Schools",
+        excerpt: "Choosing the right university in Europe can be overwhelming. In this article, I break down the exact reasons I chose Kestora University and how it compares to other options.",
+        slug: "why-i-chose-Kestora-university-europe",
+        content: `<p>As an international student from Nigeria, selecting a university in Europe was one of the most important decisions of my life. After researching dozens of options across Finland, Sweden, Germany, and the Netherlands, I chose Kestora University. Here's why it stood out.</p>
 
 <p><strong>The Quality of Education</strong></p>
-<p>Penkka's curriculum is designed for real-world application. Unlike some European universities that focus heavily on theory, Penkka emphasizes practical skills and industry connections. My engineering program includes mandatory internships and project-based learning that other schools only offer as electives.</p>
+<p>Kestora's curriculum is designed for real-world application. Unlike some European universities that focus heavily on theory, Kestora emphasizes practical skills and industry connections. My engineering program includes mandatory internships and project-based learning that other schools only offer as electives.</p>
 
 <p><strong>English-Taught Programs</strong></p>
-<p>While many Finnish universities offer English programs, Penkka goes further by ensuring all administrative support is available in English. From application to graduation, everything is streamlined for international students.</p>
+<p>While many Finnish universities offer English programs, Kestora goes further by ensuring all administrative support is available in English. From application to graduation, everything is streamlined for international students.</p>
 
 <p><strong>Student Support System</strong></p>
-<p>What really sold me was the comprehensive support network. Penkka assigns each international student a personal mentor who helps with everything from visa issues to academic challenges. This level of personalized attention is rare in larger European universities.</p>
+<p>What really sold me was the comprehensive support network. Kestora assigns each international student a personal mentor who helps with everything from visa issues to academic challenges. This level of personalized attention is rare in larger European universities.</p>
 
 <p><strong>Campus and Location</strong></p>
 <p>Helsinki offers the perfect balance of Scandinavian culture and international diversity. The campus is modern, safe, and well-connected to the city center. Public transportation is excellent, and the cost of living is reasonable compared to other Nordic capitals.</p>
 
 <p><strong>Future Opportunities</strong></p>
-<p>Penkka has strong connections with Finnish companies and international organizations. Many graduates find employment in Finland or return home with valuable experience and networks.</p>
+<p>Kestora has strong connections with Finnish companies and international organizations. Many graduates find employment in Finland or return home with valuable experience and networks.</p>
 
-<p>If you're considering European universities, I recommend visiting Penkka. The admissions team is incredibly helpful, and the virtual tours give you a real sense of the community.</p>
+<p>If you're considering European universities, I recommend visiting Kestora. The admissions team is incredibly helpful, and the virtual tours give you a real sense of the community.</p>
 
-<p><em>About the Author: Adebayo Okafor is a third-year Engineering student from Nigeria studying at Penkka University.</em></p>`,
+<p><em>About the Author: Adebayo Okafor is a third-year Engineering student from Nigeria studying at Kestora University.</em></p>`,
         author: "Adebayo Okafor",
         authorBio: "Third-year Engineering student from Nigeria",
         publishDate: getRandomDate(),
@@ -80,7 +80,7 @@ const blogPosts = [
 
 <p>My advice: Don't compare Finland to your home country. Embrace the differences, stay connected with family, and give yourself time to adjust. The rewards of studying here are worth the initial challenges.</p>
 
-<p><em>About the Author: Grace Wanjiku is a first-year Business student from Kenya studying at Penkka University.</em></p>`,
+<p><em>About the Author: Grace Wanjiku is a first-year Business student from Kenya studying at Kestora University.</em></p>`,
         author: "Grace Wanjiku",
         authorBio: "First-year Business student from Kenya",
         publishDate: getRandomDate(),
@@ -113,7 +113,7 @@ const blogPosts = [
 
 <p>My advice: Come with realistic expectations. Prepare for cultural differences and give yourself time to adapt. The challenges are worth it for the personal growth and opportunities you'll gain.</p>
 
-<p><em>About the Author: Sarah Johnson is a second-year Computer Science student from the United States studying at Penkka University.</em></p>`,
+<p><em>About the Author: Sarah Johnson is a second-year Computer Science student from the United States studying at Kestora University.</em></p>`,
         author: "Sarah Johnson",
         authorBio: "Second-year Computer Science student from the United States",
         publishDate: getRandomDate(),
@@ -121,10 +121,10 @@ const blogPosts = [
         published: true
     },
     {
-        title: "A Day in My Life at Penkka University",
+        title: "A Day in My Life at Kestora University",
         excerpt: "Curious about what student life actually looks like? Here is a full breakdown of my daily routine as an international student.",
-        slug: "day-in-my-life-penkka-university",
-        content: `<p>People often ask me what a typical day at Penkka University looks like. As a student from Estonia, I can share my routine that balances academics, social life, and self-care. Here's a glimpse into my daily life.</p>
+        slug: "day-in-my-life-Kestora-university",
+        content: `<p>People often ask me what a typical day at Kestora University looks like. As a student from Estonia, I can share my routine that balances academics, social life, and self-care. Here's a glimpse into my daily life.</p>
 
 <p><strong>7:00 AM - Wake Up and Morning Routine</strong></p>
 <p>I wake up in my dorm room in the university housing. The morning light (or darkness in winter) filters through the window. I start with a simple breakfast - oatmeal or yogurt with fruit. Finnish breakfast culture is minimal, so I've adapted to lighter mornings.</p>
@@ -136,13 +136,13 @@ const blogPosts = [
 <p>My day starts with a lecture in sustainable development. Classes are interactive, with discussions and group activities. Finnish professors encourage questions and different perspectives. The small class size makes participation comfortable.</p>
 
 <p><strong>11:00 AM - Study Session</strong></p>
-<p>Between classes, I use the library or study rooms. Penkka has excellent facilities - quiet spaces, group study areas, and modern equipment. I work on assignments or prepare for upcoming presentations.</p>
+<p>Between classes, I use the library or study rooms. Kestora has excellent facilities - quiet spaces, group study areas, and modern equipment. I work on assignments or prepare for upcoming presentations.</p>
 
 <p><strong>12:30 PM - Lunch</strong></p>
 <p>Lunch is at the university cafeteria. The food is healthy and affordable, with vegetarian options. I often eat with classmates, discussing course material or weekend plans. This is a great time to practice Finnish with local students.</p>
 
 <p><strong>2:00 PM - Afternoon Classes</strong></p>
-<p>More lectures or seminars. Today I have a workshop on project management. The practical focus of Penkka's programs means we spend time on real-world applications, not just theory.</p>
+<p>More lectures or seminars. Today I have a workshop on project management. The practical focus of Kestora's programs means we spend time on real-world applications, not just theory.</p>
 
 <p><strong>4:00 PM - Extracurricular Activities</strong></p>
 <p>I'm involved in the international student association. We organize events and support new students. This is my favorite part of the day - meeting people from different cultures and contributing to the community.</p>
@@ -159,9 +159,9 @@ const blogPosts = [
 <p><strong>11:00 PM - Wind Down</strong></p>
 <p>Time to relax before bed. I read, journal, or plan for tomorrow. Sleep is important, and I aim for 7-8 hours each night.</p>
 
-<p>This routine provides balance between academics and personal well-being. Penkka encourages students to pursue interests beyond studies, creating well-rounded individuals.</p>
+<p>This routine provides balance between academics and personal well-being. Kestora encourages students to pursue interests beyond studies, creating well-rounded individuals.</p>
 
-<p><em>About the Author: Markus Tallinn is a third-year Environmental Science student from Estonia studying at Penkka University.</em></p>`,
+<p><em>About the Author: Markus Tallinn is a third-year Environmental Science student from Estonia studying at Kestora University.</em></p>`,
         author: "Markus Tallinn",
         authorBio: "Third-year Environmental Science student from Estonia",
         publishDate: getRandomDate(),
@@ -197,7 +197,7 @@ const blogPosts = [
 
 <p>My experience taught me that work-study balance is about quality over quantity. Choose meaningful work, manage your time effectively, and prioritize your well-being. The combination of work experience and academic learning creates a strong foundation for your future career.</p>
 
-<p><em>About the Author: Priya Sharma is a graduate student in Information Technology from India who studied at Penkka University.</em></p>`,
+<p><em>About the Author: Priya Sharma is a graduate student in Information Technology from India who studied at Kestora University.</em></p>`,
         author: "Priya Sharma",
         authorBio: "Graduate student in Information Technology from India",
         publishDate: getRandomDate(),
@@ -205,13 +205,13 @@ const blogPosts = [
         published: true
     },
     {
-        title: "Step-by-Step Guide to Applying to Penkka University",
+        title: "Step-by-Step Guide to Applying to Kestora University",
         excerpt: "This guide simplifies the entire application process, from preparing documents to receiving your admission offer.",
-        slug: "apply-penkka-university-guide",
-        content: `<p>Applying to Penkka University can seem daunting, but the process is straightforward when broken down. As a student who successfully navigated the admissions process, I'll guide you through each step.</p>
+        slug: "apply-Kestora-university-guide",
+        content: `<p>Applying to Kestora University can seem daunting, but the process is straightforward when broken down. As a student who successfully navigated the admissions process, I'll guide you through each step.</p>
 
 <p><strong>Step 1: Research Programs</strong></p>
-<p>Start by exploring Penkka's offerings. Visit the website and read detailed program descriptions. Consider your interests, career goals, and the entry requirements. I recommend attending virtual information sessions to ask questions.</p>
+<p>Start by exploring Kestora's offerings. Visit the website and read detailed program descriptions. Consider your interests, career goals, and the entry requirements. I recommend attending virtual information sessions to ask questions.</p>
 
 <p><strong>Step 2: Check Eligibility</strong></p>
 <p>Review the admission requirements for your chosen program. Most bachelor's programs require a high school diploma, while master's programs need a relevant bachelor's degree. English proficiency tests (TOEFL/IELTS) are required for non-native speakers.</p>
@@ -227,10 +227,10 @@ const blogPosts = [
 - Financial proof (if required)</p>
 
 <p><strong>Step 4: Submit Application</strong></p>
-<p>Applications are submitted through Penkka's online portal. The system is user-friendly and guides you through each section. Pay attention to deadlines - they vary by program and intake period.</p>
+<p>Applications are submitted through Kestora's online portal. The system is user-friendly and guides you through each section. Pay attention to deadlines - they vary by program and intake period.</p>
 
 <p><strong>Step 5: Application Fee</strong></p>
-<p>There's a small application fee (€100) that must be paid when submitting. This is non-refundable but covers the processing costs. Payment is made online through the portal.</p>
+<p>There's a small application fee (â‚¬100) that must be paid when submitting. This is non-refundable but covers the processing costs. Payment is made online through the portal.</p>
 
 <p><strong>Step 6: Wait for Review</strong></p>
 <p>Applications are reviewed by the admissions committee. This process takes 4-6 weeks. You'll receive email updates about your application status. Be patient and use this time to prepare for your move.</p>
@@ -239,16 +239,16 @@ const blogPosts = [
 <p>If accepted, you'll receive an official admission letter. This includes details about tuition fees, payment deadlines, and next steps. Congratulations! Your hard work has paid off.</p>
 
 <p><strong>Step 8: Acceptance and Visa</strong></p>
-<p>Accept your offer by the deadline and pay any required deposits. Begin the student visa process immediately. Penkka provides comprehensive visa guidance and support letters.</p>
+<p>Accept your offer by the deadline and pay any required deposits. Begin the student visa process immediately. Kestora provides comprehensive visa guidance and support letters.</p>
 
 <p><strong>Common Mistakes to Avoid</strong></p>
 <p>Don't rush document preparation, miss deadlines, or submit incomplete applications. Double-check all information before submitting. If you're unsure about anything, contact the admissions office - they're very helpful.</p>
 
-<p>The admissions team at Penkka is supportive and responsive. Don't hesitate to reach out with questions. Good luck with your application!</p>
+<p>The admissions team at Kestora is supportive and responsive. Don't hesitate to reach out with questions. Good luck with your application!</p>
 
-<p><em>About the Author: Anna Virtanen is a Finnish student ambassador who helps international applicants navigate the admissions process at Penkka University.</em></p>`,
+<p><em>About the Author: Anna Virtanen is a Finnish student ambassador who helps international applicants navigate the admissions process at Kestora University.</em></p>`,
         author: "Anna Virtanen",
-        authorBio: "Finnish student ambassador at Penkka University",
+        authorBio: "Finnish student ambassador at Kestora University",
         publishDate: getRandomDate(),
         imageUrl: "/images/blog/application-guide.jpg",
         published: true
@@ -266,16 +266,16 @@ const blogPosts = [
 <p>The Finnish Immigration Service (MIGRI) requires comprehensive documentation:
 - Valid passport
 - University admission letter
-- Proof of financial means (€7,000 minimum)
+- Proof of financial means (â‚¬7,000 minimum)
 - Health insurance coverage
 - Accommodation proof
 - Criminal record certificate (for some countries)</p>
 
 <p><strong>Financial Proof</strong></p>
-<p>This was the most challenging part. I needed to prove €7,000 for the first year. Bank statements, scholarship letters, or sponsor declarations work. I used a combination of savings and a signed sponsor declaration from my parents.</p>
+<p>This was the most challenging part. I needed to prove â‚¬7,000 for the first year. Bank statements, scholarship letters, or sponsor declarations work. I used a combination of savings and a signed sponsor declaration from my parents.</p>
 
 <p><strong>Health Insurance</strong></p>
-<p>All students need health insurance covering at least €100,000. Penkka recommends specific insurance providers. I chose a policy that covered the entire Schengen area for flexibility.</p>
+<p>All students need health insurance covering at least â‚¬100,000. Kestora recommends specific insurance providers. I chose a policy that covered the entire Schengen area for flexibility.</p>
 
 <p><strong>Accommodation</strong></p>
 <p>You need proof of housing for the first 3 months. University dorms provide this automatically. Private accommodation requires a rental agreement or host declaration.</p>
@@ -290,15 +290,15 @@ const blogPosts = [
 <p>Processing takes 1-3 months. I applied 4 months before my program start and received my permit 6 weeks later. Track your application status online and respond quickly to any requests for additional information.</p>
 
 <p><strong>Arrival and Registration</strong></p>
-<p>Once approved, pick up your residence card from a police station. Register with local authorities within 7 days of arrival. Penkka's international office provides excellent guidance for this final step.</p>
+<p>Once approved, pick up your residence card from a police station. Register with local authorities within 7 days of arrival. Kestora's international office provides excellent guidance for this final step.</p>
 
 <p><strong>Tips for Success</strong></p>
-<p>Start early, be organized, and don't hesitate to ask for help. The admissions office at Penkka is very supportive throughout the visa process. Keep copies of everything and follow up regularly.</p>
+<p>Start early, be organized, and don't hesitate to ask for help. The admissions office at Kestora is very supportive throughout the visa process. Keep copies of everything and follow up regularly.</p>
 
 <p>The visa process tests your patience, but it's manageable with preparation. Once you have your residence permit, you can fully focus on your studies and enjoy Finland.</p>
 
-<p><em>About the Author: Lukas Müller is a first-year International Business student from Germany studying at Penkka University.</em></p>`,
-        author: "Lukas Müller",
+<p><em>About the Author: Lukas MÃ¼ller is a first-year International Business student from Germany studying at Kestora University.</em></p>`,
+        author: "Lukas MÃ¼ller",
         authorBio: "First-year International Business student from Germany",
         publishDate: getRandomDate(),
         imageUrl: "/images/blog/visa-guide.jpg",
@@ -314,7 +314,7 @@ const blogPosts = [
 <p>Finland's winter is serious. Layering is key:
 - Thermal base layers (tops and bottoms)
 - Wool sweaters and fleece jackets
-- Waterproof winter coat (rated for -20°C)
+- Waterproof winter coat (rated for -20Â°C)
 - Winter boots (waterproof, insulated)
 - Wool socks, gloves, scarf, and beanie
 - Thermal underwear for extreme cold</p>
@@ -386,7 +386,7 @@ const blogPosts = [
 
 <p>Remember, you can always buy what you forget, but it's harder to ship things home if you overpack. Focus on essentials for the first few months.</p>
 
-<p><em>About the Author: Sofia Kowalski is a second-year Design student from Poland studying at Penkka University.</em></p>`,
+<p><em>About the Author: Sofia Kowalski is a second-year Design student from Poland studying at Kestora University.</em></p>`,
         author: "Sofia Kowalski",
         authorBio: "Second-year Design student from Poland",
         publishDate: "2024-05-01",
@@ -400,44 +400,44 @@ const blogPosts = [
         content: `<p>Managing finances as an international student in Finland requires careful planning. Coming from the United States, I was surprised by both the costs and the available support. Here's my detailed monthly budget breakdown.</p>
 
 <p><strong>Housing (Most Expensive)</strong></p>
-<p>Rent is the biggest expense. University dorms cost €250-400 per month for a shared room. Private apartments range from €600-900. I live in university housing, which saves money and provides community.</p>
+<p>Rent is the biggest expense. University dorms cost â‚¬250-400 per month for a shared room. Private apartments range from â‚¬600-900. I live in university housing, which saves money and provides community.</p>
 
 <p><strong>Food and Groceries</strong></p>
-<p>Groceries are expensive but manageable. I spend €150-200 monthly:
-- Basic groceries: €100-120
-- Eating out 2-3 times: €40-60
-- Coffee/snacks: €10-20</p>
+<p>Groceries are expensive but manageable. I spend â‚¬150-200 monthly:
+- Basic groceries: â‚¬100-120
+- Eating out 2-3 times: â‚¬40-60
+- Coffee/snacks: â‚¬10-20</p>
 
 <p><strong>Transportation</strong></p>
-<p>Helsinki has excellent public transport. A monthly pass costs €60. I walk or cycle in summer, which saves money. Occasional taxis add €20-30 monthly.</p>
+<p>Helsinki has excellent public transport. A monthly pass costs â‚¬60. I walk or cycle in summer, which saves money. Occasional taxis add â‚¬20-30 monthly.</p>
 
 <p><strong>Utilities and Phone</strong></p>
-<p>Utilities are included in dorm rent. Phone plan: €20-30 monthly. Internet is fast and reliable. I use student discounts for phone plans.</p>
+<p>Utilities are included in dorm rent. Phone plan: â‚¬20-30 monthly. Internet is fast and reliable. I use student discounts for phone plans.</p>
 
 <p><strong>Study Materials and Supplies</strong></p>
-<p>Textbooks and supplies: €20-50 monthly. Most materials are digital, which saves money. Student discounts apply to many purchases.</p>
+<p>Textbooks and supplies: â‚¬20-50 monthly. Most materials are digital, which saves money. Student discounts apply to many purchases.</p>
 
 <p><strong>Entertainment and Social</strong></p>
-<p>€50-100 monthly for social activities:
-- Movies/concerts: €20-40
-- Sports/hobbies: €20-30
-- Gifts/small purchases: €10-30</p>
+<p>â‚¬50-100 monthly for social activities:
+- Movies/concerts: â‚¬20-40
+- Sports/hobbies: â‚¬20-30
+- Gifts/small purchases: â‚¬10-30</p>
 
 <p><strong>Health and Personal Care</strong></p>
-<p>Health insurance is mandatory (€50-70 monthly). Personal care products and occasional doctor visits add €30-50. Preventive care is affordable.</p>
+<p>Health insurance is mandatory (â‚¬50-70 monthly). Personal care products and occasional doctor visits add â‚¬30-50. Preventive care is affordable.</p>
 
 <p><strong>Total Monthly Budget</strong></p>
-<p>My total expenses: €650-850 monthly
-- Housing: €300
-- Food: €180
-- Transport: €60
-- Utilities/Phone: €30
-- Study materials: €30
-- Entertainment: €70
-- Health/Personal: €50</p>
+<p>My total expenses: â‚¬650-850 monthly
+- Housing: â‚¬300
+- Food: â‚¬180
+- Transport: â‚¬60
+- Utilities/Phone: â‚¬30
+- Study materials: â‚¬30
+- Entertainment: â‚¬70
+- Health/Personal: â‚¬50</p>
 
 <p><strong>Income Sources</strong></p>
-<p>To cover expenses, I work part-time (15 hours/week) earning €300-400 monthly. Student grants and scholarships provide additional support. Many students receive €200-300 in financial aid.</p>
+<p>To cover expenses, I work part-time (15 hours/week) earning â‚¬300-400 monthly. Student grants and scholarships provide additional support. Many students receive â‚¬200-300 in financial aid.</p>
 
 <p><strong>Money-Saving Tips</strong></p>
 <p>- Use student discounts everywhere
@@ -451,7 +451,7 @@ const blogPosts = [
 
 <p>While Finland is expensive, the quality of life and education make it worthwhile. With part-time work and student support, you can live comfortably while studying.</p>
 
-<p><em>About the Author: Emma Thompson is a graduate student in Economics from the United States studying at Penkka University.</em></p>`,
+<p><em>About the Author: Emma Thompson is a graduate student in Economics from the United States studying at Kestora University.</em></p>`,
         author: "Emma Thompson",
         authorBio: "Graduate student in Economics from the United States",
         publishDate: "2024-05-15",
@@ -468,25 +468,25 @@ const blogPosts = [
 <p>Finland consistently ranks among Europe's most expensive countries. Helsinki's cost of living is higher than many Western European cities. However, student life in Finland is more affordable than you might expect due to extensive support systems.</p>
 
 <p><strong>Housing Costs</strong></p>
-<p>University dormitories are reasonably priced at €250-450 per month for a shared room. Private rentals start at €600, but student housing makes accommodation accessible. The quality of student housing is excellent - modern, well-maintained, and conveniently located.</p>
+<p>University dormitories are reasonably priced at â‚¬250-450 per month for a shared room. Private rentals start at â‚¬600, but student housing makes accommodation accessible. The quality of student housing is excellent - modern, well-maintained, and conveniently located.</p>
 
 <p><strong>Food Expenses</strong></p>
-<p>Groceries are expensive. A weekly shop costs €50-70 for one person. Eating out is costly - a restaurant meal costs €15-25. However, student cafeterias offer affordable, healthy options. Many students cook at home to save money.</p>
+<p>Groceries are expensive. A weekly shop costs â‚¬50-70 for one person. Eating out is costly - a restaurant meal costs â‚¬15-25. However, student cafeterias offer affordable, healthy options. Many students cook at home to save money.</p>
 
 <p><strong>Transportation</strong></p>
-<p>Public transport is efficient but not cheap. A monthly pass costs €55-65. However, students receive discounts, and many places are walkable. Cycling is popular and free. The excellent public transport system justifies the cost.</p>
+<p>Public transport is efficient but not cheap. A monthly pass costs â‚¬55-65. However, students receive discounts, and many places are walkable. Cycling is popular and free. The excellent public transport system justifies the cost.</p>
 
 <p><strong>Other Living Expenses</strong></p>
 <p>- Utilities: Included in rent for most student housing
-- Phone/Internet: €20-40 monthly with student plans
-- Health insurance: €50-80 monthly (mandatory)
-- Study materials: €20-50 monthly
-- Entertainment: €50-100 monthly</p>
+- Phone/Internet: â‚¬20-40 monthly with student plans
+- Health insurance: â‚¬50-80 monthly (mandatory)
+- Study materials: â‚¬20-50 monthly
+- Entertainment: â‚¬50-100 monthly</p>
 
 <p><strong>Student Support Systems</strong></p>
 <p>What makes Finland affordable for students:
-- KELA student grants (€250-350 monthly)
-- Housing allowance (€200-300 monthly)
+- KELA student grants (â‚¬250-350 monthly)
+- Housing allowance (â‚¬200-300 monthly)
 - Student discounts (30-50% off many services)
 - Free healthcare for students
 - Affordable university meals</p>
@@ -507,7 +507,7 @@ const blogPosts = [
 
 <p>The expense is real, but Finland's support systems and quality of life make it accessible for committed students. With careful budgeting and part-time work, you can live comfortably while receiving a world-class education.</p>
 
-<p><em>About the Author: David Kimani is a third-year International Relations student from Kenya studying at Penkka University.</em></p>`,
+<p><em>About the Author: David Kimani is a third-year International Relations student from Kenya studying at Kestora University.</em></p>`,
         author: "David Kimani",
         authorBio: "Third-year International Relations student from Kenya",
         publishDate: "2024-06-01",
@@ -522,9 +522,9 @@ const blogPosts = [
 
 <p><strong>University Campus Jobs</strong></p>
 <p>The easiest jobs to get are on campus:
-- Library assistant (€10-12/hour)
-- Cafeteria/kitchen work (€9-11/hour)
-- Research assistant positions (€12-15/hour)
+- Library assistant (â‚¬10-12/hour)
+- Cafeteria/kitchen work (â‚¬9-11/hour)
+- Research assistant positions (â‚¬12-15/hour)
 - Event staff for university activities</p>
 
 <p><strong>Benefits of Campus Jobs</strong></p>
@@ -532,9 +532,9 @@ const blogPosts = [
 
 <p><strong>Retail and Service Industry</strong></p>
 <p>Popular options include:
-- Supermarket cashier/stocker (€9-11/hour)
-- Restaurant server (€8-10/hour + tips)
-- Cafe/barista work (€9-12/hour)
+- Supermarket cashier/stocker (â‚¬9-11/hour)
+- Restaurant server (â‚¬8-10/hour + tips)
+- Cafe/barista work (â‚¬9-12/hour)
 - Clothing store sales assistant</p>
 
 <p><strong>Language Requirements</strong></p>
@@ -564,14 +564,14 @@ const blogPosts = [
 <p>Finnish workplaces value punctuality and reliability. Communication is direct. Work-life balance is respected. Many jobs offer flexible scheduling for students.</p>
 
 <p><strong>Earnings and Budgeting</strong></p>
-<p>Part-time work provides €300-600 monthly income. This covers living expenses and reduces financial pressure. Many students work 10-15 hours weekly.</p>
+<p>Part-time work provides â‚¬300-600 monthly income. This covers living expenses and reduces financial pressure. Many students work 10-15 hours weekly.</p>
 
 <p><strong>Long-term Benefits</strong></p>
 <p>Work experience enhances your resume and provides networking opportunities. Language skills improve. Work-study balance teaches time management. Many students find permanent positions after graduation.</p>
 
 <p>Don't be discouraged if finding work takes time. Start with campus jobs, then expand your search. The experience will enrich your time in Finland and strengthen your career prospects.</p>
 
-<p><em>About the Author: Maria Santos is a graduate student in Education from Brazil studying at Penkka University.</em></p>`,
+<p><em>About the Author: Maria Santos is a graduate student in Education from Brazil studying at Kestora University.</em></p>`,
         author: "Maria Santos",
         authorBio: "Graduate student in Education from Brazil",
         publishDate: "2024-06-15",
@@ -591,7 +591,7 @@ const blogPosts = [
 <p>I started by excelling in my coursework and participating in university projects. I joined student organizations and volunteered for events. These activities built my resume and demonstrated initiative.</p>
 
 <p><strong>Leveraging University Resources</strong></p>
-<p>Penkka's career services were invaluable:
+<p>Kestora's career services were invaluable:
 - Career counseling and resume reviews
 - Internship databases and job postings
 - Company presentations and career fairs
@@ -632,7 +632,7 @@ const blogPosts = [
 
 <p>Internships provide invaluable experience and often lead to job offers. The effort invested pays dividends in your career development and future opportunities.</p>
 
-<p><em>About the Author: Ahmed Hassan is a third-year Software Engineering student from Egypt studying at Penkka University.</em></p>`,
+<p><em>About the Author: Ahmed Hassan is a third-year Software Engineering student from Egypt studying at Kestora University.</em></p>`,
         author: "Ahmed Hassan",
         authorBio: "Third-year Software Engineering student from Egypt",
         publishDate: "2024-07-01",
@@ -640,15 +640,15 @@ const blogPosts = [
         published: true
     },
     {
-        title: "Finding Accommodation Near Penkka University",
+        title: "Finding Accommodation Near Kestora University",
         excerpt: "Housing is one of the biggest concerns for new students. Here are my tips for finding the right place.",
-        slug: "student-accommodation-penkka-guide",
+        slug: "student-accommodation-Kestora-guide",
         content: `<p>Finding housing was my biggest pre-arrival stress. As someone who arrived without confirmed accommodation, I learned the Finnish housing system through trial and error. Here's my comprehensive guide for future students.</p>
 
 <p><strong>University Housing (Best Option)</strong></p>
 <p>Apply for university dorms immediately after acceptance:
 - HOAS (Foundation for Student Housing) manages most student housing
-- Rooms start at €250-450 monthly
+- Rooms start at â‚¬250-450 monthly
 - Locations range from city center to suburbs
 - Application opens after admission confirmation</p>
 
@@ -681,9 +681,9 @@ const blogPosts = [
 
 <p><strong>Cost Considerations</strong></p>
 <p>Housing costs vary by location:
-- City center: €600-900/month
-- Suburban areas: €400-600/month
-- University dorms: €250-450/month
+- City center: â‚¬600-900/month
+- Suburban areas: â‚¬400-600/month
+- University dorms: â‚¬250-450/month
 - Additional costs: Utilities, insurance, furnishings</p>
 
 <p><strong>Furnishing Your Space</strong></p>
@@ -717,7 +717,7 @@ const blogPosts = [
 
 <p>Don't panic about housing. With early planning and multiple options, you'll find suitable accommodation. University housing is reliable and affordable, making it the best choice for most students.</p>
 
-<p><em>About the Author: Fatima Al-Zahra is a second-year Architecture student from Morocco studying at Penkka University.</em></p>`,
+<p><em>About the Author: Fatima Al-Zahra is a second-year Architecture student from Morocco studying at Kestora University.</em></p>`,
         author: "Fatima Al-Zahra",
         authorBio: "Second-year Architecture student from Morocco",
         publishDate: "2024-07-15",
@@ -769,7 +769,7 @@ const blogPosts = [
 
 <p>Everyone makes mistakes when moving abroad. The key is learning from them quickly and adjusting your approach. With awareness and preparation, you can have a successful and enjoyable experience in Finland.</p>
 
-<p><em>About the Author: Li Wei is a graduate student in Cultural Studies from China studying at Penkka University.</em></p>`,
+<p><em>About the Author: Li Wei is a graduate student in Cultural Studies from China studying at Kestora University.</em></p>`,
         author: "Li Wei",
         authorBio: "Graduate student in Cultural Studies from China",
         publishDate: "2024-08-01",
@@ -814,7 +814,7 @@ const blogPosts = [
 
 <p>Studying in Finland wasn't just about gaining knowledge; it was about unlearning old patterns and adopting new perspectives. The experience reshaped how I approach problems, relationships, and life itself. For anyone considering international education, the personal growth potential is immense.</p>
 
-<p><em>About the Author: Carlos Rodriguez is a graduate student in Sustainable Development from Mexico studying at Penkka University.</em></p>`,
+<p><em>About the Author: Carlos Rodriguez is a graduate student in Sustainable Development from Mexico studying at Kestora University.</em></p>`,
         author: "Carlos Rodriguez",
         authorBio: "Graduate student in Sustainable Development from Mexico",
         publishDate: "2024-08-15",
@@ -868,7 +868,7 @@ const blogPosts = [
 
 <p>Remember, struggling doesn't mean you're failing. It means you're growing. Every international student faces these difficulties, and most emerge stronger, more capable, and with a broader worldview.</p>
 
-<p><em>About the Author: Isabella Rossi is a third-year Psychology student from Italy studying at Penkka University.</em></p>`,
+<p><em>About the Author: Isabella Rossi is a third-year Psychology student from Italy studying at Kestora University.</em></p>`,
         author: "Isabella Rossi",
         authorBio: "Third-year Psychology student from Italy",
         publishDate: "2024-09-01",
@@ -903,7 +903,7 @@ const blogPosts = [
 <p>When motivation was low, I focused on small, achievable goals. Completing assignments, trying new foods, or learning a Finnish word provided a sense of accomplishment. Celebrating these wins built momentum.</p>
 
 <p><strong>Seeking Professional Help</strong></p>
-<p>When homesickness affected my studies, I sought counseling. Penkka's student health services provided free, confidential support. Talking to a professional helped me develop coping strategies and address underlying concerns.</p>
+<p>When homesickness affected my studies, I sought counseling. Kestora's student health services provided free, confidential support. Talking to a professional helped me develop coping strategies and address underlying concerns.</p>
 
 <p><strong>Embracing the Experience</strong></p>
 <p>I reframed my experience as an opportunity for growth. While missing home, I reminded myself why I chose Finland. Focusing on long-term goals helped me appreciate the present challenges.</p>
@@ -919,7 +919,7 @@ const blogPosts = [
 
 <p>Homesickness is part of the international student journey, but it's not permanent. With time, support, and self-compassion, you'll create a new sense of home while maintaining connections to your roots.</p>
 
-<p><em>About the Author: Yuki Tanaka is a second-year Environmental Science student from Japan studying at Penkka University.</em></p>`,
+<p><em>About the Author: Yuki Tanaka is a second-year Environmental Science student from Japan studying at Kestora University.</em></p>`,
         author: "Yuki Tanaka",
         authorBio: "Second-year Environmental Science student from Japan",
         publishDate: "2024-09-15",
@@ -936,20 +936,20 @@ const blogPosts = [
 <p>The Job Seeker Visa allows 6-9 months to find employment after graduation. Requirements:
 - Completed degree from a Finnish institution
 - Valid passport and health insurance
-- Proof of financial means (€2,000-3,000)
+- Proof of financial means (â‚¬2,000-3,000)
 - Accommodation arrangements</p>
 
 <p><strong>Work Permit After Finding Employment</strong></p>
 <p>Once employed, you can apply for a work permit. Requirements:
 - Job offer from a Finnish employer
 - Qualification verification for regulated professions
-- Salary meeting minimum requirements (€2,500-3,000 monthly)
+- Salary meeting minimum requirements (â‚¬2,500-3,000 monthly)
 - Valid work contract</p>
 
 <p><strong>Entrepreneur Permit</strong></p>
 <p>For those starting businesses:
 - Viable business plan
-- Financial resources (€4,000-5,000)
+- Financial resources (â‚¬4,000-5,000)
 - Market research and feasibility study
 - Support from business development organizations</p>
 
@@ -961,7 +961,7 @@ const blogPosts = [
 
 <p><strong>EU Blue Card</strong></p>
 <p>For highly qualified workers:
-- Job offer with salary €4,890+ monthly
+- Job offer with salary â‚¬4,890+ monthly
 - Relevant higher education qualification
 - Work contract for at least 2 years</p>
 
@@ -1004,7 +1004,7 @@ const blogPosts = [
 
 <p>Staying in Finland after graduation is possible but requires planning, language skills, and professional development. The process is competitive but rewarding for those who prepare well. Start planning early in your studies to maximize your chances of success.</p>
 
-<p><em>About the Author: Raj Patel is a recent graduate in Information Systems from India who stayed in Finland after completing studies at Penkka University.</em></p>`,
+<p><em>About the Author: Raj Patel is a recent graduate in Information Systems from India who stayed in Finland after completing studies at Kestora University.</em></p>`,
         author: "Raj Patel",
         authorBio: "Recent graduate in Information Systems from India",
         publishDate: "2024-10-01",
@@ -1055,7 +1055,7 @@ const blogPosts = [
 
 <p>Experiencing the Finnish system firsthand changed my views on education. It demonstrated that when you trust students and teachers, create supportive environments, and prioritize well-being, learning becomes natural and joyful.</p>
 
-<p><em>About the Author: Elena Petrova is a graduate student in Education from Russia studying at Penkka University.</em></p>`,
+<p><em>About the Author: Elena Petrova is a graduate student in Education from Russia studying at Kestora University.</em></p>`,
         author: "Elena Petrova",
         authorBio: "Graduate student in Education from Russia",
         publishDate: "2024-10-15",
@@ -1066,7 +1066,7 @@ const blogPosts = [
         title: "What an MBA Class in Finland Looks Like",
         excerpt: "Curious about business studies in Finland? Here is what to expect inside an MBA classroom.",
         slug: "mba-class-finland-experience",
-        content: `<p>Business education in Finland differs significantly from traditional MBA programs. As someone enrolled in Penkka's MBA program, I can describe what a typical class looks like and why the approach is so effective.</p>
+        content: `<p>Business education in Finland differs significantly from traditional MBA programs. As someone enrolled in Kestora's MBA program, I can describe what a typical class looks like and why the approach is so effective.</p>
 
 <p><strong>Class Structure and Size</strong></p>
 <p>Classes are small, typically 15-25 students. This intimate setting allows for deep discussions and personalized attention. Sessions run 3-4 hours with breaks. The focus is on quality interaction rather than lecture-style delivery.</p>
@@ -1117,9 +1117,9 @@ const blogPosts = [
 <p><strong>Why This Approach Works</strong></p>
 <p>The interactive, practical method develops well-rounded business leaders. Students graduate with analytical skills, communication abilities, and real-world experience. The Finnish emphasis on equality and sustainability influences the curriculum.</p>
 
-<p>An MBA in Finland isn't about memorizing theories—it's about developing the skills to navigate complex business environments. The experience is transformative and highly applicable to global business careers.</p>
+<p>An MBA in Finland isn't about memorizing theoriesâ€”it's about developing the skills to navigate complex business environments. The experience is transformative and highly applicable to global business careers.</p>
 
-<p><em>About the Author: Thomas Anderson is an MBA student from Canada studying at Penkka University.</em></p>`,
+<p><em>About the Author: Thomas Anderson is an MBA student from Canada studying at Kestora University.</em></p>`,
         author: "Thomas Anderson",
         authorBio: "MBA student from Canada",
         publishDate: "2024-11-01",
@@ -1133,7 +1133,7 @@ const blogPosts = [
         content: `<p>Making friends as an international student was more challenging than I anticipated. Coming from a close-knit community, I struggled initially with Finland's reserved social culture. Here's how I built meaningful connections and created a support network.</p>
 
 <p><strong>University Orientation Programs</strong></p>
-<p>Penkka's orientation was my first opportunity to meet people. Buddy programs pair new international students with current students. These relationships provided immediate support and introductions to the university community.</p>
+<p>Kestora's orientation was my first opportunity to meet people. Buddy programs pair new international students with current students. These relationships provided immediate support and introductions to the university community.</p>
 
 <p><strong>Student Organizations and Clubs</strong></p>
 <p>Joining clubs aligned with my interests was transformative. I joined the photography club and international student association. Shared activities created natural opportunities for conversations and friendships.</p>
@@ -1177,9 +1177,9 @@ const blogPosts = [
 <p><strong>My Friendship Journey</strong></p>
 <p>The first month was lonely. By month three, I had study partners and activity buddies. By month six, I had close friends who felt like family. The relationships I built enriched my entire experience.</p>
 
-<p>Building friendships abroad requires intentional effort and cultural adaptation. The connections you make will become your support system and create memories that last a lifetime. Don't give up—keep showing up and being open to new experiences.</p>
+<p>Building friendships abroad requires intentional effort and cultural adaptation. The connections you make will become your support system and create memories that last a lifetime. Don't give upâ€”keep showing up and being open to new experiences.</p>
 
-<p><em>About the Author: Amara Okafor is a first-year International Relations student from Nigeria studying at Penkka University.</em></p>`,
+<p><em>About the Author: Amara Okafor is a first-year International Relations student from Nigeria studying at Kestora University.</em></p>`,
         author: "Amara Okafor",
         authorBio: "First-year International Relations student from Nigeria",
         publishDate: "2024-11-15",
@@ -1233,7 +1233,7 @@ const blogPosts = [
 
 <p>Cultural differences enrich the study abroad experience. They challenge assumptions and broaden perspectives. While adaptation takes effort, the insights gained are invaluable. Embrace the differences, learn from them, and let them shape your growth.</p>
 
-<p><em>About the Author: Sofia Papadopoulos is a second-year Cultural Studies student from Greece studying at Penkka University.</em></p>`,
+<p><em>About the Author: Sofia Papadopoulos is a second-year Cultural Studies student from Greece studying at Kestora University.</em></p>`,
         author: "Sofia Papadopoulos",
         authorBio: "Second-year Cultural Studies student from Greece",
         publishDate: "2024-12-01",
@@ -1244,7 +1244,7 @@ const blogPosts = [
         title: "My First Finnish Winter Experience",
         excerpt: "Winter in Finland is intense but beautiful. Here is what it really feels like and how I adapted.",
         slug: "first-winter-finland-student",
-        content: `<p>My first Finnish winter exceeded all expectations—both in beauty and challenge. Coming from a tropical climate, I was completely unprepared for the intensity of Nordic winter. Here's my honest account of surviving and eventually loving my first winter in Finland.</p>
+        content: `<p>My first Finnish winter exceeded all expectationsâ€”both in beauty and challenge. Coming from a tropical climate, I was completely unprepared for the intensity of Nordic winter. Here's my honest account of surviving and eventually loving my first winter in Finland.</p>
 
 <p><strong>The Arrival of Winter</strong></p>
 <p>Winter arrived suddenly in November. One day it was autumn, the next day snow covered everything. The transformation was magical but disorienting. I wasn't prepared for the darkness and cold that came so early.</p>
@@ -1261,7 +1261,7 @@ const blogPosts = [
 - Layering became an art form</p>
 
 <p><strong>The Cold Reality</strong></p>
-<p>Temperatures dropped to -20°C (-4°F). Wind made it feel colder. My face burned, and my lungs hurt when breathing. I learned to dress in layers and protect exposed skin. The cold was physically challenging but beautiful.</p>
+<p>Temperatures dropped to -20Â°C (-4Â°F). Wind made it feel colder. My face burned, and my lungs hurt when breathing. I learned to dress in layers and protect exposed skin. The cold was physically challenging but beautiful.</p>
 
 <p><strong>Snow and Ice Everywhere</strong></p>
 <p>Snow blanketed the city for months. Walking required careful footing on icy sidewalks. Snow removal was efficient, but black ice remained a hazard. I learned to walk like a penguin and appreciate winter tires on cars.</p>
@@ -1300,7 +1300,7 @@ const blogPosts = [
 
 <p>Finnish winter is intense but transformative. It teaches patience, adaptability, and appreciation for simple pleasures. While challenging, the experience enriched my time in Finland and taught me about embracing change.</p>
 
-<p><em>About the Author: Diego Morales is a third-year Environmental Engineering student from Colombia studying at Penkka University.</em></p>`,
+<p><em>About the Author: Diego Morales is a third-year Environmental Engineering student from Colombia studying at Kestora University.</em></p>`,
         author: "Diego Morales",
         authorBio: "Third-year Environmental Engineering student from Colombia",
         publishDate: "2024-12-15",
@@ -1351,7 +1351,7 @@ const blogPosts = [
 
 <p>Don't let myths discourage you from experiencing Finland. The reality is often better than the stereotypes suggest. Come prepared, stay open-minded, and discover Finland for yourself.</p>
 
-<p><em>About the Author: Jasmine Chen is a graduate student in Nordic Studies from Singapore studying at Penkka University.</em></p>`,
+<p><em>About the Author: Jasmine Chen is a graduate student in Nordic Studies from Singapore studying at Kestora University.</em></p>`,
         author: "Jasmine Chen",
         authorBio: "Graduate student in Nordic Studies from Singapore",
         publishDate: "2025-01-01",
@@ -1377,7 +1377,7 @@ const blogPosts = [
 - Nordea: Largest, good English support
 - OP: Cooperative bank, student-friendly
 - Danske Bank: International presence
-- Ålandsbanken: Smaller, personal service</p>
+- Ã…landsbanken: Smaller, personal service</p>
 
 <p><strong>Document Requirements</strong></p>
 <p>You'll need:
@@ -1405,7 +1405,7 @@ const blogPosts = [
 <p>All major banks offer English interfaces. Set up online banking during your visit or at home. This allows transfers, payments, and account monitoring. Mobile apps provide convenient access.</p>
 
 <p><strong>Initial Deposits</strong></p>
-<p>Some banks require initial deposits. €10-50 is typical. You can deposit cash at the bank or transfer from abroad. ATM deposits are common for international students.</p>
+<p>Some banks require initial deposits. â‚¬10-50 is typical. You can deposit cash at the bank or transfer from abroad. ATM deposits are common for international students.</p>
 
 <p><strong>Account Types</strong></p>
 <p>Student accounts offer:
@@ -1454,7 +1454,7 @@ const blogPosts = [
 
 <p>Opening a Finnish bank account provides financial independence and integration. While bureaucratic, the process is straightforward with preparation. Once set up, banking becomes convenient and secure.</p>
 
-<p><em>About the Author: Oliver Schmidt is a first-year Computer Science student from Germany studying at Penkka University.</em></p>`,
+<p><em>About the Author: Oliver Schmidt is a first-year Computer Science student from Germany studying at Kestora University.</em></p>`,
         author: "Oliver Schmidt",
         authorBio: "First-year Computer Science student from Germany",
         publishDate: "2025-01-15",
@@ -1538,7 +1538,7 @@ const blogPosts = [
 - Comparing everything to home</p>
 
 <p><strong>University Support</strong></p>
-<p>Penkka provides extensive first-week support:
+<p>Kestora provides extensive first-week support:
 - Dedicated international student advisors
 - 24/7 emergency contacts
 - Welcome packages with essential information
@@ -1556,7 +1556,7 @@ const blogPosts = [
 
 <p>Remember, everyone feels overwhelmed initially. You're not alone, and the university community exists to help you succeed. Take it one day at a time, and soon Finland will feel like home.</p>
 
-<p><em>About the Author: Aisha Rahman is a student advisor and second-year Psychology student from Bangladesh studying at Penkka University.</em></p>`,
+<p><em>About the Author: Aisha Rahman is a student advisor and second-year Psychology student from Bangladesh studying at Kestora University.</em></p>`,
         author: "Aisha Rahman",
         authorBio: "Student advisor and second-year Psychology student from Bangladesh",
         publishDate: "2025-02-01",
@@ -1669,7 +1669,7 @@ const blogPosts = [
 
 <p>Effective time management creates space for both academic success and personal growth. The Finnish approach emphasizes balance, teaching me that productivity includes rest and relationships, not just work.</p>
 
-<p><em>About the Author: Nikolai Ivanov is a third-year Business Administration student from Russia studying at Penkka University.</em></p>`,
+<p><em>About the Author: Nikolai Ivanov is a third-year Business Administration student from Russia studying at Kestora University.</em></p>`,
         author: "Nikolai Ivanov",
         authorBio: "Third-year Business Administration student from Russia",
         publishDate: "2025-02-15",
@@ -1698,7 +1698,7 @@ const blogPosts = [
 
 <p><strong>Food and Dining</strong></p>
 <p>Student meal benefits:
-- University cafeterias: Subsidized prices (€2.50-4.50)
+- University cafeterias: Subsidized prices (â‚¬2.50-4.50)
 - Restaurant chains: 10-20% off
 - Grocery stores: Student discounts on specific items
 - Coffee shops: Student coffee prices</p>
@@ -1780,14 +1780,14 @@ const blogPosts = [
 
 <p><strong>Budget Impact</strong></p>
 <p>Student discounts can save:
-- €100-200 monthly on food and transport
-- €50-100 monthly on entertainment
-- €200-500 annually on software and services
+- â‚¬100-200 monthly on food and transport
+- â‚¬50-100 monthly on entertainment
+- â‚¬200-500 annually on software and services
 - Significant savings on travel and shopping</p>
 
 <p>Student discounts make Finland more affordable and enhance the student experience. Take advantage of these benefits to stretch your budget and enjoy more of what Finland offers.</p>
 
-<p><em>About the Author: Emma Larsson is a student life coordinator and first-year International Business student from Sweden studying at Penkka University.</em></p>`,
+<p><em>About the Author: Emma Larsson is a student life coordinator and first-year International Business student from Sweden studying at Kestora University.</em></p>`,
         author: "Emma Larsson",
         authorBio: "Student life coordinator and first-year International Business student from Sweden",
         publishDate: "2025-03-01",
@@ -1826,8 +1826,8 @@ const blogPosts = [
 
 <p><strong>The Costs</strong></p>
 <p>Financial investment required:
-- Tuition fees (€12,000-15,000 annually)
-- High cost of living (€800-1,200 monthly)
+- Tuition fees (â‚¬12,000-15,000 annually)
+- High cost of living (â‚¬800-1,200 monthly)
 - Travel expenses to/from Finland
 - Opportunity cost of time away from career
 - Potential lost earnings from part-time work</p>
@@ -1885,7 +1885,7 @@ const blogPosts = [
 
 <p>The investment is significant, but for the right person, studying in Finland provides returns that last a lifetime. It's not for everyone, but for those who adapt and commit, it becomes a transformative experience that opens doors to global opportunities.</p>
 
-<p><em>About the Author: Marcus Johnson is a graduate student in Innovation Management from the United States studying at Penkka University.</em></p>`,
+<p><em>About the Author: Marcus Johnson is a graduate student in Innovation Management from the United States studying at Kestora University.</em></p>`,
         author: "Marcus Johnson",
         authorBio: "Graduate student in Innovation Management from the United States",
         publishDate: "2025-03-15",
@@ -1937,9 +1937,9 @@ const blogPosts = [
 <p><strong>Advice for Future Students</strong></p>
 <p>Go with realistic expectations. Embrace the challenges as growth opportunities. Stay open-minded and proactive. Build support networks early. Remember that difficult periods pass, and the rewards are lasting.</p>
 
-<p>Studying abroad in Finland has been the most challenging and rewarding experience of my life. It pushed me beyond my comfort zone and revealed strengths I didn't know I had. For anyone considering this journey, I say yes—it's worth it, but be prepared for the transformation.</p>
+<p>Studying abroad in Finland has been the most challenging and rewarding experience of my life. It pushed me beyond my comfort zone and revealed strengths I didn't know I had. For anyone considering this journey, I say yesâ€”it's worth it, but be prepared for the transformation.</p>
 
-<p><em>About the Author: Lina Kowalewski is a second-year European Studies student from Poland studying at Penkka University.</em></p>`,
+<p><em>About the Author: Lina Kowalewski is a second-year European Studies student from Poland studying at Kestora University.</em></p>`,
         author: "Lina Kowalewski",
         authorBio: "Second-year European Studies student from Poland",
         publishDate: "2025-04-01",
@@ -1996,7 +1996,7 @@ function createDiverseAuthors() {
             const names = nameSets[country][gender];
             return names.map(name => ({
                 name: `${name} ${country === 'Finland' ? 'Virtanen' : 
-                            country === 'Germany' ? 'Müller' :
+                            country === 'Germany' ? 'MÃ¼ller' :
                             country === 'Nigeria' ? 'Okafor' :
                             country === 'Estonia' ? 'Tamm' :
                             country === 'India' ? 'Sharma' :
@@ -2020,7 +2020,7 @@ async function seedBlogs() {
         const authorBio = `${['First-year', 'Second-year', 'Third-year', 'Graduate'][Math.floor(Math.random() * 4)]} ${['Business', 'Computer Science', 'Engineering', 'Psychology', 'International Relations', 'Environmental Science', 'Design', 'Economics', 'Cultural Studies', 'Education'][Math.floor(Math.random() * 10)]} student from ${author.country}`;
         
         // Add author bio to content
-        post.content += `\n\n<p><em>About the Author: ${author.name} is a ${authorBio} studying at Penkka University.</em></p>`;
+        post.content += `\n\n<p><em>About the Author: ${author.name} is a ${authorBio} studying at Kestora University.</em></p>`;
         
         // Remove author and authorBio fields since table doesn't have them
         const { author: _, authorBio: __, ...postData } = post;
@@ -2034,7 +2034,7 @@ async function seedBlogs() {
             if (error) {
                 console.error(`Error inserting blog "${post.title}":`, error);
             } else {
-                console.log(`✅ Inserted blog: "${post.title}" by ${post.author}`);
+                console.log(`âœ… Inserted blog: "${post.title}" by ${post.author}`);
             }
         } catch (err) {
             console.error(`Failed to insert blog "${post.title}":`, err);

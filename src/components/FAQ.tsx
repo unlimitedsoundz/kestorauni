@@ -31,7 +31,7 @@ export default function FAQ({ faqs }: FAQProps) {
 
     if (!faqList || faqList.length === 0) {
         return (
-            <div className="text-center py-12 text-neutral-400">
+            <div className="text-center py-12 text-black">
                 <p className="text-lg font-medium">No FAQs available yet</p>
             </div>
         );
@@ -52,7 +52,7 @@ export default function FAQ({ faqs }: FAQProps) {
                     >
                         <button
                             onClick={() => toggle(faq.id)}
-                            className="w-full flex items-center justify-between py-8 px-0 text-left hover:bg-neutral-50 transition-colors focus:outline-none group"
+                            className="w-full flex items-center justify-between py-8 px-0 text-left hover:bg-black/5 transition-colors focus:outline-none group"
                             aria-expanded={isOpen}
                         >
                             <span className="text-aalto-5 md:text-aalto-6 font-bold text-black pr-8 leading-aalto-5 tracking-aalto-2">

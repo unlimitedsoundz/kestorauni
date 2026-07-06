@@ -91,7 +91,7 @@ export default function DbFAQ({ pageSlug, fallbackFaqs, refreshKey }: DbFAQProps
 
     if (loading) {
         return (
-            <div className="bg-white p-8 text-center text-gray-500">
+            <div className="bg-white p-8 text-center text-black">
                 Loading FAQs...
             </div>
         );
@@ -99,7 +99,7 @@ export default function DbFAQ({ pageSlug, fallbackFaqs, refreshKey }: DbFAQProps
 
     if (error && displayFaqs.length === 0) {
         return (
-            <div className="bg-white p-8 text-center text-red-600">
+            <div className="bg-white p-8 text-center text-black">
                 {error}
             </div>
         );

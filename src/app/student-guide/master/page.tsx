@@ -8,10 +8,10 @@ import { Card } from '@/components/ui/Card';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata: Metadata = {
-    title: 'Master\'s Students Guide | Cannoga College',
-    description: 'Essential steps and instructions for newly admitted Master\'s students at Cannoga College. Follow this guide to ensure a smooth start to your studies.',
+    title: 'Master\'s Students Guide | Kestora University',
+    description: 'Essential steps and instructions for newly admitted Master\'s students at Kestora University. Follow this guide to ensure a smooth start to your studies.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/student-guide/master/',
+        canonical: 'https://kestora.online/student-guide/master/',
     },
 };
 
@@ -33,7 +33,7 @@ export default function MastersGuidePage() {
                 {/* HERO SECTION */}
                 <Hero
                     title="Master’s Students Guide"
-                    body="Essential steps and instructions for newly admitted Master’s students at Cannoga College. Follow this guide to ensure a smooth start to your studies."
+                    body="Essential steps and instructions for newly admitted Master’s students at Kestora University. Follow this guide to ensure a smooth start to your studies."
                     backgroundColor="#dc6ade"
                     tinted
                     lightText={true}
@@ -89,7 +89,7 @@ export default function MastersGuidePage() {
                                         <div className="bg-neutral-100 p-6 rounded-xl border-l-4 border-black">
                                             <h4 className="font-bold text-lg mb-2">Important Conditions</h4>
                                             <ul className="text-sm font-bold space-y-2">
-                                                <li>• You can accept only one study place in Ottawa, Canada per term.</li>
+                                                <li>• You can accept only one study place in Helsinki, Finland per term.</li>
                                                 <li>• Binding acceptance: strictly no cancellations after acceptance.</li>
                                             </ul>
                                         </div>

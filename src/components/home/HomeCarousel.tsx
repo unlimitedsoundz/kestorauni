@@ -16,22 +16,22 @@ interface Slide {
 const slides: Slide[] = [
     {
         title: "The future you want is yours to make",
-        body: "With practical, hands-on learning, Cannoga College prepares you for success. Explore our programs and discover your potential in the heart of Ottawa, Canada.",
-        image: "/images/cannoga-hero-new.png",
+        body: "With practical, hands-on learning, Kestora University prepares you for success. Explore our programs and discover your potential in the heart of Helsinki, Finland.",
+        image: "/images/kestora-hero-new.png",
         btnText: "Start your application",
         btnHref: "/admissions"
     },
     {
         title: "Experience that sets you apart",
-        body: "Earn while you learn. Our industry connections connect students with paid, on-the-job training in Ottawa's top tech firms and creative studios.",
-        image: "/images/arrival-hero.png",
+        body: "Earn while you learn. Our industry connections connect students with paid, on-the-job training in Helsinki's top tech firms and creative studios.",
+        image: "/images/home-carousel-2.png",
         btnText: "Explore programs",
         btnHref: "/studies"
     },
     {
-        title: "State-of-the-art campus in Ottawa",
+        title: "State-of-the-art campus in Helsinki",
         body: "Enjoy advanced facilities, modern laboratories, and collaborative workspaces designed to foster innovation and learning.",
-        image: "/images/cannoga technology.png",
+        image: "/images/home-carousel-3.png",
         btnText: "Book a campus visit",
         btnHref: "/contact"
     }
@@ -63,8 +63,7 @@ export function HomeCarousel() {
                 {slides.map((slide, idx) => (
                     <div
                         key={idx}
-                        className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${idx === current ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
-                            }`}
+                        className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${idx === current ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'}`}
                     >
                         {/* Background Image */}
                         <div className="absolute inset-0 w-full h-full bg-neutral-900">
@@ -87,7 +86,7 @@ export function HomeCarousel() {
                                     <h1 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
                                         {slide.title}
                                     </h1>
-                                    <p className="text-lg lg:text-xl text-purple-100 max-w-xl font-medium leading-relaxed">
+                                    <p className="text-lg lg:text-xl text-neutral-200 max-w-xl font-medium leading-relaxed">
                                         {slide.body}
                                     </p>
                                 </div>
@@ -95,7 +94,7 @@ export function HomeCarousel() {
                                 <div className="pt-4">
                                     <Link
                                         href={slide.btnHref}
-                                        className="inline-flex items-center gap-2 bg-[#5c2d91] hover:bg-[#4a2475] text-white font-bold text-sm tracking-wider uppercase px-8 py-4 transition-colors no-underline"
+                                        className="inline-flex items-center gap-2 bg-[#000000] hover:bg-[#000000] text-white font-bold text-sm tracking-wider uppercase px-8 py-4 transition-colors no-underline"
                                     >
                                         <span>{slide.btnText}</span>
                                         <ArrowRight size={18} weight="bold" />
@@ -110,14 +109,14 @@ export function HomeCarousel() {
             {/* Manual Controls */}
             <button
                 onClick={prevSlide}
-                className="absolute left-6 top-1/2 transform -translate-y-1/2 z-30 rounded-full bg-[#000000]/40 hover:bg-[#5c2d91] w-12 h-12 flex items-center justify-center text-white transition-colors"
+                className="absolute left-6 top-1/2 transform -translate-y-1/2 z-30 rounded-full bg-[#000000]/40 hover:bg-[#000000] w-12 h-12 flex items-center justify-center text-white transition-colors"
                 aria-label="Previous slide"
             >
                 <CaretLeft size={24} weight="bold" />
             </button>
             <button
                 onClick={nextSlide}
-                className="absolute right-6 top-1/2 transform -translate-y-1/2 z-30 rounded-full bg-[#000000]/40 hover:bg-[#5c2d91] w-12 h-12 flex items-center justify-center text-white transition-colors"
+                className="absolute right-6 top-1/2 transform -translate-y-1/2 z-30 rounded-full bg-[#000000]/40 hover:bg-[#000000] w-12 h-12 flex items-center justify-center text-white transition-colors"
                 aria-label="Next slide"
             >
                 <CaretRight size={24} weight="bold" />

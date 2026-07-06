@@ -58,7 +58,7 @@ export async function updateApplicationStatus(applicationId: string, status: App
                 const tuitionField = mapSchoolToTuitionField(schoolSlug);
                 const personal = (appData as any)?.personal_info || {};
                 const nationality = personal.nationality;
-                const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'canada' || nationality.toLowerCase().trim() === 'canadian' || nationality.toLowerCase().trim() === 'domestic') : false;
+                const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'finland' || nationality.toLowerCase().trim() === 'finnish' || nationality.toLowerCase().trim() === 'eu' || nationality.toLowerCase().trim() === 'domestic') : false;
                 const annualFee = getTuitionFee(degreeLevel, tuitionField, isDomestic);
                 
                 // For automated first offer, we default to FULL_TUITION (Full Programme) 

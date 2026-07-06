@@ -2,10 +2,10 @@
 import PublicationList from './PublicationList';
 
 export const metadata = {
-    title: 'Research Publications — Cannoga College | Peer-Reviewed Journals & Papers',
-    description: 'Explore peer-reviewed publications by Cannoga College faculty and researchers. Sustainable construction, smart grids, urban planning, and circular economy research.',
+    title: 'Research Publications — Kestora University | Peer-Reviewed Journals & Papers',
+    description: 'Explore peer-reviewed publications by Kestora University faculty and researchers. Sustainable construction, smart grids, urban planning, and circular economy research.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/research/publications/',
+        canonical: 'https://kestora.online/research/publications/',
     },
 };
 

@@ -2,20 +2,20 @@
 import { RocketLaunch as Rocket, Lightbulb } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'Innovation Hub — Cannoga College | Startups, Incubation & Entrepreneurship',
-    description: 'Cannoga College Innovation Hub connects students, researchers, and industry to turn ideas into impact. Startup incubation, workshops, and entrepreneurship support.',
+    title: 'Innovation Hub — Kestora University | Startups, Incubation & Entrepreneurship',
+    description: 'Kestora University Innovation Hub connects students, researchers, and industry to turn ideas into impact. Startup incubation, workshops, and entrepreneurship support.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/innovation/',
+        canonical: 'https://kestora.online/innovation/',
     },
 };
 
 export default function InnovationPage() {
     return (
         <div className="min-h-screen bg-neutral-50">
-            <div className="bg-indigo-900 p-8 md:p-16 text-center text-white shadow-2xl">
+            <div className="bg-black p-8 md:p-16 text-center text-white shadow-2xl">
                 <h1 className="text-[36px] md:text-5xl lg:text-7xl font-bold mb-6 leading-tight pt-8 text-white">
                     Innovation Hub</h1>
-                <p className="text-xl text-indigo-200 max-w-2xl mx-auto">
+                <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
                     Incubating the next generation of green technology startups. From classroom to market.
                 </p>
             </div>
@@ -23,14 +23,14 @@ export default function InnovationPage() {
             <div className="container mx-auto px-4 py-8 md:py-16 -mt-12">
                 <div className="grid md:grid-cols-2 gap-8">
                     <div className="bg-white p-8 shadow-lg border border-neutral-100 transform hover:-translate-y-1 transition-transform">
-                        <div className="w-12 h-12 bg-indigo-100 flex items-center justify-center text-indigo-600 mb-6">
+                        <div className="w-12 h-12 bg-neutral-100 flex items-center justify-center text-black mb-6">
                             <Rocket size={24} weight="regular" />
                         </div>
                         <h3 className="text-2xl font-bold text-neutral-900 mb-2">Startup Incubator</h3>
                         <p className="text-neutral-600 mb-6">
                             A 12-week intensive program for student founders. Provides seed funding, mentorship from industry leaders, and office space.
                         </p>
-                        <button className="text-indigo-600 font-bold hover:text-indigo-800">Apply for Spring Batch →</button>
+                        <button className="text-black font-bold hover:opacity-80">Apply for Spring Batch →</button>
                     </div>
 
                     <div className="bg-white p-8 shadow-lg border border-neutral-100 transform hover:-translate-y-1 transition-transform">

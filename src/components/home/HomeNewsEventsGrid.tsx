@@ -77,7 +77,7 @@ export function HomeNewsEventsGrid() {
                                 <li key={item.id} className="py-4 px-5">
                                     <a
                                         href={`/news/${item.slug}`}
-                                        className="text-[#5c2d91] font-bold hover:underline hover:text-[#4a2475] leading-snug block transition-colors"
+                                        className="text-[#000000] font-bold hover:underline hover:text-[#000000] leading-snug block transition-colors"
                                     >
                                         {item.title}
                                     </a>
@@ -102,7 +102,7 @@ export function HomeNewsEventsGrid() {
                     Important Dates
                 </div>
                 <div className="flex-1 flex flex-col justify-center items-center p-8 text-center">
-                    <span className="text-[#5c2d91] font-semibold text-lg">
+                    <span className="text-[#000000] font-semibold text-lg">
                         No upcoming events
                     </span>
                 </div>
@@ -116,14 +116,14 @@ export function HomeNewsEventsGrid() {
                 </div>
             </div>
 
-            {/* Column 3: CU Events */}
+            {/* Column 3: KU Events */}
             <div className="flex flex-col bg-white border border-neutral-300">
                 <div className="bg-[#555] text-white py-3 px-5 font-bold text-lg uppercase tracking-wider">
-                    CU Events
+KU Events
                 </div>
                 <div className="flex-1 flex flex-col justify-start">
                     {events.length === 0 ? (
-                        <div className="flex-1 flex items-center justify-center p-8 text-[#5c2d91] font-semibold text-lg text-center">
+                        <div className="flex-1 flex items-center justify-center p-8 text-[#000000] font-semibold text-lg text-center">
                             No upcoming events
                         </div>
                     ) : (
@@ -132,7 +132,7 @@ export function HomeNewsEventsGrid() {
                                 <li key={item.id} className="py-4 px-5">
                                     <a
                                         href={`/news/events/${item.slug}`}
-                                        className="text-[#5c2d91] font-bold hover:underline hover:text-[#4a2475] leading-snug block transition-colors"
+                                        className="text-[#000000] font-bold hover:underline hover:text-[#000000] leading-snug block transition-colors"
                                     >
                                         {item.title}
                                     </a>

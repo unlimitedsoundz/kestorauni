@@ -127,7 +127,7 @@ serve(async (req) => {
         const lastName = app.personal_info?.lastName || app.user?.last_name || '';
         const fullName = `${firstName} ${lastName}`;
         const programTitle = app.course?.title || 'N/A';
-        const degreeLevel = app.course?.degreeLevel === 'MASTER' ? "Master's Degree" : "Bachelor's Degree";
+        const degreeLevel = app.course?.degreeLevel === 'MASTER' ? "Master's Degree" : app.course?.degreeLevel === 'BACHELOR' ? "Bachelor's Degree" : app.course?.degreeLevel === 'DIPLOMA' ? "Diploma" : app.course?.degreeLevel === 'CERTIFICATE' ? "Certificate" : "Bachelor's Degree";
         const studentId = app.user?.student_id || 'PENDING';
         const today = new Date();
         const dateStr = today.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -137,12 +137,12 @@ serve(async (req) => {
         // =====================================================
         // SECTION 1: HEADER — Institution + Address
         // =====================================================
-        page.drawText('PENKKA UNIVERSITY', { x: margin, y, size: 14, font: boldFont, color: black });
+        page.drawText('KESTORA UNIVERSITY', { x: margin, y, size: 14, font: boldFont, color: black });
         y -= 16;
         page.drawText('\u2013 Helsinki Campus', { x: margin, y, size: 9, font: regularFont, color: darkGrey });
 
         // Right-aligned address
-        const addr = ['Pohjoisesplanadi 51', '00150 Helsinki, Finland', 'Phone: +358 09 42721884', 'penkka.fi', 'admissions@penkka.fi'];
+        const addr = ['Pohjoisesplanadi 51', '00150 Helsinki, Finland', 'Phone: +358 09 42721884', 'kestora.online', 'admissions@kestora.online'];
         let ay = height - margin;
         for (const line of addr) {
             const lw = regularFont.widthOfTextAtSize(line, 8);
@@ -175,30 +175,73 @@ serve(async (req) => {
         page.drawText(applicationId.substring(0, 8).toUpperCase(), { x: c3, y: vy, size: 9, font: boldFont, color: black });
         y -= 50;
 
-        // ---- Tuition Fee Computation (from degree level + school) ----
-        const TUITION_FEES: Record<string, Record<string, number>> = {
-            BACHELOR: { BUSINESS: 8000, ARTS: 8000, TECHNOLOGY: 8000, SCIENCE: 12000 },
-            MASTER: { BUSINESS: 8000, ARTS: 8000, TECHNOLOGY: 8000, SCIENCE: 12000 },
-        };
-        const EARLY_DISCOUNT_PERCENT = 25;
+        // =====================================================
+// TUITION FEE COMPUTATION (fetched from tuition_rates table)
+// ==========================================================
+        let DOMESTIC_TUITION = { CERTIFICATE_DIPLOMA: 1500, BACHELOR: 2500, MASTER: 3500 };
+        let INTERNATIONAL_TUITION = { CERTIFICATE_DIPLOMA: 2500, BACHELOR: 4000, MASTER: 6000 };
 
-        function schoolSlugToField(slug: string): string {
-            const s = (slug || '').toLowerCase();
-            if (s.includes('business')) return 'BUSINESS';
-            if (s.includes('arts') || s.includes('design')) return 'ARTS';
-            if (s.includes('technology') || s.includes('engineering')) return 'TECHNOLOGY';
-            if (s.includes('science')) return 'SCIENCE';
-            return 'TECHNOLOGY';
+        async function loadTuitionRates() {
+            const { data: rates } = await supabase
+                .from('tuition_rates')
+                .select('degree_level, field, annual_fee')
+                .eq('field', 'BUSINESS');
+            
+            if (rates && rates.length > 0) {
+                const rateMap: Record<string, number> = {};
+                rates.forEach((r: any) => {
+                    rateMap[r.degree_level] = parseFloat(r.annual_fee);
+                });
+                
+                DOMESTIC_TUITION = {
+                    CERTIFICATE_DIPLOMA: rateMap['CERTIFICATE'] || 1500,
+                    BACHELOR: rateMap['BACHELOR'] || 4000,
+                    MASTER: rateMap['MASTER'] || 6000
+                };
+                INTERNATIONAL_TUITION = { ...DOMESTIC_TUITION };
+            }
         }
 
-        const schoolSlug = app.course?.school?.slug || '';
+        await loadTuitionRates();
+
+        function getTuitionFee(level: string, isDomestic: boolean): number {
+            const lvl = (level || '').toUpperCase();
+            if (lvl.includes('CERTIFICATE') || lvl.includes('DIPLOMA')) {
+                return isDomestic ? DOMESTIC_TUITION.CERTIFICATE_DIPLOMA : INTERNATIONAL_TUITION.CERTIFICATE_DIPLOMA;
+            }
+            if (lvl.includes('BACHELOR') || lvl.includes('BSC')) {
+                return isDomestic ? DOMESTIC_TUITION.BACHELOR : INTERNATIONAL_TUITION.BACHELOR;
+            }
+            if (lvl.includes('MASTER') || lvl.includes('MSC')) {
+                return isDomestic ? DOMESTIC_TUITION.MASTER : INTERNATIONAL_TUITION.MASTER;
+            }
+            return isDomestic ? DOMESTIC_TUITION.BACHELOR : INTERNATIONAL_TUITION.BACHELOR;
+        }
+
+        function getProgramYears(level?: string, duration?: string): number {
+            const lvl = (level || '').toUpperCase();
+            if (lvl.includes('BACHELOR') || lvl.includes('BSC')) return 3;
+            if (lvl.includes('MASTER') || lvl.includes('MSC')) return 2;
+            if (lvl.includes('DIPLOMA')) return 2;
+            if (lvl.includes('CERTIFICATE')) return 1;
+            const dur = (duration || '').toLowerCase();
+            if (dur.includes('6 months') || dur.includes('1 year') || dur.includes('1st year') || dur.includes('1-year')) return 1;
+            if (dur.includes('2 year') || dur.includes('2-year')) return 2;
+            if (dur.includes('3 year') || dur.includes('3-year')) return 3;
+            return 1;
+        }
+
+        const nationality = (app.personal_info?.nationality || app.user?.country_of_residence || '').toLowerCase();
+        const isDomestic = nationality === 'finland' || nationality === 'finnish' || nationality === 'eu' || nationality === 'domestic';
         const courseDegreeLevel = app.course?.degreeLevel || 'BACHELOR';
-        const tuitionField = schoolSlugToField(schoolSlug);
+        const programYears = getProgramYears(courseDegreeLevel, app.course?.duration);
+        const baseAnnualFee = getTuitionFee(courseDegreeLevel, isDomestic);
+        const fullProgramFee = baseAnnualFee * programYears;
         
-        // Use offerData fee if available (since it contains full program calc if applicable)
-        const computedBaseFee = offerData?.tuition_fee || TUITION_FEES[courseDegreeLevel]?.[tuitionField] || 8000;
-        const computedDiscount = offerData?.discount_amount || Math.round(computedBaseFee * EARLY_DISCOUNT_PERCENT / 100);
-        const computedNetFee = computedBaseFee; // The tuition_fee in DB is already the net fee if coming from offerData
+        // Use offerData fee if available; otherwise compute from tuition table
+        const computedBaseFee = offerData?.tuition_fee || fullProgramFee;
+        const computedDiscount = offerData?.discount_amount || 0;
+        const computedNetFee = computedBaseFee;
 
 
         if (isOffer) {
@@ -234,7 +277,7 @@ serve(async (req) => {
             const offerPara1 = `Dear ${firstName},`;
             y = drawParagraph(page, offerPara1, margin, y, regularFont, 9, cw, black);
             y -= 6;
-            const offerPara2 = `We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Penkka University has decided to offer you a place in the ${programTitle} (${degreeLevel}) programme for the Autumn 2026 intake.`;
+            const offerPara2 = `We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Kestora University has decided to offer you a place in the ${programTitle} (${degreeLevel}) programme for the Autumn 2026 intake.`;
             y = drawParagraph(page, offerPara2, margin, y, regularFont, 9, cw, darkGrey);
             y -= 6;
             const offerPara3 = `This offer is subject to the conditions outlined below, including acceptance of the offer via the student portal and confirmation of tuition payment by the specified deadline. Upon fulfillment of these conditions, an official Letter of Admission will be issued confirming your enrollment.`;
@@ -254,11 +297,21 @@ serve(async (req) => {
 
             // Tuition info — computed from programme data
             y = drawSectionHeading(page, 'TUITION & FINANCIAL INFORMATION', margin, y, cw, boldFont, black);
-            // If offer is for DEPOSIT, fee is the deposit. If for FULL, it's the whole thing.
-            // But we display the deposit (50%) in the table below usually.
             const isDepositOffer = offerData?.offer_type === 'DEPOSIT';
-            const displayTotalFee = isDepositOffer ? computedBaseFee * 2 : computedBaseFee + computedDiscount;
-            const computedDeposit = Math.round(displayTotalFee * 0.5);
+            const isFullProgram = offerData?.offer_type === 'FULL_TUITION';
+            
+            // Deposit is always 50% of the ANNUAL tuition
+            const computedDeposit = Math.round(baseAnnualFee * 0.5);
+            
+            // Determine total fee based on offer type
+            let displayTotalFee = baseAnnualFee;
+            if (isFullProgram) {
+                displayTotalFee = fullProgramFee;
+            } else if (!isDepositOffer && offerData?.tuition_fee) {
+                displayTotalFee = offerData.tuition_fee;
+            } else if (isDepositOffer) {
+                displayTotalFee = baseAnnualFee;
+            }
 
             y = drawParagraph(page, 'The following tuition information is provided for your reference based on the programme and degree level.', margin, y, regularFont, 8, cw, grey);
             y -= 8;
@@ -277,7 +330,8 @@ serve(async (req) => {
 
             // Balance Row
             page.drawText('Remaining Balance (Due before commencement)', { x: margin + 10, y, size: 9, font: regularFont, color: grey });
-            const balt = `\u20AC${computedDeposit.toLocaleString()} EUR`;
+            const remainingBalance = displayTotalFee - computedDeposit;
+            const balt = `€${remainingBalance.toLocaleString()} EUR`;
             const balw = boldFont.widthOfTextAtSize(balt, 9);
             page.drawText(balt, { x: width - margin - 10 - balw, y, size: 9, font: boldFont, color: grey });
             
@@ -304,7 +358,7 @@ serve(async (req) => {
             y -= 10; drawLine(page, margin, y, cw, 0.5); y -= 30;
             page.drawText('Admissions Office', { x: margin, y, size: 10, font: boldFont, color: black });
             y -= 13;
-            page.drawText('Penkka University | Helsinki, Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
+            page.drawText('Kestora University | Helsinki, Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
             const did1 = 'Verified Document ID';
             const dw1 = regularFont.widthOfTextAtSize(did1, 8);
             page.drawText(did1, { x: width - margin - dw1, y: y + 13, size: 8, font: regularFont, color: lightGrey });
@@ -372,7 +426,7 @@ serve(async (req) => {
             const dobRaw = app.user?.date_of_birth || personal.dateOfBirth || personal.dob;
             const dobDisplay = dobRaw ? new Date(dobRaw).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : 'N/A';
             
-            const officialStatement = `This letter serves as official notification that ${fullName} (Passport: ${passport}, DOB: ${dobDisplay}) has been formally admitted and fully enrolled as a degree student at Penkka University for the 2026 - 2027 academic year. Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the ${programTitle} (${app.course?.programType || 'Full-time'}). This program is a full-time course of study conducted in the English language at our Helsinki campus location (Pohjoisesplanadi 51, 00150 Helsinki, Finland).`;
+            const officialStatement = `This letter serves as official notification that ${fullName} (Passport: ${passport}, DOB: ${dobDisplay}) has been formally admitted and fully enrolled as a degree student at Kestora University for the 2026 - 2027 academic year. Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the ${programTitle} (${app.course?.programType || 'Full-time'}). This program is a full-time course of study conducted in the English language at our Helsinki campus location (Pohjoisesplanadi 51, 00150 Helsinki, Finland).`;
             
             y = drawParagraph(page, officialStatement, margin, y, regularFont, 10, cw, black, 16);
             y -= 25;
@@ -412,7 +466,7 @@ serve(async (req) => {
                 },
                 {
                     title: 'Refund Policy',
-                    content: 'Tuition fees are subject to the university\u2019s refund policy. Full details can be found at https://penkka.fi/refund-withdrawal-policy/.'
+                    content: 'Tuition fees are subject to the university\u2019s refund policy. Full details can be found at https://kestora.online/refund-withdrawal-policy/.'
                 }
             ];
 
@@ -436,11 +490,11 @@ serve(async (req) => {
             y -= 13;
             page.drawText('Dosentti (Docent) Anna Virtanen, FT (Doctor of Philosophy)', { x: margin, y, size: 9, font: regularFont, color: black });
             y -= 12;
-            page.drawText('Penkka University | Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
+            page.drawText('Kestora University | Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
 
             // Footer
             y = 40;
-            const footerText = 'Generated electronically via Penkka SIS. Valid without physical signature if verified online.';
+            const footerText = 'Generated electronically via Kestora SIS. Valid without physical signature if verified online.';
             const fw = regularFont.widthOfTextAtSize(footerText, 8);
             page.drawText(footerText, { x: (width - fw) / 2, y, size: 8, font: italicFont, color: grey });
         }

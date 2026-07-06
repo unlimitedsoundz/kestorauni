@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: `${project.title} | Cannoga Research`,
         description: project.description,
         alternates: {
-            canonical: `https://cannogacollege.ca/research/projects/${slug}/`,
+            canonical: `https://kestora.online/research/projects/${slug}/`,
         },
     };
 }

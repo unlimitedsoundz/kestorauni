@@ -83,7 +83,7 @@ export default function EditBlogPost() {
                 .replace(/overflow-wrap:\s*anywhere;?/gi, '')
                 .replace(/white-space:\s*pre-wrap;?/gi, '')
                 // remove inline styles from all tags except img and figure (to preserve image resizing)
-                .replace(/(<(?!img|figure)[^>]*?)style="[^"]*"/gi, '$1')
+                .replace(/(<(?!img|figure)[^>]*?)style="[^"]*"/gi, '€1')
                 .replace(/<p><\/p>/g, '');
 
             // Validate publish date
@@ -217,7 +217,7 @@ export default function EditBlogPost() {
 
                 <div>
                     <label className="flex items-center gap-2">
-                        <input {...register('published')} type="checkbox" />
+                        <input {...register('published')} type="checkbox" className="border-2 border-neutral-300 rounded-sm checked:bg-black checked:border-black w-4 h-4" />
                         Published
                     </label>
                 </div>

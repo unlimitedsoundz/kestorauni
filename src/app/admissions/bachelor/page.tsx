@@ -13,12 +13,12 @@ import { SchemaLD } from '@/components/seo/SchemaLD';
 import { Breadcrumbs } from '@aalto-dx/react-modules';
 
 export const metadata = {
-    title: 'Bachelor\'s Admissions | Cannoga College',
-    description: 'Apply to Bachelor\'s Programmes in English at Cannoga College. Information on benefits, progression, scholarships, and admissions.',
+    title: 'Bachelor\'s Admissions | Kestora University',
+    description: 'Apply to Bachelor\'s Programmes in English at Kestora University. Information on benefits, progression, scholarships, and admissions.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/admissions/bachelor/',
+        canonical: 'https://kestora.online/admissions/bachelor/',
         languages: {
-            'en': 'https://cannogacollege.ca/admissions/bachelor/',
+            'en': 'https://kestora.online/admissions/bachelor/',
         },
     },
 };
@@ -202,11 +202,11 @@ export default function BachelorAdmissionsPage() {
                 "@context": "https://schema.org",
                 "@type": "EducationalOccupationalProgram",
                 "name": "Bachelor's Degree Programmes",
-                "description": "Information on Bachelor's degree programmes taught in English at Cannoga College.",
+                "description": "Information on Bachelor's degree programmes taught in English at Kestora University.",
                 "provider": {
                     "@type": "UniversityOrUniversity",
-                    "name": "Cannoga College",
-                    "url": "https://cannogacollege.ca"
+                    "name": "Kestora University",
+                    "url": "https://kestora.online"
                 },
                 "educationalLevel": "Bachelor",
                 "offers": {

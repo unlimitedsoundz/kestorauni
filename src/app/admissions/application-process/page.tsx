@@ -17,10 +17,10 @@ const sections = [
 ];
 
 export const metadata = {
-    title: 'How to Apply | Cannoga College',
-    description: 'Step-by-step guide to applying to Cannoga College. Deadlines, requirements, and admission procedures.',
+    title: 'How to Apply | Kestora University',
+    description: 'Step-by-step guide to applying to Kestora University. Deadlines, requirements, and admission procedures.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/admissions/application-process/',
+        canonical: 'https://kestora.online/admissions/application-process/',
     },
 };
 
@@ -35,7 +35,7 @@ export default function ApplicationProcessPage() {
             {/* ── HERO – Home-page style ── */}
             <section
                 className="relative overflow-hidden text-white"
-                style={{ background: 'linear-gradient(135deg, #2e1150 0%, #5c2d91 55%, #7c3aed 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #000000 0%, #000000 55%, #7c3aed 100%)' }}
             >
                 {/* Decorative blobs */}
                 <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
@@ -67,13 +67,13 @@ export default function ApplicationProcessPage() {
                             className="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed"
                             pageSlug={pageSlug}
                             sectionKey="hero_subtitle"
-                            fallbackContent={getSectionDefault('hero_subtitle') || 'Follow our step-by-step guide to ensure a smooth application to Cannoga College.'}
+                            fallbackContent={getSectionDefault('hero_subtitle') || 'Follow our step-by-step guide to ensure a smooth application to Kestora University.'}
                         />
 
                         <div className="flex flex-wrap gap-4 pt-2">
                             <Link
                                 href="#steps"
-                                className="inline-flex items-center gap-2 bg-white text-[#2e1150] px-7 py-3.5 font-bold hover:bg-neutral-100 transition-all text-sm uppercase tracking-widest"
+                                className="inline-flex items-center gap-2 bg-white text-[#000000] px-7 py-3.5 font-bold hover:bg-neutral-100 transition-all text-sm uppercase tracking-widest"
                             >
                                 Application Steps <ArrowRight size={18} weight="bold" />
                             </Link>
@@ -105,14 +105,14 @@ export default function ApplicationProcessPage() {
                         <div className="relative w-full aspect-[4/3] lg:h-[520px] lg:aspect-auto overflow-hidden shadow-2xl">
                             <Image
                                 src="/images/admissions/application-process-hero.jpg"
-                                alt="Application Process at Cannoga College"
+                                alt="Application Process at Kestora University"
                                 fill
                                 priority
                                 className="object-cover object-center opacity-90"
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                             />
                             {/* Bottom gradient overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#2e1150]/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/40 via-transparent to-transparent" />
                         </div>
                     </div>
                 </div>
@@ -163,7 +163,7 @@ export default function ApplicationProcessPage() {
                     <section className="mt-4">
                         <CTA
                             title="Ready to Start Your Journey?"
-                            body="Join the next generation of global leaders at Cannoga College. Create your portal account to begin your official application."
+                            body="Join the next generation of global leaders at Kestora University. Create your portal account to begin your official application."
                             cta={{
                                 label: "Create Portal Account",
                                 linkComponentProps: {

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Careers | Cannoga College',
-    description: 'Join the Cannoga College team. Explore our open positions and learn about our multi-disciplinary institutional culture in Ottawa, Canada.',
+    title: 'Careers | Kestora University',
+    description: 'Join the Kestora University team. Explore our open positions and learn about our multi-disciplinary institutional culture in Helsinki, Finland.',
     alternates: {
-        canonical: 'https://www.cannogacollege.ca/careers',
+        canonical: 'https://www.kestora.online/careers',
     },
 };
 

@@ -19,7 +19,7 @@ interface ListProps {
 }
 
 /**
- * Standardized recursive List component for the Cannoga College project.
+ * Standardized recursive List component for the Kestora University project.
  * Aliased from @aalto-dx/react-components.
  */
 export function List({ items, className = "", depth = 0 }: ListProps) {

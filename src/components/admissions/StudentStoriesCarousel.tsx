@@ -9,14 +9,14 @@ const stories = [
         id: 1,
         name: 'Uchida Ideguchi',
         programme: "Bachelor's in International Business",
-        quote: "Cannoga College provided me with a unique multidisciplinary environment where I could combine my interest in tech with business strategy. The practical projects were eye-opening.",
+        quote: "Kestora University provided me with a unique multidisciplinary environment where I could combine my interest in tech with business strategy. The practical projects were eye-opening.",
         image: '/images/student-story-1.png'
     },
     {
         id: 2,
         name: 'Maria Petrova',
         programme: "Master's in Design Management",
-        quote: "Studying in Ottawa, Canada has been a life-changing experience. The focus on work-life balance and deep collaborative research at Cannoga is truly world-class.",
+        quote: "Studying in Helsinki, Finland has been a life-changing experience. The focus on work-life balance and deep collaborative research at Cannoga is truly world-class.",
         image: '/images/admissions/student_stories_maria.jpg'
     }
 ];
@@ -60,7 +60,7 @@ export default function StudentStoriesCarousel() {
 
                                 <div className="pt-8 opacity-80">
                                     <a 
-                                        href="https://ourblogs.cannogacollege.ca/" 
+                                        href="https://ourblogs.kestora.online/" 
                                         target="_blank" 
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-3 font-bold underline underline-offset-4 hover:gap-5 transition-all text-sm group/link"

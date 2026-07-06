@@ -30,7 +30,7 @@ const faqs: FAQItem[] = [
         )
     },
     {
-        question: "How do I find housing in Ottawa, Canada?",
+        question: "How do I find housing in Helsinki, Finland?",
         answer: (
             <div className="space-y-4">
                 <p>
@@ -54,17 +54,17 @@ const faqs: FAQItem[] = [
         answer: (
             <div className="space-y-4">
                 <p>
-                    Attending degree students have access to on-campus health services and are encouraged to obtain provincial health coverage (OHIP in Ontario) after arrival. Cannoga College partners with local clinics for general, mental, and oral health care.
+                    Attending degree students have access to on-campus health services and are encouraged to obtain provincial health coverage (OHIP in Ontario) after arrival. Kestora University partners with local clinics for general, mental, and oral health care.
                 </p>
             </div>
         )
     },
                 {
-        question: "Do I need to speak French to live in Ottawa, Canada?",
+        question: "Do I need to speak French to live in Helsinki, Finland?",
         answer: (
             <div className="space-y-4">
                 <p>
-                    English is the primary language of instruction and daily life in Ottawa. While Ottawa is a bilingual city with some French spoken, all college programmes and services are fully available in English. Learning French is a bonus but not required.
+                    English is the primary language of instruction and daily life in Helsinki. While Helsinki is a bilingual city with some French spoken, all college programmes and services are fully available in English. Learning French is a bonus but not required.
                 </p>
             </div>
         )
@@ -94,15 +94,15 @@ export default function InternationalStudentFAQ() {
                 <div key={index} className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 overflow-hidden">
                      <button
                          onClick={() => toggle(index)}
-                         className="w-full flex items-center justify-between py-6 px-6 text-left hover:bg-gray-50 transition-colors focus:outline-none group"
+                         className="w-full flex items-center justify-between py-6 px-6 text-left hover:bg-black/5 transition-colors focus:outline-none group"
                      >
                          <span className="text-lg font-bold text-black">{faq.question}</span>
                          {openIndex === index ? (
-                             <div className="bg-gray-100 text-gray-700 p-1.5 rounded-full shrink-0">
+                             <div className="bg-black text-white p-1.5 rounded-full shrink-0">
                                  <Minus size={20} weight="bold" />
                              </div>
                          ) : (
-                             <div className="bg-gray-50 text-gray-600 p-1.5 rounded-full shrink-0 group-hover:bg-gray-100 group-hover:text-gray-800 transition-colors">
+                             <div className="bg-black/10 text-black p-1.5 rounded-full shrink-0 group-hover:bg-black/20 transition-colors">
                                  <Plus className="group-hover:scale-110 transition-transform" size={20} weight="bold" />
                              </div>
                          )}
@@ -111,7 +111,7 @@ export default function InternationalStudentFAQ() {
                          className={`transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-[1000px] opacity-100 pb-6' : 'max-h-0 opacity-0'
                              } overflow-hidden`}
                      >
-                         <div className="text-gray-900 leading-relaxed px-6 border-t border-gray-50 pt-6">
+                         <div className="text-black leading-relaxed px-6 border-t border-black/10 pt-6">
                              {faq.answer}
                          </div>
                      </div>

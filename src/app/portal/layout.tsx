@@ -136,7 +136,7 @@ export default function PortalLayout({ children }: { children: ReactNode }) {
             </main>
             <footer className="bg-black text-white py-12 mt-auto">
                 <div className="container mx-auto px-4 text-center text-[10px] font-medium uppercase tracking-widest text-white/60">
-                    &copy; {new Date().getFullYear()} Cannoga College Portal. Secure Admissions Environment.
+                    &copy; {new Date().getFullYear()} Kestora University Portal. Secure Admissions Environment.
                     <span className="mx-2 text-white/40">|</span>
                     <a href="/student-handbook" className="hover:text-white transition-colors">Student Handbook</a>
                     <span className="mx-2 text-white/40">|</span>

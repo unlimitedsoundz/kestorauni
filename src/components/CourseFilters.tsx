@@ -37,7 +37,7 @@ export default function CourseFilters() {
                             key={opt.value}
                             onClick={() => router.push(`?${createQueryString('degree', opt.value)}`, { scroll: false })}
                             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${currentDegree === opt.value
-                                    ? 'bg-emerald-600 text-white'
+                                    ? 'bg-neutral-600 text-white'
                                     : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
                                 }`}
                         >

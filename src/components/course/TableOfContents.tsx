@@ -69,7 +69,7 @@ export default function TableOfContents({ sections }: Props) {
         <div className="bg-white text-black h-full p-4 overflow-y-auto">
             <div className="pt-4">
                 <div className="px-4 md:px-0 pb-2">
-                    <h3 className="text-sm md:text-lg font-bold text-black uppercase tracking-widest">Study at Cannoga College</h3>
+                    <h3 className="text-sm md:text-lg font-bold text-black uppercase tracking-widest">Study at Kestora University</h3>
                 </div>
 
                 <div className="px-4 md:px-0 pb-6">

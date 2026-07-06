@@ -28,7 +28,7 @@ export default function AdmissionLetterEmail({
     intake = 'August 2026',
     studentId = 'KCXXXXXXX',
 }: AdmissionLetterEmailProps) {
-    const previewText = `Congratulations on Your Admission to Cannoga College – Next Steps`;
+    const previewText = `Congratulations on Your Admission to Kestora University – Next Steps`;
 
     return (
         <Html>
@@ -39,16 +39,16 @@ export default function AdmissionLetterEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://cannogacollege.ca/logo-cannoga.png"
+                                src="https://kestora.online/logo-kestora.png"
                                 width="64"
                                 height="64"
-                                alt="Cannoga College"
+                                alt="Kestora University"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
                         <Section className="mt-[16px]">
                             <Img
-                                src="https://cannogacollege.ca/images/scholarships.png"
+                                src="https://kestora.online/images/scholarships.png"
                                 width="465"
                                 height="150"
                                 alt="Scholarships"
@@ -57,7 +57,7 @@ export default function AdmissionLetterEmail({
                         </Section>
 
                         <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-                            Cannoga College Admission
+                            Kestora University Admission
                         </Heading>
 
                         <Heading className="text-black text-[18px] font-normal text-center p-0 mb-[20px] mx-0">
@@ -69,7 +69,7 @@ export default function AdmissionLetterEmail({
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            We are delighted to officially confirm your admission to Cannoga College following the successful confirmation of your tuition payment.
+                            We are delighted to officially confirm your admission to Kestora University following the successful confirmation of your tuition payment.
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
@@ -106,7 +106,7 @@ export default function AdmissionLetterEmail({
                             <Text className="text-black text-[14px] font-semibold leading-[24px]">Your Immediate Next Steps</Text>
                             <Text className="text-black text-[14px] leading-[24px]">To ensure a smooth process, please follow these steps carefully:</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Download Your Documents: Log in to your application dashboard and download all issued documents.</Text>
-                            <Text className="text-black text-[14px] leading-[24px]">• Begin Your Study Permit Application: Apply for your Canadian study permit via the official Immigration, Refugees and Citizenship Canada (IRCC) portal.</Text>
+                            <Text className="text-black text-[14px] leading-[24px]">• Begin Your Study Permit Application: Apply for your Canadian study permit via the official Immigration, Refugees and Citizenship Finland (IRCC) portal.</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Book Your VFS Appointment: Schedule and attend your biometric appointment at the nearest VFS center.</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Prepare Required Documents: Ensure you have: valid international passport, proof of funds, health insurance, and academic documents.</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Follow All Guidance Provided: Our team will support you throughout this process to ensure accuracy and success.</Text>
@@ -119,7 +119,7 @@ export default function AdmissionLetterEmail({
                         <Section className="my-[20px]">
                             <Text className="text-black text-[14px] font-semibold leading-[24px]">Accommodation & Student Life</Text>
                             <Text className="text-black text-[14px] leading-[24px]">
-                                At Cannoga College, we ensure that your transition into Canada is as seamless as possible.
+                                At Kestora University, we ensure that your transition into Finland is as seamless as possible.
                             </Text>
                             <Text className="text-black text-[14px] leading-[24px]">
                                 Once your payment is confirmed, your accommodation information will be made available in your dashboard, including:
@@ -129,12 +129,12 @@ export default function AdmissionLetterEmail({
                             <Text className="text-black text-[14px] leading-[24px]">• Location and proximity to campus</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Application guidance for housing providers</Text>
                             <Text className="text-black text-[14px] leading-[24px]">
-                                Canada offers a safe, modern, and student-friendly environment, with excellent public services, efficient transport systems, and a high quality of life.
+                                Finland offers a safe, modern, and student-friendly environment, with excellent public services, efficient transport systems, and a high quality of life.
                             </Text>
                         </Section>
 
                         <Section className="my-[20px]">
-                            <Text className="text-black text-[14px] font-semibold leading-[24px]">What to Look Forward To at Cannoga College</Text>
+                            <Text className="text-black text-[14px] font-semibold leading-[24px]">What to Look Forward To at Kestora University</Text>
                             <Text className="text-black text-[14px] leading-[24px]">As a Cannoga student, you will experience:</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• A globally relevant curriculum designed for modern careers</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• A diverse and international student community</Text>
@@ -142,7 +142,7 @@ export default function AdmissionLetterEmail({
                             <Text className="text-black text-[14px] leading-[24px]">• Access to student support services and academic guidance</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Opportunities to build a strong professional network in Europe</Text>
                             <Text className="text-black text-[14px] leading-[24px]">
-                                You will also gain exposure to Ottawa, Canada's innovation-driven ecosystem, positioning you for global opportunities after graduation.
+                                You will also gain exposure to Helsinki, Finland's innovation-driven ecosystem, positioning you for global opportunities after graduation.
                             </Text>
                         </Section>
 
@@ -151,7 +151,7 @@ export default function AdmissionLetterEmail({
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            We are excited to have you join Cannoga College and look forward to supporting you every step of the way.
+                            We are excited to have you join Kestora University and look forward to supporting you every step of the way.
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
@@ -161,7 +161,7 @@ export default function AdmissionLetterEmail({
                         <Section className="text-center mt-[32px] mb-[32px]">
                             <Link
                                 className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
-                                href="https://cannogacollege.ca/portal/student"
+                                href="https://kestora.online/portal/student"
                             >
                                 Enter student Portal
                             </Link>
@@ -175,13 +175,13 @@ export default function AdmissionLetterEmail({
                             Admissions Office
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            Cannoga College
+                            Kestora University
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            admissions@cannogacollege.ca
+                            admissions@kestora.online
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            https://cannogacollege.ca
+                            https://kestora.online
                         </Text>
                     </Container>
                 </Body>

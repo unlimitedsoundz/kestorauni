@@ -3,28 +3,29 @@ import { DegreeLevel } from '@/types/database';
 export type TuitionField = 'BUSINESS' | 'ARTS' | 'TECHNOLOGY' | 'SCIENCE';
 
 export const DOMESTIC_TUITION = {
-    CERTIFICATE_DIPLOMA: 3500,
-    BACHELOR: 6200,
-    MASTER: 8500
+    CERTIFICATE_DIPLOMA: 1500,
+    BACHELOR: 2500,
+    MASTER: 3500
 };
 
 export const INTERNATIONAL_TUITION = {
-    CERTIFICATE_DIPLOMA: 9500,
-    BACHELOR: 12500,
-    MASTER: 18000
+    CERTIFICATE_DIPLOMA: 2500,
+    BACHELOR: 4000,
+    MASTER: 6000
 };
 
 export const DOMESTIC_DEPOSIT = {
     CERTIFICATE_DIPLOMA: 750,
     BACHELOR: 1250,
-    MASTER: 2000
+    MASTER: 1750
 };
 
 export const INTERNATIONAL_DEPOSIT = {
-    CERTIFICATE_DIPLOMA: 2500,
-    BACHELOR: 3500,
-    MASTER: 5000
+    CERTIFICATE_DIPLOMA: 1250,
+    BACHELOR: 2000,
+    MASTER: 3000
 };
+
 
 export const EARLY_PAYMENT_DISCOUNT_PERCENT = 0;
 export const EARLY_PAYMENT_WINDOW_DAYS = 7;
@@ -78,8 +79,10 @@ export function calculateFullProgramDiscountedFee(annualFee: number, years: numb
  */
 export function getProgramYears(duration: string, level?: string): number {
     const lvl = (level || '').toUpperCase();
-    if (lvl.includes('BACHELOR') || lvl.includes('BSC')) return 4;
+    if (lvl.includes('BACHELOR') || lvl.includes('BSC')) return 3;
     if (lvl.includes('MASTER') || lvl.includes('MSC')) return 2;
+    if (lvl.includes('DIPLOMA')) return 2;
+    if (lvl.includes('CERTIFICATE')) return 1;
 
     const dur = duration.toLowerCase();
     if (dur.includes('6 months') || dur.includes('1 year') || dur.includes('1st year') || dur.includes('1-year')) return 1;
@@ -101,40 +104,7 @@ export function getAnnualFeeFromTotal(totalFee: number, discountAmount: number, 
  * Calculates the tuition deposit required to secure a place.
  */
 export function calculateTuitionDeposit(annualFee: number, field?: string, isEarlyBird?: boolean, level?: string, isDomestic?: boolean): number {
-    let isDom = isDomestic;
-    let lvl = (level || '').toUpperCase();
-
-    if (isDom === undefined || !lvl) {
-        // Guess based on fee amount:
-        // Domestic fees: 3500, 6200, 8500
-        // International fees: 9500, 12500, 18000
-        if (annualFee === DOMESTIC_TUITION.CERTIFICATE_DIPLOMA) { isDom = true; lvl = 'CERTIFICATE'; }
-        else if (annualFee === DOMESTIC_TUITION.BACHELOR) { isDom = true; lvl = 'BACHELOR'; }
-        else if (annualFee === DOMESTIC_TUITION.MASTER) { isDom = true; lvl = 'MASTER'; }
-        else if (annualFee === INTERNATIONAL_TUITION.CERTIFICATE_DIPLOMA) { isDom = false; lvl = 'CERTIFICATE'; }
-        else if (annualFee === INTERNATIONAL_TUITION.BACHELOR) { isDom = false; lvl = 'BACHELOR'; }
-        else if (annualFee === INTERNATIONAL_TUITION.MASTER) { isDom = false; lvl = 'MASTER'; }
-        else {
-            // Heuristic fallbacks
-            isDom = annualFee < 9000;
-            if (annualFee <= 4000) lvl = 'CERTIFICATE';
-            else if (annualFee <= 9000) lvl = isDom ? 'MASTER' : 'CERTIFICATE';
-            else if (annualFee <= 13000) lvl = 'BACHELOR';
-            else lvl = 'MASTER';
-        }
-    }
-
-    if (lvl.includes('CERTIFICATE') || lvl.includes('DIPLOMA')) {
-        return isDom ? DOMESTIC_DEPOSIT.CERTIFICATE_DIPLOMA : INTERNATIONAL_DEPOSIT.CERTIFICATE_DIPLOMA;
-    }
-    if (lvl.includes('BACHELOR') || lvl.includes('BSC')) {
-        return isDom ? DOMESTIC_DEPOSIT.BACHELOR : INTERNATIONAL_DEPOSIT.BACHELOR;
-    }
-    if (lvl.includes('MASTER') || lvl.includes('MSC')) {
-        return isDom ? DOMESTIC_DEPOSIT.MASTER : INTERNATIONAL_DEPOSIT.MASTER;
-    }
-
-    return isDom ? DOMESTIC_DEPOSIT.BACHELOR : INTERNATIONAL_DEPOSIT.BACHELOR;
+    return Math.round(annualFee * 0.5);
 }
 
 /**
@@ -148,4 +118,3 @@ export function mapSchoolToTuitionField(schoolSlug: string): TuitionField {
     if (slug.includes('science')) return 'SCIENCE';
     return 'TECHNOLOGY';
 }
-

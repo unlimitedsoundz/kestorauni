@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { School } from '@/types/database';
 
 export const metadata = {
-    title: 'Academic Schools — Cannoga College Ottawa, Canada | Arts, Business, Science, Technology',
-    description: 'Cannoga College is organized into four schools: Arts & Architecture, Business, Science, and Technology. Explore departments, research, and degree programmes.',
+    title: 'Academic Schools — Kestora University Helsinki, Finland | Arts, Business, Science, Technology',
+    description: 'Kestora University is organized into four schools: Arts & Architecture, Business, Science, and Technology. Explore departments, research, and degree programmes.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/schools/',
+        canonical: 'https://kestora.online/schools/',
     },
 };
 
@@ -38,8 +38,8 @@ export default async function SchoolsPage() {
             {/* Hero Section */}
             <Hero
                 title="Our Schools"
-                body="Cannoga College is organized into specialized schools, each driving innovation in technology, business, science, and design through world-class research and English-taught Bachelor’s and Master’s programmes."
-                backgroundColor="#5c2d91"
+                body="Kestora University is organized into specialized schools, each driving innovation in technology, business, science, and design through world-class research and English-taught Bachelor’s and Master’s programmes."
+                backgroundColor="#000000"
                 tinted
                 lightText={true}
                 breadcrumbs={[

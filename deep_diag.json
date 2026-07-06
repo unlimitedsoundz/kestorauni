@@ -1,4 +1,4 @@
-{
+﻿{
   "depts": [
     {
       "id": "0cd264ab-2d6b-4c2c-9663-bacc1bdbbbd3",
@@ -33,13 +33,13 @@
       "departmentId": "a9577f4a-e5d7-4ddc-b323-52fbcb1a9089",
       "createdAt": "2026-01-28T00:08:56.159",
       "updatedAt": "2026-01-28T00:08:56.159",
-      "tuitionFee": "€8,000 / year",
+      "tuitionFee": "â‚¬8,000 / year",
       "credits": 180,
       "sections": [
         {
           "id": "description",
           "title": "Description",
-          "content": "\n            <p class=\"mb-4\">The Accounting & Finance BSc program at Penkka University provides a solid foundation in accounting, finance, and management. Students gain practical and theoretical knowledge in financial accounting, management accounting, corporate governance, auditing, performance management, and financial decision-making.</p>\n            <p>The program equips students with analytical skills and business understanding necessary for careers in accounting, finance, and corporate administration.</p>\n        "
+          "content": "\n            <p class=\"mb-4\">The Accounting & Finance BSc program at Kestora University provides a solid foundation in accounting, finance, and management. Students gain practical and theoretical knowledge in financial accounting, management accounting, corporate governance, auditing, performance management, and financial decision-making.</p>\n            <p>The program equips students with analytical skills and business understanding necessary for careers in accounting, finance, and corporate administration.</p>\n        "
         },
         {
           "id": "language",
@@ -49,17 +49,17 @@
         {
           "id": "tuition",
           "title": "Tuition Fees and Scholarships",
-          "content": "\n            <div class=\"mb-4\">\n                <strong>Tuition Fee:</strong> Included in degree tuition for full-time BSc students\n            </div>\n            <div>\n                <strong>Scholarships:</strong>\n                <ul class=\"list-disc pl-5 mt-2 space-y-1\">\n                    <li>Merit-based scholarships for high-achieving students</li>\n                    <li>Need-based financial aid</li>\n                    <li>Support for international students</li>\n                </ul>\n                <p class=\"mt-2 text-sm text-neutral-500\">Detailed scholarship information is available on the Penkka University Scholarships page.</p>\n            </div>\n        "
+          "content": "\n            <div class=\"mb-4\">\n                <strong>Tuition Fee:</strong> Included in degree tuition for full-time BSc students\n            </div>\n            <div>\n                <strong>Scholarships:</strong>\n                <ul class=\"list-disc pl-5 mt-2 space-y-1\">\n                    <li>Merit-based scholarships for high-achieving students</li>\n                    <li>Need-based financial aid</li>\n                    <li>Support for international students</li>\n                </ul>\n                <p class=\"mt-2 text-sm text-neutral-500\">Detailed scholarship information is available on the Kestora University Scholarships page.</p>\n            </div>\n        "
         },
         {
           "id": "structure",
           "title": "Structure of Studies",
-          "content": "\n            <div class=\"mb-6\">\n                <h4 class=\"font-bold mb-2\">BSc in Accounting & Finance (3 Years):</h4>\n                <div class=\"mb-4\">\n                    <strong class=\"block mb-1\">Core Courses:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Introduction to Financial Accounting</li>\n                        <li>Management Accounting I & II</li>\n                        <li>Financial Statement Analysis</li>\n                        <li>Corporate Governance</li>\n                        <li>Auditing – Theory and Practice</li>\n                        <li>Performance Management</li>\n                    </ul>\n                </div>\n                <div class=\"mb-4\">\n                    <strong class=\"block mb-1\">Electives and Projects:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Big Data Analysis in Accounting</li>\n                        <li>Risk Management and Financial Planning</li>\n                        <li>Entrepreneurship Law</li>\n                    </ul>\n                </div>\n                <div>\n                    <strong class=\"block mb-1\">Final Year:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Students complete a capstone project or thesis to apply their knowledge in a practical accounting or finance scenario.</li>\n                    </ul>\n                </div>\n                <p class=\"mt-4 italic\">The program emphasizes hands-on exercises, case studies, and team-based projects.</p>\n            </div>\n        "
+          "content": "\n            <div class=\"mb-6\">\n                <h4 class=\"font-bold mb-2\">BSc in Accounting & Finance (3 Years):</h4>\n                <div class=\"mb-4\">\n                    <strong class=\"block mb-1\">Core Courses:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Introduction to Financial Accounting</li>\n                        <li>Management Accounting I & II</li>\n                        <li>Financial Statement Analysis</li>\n                        <li>Corporate Governance</li>\n                        <li>Auditing â€“ Theory and Practice</li>\n                        <li>Performance Management</li>\n                    </ul>\n                </div>\n                <div class=\"mb-4\">\n                    <strong class=\"block mb-1\">Electives and Projects:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Big Data Analysis in Accounting</li>\n                        <li>Risk Management and Financial Planning</li>\n                        <li>Entrepreneurship Law</li>\n                    </ul>\n                </div>\n                <div>\n                    <strong class=\"block mb-1\">Final Year:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Students complete a capstone project or thesis to apply their knowledge in a practical accounting or finance scenario.</li>\n                    </ul>\n                </div>\n                <p class=\"mt-4 italic\">The program emphasizes hands-on exercises, case studies, and team-based projects.</p>\n            </div>\n        "
         },
         {
           "id": "specialisations",
           "title": "Specialisations",
-          "content": "\n            <p class=\"mb-2\">Students may focus on areas such as:</p>\n            <ul class=\"list-disc pl-5 space-y-1\">\n                <li>Financial Accounting and Reporting</li>\n                <li>Management Accounting and Planning</li>\n                <li>Auditing and Compliance</li>\n                <li>Risk Management and Sustainability Accounting</li>\n            </ul>\n            <p class=\"mt-2\">Specialisations help tailor the degree to the student’s career goals.</p>\n        "
+          "content": "\n            <p class=\"mb-2\">Students may focus on areas such as:</p>\n            <ul class=\"list-disc pl-5 space-y-1\">\n                <li>Financial Accounting and Reporting</li>\n                <li>Management Accounting and Planning</li>\n                <li>Auditing and Compliance</li>\n                <li>Risk Management and Sustainability Accounting</li>\n            </ul>\n            <p class=\"mt-2\">Specialisations help tailor the degree to the studentâ€™s career goals.</p>\n        "
         },
         {
           "id": "internationalisation",
@@ -94,7 +94,7 @@
         {
           "id": "contact",
           "title": "Contact Information",
-          "content": "\n            <p><strong>Penkka University School of Business – Accounting & Finance Department</strong></p>\n            <p>Email: <a href=\"mailto:accounting@penkka.com\" class=\"text-emerald-600 hover:underline\">accounting@penkka.com</a></p>\n            <p>Address: Penkka University, Otaniemi Campus, Finland</p>\n            <p>Office Hours: Monday–Friday, 9:00–17:00</p>\n        "
+          "content": "\n            <p><strong>Kestora University School of Business â€“ Accounting & Finance Department</strong></p>\n            <p>Email: <a href=\"mailto:accounting@Kestora.com\" class=\"text-emerald-600 hover:underline\">accounting@Kestora.com</a></p>\n            <p>Address: Kestora University, Otaniemi Campus, Finland</p>\n            <p>Office Hours: Mondayâ€“Friday, 9:00â€“17:00</p>\n        "
         }
       ],
       "department": {
@@ -122,13 +122,13 @@
       "departmentId": "a9577f4a-e5d7-4ddc-b323-52fbcb1a9089",
       "createdAt": "2026-01-27T23:31:13.772",
       "updatedAt": "2026-01-27T23:31:13.772",
-      "tuitionFee": "€10,000 / year",
+      "tuitionFee": "â‚¬10,000 / year",
       "credits": 120,
       "sections": [
         {
           "id": "description",
           "title": "Description",
-          "content": "\n            <p class=\"mb-4\">The Accounting & Finance MSc program at Penkka University is designed for students seeking advanced knowledge in accounting, corporate finance, auditing, and financial management. The program emphasizes both theoretical understanding and practical application of accounting standards, corporate governance, strategic management accounting, performance management, risk management, and sustainability in accounting.</p>\n            <p>Students develop analytical skills for complex financial decision-making, preparing them for leadership roles in accounting, finance, and corporate strategy.</p>\n        "
+          "content": "\n            <p class=\"mb-4\">The Accounting & Finance MSc program at Kestora University is designed for students seeking advanced knowledge in accounting, corporate finance, auditing, and financial management. The program emphasizes both theoretical understanding and practical application of accounting standards, corporate governance, strategic management accounting, performance management, risk management, and sustainability in accounting.</p>\n            <p>Students develop analytical skills for complex financial decision-making, preparing them for leadership roles in accounting, finance, and corporate strategy.</p>\n        "
         },
         {
           "id": "language",
@@ -138,12 +138,12 @@
         {
           "id": "tuition",
           "title": "Tuition Fees and Scholarships",
-          "content": "\n            <div class=\"mb-4\">\n                <strong>Tuition Fee:</strong> Included in degree tuition for full-time MSc students\n            </div>\n            <div>\n                <strong>Scholarships:</strong>\n                <ul class=\"list-disc pl-5 mt-2 space-y-1\">\n                    <li>Merit-based scholarships for top-performing applicants</li>\n                    <li>Need-based financial aid</li>\n                    <li>Scholarships for international students</li>\n                </ul>\n                <p class=\"mt-2 text-sm text-neutral-500\">Detailed scholarship information and application procedures are available on the Penkka University Scholarships page.</p>\n            </div>\n        "
+          "content": "\n            <div class=\"mb-4\">\n                <strong>Tuition Fee:</strong> Included in degree tuition for full-time MSc students\n            </div>\n            <div>\n                <strong>Scholarships:</strong>\n                <ul class=\"list-disc pl-5 mt-2 space-y-1\">\n                    <li>Merit-based scholarships for top-performing applicants</li>\n                    <li>Need-based financial aid</li>\n                    <li>Scholarships for international students</li>\n                </ul>\n                <p class=\"mt-2 text-sm text-neutral-500\">Detailed scholarship information and application procedures are available on the Kestora University Scholarships page.</p>\n            </div>\n        "
         },
         {
           "id": "structure",
           "title": "Structure of Studies",
-          "content": "\n            <div class=\"mb-6\">\n                <h4 class=\"font-bold mb-2\">MSc in Accounting & Finance (2 Years):</h4>\n                <div class=\"mb-4\">\n                    <strong class=\"block mb-1\">Core Courses:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Financial Statement Analysis</li>\n                        <li>Financial Accounting Theories</li>\n                        <li>Corporate Governance</li>\n                        <li>Strategic Management Accounting</li>\n                        <li>Auditing – Theory and Practice</li>\n                        <li>Performance Management</li>\n                        <li>Accounting for Sustainability</li>\n                    </ul>\n                </div>\n                <div class=\"mb-4\">\n                    <strong class=\"block mb-1\">Specialised Courses:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Risk Management: Organization and Control</li>\n                        <li>Financial Management for Entrepreneurs</li>\n                        <li>Capital Budgeting</li>\n                        <li>Big Data Analysis in Accounting</li>\n                        <li>Entrepreneurship Law in Practice</li>\n                    </ul>\n                </div>\n                <div>\n                    <strong class=\"block mb-1\">Capstone / Thesis:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Students complete an individual thesis project focusing on applied accounting and financial issues.</li>\n                    </ul>\n                </div>\n                <p class=\"mt-4 italic\">Practical exercises, case studies, and real-world financial scenarios are embedded throughout the program.</p>\n            </div>\n        "
+          "content": "\n            <div class=\"mb-6\">\n                <h4 class=\"font-bold mb-2\">MSc in Accounting & Finance (2 Years):</h4>\n                <div class=\"mb-4\">\n                    <strong class=\"block mb-1\">Core Courses:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Financial Statement Analysis</li>\n                        <li>Financial Accounting Theories</li>\n                        <li>Corporate Governance</li>\n                        <li>Strategic Management Accounting</li>\n                        <li>Auditing â€“ Theory and Practice</li>\n                        <li>Performance Management</li>\n                        <li>Accounting for Sustainability</li>\n                    </ul>\n                </div>\n                <div class=\"mb-4\">\n                    <strong class=\"block mb-1\">Specialised Courses:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Risk Management: Organization and Control</li>\n                        <li>Financial Management for Entrepreneurs</li>\n                        <li>Capital Budgeting</li>\n                        <li>Big Data Analysis in Accounting</li>\n                        <li>Entrepreneurship Law in Practice</li>\n                    </ul>\n                </div>\n                <div>\n                    <strong class=\"block mb-1\">Capstone / Thesis:</strong>\n                    <ul class=\"list-disc pl-5 space-y-1\">\n                        <li>Students complete an individual thesis project focusing on applied accounting and financial issues.</li>\n                    </ul>\n                </div>\n                <p class=\"mt-4 italic\">Practical exercises, case studies, and real-world financial scenarios are embedded throughout the program.</p>\n            </div>\n        "
         },
         {
           "id": "specialisations",
@@ -168,7 +168,7 @@
         {
           "id": "research",
           "title": "Research Focus",
-          "content": "\n            <p class=\"mb-2\">Penkka University Accounting & Finance Department focuses on:</p>\n            <ul class=\"list-disc pl-5 space-y-1\">\n                <li>Advanced corporate finance and valuation</li>\n                <li>Management accounting and strategic decision-making</li>\n                <li>Auditing and compliance research</li>\n                <li>Sustainability accounting and reporting</li>\n                <li>Big Data analytics in financial decision-making</li>\n            </ul>\n        "
+          "content": "\n            <p class=\"mb-2\">Kestora University Accounting & Finance Department focuses on:</p>\n            <ul class=\"list-disc pl-5 space-y-1\">\n                <li>Advanced corporate finance and valuation</li>\n                <li>Management accounting and strategic decision-making</li>\n                <li>Auditing and compliance research</li>\n                <li>Sustainability accounting and reporting</li>\n                <li>Big Data analytics in financial decision-making</li>\n            </ul>\n        "
         },
         {
           "id": "cooperation",
@@ -178,12 +178,12 @@
         {
           "id": "admissions",
           "title": "Study-Option-Specific Evaluation Criteria in Master's Admissions 2025",
-          "content": "\n            <p class=\"mb-2\">Applicants are evaluated based on:</p>\n            <ul class=\"list-disc pl-5 space-y-1\">\n                <li>Bachelor’s degree in Business, Finance, Accounting, or related field</li>\n                <li>Academic excellence (GPA or minimum grade requirement)</li>\n                <li>Motivation letter and career goals</li>\n                <li>Letters of recommendation</li>\n                <li>Relevant professional experience or internships</li>\n            </ul>\n            <p class=\"mt-2 text-sm text-neutral-500\">Additional criteria may apply for international students and scholarship applications.</p>\n        "
+          "content": "\n            <p class=\"mb-2\">Applicants are evaluated based on:</p>\n            <ul class=\"list-disc pl-5 space-y-1\">\n                <li>Bachelorâ€™s degree in Business, Finance, Accounting, or related field</li>\n                <li>Academic excellence (GPA or minimum grade requirement)</li>\n                <li>Motivation letter and career goals</li>\n                <li>Letters of recommendation</li>\n                <li>Relevant professional experience or internships</li>\n            </ul>\n            <p class=\"mt-2 text-sm text-neutral-500\">Additional criteria may apply for international students and scholarship applications.</p>\n        "
         },
         {
           "id": "contact",
           "title": "Contact Information",
-          "content": "\n            <p><strong>Penkka University School of Business – Accounting & Finance Department</strong></p>\n            <p>Email: <a href=\"mailto:accounting@penkka.edu\" class=\"text-emerald-600 hover:underline\">accounting@penkka.edu</a></p>\n            <p>Phone: +358 20 123 4568</p>\n            <p>Address: Penkka University, Otaniemi Campus, Finland</p>\n            <p>Office Hours: Monday–Friday, 9:00–17:00</p>\n        "
+          "content": "\n            <p><strong>Kestora University School of Business â€“ Accounting & Finance Department</strong></p>\n            <p>Email: <a href=\"mailto:accounting@Kestora.edu\" class=\"text-emerald-600 hover:underline\">accounting@Kestora.edu</a></p>\n            <p>Phone: +358 20 123 4568</p>\n            <p>Address: Kestora University, Otaniemi Campus, Finland</p>\n            <p>Office Hours: Mondayâ€“Friday, 9:00â€“17:00</p>\n        "
         }
       ],
       "department": {
@@ -211,13 +211,13 @@
       "departmentId": "0cd264ab-2d6b-4c2c-9663-bacc1bdbbbd3",
       "createdAt": "2026-01-27T23:31:12.024",
       "updatedAt": "2026-01-27T23:31:12.024",
-      "tuitionFee": "€8,000 / year",
+      "tuitionFee": "â‚¬8,000 / year",
       "credits": 180,
       "sections": [
         {
           "id": "description",
           "title": "Programme Description",
-          "content": "\n            <p class=\"mb-4\">The Finance BACHELOR programme at Penkka University offers a comprehensive curriculum designed to prepare students for leadership roles in the global economy. The programme integrates theoretical foundations with practical applications, focusing on sustainable practices and innovative thinking.</p>\n            <p>Students will engage in multi-disciplinary projects, case studies, and corporate collaborations to develop the skills necessary for a successful career in Finance.</p>\n        "
+          "content": "\n            <p class=\"mb-4\">The Finance BACHELOR programme at Kestora University offers a comprehensive curriculum designed to prepare students for leadership roles in the global economy. The programme integrates theoretical foundations with practical applications, focusing on sustainable practices and innovative thinking.</p>\n            <p>Students will engage in multi-disciplinary projects, case studies, and corporate collaborations to develop the skills necessary for a successful career in Finance.</p>\n        "
         },
         {
           "id": "structure",
@@ -260,13 +260,13 @@
       "departmentId": "0cd264ab-2d6b-4c2c-9663-bacc1bdbbbd3",
       "createdAt": "2026-01-27T23:31:14.877",
       "updatedAt": "2026-01-27T23:31:14.877",
-      "tuitionFee": "€10,000 / year",
+      "tuitionFee": "â‚¬10,000 / year",
       "credits": 120,
       "sections": [
         {
           "id": "description",
           "title": "Programme Description",
-          "content": "\n            <p class=\"mb-4\">The Finance MASTER programme at Penkka University offers a comprehensive curriculum designed to prepare students for leadership roles in the global economy. The programme integrates theoretical foundations with practical applications, focusing on sustainable practices and innovative thinking.</p>\n            <p>Students will engage in multi-disciplinary projects, case studies, and corporate collaborations to develop the skills necessary for a successful career in Finance.</p>\n        "
+          "content": "\n            <p class=\"mb-4\">The Finance MASTER programme at Kestora University offers a comprehensive curriculum designed to prepare students for leadership roles in the global economy. The programme integrates theoretical foundations with practical applications, focusing on sustainable practices and innovative thinking.</p>\n            <p>Students will engage in multi-disciplinary projects, case studies, and corporate collaborations to develop the skills necessary for a successful career in Finance.</p>\n        "
         },
         {
           "id": "structure",
@@ -309,13 +309,13 @@
       "departmentId": "a4e247de-8e3b-4bcb-8422-45f7672b29a9",
       "createdAt": "2026-01-27T23:07:43.498",
       "updatedAt": "2026-01-27T23:07:43.498",
-      "tuitionFee": "€10,000 / year",
+      "tuitionFee": "â‚¬10,000 / year",
       "credits": 120,
       "sections": [
         {
           "id": "description",
           "title": "Programme Description",
-          "content": "\n            <p class=\"mb-4\">The Strategic Management & Finance MASTER programme at Penkka University offers a comprehensive curriculum designed to prepare students for leadership roles in the global economy. The programme integrates theoretical foundations with practical applications, focusing on sustainable practices and innovative thinking.</p>\n            <p>Students will engage in multi-disciplinary projects, case studies, and corporate collaborations to develop the skills necessary for a successful career in Strategic Management & Finance.</p>\n        "
+          "content": "\n            <p class=\"mb-4\">The Strategic Management & Finance MASTER programme at Kestora University offers a comprehensive curriculum designed to prepare students for leadership roles in the global economy. The programme integrates theoretical foundations with practical applications, focusing on sustainable practices and innovative thinking.</p>\n            <p>Students will engage in multi-disciplinary projects, case studies, and corporate collaborations to develop the skills necessary for a successful career in Strategic Management & Finance.</p>\n        "
         },
         {
           "id": "structure",
@@ -344,3 +344,4 @@
     }
   ]
 }
+

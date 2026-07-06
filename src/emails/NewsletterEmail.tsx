@@ -22,7 +22,7 @@ interface NewsletterEmailProps {
 export default function NewsletterEmail({
     firstName = 'Student',
 }: NewsletterEmailProps) {
-    const previewText = `Important updates regarding your journey to Cannoga College.`;
+    const previewText = `Important updates regarding your journey to Kestora University.`;
 
     return (
         <Html>
@@ -35,9 +35,9 @@ export default function NewsletterEmail({
                         {/* Header */}
                         <Section className="bg-white p-[30px] text-center border-b border-solid border-[#eeeeee]">
                             <Img
-                                src="https://cannogacollege.ca/logo-cannoga.png"
+                                src="https://kestora.online/logo-kestora.png"
                                 width="200"
-                                alt="Cannoga College"
+                                alt="Kestora University"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
@@ -45,7 +45,7 @@ export default function NewsletterEmail({
                         {/* Hero Image */}
                         <Section className="p-0">
                             <Img
-                                src="https://cannogacollege.ca/images/scholarships.png"
+                                src="https://kestora.online/images/scholarships.png"
                                 width="600"
                                 height="150"
                                 alt="Scholarships"
@@ -56,13 +56,13 @@ export default function NewsletterEmail({
                         {/* Content */}
                         <Section className="px-[40px] pt-[40px] pb-[20px]">
                             <Heading className="text-[26px] font-semibold text-black leading-[1.2] m-0 mb-[20px]">
-                                Your Journey to study in Ottawa, Canada Starts Here
+                                Your Journey to study in Helsinki, Finland Starts Here
                             </Heading>
                             <Text className="text-[16px] leading-[1.6] color-[#444444]">
                                 Dear {firstName},
                             </Text>
                             <Text className="text-[16px] leading-[1.6] color-[#444444]">
-                                We are pleased to welcome you to the Cannoga College community. This newsletter provides you with critical updates, upcoming deadlines, and the necessary next steps for your official admission process.
+                                We are pleased to welcome you to the Kestora University community. This newsletter provides you with critical updates, upcoming deadlines, and the necessary next steps for your official admission process.
                             </Text>
                         </Section>
 
@@ -79,7 +79,7 @@ export default function NewsletterEmail({
                         {/* Dashboard CTA */}
                         <Section className="text-center py-[40px]">
                             <Link
-                                href="https://cannogacollege.ca/portal"
+                                href="https://kestora.online/portal"
                                 className="bg-black text-white text-[14px] font-bold no-underline text-center px-[35px] py-[16px] inline-block uppercase tracking-[1px] rounded-[2px]"
                             >
                                 Access Your Dashboard
@@ -95,7 +95,7 @@ export default function NewsletterEmail({
                                 Engage with fellow students and ambassadors through our dedicated communication platform for real-time support and peer networking.
                             </Text>
                             <Link 
-                                href="https://students.cannogacollege.ca/" 
+                                href="https://students.kestora.online/" 
                                 className="bg-black text-white text-[14px] font-bold no-underline text-center px-[35px] py-[16px] inline-block uppercase tracking-[1px] rounded-[2px]"
                             >
                                 Student Community
@@ -118,19 +118,19 @@ export default function NewsletterEmail({
                         {/* Footer */}
                         <Section className="p-[40px] text-center">
                             <Text className="m-0 font-bold text-[#333333] uppercase tracking-[1px] text-[12px]">
-                                Cannoga College
+                                Kestora University
                             </Text>
                             <Text className="text-[12px] text-[#888888] my-[10px]">
-                                Admissions Office: admissions@cannogacollege.ca
+                                Admissions Office: admissions@kestora.online
                             </Text>
                             <Hr className="border-t border-solid border-[#eeeeee] my-[20px]" />
                             <Section className="text-center">
-                                <Link href="https://cannogacollege.ca" className="text-[#333333] no-underline mx-[10px] text-[12px]">Website</Link>
+                                <Link href="https://kestora.online" className="text-[#333333] no-underline mx-[10px] text-[12px]">Website</Link>
                                 <span className="text-[#dddddd]">|</span>
-                                <a href="https://cannogacollege.ca/privacy" className="text-[#333333] no-underline mx-[10px] text-[12px]">Privacy Policy</a>
+                                <a href="https://kestora.online/privacy" className="text-[#333333] no-underline mx-[10px] text-[12px]">Privacy Policy</a>
                             </Section>
                             <Text className="text-[12px] text-[#888888] mt-[20px] mb-0">
-                                &copy; 2026 Cannoga College. All rights reserved.
+                                &copy; 2026 Kestora University. All rights reserved.
                             </Text>
                         </Section>
 

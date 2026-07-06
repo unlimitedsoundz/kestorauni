@@ -196,8 +196,8 @@ function AdmissionLetterContent() {
                         <div className="space-y-4">
                             <div className="relative w-40 h-10">
                                 <Image
-                                    src="/logo-cannoga.png"
-                                    alt="Cannoga College"
+                                    src="/logo-kestora.png"
+                                    alt="Kestora University"
                                     fill
                                     style={{ objectFit: 'contain', objectPosition: 'left center' }}
                                 />
@@ -211,12 +211,12 @@ function AdmissionLetterContent() {
                             </div>
                         </div>
                         <div className="text-left md:text-right text-[9px] font-medium text-black leading-tight uppercase tracking-wide">
-                            <strong className="text-black block mb-1 text-[10px]">Cannoga College – Ottawa Campus</strong>
-                            2368 Midway Ave,<br />
-                            Ottawa, ON K2B 5J8, Canada<br />
+                            <strong className="text-black block mb-1 text-[10px]">Kestora University – Helsinki Campus</strong>
+                            Pohjoisesplanadi 51,<br />
+                            00150 Helsinki, Uusimaa, Finland<br />
                             Phone: +1-613-727-4723<br />
                             <div className="mt-1 text-[8px]">
-                                cannogacollege.ca | admissions@cannogacollege.ca
+                                kestora.online | admissions@kestora.online
                             </div>
                         </div>
                     </div>
@@ -236,10 +236,10 @@ function AdmissionLetterContent() {
                     {/* Official Statement */}
                     <div className="text-xs print:text-[10px] leading-normal text-black mb-4 print:mb-2">
                         <p className="mb-2 print:mb-1 text-black">
-                            This letter serves as official notification that {studentName} (Passport: {passportNumber}, DOB: {dob}) has been formally admitted and fully enrolled as a degree student at Cannoga College for the 2026 - 2027 academic year.
+                            This letter serves as official notification that {studentName} (Passport: {passportNumber}, DOB: {dob}) has been formally admitted and fully enrolled as a degree student at Kestora University for the 2026 - 2027 academic year.
                         </p>
                         <p className="text-black">
-                            Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the <strong className="text-black">{application.course?.title} ({application.course?.programType || 'Full-time'})</strong>. This program is a full-time course of study conducted in the English language at our Ottawa Campus location (2368 Midway Ave, Ottawa, ON K2B 5J8, Canada).
+                            Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the <strong className="text-black">{application.course?.title} ({application.course?.programType || 'Full-time'})</strong>. This program is a full-time course of study conducted in the English language at our Helsinki Campus location (Pohjoisesplanadi 51, 00150 Helsinki, Uusimaa, Finland).
                         </p>
                     </div>
 
@@ -253,8 +253,8 @@ function AdmissionLetterContent() {
                                 { label: 'Academic Year', value: academicYear },
                                 { label: 'Intake', value: intake },
                                 { label: 'Programme Start Date', value: '17.08.2026' },
-                                { label: 'Programme End Date', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '17.08.2028' : '17.08.2029' },
-                                { label: 'Total Credits', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 credits' : '180 credits' },
+                                { label: 'Programme End Date', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '17.08.2028' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '17.08.2029' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '17.08.2028' : '17.08.2027' },
+                                { label: 'Total Credits', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 ECTS' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '180 ECTS' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '120 ECTS' : '60 ECTS' },
                                 { label: 'Programme of Study', value: `${application.course?.title} (${application.course?.programType || 'Full-time'})` }
                             ].map((row, idx) => (
                                 <li key={idx}><strong>{row.label}:</strong> {row.value}</li>
@@ -287,7 +287,7 @@ function AdmissionLetterContent() {
                         <div>
                             <h4 className="text-[9px] font-bold text-black uppercase tracking-widest mb-1">Refund Policy</h4>
                             <p className="text-[10px] text-black leading-tight">
-                                Subject to the university’s refund policy at <a href="https://cannogacollege.ca/refund-withdrawal-policy/" className="underline text-black">cannogacollege.ca/refund</a>.
+                                Subject to the university’s refund policy at <a href="https://kestora.online/refund-withdrawal-policy/" className="underline text-black">kestora.online/refund</a>.
                             </p>
                         </div>
                     </div>
@@ -305,8 +305,8 @@ function AdmissionLetterContent() {
                                 />
                             </div>
                             <div className="text-[10px] font-black text-black uppercase">Office of the Registrar</div>
-                            <div className="text-[9px] font-bold text-black">Office of the Registrar, Cannoga College</div>
-                            <div className="text-[8px] font-bold text-black uppercase tracking-widest">Cannoga College | Ottawa, Canada</div>
+                            <div className="text-[9px] font-bold text-black">Office of the Registrar, Kestora University</div>
+                            <div className="text-[8px] font-bold text-black uppercase tracking-widest">Kestora University | Helsinki, Finland</div>
                         </div>
                     </div>
 

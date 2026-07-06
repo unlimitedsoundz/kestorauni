@@ -193,7 +193,7 @@ export default function AdminStudentsPage() {
                                     for (const profile of profiles) {
                                         let newId;
                                         do {
-                                            newId = 'KC' + Math.floor(1000000 + Math.random() * 8999999).toString();
+                                            newId = 'KU' + Math.floor(1000000 + Math.random() * 8999999).toString();
                                         } while (usedIds.has(newId));
                                         usedIds.add(newId);
 
@@ -215,11 +215,11 @@ export default function AdminStudentsPage() {
                         disabled={actionLoading === 'backfill'}
                         className="px-4 py-2 bg-blue-600 text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        {actionLoading === 'backfill' ? 'Assigning...' : 'Assign KC IDs'}
+                        {actionLoading === 'backfill' ? 'Assigning...' : 'Assign KU IDs'}
                     </button>
                     <button
                         onClick={async () => {
-                            if (!confirm("This will convert all SYK or KU student IDs to KC. Continue?")) return;
+                            if (!confirm("This will convert all SYK or KC student IDs to KU. Continue?")) return;
                             setActionLoading('convert');
                             try {
                                 const { data: profiles } = await supabase
@@ -229,14 +229,14 @@ export default function AdminStudentsPage() {
 
                                 if (profiles) {
                                     for (const profile of profiles) {
-                                        const newId = profile.student_id.replace(/^(SYK|KU)/, 'KC');
+                                        const newId = profile.student_id.replace(/^(SYK|KC)/, 'KU');
                                         await supabase
                                             .from('profiles')
                                             .update({ student_id: newId })
                                             .eq('id', profile.id);
                                     }
                                 }
-                                alert('Student IDs converted to KC successfully!');
+                                alert('Student IDs converted to KU successfully!');
                                 await fetchData();
                             } catch (error) {
                                 console.error('Convert error:', error);
@@ -248,7 +248,7 @@ export default function AdminStudentsPage() {
                         disabled={actionLoading === 'convert'}
                         className="px-4 py-2 bg-green-600 text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        {actionLoading === 'convert' ? 'Converting...' : 'Convert to KC'}
+                        {actionLoading === 'convert' ? 'Converting...' : 'Convert to KU'}
                     </button>
                 </div>
             </div>
@@ -287,7 +287,7 @@ export default function AdminStudentsPage() {
                                             <div className="flex items-center gap-2">
                                                 <span className="md:hidden text-[10px] font-bold text-neutral-400 uppercase tracking-widest">Status:</span>
                                                 {app.status === 'PAYMENT_SUBMITTED' ? (
-                                                    <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-none text-[9px] font-bold uppercase flex items-center gap-1 w-fit">
+                                                    <span className="px-2 py-1 bg-neutral-100 text-neutral-700 rounded-none text-[9px] font-bold uppercase flex items-center gap-1 w-fit">
                                                         <CheckCircle size={10} weight="bold" /> Payment Success
                                                     </span>
                                                 ) : (app.status === 'ENROLLED' || app.status === 'ADMISSION_LETTER_GENERATED') ? (
@@ -317,7 +317,7 @@ export default function AdminStudentsPage() {
                                             <button
                                                 onClick={() => handleApproveTuition(app.id)}
                                                 disabled={actionLoading === app.id || !['OFFER_ACCEPTED', 'PAYMENT_SUBMITTED', 'ENROLLED', 'ADMISSION_LETTER_GENERATED'].includes(app.status)}
-                                                className={`inline-flex items-center gap-2 bg-emerald-600 text-white px-4 py-2 rounded-none text-xs font-bold uppercase tracking-widest hover:bg-emerald-700 transition-all active:scale-95 ${actionLoading === app.id || !['OFFER_ACCEPTED', 'PAYMENT_SUBMITTED', 'ENROLLED', 'ADMISSION_LETTER_GENERATED'].includes(app.status) ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                                className={`inline-flex items-center gap-2 bg-neutral-600 text-white px-4 py-2 rounded-none text-xs font-bold uppercase tracking-widest hover:bg-neutral-700 transition-all active:scale-95 ${actionLoading === app.id || !['OFFER_ACCEPTED', 'PAYMENT_SUBMITTED', 'ENROLLED', 'ADMISSION_LETTER_GENERATED'].includes(app.status) ? 'opacity-50 cursor-not-allowed' : ''}`}
                                             >
                                                 {actionLoading === app.id ? (
                                                     <Loader2 size={14} className="animate-spin" />
@@ -336,7 +336,7 @@ export default function AdminStudentsPage() {
             )}
 
             <h2 className="text-xl font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                <CheckCircle size={20} weight="bold" className="text-emerald-500" />
+                <CheckCircle size={20} weight="bold" className="text-neutral-500" />
                 Active Student Body
             </h2>
             <div className="bg-white border border-neutral-200 overflow-hidden">
@@ -371,7 +371,7 @@ export default function AdminStudentsPage() {
                                     {student.institutional_email}
                                 </td>
                                 <td className="block md:table-cell py-2 md:p-4">
-                                    <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-none text-[9px] font-bold uppercase flex items-center gap-1 w-fit">
+                                    <span className="px-2 py-1 bg-neutral-100 text-neutral-700 rounded-none text-[9px] font-bold uppercase flex items-center gap-1 w-fit">
                                         <CheckCircle size={10} weight="bold" /> {student.enrollment_status}
                                     </span>
                                 </td>
@@ -421,7 +421,7 @@ export default function AdminStudentsPage() {
 }
 function StatusBadge({ status }: { status: string }) {
     const s = (status || 'PENDING').toUpperCase();
-    if (s === 'APPROVED') return <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-none text-[10px] font-bold uppercase flex items-center gap-1 w-fit"><CheckCircle size={10} weight="bold" /> Approved</span>;
+    if (s === 'APPROVED') return <span className="px-2 py-1 bg-neutral-100 text-neutral-700 rounded-none text-[10px] font-bold uppercase flex items-center gap-1 w-fit"><CheckCircle size={10} weight="bold" /> Approved</span>;
     if (s === 'REJECTED') return <span className="px-2 py-1 bg-red-100 text-red-700 rounded-none text-[10px] font-bold uppercase flex items-center gap-1 w-fit"><XCircle size={10} weight="bold" /> Rejected</span>;
     return <span className="px-2 py-1 bg-amber-100 text-amber-700 rounded-none text-[10px] font-bold uppercase flex items-center gap-1 w-fit"><Clock size={10} weight="bold" /> Pending</span>;
 }

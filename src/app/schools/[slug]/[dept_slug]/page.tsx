@@ -7,6 +7,7 @@ import { Department, School, Faculty, Course } from '@/types/database';
 import { notFound } from 'next/navigation';
 import { CaretLeft } from '@phosphor-icons/react/dist/ssr';
 import { Breadcrumbs } from '@aalto-dx/react-modules';
+import { getTuitionFee } from '@/utils/tuition';
 
 export async function generateStaticParams() {
     const supabase = createStaticClient();
@@ -50,24 +51,18 @@ export async function generateMetadata({ params }: Props) {
         .single();
 
     return {
-        title: dept ? `${dept.name} — ${(Array.isArray(dept.school) ? dept.school[0] : dept.school)?.name || 'School'} | Cannoga College` : 'Department | Cannoga College',
-        description: dept?.description?.substring(0, 160) || `Learn about the ${dept?.name} at Cannoga College. Research, faculty, and academic programs.`,
+        title: dept ? `${dept.name} — ${(Array.isArray(dept.school) ? dept.school[0] : dept.school)?.name || 'School'} | Kestora University` : 'Department | Kestora University',
+        description: dept?.description?.substring(0, 160) || `Learn about the ${dept?.name} at Kestora University. Research, faculty, and academic programs.`,
         alternates: {
-            canonical: `https://cannogacollege.ca/schools/${resolvedParams.slug}/${dept_slug}/`,
+            canonical: `https://kestora.online/schools/${resolvedParams.slug}/${dept_slug}/`,
         },
     };
 }
 
 function getEstimatedTuitionFee(schoolSlug: string, degreeLevel: string) {
-    const lvl = (degreeLevel || '').toUpperCase();
-    if (lvl.includes('CERTIFICATE') || lvl.includes('DIPLOMA')) {
-        return '$3,500 (Domestic) / $9,500 (International) per year';
-    } else if (lvl.includes('BACHELOR') || lvl.includes('BSC')) {
-        return '$6,200 (Domestic) / $12,500 (International) per year';
-    } else if (lvl.includes('MASTER') || lvl.includes('MSC')) {
-        return '$8,500 (Domestic) / $18,000 (International) per year';
-    }
-    return 'Contact Admissions';
+    const domestic = getTuitionFee(degreeLevel, undefined, true);
+    const international = getTuitionFee(degreeLevel, undefined, false);
+    return `€${domestic.toLocaleString()} (Domestic) / €${international.toLocaleString()} (International) per year`;
 }
 
 function getCredentialName(degreeLevel: string, duration: string) {
@@ -79,11 +74,11 @@ function getCredentialName(degreeLevel: string, duration: string) {
         return "Bachelor's Degree";
     } else if (lvl === 'DIPLOMA') {
         if (dur.includes('3 year')) {
-            return "Ontario College Advanced Diploma";
+            return "Finnish Advanced Diploma";
         }
-        return "Ontario College Diploma";
+        return "Finnish Diploma";
     } else if (lvl === 'CERTIFICATE') {
-        return "Ontario College Certificate";
+        return "Finnish Certificate";
     }
     return "College Credential";
 }
@@ -141,14 +136,14 @@ export default async function DepartmentDetailPage({ params }: Props) {
         'automation-control': '#0891b2',      // Cyan
         'architecture': '#db2777',            // Pink
         'art-media': '#ec4899',               // Rose/Pink
-        'chemical-materials': '#059669',      // Emerald
+        'chemical-materials': '#000000',      // Black
         'civil-environmental': '#0d9488',     // Teal
         'computer-science-digital': '#2563eb', // Blue
         'design': '#ea580c',                  // Orange
         'economics': '#4f46e5',               // Indigo
         'electrical-electronics': '#0891b2',  // Cyan
         'energy-mechanical': '#ea580c',       // Orange
-        'film-tv': '#d946ef',                 // Fuchsia
+        'film-tv': '#000000',                 // Black
         'finance': '#2563eb',                 // Blue
         'info-service': '#0ea5e9',            // Sky
         'management': '#4f46e5',              // Indigo
@@ -165,8 +160,8 @@ export default async function DepartmentDetailPage({ params }: Props) {
         else if (dept.slug.includes('science')) heroColor = '#4f46e5'; // Indigo
         else if (dept.slug.includes('arts') || dept.slug.includes('media')) heroColor = '#db2777'; // Pink
         else if (dept.slug.includes('business') || dept.slug.includes('management') || dept.slug.includes('hospitality')) heroColor = '#2563eb'; // Blue
-        else if (dept.slug.includes('health') || dept.slug.includes('community')) heroColor = '#059669'; // Emerald
-        else heroColor = '#5c2d91'; // College Purple
+        else if (dept.slug.includes('health') || dept.slug.includes('community')) heroColor = '#000000'; // Black
+        else heroColor = '#000000'; // College Purple
     }
 
     return (
@@ -178,7 +173,7 @@ export default async function DepartmentDetailPage({ params }: Props) {
                         {dept.name}
                     </h1>
                     <p className="text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed mt-4">
-                        {(dept.description || "Advancing knowledge and innovation through world-class research and education.").replace(/SYKLI|College/g, 'Cannoga College')}
+                        {(dept.description || "Advancing knowledge and innovation through world-class research and education.").replace(/SYKLI|College/g, 'Kestora University')}
                     </p>
                 </div>
             </section>
@@ -221,7 +216,7 @@ export default async function DepartmentDetailPage({ params }: Props) {
                                     <div className="flex justify-between items-start">
                                         <div>
                                             <h3 className="text-xl font-bold text-white mb-1">{course.title}</h3>
-                                            <p className="text-white text-sm line-clamp-2 mb-4">{(course.description || "").replace(/SYKLI|College/g, 'Cannoga College')}</p>
+                                            <p className="text-white text-sm line-clamp-2 mb-4">{(course.description || "").replace(/SYKLI|College/g, 'Kestora University')}</p>
 
                                             {/* Program Details Grid */}
                                             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-sm mt-4 pt-4 border-t border-white/10">
@@ -235,7 +230,7 @@ export default async function DepartmentDetailPage({ params }: Props) {
                                                 </div>
                                                 <div>
                                                     <p className="text-white uppercase tracking-wider text-[10px] font-bold mb-1">Campus</p>
-                                                    <p className="font-semibold text-white">Ottawa</p>
+                                                    <p className="font-semibold text-white">Helsinki</p>
                                                 </div>
                                                 <div>
                                                     <p className="text-white uppercase tracking-wider text-[10px] font-bold mb-1">Length</p>

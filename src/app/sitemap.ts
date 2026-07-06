@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://cannogacollege.ca';
+    const baseUrl = 'https://kestora.online';
 
     // Core pages with highest priority
     const corePages = [
@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Institutional pages
     const institutionalPages = [
-        { url: `${baseUrl}/about-cannoga-college`, changeFrequency: 'monthly' as const, priority: 0.5 },
+        { url: `${baseUrl}/about-kestora-university`, changeFrequency: 'monthly' as const, priority: 0.5 },
         { url: `${baseUrl}/contact`, changeFrequency: 'monthly' as const, priority: 0.5 },
         { url: `${baseUrl}/news`, changeFrequency: 'daily' as const, priority: 0.6 },
         { url: `${baseUrl}/alumni`, changeFrequency: 'monthly' as const, priority: 0.4 },

@@ -1,5 +1,5 @@
--- Migration: Standardize Student IDs to 'KC' prefix
--- This migration handles the transition from legacy 'SK' prefix to 'KC' prefix.
+-- Migration: Standardize Student IDs to 'KU' prefix
+-- This migration handles the transition from legacy 'SK' prefix to 'KU' prefix.
 -- It applies to profiles, applications, admissions, and students tables.
 
 -- 1. Update the helper function to use the new prefix
@@ -9,7 +9,7 @@ DECLARE
     id_exists BOOLEAN;
 BEGIN
     LOOP
-        new_id := 'KC' || LPAD(floor(random() * 10000000)::text, 7, '0');
+        new_id := 'KU' || LPAD(floor(random() * 10000000)::text, 7, '0');
 
         -- Check all unique constraints across ALL tables
         SELECT EXISTS (
@@ -32,7 +32,7 @@ $$ LANGUAGE plpgsql;
 CREATE OR REPLACE FUNCTION set_profile_student_id()
 RETURNS TRIGGER AS $$
 BEGIN
-    IF NEW.student_id IS NULL OR NEW.student_id NOT LIKE 'KC%' OR LENGTH(NEW.student_id) != 9 THEN
+    IF NEW.student_id IS NULL OR NEW.student_id NOT LIKE 'KU%' OR LENGTH(NEW.student_id) != 9 THEN
         NEW.student_id := generate_student_id();
     END IF;
     RETURN NEW;
@@ -42,7 +42,7 @@ $$ LANGUAGE plpgsql;
 CREATE OR REPLACE FUNCTION set_application_number()
 RETURNS TRIGGER AS $$
 BEGIN
-    IF NEW.application_number IS NULL OR NEW.application_number NOT LIKE 'KC%' OR LENGTH(NEW.application_number) != 8 THEN
+    IF NEW.application_number IS NULL OR NEW.application_number NOT LIKE 'KU%' OR LENGTH(NEW.application_number) != 8 THEN
         NEW.application_number := generate_student_id();
     END IF;
     RETURN NEW;
@@ -69,11 +69,11 @@ BEGIN
         SELECT id, student_id FROM public.profiles
         WHERE student_id IS NULL
             OR student_id LIKE 'SK%'
-            OR student_id NOT LIKE 'KC%'
+            OR student_id NOT LIKE 'KU%'
             OR LENGTH(student_id) != 8
     LOOP
         -- Determine new ID
-        IF row_record.student_id LIKE 'SK%' OR LENGTH(row_record.student_id) != 8 OR row_record.student_id NOT LIKE 'KC%' THEN
+        IF row_record.student_id LIKE 'SK%' OR LENGTH(row_record.student_id) != 8 OR row_record.student_id NOT LIKE 'KU%' THEN
             new_val := generate_student_id();
         ELSE
             new_val := row_record.student_id; -- Keep if already correct
@@ -108,7 +108,7 @@ BEGIN
         SELECT id, user_id, student_id FROM public.students
     LOOP
         -- If this record needs updating
-        IF row_record.student_id NOT LIKE 'KC%' OR LENGTH(row_record.student_id) != 8 THEN
+        IF row_record.student_id NOT LIKE 'KU%' OR LENGTH(row_record.student_id) != 8 THEN
             -- Check if we have a map for this user
             SELECT new_id INTO new_val FROM id_map WHERE user_id = row_record.user_id;
             

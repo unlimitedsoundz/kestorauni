@@ -10,6 +10,7 @@ interface DbPageContentProps {
     className?: string;
     tagName?: keyof JSX.IntrinsicElements;
     style?: React.CSSProperties;
+    skipDbFetch?: boolean;
 }
 
 export default function DbPageContent({
@@ -19,6 +20,7 @@ export default function DbPageContent({
     className,
     tagName = 'div',
     style,
+    skipDbFetch = false,
 }: DbPageContentProps) {
     const sanitize = (text: string) => {
         if (pageSlug === 'admissions/tuition') {
@@ -33,7 +35,7 @@ export default function DbPageContent({
     const supabase = useMemo(() => typeof window !== 'undefined' ? createClient() : null, []);
 
     useEffect(() => {
-        if (!supabase) return;
+        if (!supabase || skipDbFetch) return;
         let mounted = true;
 
         async function loadPageContent() {
@@ -64,7 +66,7 @@ export default function DbPageContent({
         return () => {
             mounted = false;
         };
-    }, [pageSlug, sectionKey, supabase]);
+    }, [pageSlug, sectionKey, supabase, skipDbFetch]);
 
     return createElement(tagName, {
         className: `${className || ''} ck-content`,

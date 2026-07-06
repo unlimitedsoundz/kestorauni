@@ -3,10 +3,10 @@ import { CheckCircle, X, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import Image from 'next/image';
 
 export const metadata = {
-    title: 'Entry Requirements — Cannoga College | GPA, English Proficiency & Documents',
-    description: 'Admissions requirements for Cannoga College. GPA thresholds, English proficiency (IELTS/TOEFL), required documents, and eligibility criteria for international applicants.',
+    title: 'Entry Requirements — Kestora University | GPA, English Proficiency & Documents',
+    description: 'Admissions requirements for Kestora University. GPA thresholds, English proficiency (IELTS/TOEFL), required documents, and eligibility criteria for international applicants.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/admissions/requirements/',
+        canonical: 'https://kestora.online/admissions/requirements/',
     },
 };
 

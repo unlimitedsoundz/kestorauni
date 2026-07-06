@@ -195,10 +195,10 @@ export default function CourseSelector({ initialCourses, initialSelected }: Cour
                                     return (
                                         <div className="flex flex-wrap items-center gap-3">
                                             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm border border-neutral-100 text-black font-bold text-[13px]">
-                                                ${domesticFee.toLocaleString()} <span className="text-[11px] text-black font-medium lowercase ml-1">/ year (Domestic)</span>
+                                                €{domesticFee.toLocaleString()} <span className="text-[11px] text-black font-medium lowercase ml-1">/ year (Domestic)</span>
                                             </div>
                                             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm border border-neutral-100 text-black font-bold text-[13px]">
-                                                ${internationalFee.toLocaleString()} <span className="text-[11px] text-black font-medium lowercase ml-1">/ year (International)</span>
+                                                €{internationalFee.toLocaleString()} <span className="text-[11px] text-black font-medium lowercase ml-1">/ year (International)</span>
                                             </div>
                                         </div>
                                     );

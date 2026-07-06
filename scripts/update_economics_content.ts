@@ -167,7 +167,7 @@ const sections = [
         id: "contact",
         content: `
             <p><strong>Penkka University School of Business – Economics Department</strong></p>
-            <p>Email: <a href="mailto:economics@penkka.com" class="text-emerald-600 hover:underline">economics@penkka.com</a></p>
+            <p>Email: <a href="mailto:economics@penkka.com" class="text-black hover:underline">economics@penkka.com</a></p>
             <p>Address: Penkka University, Otaniemi Campus, Finland</p>
             <p>Office Hours: Monday–Friday, 9:00–17:00</p>
         `

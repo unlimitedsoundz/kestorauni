@@ -40,10 +40,10 @@ export default function InvoiceReadyEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://cannogacollege.ca/logo-cannoga.png"
+                                src="https://kestora.online/logo-kestora.png"
                                 width="40"
                                 height="40"
-                                alt="Cannoga College"
+                                alt="Kestora University"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
@@ -78,7 +78,7 @@ export default function InvoiceReadyEmail({
                         <Section className="text-center mt-[32px] mb-[32px]">
                             <Link
                                 className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
-                                href="https://cannogacollege.ca/portal/application/payment"
+                                href="https://kestora.online/portal/application/payment"
                             >
                                 Pay Tuition
                             </Link>
@@ -100,9 +100,7 @@ export default function InvoiceReadyEmail({
 
                         <Section className="text-center mt-[10px] mb-[20px]">
                             <Text className="m-0">
-                                <Link href="https://www.linkedin.com/company/cannoga-university" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">LinkedIn</Link>
                                 <Link href="https://www.tiktok.com/@cannogauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
-                                <Link href="https://snapchat.com/add/cannogacollege" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Snapchat</Link>
                             </Text>
                         </Section>
 
@@ -110,7 +108,7 @@ export default function InvoiceReadyEmail({
                             If you have any questions, please contact our admissions team.
                         </Text>
                         <Text className="text-[#666666] text-[12px] leading-[24px]">
-                            Finance Department, Cannoga College.
+                            Finance Department, Kestora University.
                         </Text>
                     </Container>
                 </Body>

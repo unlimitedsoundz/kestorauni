@@ -19,7 +19,7 @@ interface HousingDashboardClientProps {
     invoices: HousingInvoice[];
 }
 
-const COUNTRIES = ['Ottawa, Canada', 'United States', 'United Kingdom', 'Germany', 'France', 'China', 'India', 'Nigeria', 'Other'];
+const COUNTRIES = ['Helsinki, Finland', 'United States', 'United Kingdom', 'Germany', 'France', 'China', 'India', 'Nigeria', 'Other'];
 
 export default function HousingDashboardClient({ student, application, assignment, buildings, semesters, invoices }: HousingDashboardClientProps) {
     const [showForm, setShowForm] = useState(false);
@@ -156,7 +156,7 @@ export default function HousingDashboardClient({ student, application, assignmen
         if (!selectedInvoice) return;
         setPaying(true);
         try {
-            const result = await initiatePayment(selectedInvoice.id, 'BANK_TRANSFER', details.country || 'Ottawa, Canada');
+            const result = await initiatePayment(selectedInvoice.id, 'BANK_TRANSFER', details.country || 'Helsinki, Finland');
             if (result.success && result.transactionId) {
                 // Here we verify the transaction
                 await verifyPayment(result.transactionId);
@@ -269,16 +269,16 @@ export default function HousingDashboardClient({ student, application, assignmen
                                 <div className="space-y-4 print:space-y-2">
                                     <img 
                                         src="/logo-cannoga.png" 
-                                        alt="Cannoga College" 
+                                        alt="Kestora University" 
                                         className="h-10 w-auto"
                                     />
                                     <div className="space-y-1">
                                         <p className="text-[10px] uppercase font-black text-black">Housing Office Receipt</p>
-                                        <p className="text-[10px] font-bold text-black opacity-60">Cannoga College Official Document</p>
+                                        <p className="text-[10px] font-bold text-black opacity-60">Kestora University Official Document</p>
                                     </div>
                                 </div>
                                 <div className="text-left md:text-right space-y-1">
-                                    <p className="text-[10px] font-black uppercase text-black">Receipt No: KC-HS-{application.id.slice(0,8).toUpperCase()}</p>
+                                    <p className="text-[10px] font-black uppercase text-black">Receipt No: KU-HS-{application.id.slice(0,8).toUpperCase()}</p>
                                     <p className="text-[10px] font-black uppercase text-black">Date: {new Date().toLocaleDateString('en-GB')}</p>
                                 </div>
                             </div>
@@ -619,7 +619,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                                 <div className="space-y-4 pt-4 border-t border-neutral-200">
                                     <div>
                                         <h3 className="text-sm font-black uppercase text-black mb-1">Housing preference</h3>
-                                        <p className="text-xs text-black">You can apply for an apartment as soon as you are admitted to Cannoga College.</p>
+                                        <p className="text-xs text-black">You can apply for an apartment as soon as you are admitted to Kestora University.</p>
                                         <p className="text-[10px] text-black mt-1">*Mandatory field</p>
                                     </div>
                                     
@@ -648,7 +648,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                                 </div>
 
                                 <div className="flex items-start gap-2 p-3 bg-neutral-50 border border-neutral-200 rounded-none">
-                                    <input type="checkbox" required id="refundPolicyAgree" className="mt-0.5" />
+                                    <input type="checkbox" required id="refundPolicyAgree" className="mt-0.5 border-2 border-neutral-300 rounded-sm checked:bg-black checked:border-black w-4 h-4" />
                                     <label htmlFor="refundPolicyAgree" className="text-[10px] text-black leading-tight">
                                         I adhere to the <a href="/refund-withdrawal-policy" target="_blank" className="underline font-bold text-black">Refund & Withdrawal Policy</a> and understand the terms regarding deposit forfeiture and lease cancellation.
                                     </label>

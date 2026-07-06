@@ -21,7 +21,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 /**
- * Standardized Tag component for the Cannoga College project.
+ * Standardized Tag component for the Kestora University project.
  * Aliased from @aalto-dx/react-components.
  */
 export function Tag({ 
@@ -35,7 +35,7 @@ export function Tag({
     const typeStyles = {
         default: 'bg-neutral-100 text-neutral-800 border-neutral-200',
         neutral: 'bg-neutral-50 text-black border-neutral-200',
-        success: 'bg-emerald-50 text-emerald-800 border-emerald-100',
+        success: 'bg-neutral-50 text-neutral-800 border-neutral-100',
         warning: 'bg-amber-50 text-amber-800 border-amber-100',
         error: 'bg-red-50 text-red-800 border-red-100',
         info: 'bg-blue-50 text-blue-800 border-blue-100',

@@ -96,51 +96,51 @@ export default function DashboardPage() {
         );
     }
 
-    return (
-        <div className="space-y-8">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <div className="flex items-center gap-2">
-                        <h1 className="text-xl font-semibold text-black leading-none">My Applications</h1>
-                        {profile?.student_id && (
-                            <Tag 
-                                label={`Student ID: ${profile.student_id}`}
-                                className="!font-black"
-                            />
-                        )}
-                    </div>
-                    <p className="text-black text-sm font-medium mt-1">
-                        Welcome back, <span className="text-black">{profile?.first_name || user?.email}</span>
-                    </p>
-                </div>
-                {!student && (
-                    <Button
-                        href="/portal/apply"
-                        type="outline"
-                        label="New Application"
-                        size="sm"
-                        className="self-start md:self-auto"
-                    />
-                )}
-            </div>
+      return (
+           <div className="space-y-8 text-white bg-black min-h-screen p-4 md:p-8 rounded-xl">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div>
+                      <div className="flex items-center gap-2">
+                          <h1 className="text-xl font-semibold text-white leading-none">My Applications</h1>
+                          {profile?.student_id && (
+                              <Tag 
+                                  label={`Student ID: ${profile.student_id}`}
+                                  className="!font-black border-white text-white"
+                              />
+                          )}
+                      </div>
+                      <p className="text-neutral-300 text-sm font-medium mt-1">
+                          Welcome back, <span className="text-white">{profile?.first_name || user?.email}</span>
+                      </p>
+                  </div>
+                  {!student && (
+                      <Button
+                          href="/portal/apply"
+                          type="outline"
+                          label="New Application"
+                          size="sm"
+                          className="self-start md:self-auto border-white text-white hover:bg-white hover:text-black"
+                      />
+                  )}
+              </div>
 
             {/* Enrolled Student Alert Card - Only show if fully ENROLLED (Admin approved) */}
             {student && applications.some(app => app.id === student.application_id && app.status === 'ENROLLED') && (
-                <div className="flex items-start justify-between border-2 border-black p-6 md:p-8 rounded-sm text-black relative overflow-hidden bg-neutral-50">
+                <div className="flex items-start justify-between border-2 border-white p-6 md:p-8 rounded-sm text-white relative overflow-hidden bg-neutral-900">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
                         <div>
                             <h4 className="font-black text-[11px] flex items-center gap-2">
                                 <GraduationCap size={14} weight="bold" /> Active Student Status
                             </h4>
-                            <p className="text-black text-[11px] font-bold mt-1">
-                                You are officially enrolled in <span className="text-black">{student.program?.title}</span>. Access your academic tools below.
+                            <p className="text-neutral-300 text-[11px] font-bold mt-1">
+                                You are officially enrolled in <span className="text-white">{student.program?.title}</span>. Access your academic tools below.
                             </p>
                         </div>
                         <Button
                             href="/portal/student"
                             type="primary"
                             label="Enter Student Portal"
-                            className="whitespace-nowrap shadow-lg"
+                            className="whitespace-nowrap shadow-lg bg-white text-black hover:bg-neutral-200"
                         />
                     </div>
                 </div>
@@ -153,16 +153,16 @@ export default function DashboardPage() {
                         <div key={app.id}>
                             {/* Action Needed - DOCS_REQUIRED */}
                             {app.status === 'DOCS_REQUIRED' && (
-                                <div className="flex items-start justify-between border-2 border-purple-600 p-6 md:p-8 rounded-sm text-purple-900 relative overflow-hidden bg-purple-50 mb-4 shadow-[6px_6px_0px_0px_rgba(147,51,234,0.3)] border-l-[8px]">
+                                <div className="flex items-start justify-between border-2 border-white p-6 md:p-8 rounded-sm text-white relative overflow-hidden bg-neutral-900 mb-4 shadow-[6px_6px_0px_0px_rgba(255,255,255,0.2)] border-l-[8px]">
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
                                         <div>
                                             <h4 className="font-black text-[13px] flex items-center gap-2">
                                                 <AlertCircle size={16} weight="bold" /> Additional Documents Requested
                                             </h4>
                                             {app.document_request_note && (
-                                                <div className="mt-3 bg-white/50 p-4 rounded-sm border border-purple-200/50 backdrop-blur-sm">
-                                                    <p className="text-[11px] font-black text-purple-600 mb-1 leading-none">Note from Admissions:</p>
-                                                    <p className="text-sm font-bold text-purple-900 leading-relaxed italic">"{app.document_request_note}"</p>
+                                                <div className="mt-3 bg-white/10 p-4 rounded-sm border border-white/20 backdrop-blur-sm">
+                                                    <p className="text-[11px] font-black text-neutral-400 mb-1 leading-none">Note from Admissions:</p>
+                                                    <p className="text-sm font-bold text-white leading-relaxed italic">"{app.document_request_note}"</p>
                                                 </div>
                                             )}
                                             {app.requested_documents && app.requested_documents.length > 0 ? (
@@ -171,12 +171,12 @@ export default function DashboardPage() {
                                                         <Tag 
                                                             key={docId}
                                                             label={docId.replaceAll('_', ' ')}
-                                                            className="bg-purple-100 text-purple-700 border-purple-200"
+                                                            className="bg-neutral-800 text-neutral-300 border-neutral-700"
                                                         />
                                                     ))}
                                                 </div>
                                             ) : (
-                                                <p className="text-purple-700 text-[11px] font-bold mt-1">
+                                                <p className="text-neutral-300 text-[11px] font-bold mt-1">
                                                     The admissions team has requested additional documents. Please check your uploads.
                                                 </p>
                                             )}
@@ -186,7 +186,7 @@ export default function DashboardPage() {
                                                 href={`/portal/application?id=${app.id}&step=6`}
                                                 type="primary"
                                                 label="Upload Missing Documents"
-                                                className="bg-purple-600 hover:bg-purple-700 whitespace-nowrap shadow-lg px-8"
+                                                 className="bg-white text-black hover:bg-neutral-200 whitespace-nowrap shadow-lg px-8"
                                             />
                                         </div>
                                     </div>
@@ -195,13 +195,13 @@ export default function DashboardPage() {
 
                             {/* Decision Alert Card - ADMITTED */}
                             {app.status === 'ADMITTED' && (
-                                <div className="flex items-start justify-between border-2 border-black p-6 md:p-8 rounded-sm text-black relative overflow-hidden bg-card shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mb-4">
+                                <div className="flex items-start justify-between border-2 border-white p-6 md:p-8 rounded-sm text-white relative overflow-hidden bg-neutral-900 shadow-[6px_6px_0px_0px_rgba(255,255,255,0.2)] mb-4">
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
                                         <div>
                                             <h4 className="font-black text-[13px] flex items-center gap-2">
                                                 <GraduationCap size={16} weight="bold" /> Formal Offer of Admission
                                             </h4>
-                                            <p className="text-black text-[11px] font-bold mt-1">
+                                            <p className="text-neutral-300 text-[11px] font-bold mt-1">
                                                 An official offer letter has been issued. Action is required to secure your place.
                                             </p>
                                         </div>
@@ -209,71 +209,71 @@ export default function DashboardPage() {
                                             <Link
                                                 label="Accept Official Offer"
                                                 linkComponentProps={{ href: `/portal/application/letter?id=${app.id}` }}
-                                                className="bg-black text-white px-8 py-4 rounded-sm text-[11px] font-black hover:bg-neutral-800 transition-all whitespace-nowrap text-center shadow-lg"
+                                                className="bg-white text-black px-8 py-4 rounded-sm text-[11px] font-black hover:bg-neutral-200 transition-all whitespace-nowrap text-center shadow-lg"
                                             />
                                         </div>
                                     </div>
                                 </div>
                             )}
 
-                            {/* Payment Pending Alert Card - OFFER_ACCEPTED */}
-                            {app.status === 'OFFER_ACCEPTED' && (
-                                <div className="flex items-start justify-between border border-neutral-200 p-6 md:p-8 rounded-sm text-neutral-900 relative overflow-hidden bg-card shadow-sm mb-4">
-                                    {(() => {
-                                        const offer = Array.isArray(app.offer) ? app.offer[0] : app.offer;
-                                        const isInvoicePushed = offer?.invoice_pushed;
-                                        const tuitionFee = offer?.tuition_fee;
-                                        const invoiceType = offer?.invoice_type ? offer.invoice_type.replace(/_/g, ' ') : 'TUITION DEPOSIT';
-                                        
-                                        if (isInvoicePushed) {
-                                            return (
-                                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
-                                                    <div>
-                                                        <h4 className="font-normal text-[11px] flex items-center gap-2 text-black">
-                                                            <CreditCard size={14} weight="bold" /> {invoiceType} Required: ${tuitionFee}
-                                                        </h4>
-                                                        <p className="text-black text-[11px] font-bold mt-1">
-                                                            Your invoice has been generated. Complete your {invoiceType.toLowerCase()} payment to secure enrollment.
-                                                        </p>
-                                                    </div>
-                                                    <div className="flex flex-col md:flex-row gap-2">
-                                                        <Link
-                                                            label="View Offer"
-                                                            linkComponentProps={{ href: `/portal/application/letter?id=${app.id}` }}
-                                                            className="px-6 py-3 border border-neutral-200 text-black rounded-sm text-[11px] font-black hover:bg-neutral-50 transition-all whitespace-nowrap text-center"
-                                                        />
-                                                        <Link
-                                                            label={`Pay ${invoiceType}`}
-                                                            linkComponentProps={{ href: `/portal/application/payment?id=${app.id}` }}
-                                                            className="bg-black text-white px-6 py-3 rounded-sm text-[11px] font-black hover:bg-neutral-800 transition-all whitespace-nowrap text-center"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            );
-                                        } else {
-                                            return (
-                                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
-                                                    <div>
-                                                        <h4 className="font-black text-[11px] flex items-center gap-2 text-black">
-                                                            <Clock size={14} weight="bold" /> Pending Invoice
-                                                        </h4>
-                                                        <p className="text-black text-[11px] font-bold mt-1">
-                                                            The Admissions Office is preparing your tuition invoice. You will be able to pay once it is sent shortly.
-                                                        </p>
-                                                    </div>
-                                                    <div className="flex flex-col md:flex-row gap-2">
-                                                        <Link
-                                                            label="View Offer"
-                                                            linkComponentProps={{ href: `/portal/application/letter?id=${app.id}` }}
-                                                            className="px-6 py-3 border border-neutral-200 text-black rounded-sm text-[11px] font-black hover:bg-neutral-50 transition-all whitespace-nowrap text-center"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            );
-                                        }
-                                    })()}
-                                </div>
-                            )}
+                             {/* Payment Pending Alert Card - OFFER_ACCEPTED */}
+                             {app.status === 'OFFER_ACCEPTED' && (
+                                 <div className="flex items-start justify-between border border-white/20 p-6 md:p-8 rounded-sm text-white relative overflow-hidden bg-neutral-900 shadow-sm mb-4">
+                                     {(() => {
+                                         const offer = Array.isArray(app.offer) ? app.offer[0] : app.offer;
+                                         const isInvoicePushed = offer?.invoice_pushed;
+                                         const tuitionFee = offer?.tuition_fee;
+                                         const invoiceType = offer?.invoice_type ? offer.invoice_type.replace(/_/g, ' ') : 'TUITION DEPOSIT';
+                                         
+                                         if (isInvoicePushed) {
+                                             return (
+                                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
+                                                     <div>
+                                                         <h4 className="font-normal text-[11px] flex items-center gap-2 text-white">
+                                                             <CreditCard size={14} weight="bold" /> {invoiceType} Required: ${tuitionFee}
+                                                         </h4>
+                                                         <p className="text-white text-[11px] font-bold mt-1">
+                                                             Your invoice has been generated. Complete your {invoiceType.toLowerCase()} payment to secure enrollment.
+                                                         </p>
+                                                     </div>
+                                                     <div className="flex flex-col md:flex-row gap-2">
+                                                         <Link
+                                                             label="View Offer"
+                                                             linkComponentProps={{ href: `/portal/application/letter?id=${app.id}` }}
+                                                             className="px-6 py-3 border border-white/30 text-white rounded-sm text-[11px] font-black hover:bg-white/10 transition-all whitespace-nowrap text-center"
+                                                         />
+                                                         <Link
+                                                             label={`Pay ${invoiceType}`}
+                                                             linkComponentProps={{ href: `/portal/application/payment?id=${app.id}` }}
+                                                             className="bg-white text-black px-6 py-3 rounded-sm text-[11px] font-black hover:bg-neutral-200 transition-all whitespace-nowrap text-center"
+                                                         />
+                                                     </div>
+                                                 </div>
+                                             );
+                                         } else {
+                                             return (
+                                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
+                                                     <div>
+                                                         <h4 className="font-black text-[11px] flex items-center gap-2 text-white">
+                                                             <Clock size={14} weight="bold" /> Pending Invoice
+                                                         </h4>
+                                                         <p className="text-white text-[11px] font-bold mt-1">
+                                                             The Admissions Office is preparing your tuition invoice. You will be able to pay once it is sent shortly.
+                                                         </p>
+                                                     </div>
+                                                     <div className="flex flex-col md:flex-row gap-2">
+                                                         <Link
+                                                             label="View Offer"
+                                                             linkComponentProps={{ href: `/portal/application/letter?id=${app.id}` }}
+                                                             className="px-6 py-3 border border-white/30 text-white rounded-sm text-[11px] font-black hover:bg-white/10 transition-all whitespace-nowrap text-center"
+                                                         />
+                                                     </div>
+                                                 </div>
+                                             );
+                                         }
+                                     })()}
+                                 </div>
+                             )}
 
                             {/* Payment Verification Pending - PAYMENT_SUBMITTED */}
                             {app.status === 'PAYMENT_SUBMITTED' && (
@@ -298,15 +298,15 @@ export default function DashboardPage() {
                             )}
 
                             {app.status === 'REJECTED' && (
-                                <div className="border border-neutral-200 p-6 rounded-sm transition-all flex flex-col md:flex-row md:items-center justify-between gap-6 mb-4">
+                                <div className="border border-white/20 p-6 rounded-sm transition-all flex flex-col md:flex-row md:items-center justify-between gap-6 mb-4 bg-neutral-900 text-white">
                                     <div>
                                         <h4 className="font-semibold text-[11px]">Decision updated</h4>
-                                        <p className="text-black text-[11px] font-medium mt-0.5">A decision has been reached regarding your application.</p>
+                                        <p className="text-neutral-300 text-[11px] font-medium mt-0.5">A decision has been reached regarding your application.</p>
                                     </div>
                                     <Link
                                         label="Details"
                                         linkComponentProps={{ href: `/portal/application?id=${app.id}` }}
-                                        className="border border-neutral-200 text-black px-4 py-2 rounded-sm text-[11px] font-semibold hover:bg-neutral-50 transition-all whitespace-nowrap"
+                                        className="border border-white/30 text-white px-4 py-2 rounded-sm text-[11px] font-semibold hover:bg-white/10 transition-all whitespace-nowrap"
                                     />
                                 </div>
                             )}
@@ -392,7 +392,7 @@ export default function DashboardPage() {
                                             <Link
                                                 label="Admission Letter"
                                                 linkComponentProps={{ href: `/portal/application/admission-letter/?id=${app.id}` }}
-                                                className="px-4 py-2 border border-emerald-600 text-emerald-600 rounded-sm text-[11px] font-bold hover:bg-emerald-50 transition-all flex items-center gap-2"
+                                                className="px-4 py-2 border border-neutral-600 text-neutral-600 rounded-sm text-[11px] font-bold hover:bg-neutral-50 transition-all flex items-center gap-2"
                                                 icon={<FileText size={12} weight="bold" />}
                                             />
                                             <Link
@@ -430,12 +430,12 @@ export default function DashboardPage() {
                     ))}
                 </div>
             ) : (
-                <div className="p-12 text-center border border-neutral-100 rounded-sm">
-                    <h3 className="text-[11px] font-semibold text-black mb-2">No active applications</h3>
+                <div className="p-12 text-center border border-white/20 rounded-sm bg-neutral-900">
+                    <h3 className="text-[11px] font-semibold text-white mb-2">No active applications</h3>
                     <Link
                         label="Start Journey"
                         linkComponentProps={{ href: "/portal/apply" }}
-                        className="inline-block border border-black text-black px-6 py-2 rounded-sm text-[11px] font-semibold hover:bg-neutral-50 transition-all"
+                        className="inline-block border border-white text-white px-6 py-2 rounded-sm text-[11px] font-semibold hover:bg-white hover:text-black transition-all"
                     />
                 </div>
             )}

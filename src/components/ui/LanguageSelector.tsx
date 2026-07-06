@@ -129,7 +129,7 @@ export function LanguageSelector({ mobile = false }: { mobile?: boolean }) {
                             <span className={currentCode === lang.code ? "font-bold text-black" : "text-black hover:opacity-70"}>
                                 {lang.name}
                             </span>
-                            {currentCode === lang.code && <Check size={14} weight="bold" className="text-emerald-500" />}
+                            {currentCode === lang.code && <Check size={14} weight="bold" className="text-neutral-500" />}
                         </button>
                     ))}
                 </div>

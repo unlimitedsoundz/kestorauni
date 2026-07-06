@@ -29,7 +29,7 @@ export function Hero({
     title, 
     body, 
     image, 
-    backgroundColor = '#2e1150', 
+    backgroundColor = '#000000', 
     tinted = true, 
     lightText = true,
     breadcrumbs,
@@ -66,7 +66,7 @@ export function Hero({
                         <h1 className="font-black text-3xl md:text-5xl lg:text-6xl leading-tight tracking-tight">
                             {title}
                         </h1>
-                        <p className="text-lg lg:text-xl text-purple-100 max-w-xl font-medium leading-relaxed">
+                        <p className="text-lg lg:text-xl text-neutral-200 max-w-xl font-medium leading-relaxed">
                             {body}
                         </p>
                     </div>

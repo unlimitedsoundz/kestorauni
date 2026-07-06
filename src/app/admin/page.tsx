@@ -77,12 +77,12 @@ export default function AdminPage() {
                 setStats([
                     { label: 'Courses', count: courseCount, icon: BookOpen, color: 'bg-blue-500', href: '/admin/courses' },
                     { label: 'News Stories', count: newsCount, icon: Newspaper, color: 'bg-neutral-800', href: '/admin/news' },
-                    { label: 'Campus Events', count: eventCount, icon: Calendar, color: 'bg-purple-500', href: '/admin/events' },
+                    { label: 'Campus Events', count: eventCount, icon: Calendar, color: 'bg-neutral-500', href: '/admin/events' },
                     { label: 'Applications', count: totalApps, icon: FileText, color: 'bg-amber-500', href: '/admin/admissions' },
                     { label: 'Housing Applications', count: housingAppsCount, icon: Home, color: 'bg-teal-500', href: '/admin/housing' },
                     { label: 'Faculty Members', count: facultyCount, icon: Users, color: 'bg-neutral-900', href: '/admin/faculty' },
-                    { label: 'Academic Departments', count: departmentCount, icon: SchoolIcon, color: 'bg-emerald-600', href: '/admin/departments' },
-                    { label: 'Registrar Windows', count: registrarCount, icon: FileText, color: 'bg-indigo-600', href: '/admin/registrar' },
+                    { label: 'Academic Departments', count: departmentCount, icon: SchoolIcon, color: 'bg-neutral-600', href: '/admin/departments' },
+                    { label: 'Registrar Windows', count: registrarCount, icon: FileText, color: 'bg-neutral-800', href: '/admin/registrar' },
                 ]);
             } catch (error) {
                 console.error("Error fetching dashboard data:", error);
@@ -106,7 +106,7 @@ export default function AdminPage() {
         <div className="space-y-8 md:space-y-10 animate-in fade-in duration-500">
             <div>
                 <h1 className="text-3xl font-extrabold text-neutral-900 tracking-tight">System Overview</h1>
-                <p className="text-neutral-500 mt-2">Welcome back. Here's what's happening at Cannoga College.</p>
+                <p className="text-neutral-500 mt-2">Welcome back. Here's what's happening at Kestora University.</p>
             </div>
 
             {/* Quick Stats Grid */}
@@ -207,7 +207,7 @@ export default function AdminPage() {
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center gap-2 text-sm text-neutral-300">
-                                        <div className="w-2 h-2 rounded-full bg-emerald-400" /> Admitted
+                                        <div className="w-2 h-2 rounded-full bg-neutral-400" /> Admitted
                                     </div>
                                     <div className="font-bold">{statusCounts.ADMITTED}</div>
                                 </div>

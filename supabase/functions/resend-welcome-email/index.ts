@@ -64,7 +64,7 @@ serve(async (req) => {
   <meta charset="utf-8">
   <meta name="color-scheme" content="light dark">
   <meta name="supported-color-schemes" content="light dark">
-  <title>Welcome to Penkka University</title>
+  <title>Welcome to Kestora University</title>
   <style>
     :root { color-scheme: light dark; }
     @media (prefers-color-scheme: dark) {
@@ -87,11 +87,11 @@ serve(async (req) => {
 </head>
 <body>
   <div class="container">
-    <img src="https://penkka.fi/images/scholarships.png" alt="Penkka University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
-    <img src="https://penkka.fi/logo-penkka.png" alt="Penkka University" class="logo">
-    <h1>Welcome to Penkka University</h1>
+    <img src="https://kestora.online/images/scholarships.png" alt="Kestora University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
+    <img src="https://kestora.online/logo-kestora.png" alt="Kestora University" class="logo">
+    <h1>Welcome to Kestora University</h1>
     <p>Dear ${first_name || 'Student'},</p>
-    <p>Congratulations on creating your student account at Penkka University! We are excited to have you join our academic community.</p>
+    <p>Congratulations on creating your student account at Kestora University! We are excited to have you join our academic community.</p>
     
     <div class="id-box">
       <div class="id-label">Your Unique Student ID</div>
@@ -102,20 +102,18 @@ serve(async (req) => {
     <p>You can now access your dashboard to complete your application, upload documents, and track your progress.</p>
 
     <div class="button-container">
-      <a href="https://penkka.fi/portal/account/login" class="button">Enter Student Portal</a>
+      <a href="https://kestora.online/portal/account/login" class="button">Enter Student Portal</a>
     </div>
 
-    <p>If you have any questions or need assistance, please reach out to our Admissions Office at <a href="mailto:admissions@penkka.fi">admissions@penkka.fi</a> or call us at <strong>+358 09 42721884</strong>.</p>
+    <p>If you have any questions or need assistance, please reach out to our Admissions Office at <a href="mailto:admissions@kestora.online">admissions@kestora.online</a> or call us at <strong>+358 09 42721884</strong>.</p>
 
     <div class="footer">
-      <p style="text-align: center; margin: 0;">&copy; ${new Date().getFullYear()} Penkka University<br>Helsinki, Finland | +358 09 42721884 | info@penkka.fi</p>
+      <p style="text-align: center; margin: 0;">&copy; ${new Date().getFullYear()} Kestora University<br>Helsinki, Finland | +358 09 42721884 | info@kestora.online</p>
       <div style="text-align: center; margin-top: 20px;">
-        <a href="https://www.linkedin.com/company/penkka-university" style="color: #888; text-decoration: none; margin: 0 10px; font-weight: bold;">LinkedIn</a>
-        <a href="https://www.tiktok.com/@penkkauniversity" style="color: #888; text-decoration: none; margin: 0 10px; font-weight: bold;">TikTok</a>
-        <a href="https://snapchat.com/add/penkkauniversity" style="color: #888; text-decoration: none; margin: 0 10px; font-weight: bold;">Snapchat</a>
+        <a href="https://www.tiktok.com/@kestorauniversity" style="color: #888; text-decoration: none; margin: 0 10px; font-weight: bold;">TikTok</a>
       </div>
       <br>
-      This email was sent to confirm your account registration at Penkka University.
+      This email was sent to confirm your account registration at Kestora University.
     </div>
   </div>
 </body>
@@ -123,9 +121,9 @@ serve(async (req) => {
     `;
 
         const { data, error } = await resend.emails.send({
-            from: "Penkka University <admissions@penkka.fi>",
+            from: "Kestora University <admissions@kestora.online>",
             to: [email],
-            subject: "Welcome to Penkka University",
+            subject: "Welcome to Kestora University",
             html: html,
         });
 

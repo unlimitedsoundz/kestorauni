@@ -22,7 +22,7 @@ interface LinkProps {
 }
 
 /**
- * Standardized Link component for the Cannoga College project.
+ * Standardized Link component for the Kestora University project.
  * Aliased from @aalto-dx/react-components.
  * Supports both the new API (label, linkComponentProps) and traditional Link API (href, target, children).
  */

@@ -13,10 +13,10 @@ export function Logo({ className = "", onClick }: { className?: string, onClick?
             <div className={`relative h-full transition-all duration-300 ${isDarkBackground ? 'brightness-0 invert' : ''}`}>
 
                 <Image
-                    src="/logo-cannoga.png"
-                    alt="Cannoga College"
-                    width={120}
-                    height={120}
+                    src="/logo-kestora.png"
+                    alt="Kestora University"
+                    width={72}
+                    height={72}
                     className="object-contain w-auto h-full"
                     priority
                 />

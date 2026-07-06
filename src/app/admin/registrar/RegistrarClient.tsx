@@ -636,7 +636,7 @@ export default function RegistrarClient({
                                                 })()}
                                             </td>
                                             <td className="px-6 py-4">
-                                                <span className={`px-2 py-1 rounded text-[10px] font-bold uppercase tracking-tight ${student.enrollment_status === 'ACTIVE' ? 'bg-emerald-50 text-emerald-600' : 'bg-red-50 text-red-600'}`}>
+                                                <span className={`px-2 py-1 rounded text-[10px] font-bold uppercase tracking-tight ${student.enrollment_status === 'ACTIVE' ? 'bg-neutral-50 text-neutral-600' : 'bg-red-50 text-red-600'}`}>
                                                     {student.enrollment_status}
                                                 </span>
                                             </td>
@@ -645,7 +645,7 @@ export default function RegistrarClient({
                                                     <button
                                                         onClick={() => handleUpdateStudentStatus(student.id, student.enrollment_status === 'ACTIVE' ? 'INACTIVE' : 'ACTIVE')}
                                                         disabled={isLoading}
-                                                        className={`p-2 rounded-lg transition-all ${student.enrollment_status === 'ACTIVE' ? 'text-red-400 hover:bg-red-50' : 'text-emerald-400 hover:bg-emerald-50'}`}
+                                                        className={`p-2 rounded-lg transition-all ${student.enrollment_status === 'ACTIVE' ? 'text-red-400 hover:bg-red-50' : 'text-neutral-400 hover:bg-neutral-50'}`}
                                                     >
                                                         <ShieldCheck size={16} weight="bold" />
                                                     </button>
@@ -776,7 +776,7 @@ export default function RegistrarClient({
                                                 </span>
                                             </td>
                                             <td className="p-4">
-                                                <span className={`px-2 py-1 rounded-md text-[10px] font-bold uppercase flex items-center gap-1 w-fit ${payment.status === 'COMPLETED' ? 'bg-emerald-100 text-emerald-700' :
+                                                <span className={`px-2 py-1 rounded-md text-[10px] font-bold uppercase flex items-center gap-1 w-fit ${payment.status === 'COMPLETED' ? 'bg-neutral-100 text-neutral-700' :
                                                     payment.status === 'FAILED' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'
                                                     }`}>
                                                     {payment.status === 'COMPLETED' ? <CheckCircle size={10} weight="bold" /> : <Clock size={10} weight="bold" />} {payment.status}
@@ -928,7 +928,7 @@ export default function RegistrarClient({
                                 <div key={log.id} className="p-6 hover:bg-neutral-50/50 transition-all">
                                     <div className="flex items-center justify-between mb-2">
                                         <div className="flex items-center gap-3">
-                                            <span className={`px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest ${log.action === 'INSERT' ? 'bg-emerald-100 text-emerald-700' : log.action === 'UPDATE' ? 'bg-blue-100 text-blue-700' : 'bg-red-100 text-red-700'}`}>
+                                            <span className={`px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest ${log.action === 'INSERT' ? 'bg-neutral-100 text-neutral-700' : log.action === 'UPDATE' ? 'bg-blue-100 text-blue-700' : 'bg-red-100 text-red-700'}`}>
                                                 {log.action}
                                             </span>
                                             <span className="font-mono text-xs font-bold text-neutral-500 uppercase tracking-tight">{log.entity_table}</span>

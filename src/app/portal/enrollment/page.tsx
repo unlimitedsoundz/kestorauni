@@ -105,7 +105,7 @@ function EnrollmentContent() {
                         <div className="mb-4 relative w-48 h-16">
                             <Image
                                 src="/logo-cannoga.png"
-                                alt="Cannoga College Official Logo"
+                                alt="Kestora University Official Logo"
                                 fill
                                 style={{ objectFit: 'contain', objectPosition: 'left center' }}
                                 priority
@@ -113,10 +113,10 @@ function EnrollmentContent() {
                         </div>
                     </div>
                     <div className="text-right text-[10px] font-medium text-neutral-600 leading-relaxed uppercase tracking-wide">
-                        <strong className="text-black">Cannoga College – Ottawa Campus</strong><br />
+                        <strong className="text-black">Kestora University – Helsinki Campus</strong><br />
                         Office of the Registrar<br />
                         Pohjoisesplanadi 51<br />
-                        00150 Ottawa, Canada
+                        00150 Helsinki, Finland
                     </div>
                 </div>
 
@@ -160,7 +160,7 @@ function EnrollmentContent() {
                 <div className="mb-12 text-sm leading-relaxed text-neutral-800">
                     <p className="mb-6">
                         This is to certify that <strong>{application.personal_info?.firstName} {application.personal_info?.lastName}</strong> is officially
-                        enrolled as a full-time student at Cannoga College.
+                        enrolled as a full-time student at Kestora University.
                     </p>
                     <p className="mb-6">
                         The student has successfully completed all admission requirements, accepted the offer of place, and satisfied the initial tuition payment obligations for the <strong>{application.course?.title}</strong> programme.
@@ -227,7 +227,7 @@ function EnrollmentContent() {
                 {/* Footer */}
                 <div className="absolute bottom-[10mm] left-[20mm] right-[20mm] border-t border-neutral-100 pt-2 flex justify-between items-center opacity-60">
                     <div className="text-[8px] font-bold uppercase tracking-widest text-neutral-400">
-                        Cannoga College – Ottawa Campus | 2368 Midway Ave, Ottawa, ON K2B 5J8, Canada
+                        Kestora University – Helsinki Campus | Pohjoisesplanadi 51, 00150 Helsinki, Uusimaa, Finland
                     </div>
                     <div className="text-[8px] font-bold uppercase tracking-widest text-neutral-400">
                         Page 1 of 1

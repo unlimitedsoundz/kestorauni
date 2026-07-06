@@ -25,7 +25,7 @@ export default function StudentLifeContent() {
             {/* HERO SECTION */}
             <Hero
                 title="Student life"
-                body="Experience a supportive and vibrant campus environment. From coastal landscapes to modern academic facilities, discover how our community thrives in the heart of Ottawa."
+                body="Experience a supportive and vibrant campus environment. From coastal landscapes to modern academic facilities, discover how our community thrives in the heart of Helsinki."
                 backgroundColor="#392d56"
                 tinted
                 lightText={true}
@@ -51,7 +51,7 @@ export default function StudentLifeContent() {
                                 {/* Left: Text Content */}
                                 <div className="p-12 md:p-20 flex flex-col justify-center bg-white order-2 lg:order-1">
                                     <p className="text-aalto-3 text-black leading-aalto-3">
-                                        The Cannoga College campus is located in the Ottawa region and forms a compact academic district where teaching facilities, student services, housing, and leisure areas are closely integrated. The campus is surrounded by coastal landscapes and protected green areas, offering a unique balance between urban infrastructure and natural surroundings.
+                                        The Kestora University campus is located in the Helsinki region and forms a compact academic district where teaching facilities, student services, housing, and leisure areas are closely integrated. The campus is surrounded by coastal landscapes and protected green areas, offering a unique balance between urban infrastructure and natural surroundings.
                                     </p>
                                 </div>
 
@@ -87,7 +87,7 @@ export default function StudentLifeContent() {
                                 <div className="p-12 md:p-20 flex flex-col justify-center bg-black text-white">
                                     <div className="space-y-8">
                                         <p className="text-aalto-3 text-white/90 leading-aalto-3">
-                                            The campus is directly connected to public transport networks. A dedicated metro station provides fast access to central Ottawa, with travel times typically under twenty minutes.
+                                            The campus is directly connected to public transport networks. A dedicated metro station provides fast access to central Helsinki, with travel times typically under twenty minutes.
                                         </p>
                                         <p className="text-aalto-3 text-white/90 leading-aalto-3">
                                             Cycling infrastructure is well developed, with marked bike paths and secure bicycle parking available throughout the campus area.
@@ -277,7 +277,7 @@ export default function StudentLifeContent() {
                                 Evolution
                             </h2>
                             <p className="text-xl text-black leading-relaxed font-medium max-w-4xl">
-                                Cannoga College continues to expand its infrastructure to support modern pedagogical methods and sustainability. Every new renovation focuses on energy efficiency, accessibility, and radically flexible learning environments.
+                                Kestora University continues to expand its infrastructure to support modern pedagogical methods and sustainability. Every new renovation focuses on energy efficiency, accessibility, and radically flexible learning environments.
                             </p>
                         </section>
 
@@ -286,7 +286,7 @@ export default function StudentLifeContent() {
                         <section id="summary" className="scroll-mt-32 bg-black text-white p-12 md:p-20">
                             <h2 className="text-aalto-5 font-bold mb-8 text-white tracking-tight">Integrated Experience</h2>
                             <p className="text-xl text-white/80 leading-relaxed font-medium max-w-4xl">
-                                Studying at Cannoga College means being part of an integrated academic ecosystem where teaching, research, and daily living coexist seamlessly. The combination of first-class infrastructure and natural surroundings supports both academic success and radical personal wellbeing.
+                                Studying at Kestora University means being part of an integrated academic ecosystem where teaching, research, and daily living coexist seamlessly. The combination of first-class infrastructure and natural surroundings supports both academic success and radical personal wellbeing.
                             </p>
                         </section>
 

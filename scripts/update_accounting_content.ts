@@ -183,7 +183,7 @@ const sections = [
         id: "contact",
         content: `
             <p><strong>Penkka University School of Business – Accounting & Finance Department</strong></p>
-            <p>Email: <a href="mailto:accounting@penkka.edu" class="text-emerald-600 hover:underline">accounting@penkka.edu</a></p>
+            <p>Email: <a href="mailto:accounting@penkka.edu" class="text-black hover:underline">accounting@penkka.edu</a></p>
             <p>Phone: +358 20 123 4568</p>
             <p>Address: Penkka University, Otaniemi Campus, Finland</p>
             <p>Office Hours: Monday–Friday, 9:00–17:00</p>

@@ -229,14 +229,14 @@ function ApplicationWizardContent() {
             </div>
 
             {application.status === 'ADMITTED' && (
-                <div className="mb-8 bg-emerald-50 border border-emerald-100 p-6 rounded-sm flex items-center justify-between">
+                <div className="mb-8 bg-neutral-50 border border-neutral-100 p-6 rounded-sm flex items-center justify-between">
                     <div>
-                        <h3 className="text-emerald-900 font-bold tracking-tight text-sm mb-1">Congratulations! You have an admission offer.</h3>
-                        <p className="text-emerald-700 text-xs font-medium">Please review your offer letter and accept it to proceed with your enrollment.</p>
+                        <h3 className="text-neutral-900 font-bold tracking-tight text-sm mb-1">Congratulations! You have an admission offer.</h3>
+                        <p className="text-neutral-700 text-xs font-medium">Please review your offer letter and accept it to proceed with your enrollment.</p>
                     </div>
                     <Link
                         href={`/portal/application/letter?id=${application.id}`}
-                        className="bg-emerald-600 text-white px-6 py-2 rounded-sm text-[11px] font-bold hover:bg-emerald-700 transition-all shadow-sm flex items-center gap-2"
+                        className="bg-neutral-600 text-white px-6 py-2 rounded-sm text-[11px] font-bold hover:bg-neutral-700 transition-all shadow-sm flex items-center gap-2"
                     >
                         <CheckCircle2 size={16} weight="bold" />
                         View Offer Letter
@@ -409,7 +409,7 @@ function ApplicationWizardContent() {
                                             const totalRequired = allRequired.length;
                                             return (
                                                 <>
-                                                    <span className={uploadedCount >= totalRequired ? 'text-emerald-600' : 'text-black'}>
+                                                    <span className={uploadedCount >= totalRequired ? 'text-neutral-600' : 'text-black'}>
                                                         {uploadedCount}
                                                     </span>
                                                     <span className="text-neutral-400">/</span>

@@ -13,37 +13,37 @@
 /* Sections */
 .cc-section        { padding-top: 4rem; padding-bottom: 4rem; }
 .cc-section-lg     { padding-top: 5rem; padding-bottom: 5rem; }
-.cc-section-tinted { padding-top: 4rem; padding-bottom: 4rem; background-color: #f7f4fc; }
+.cc-section-tinted { padding-top: 4rem; padding-bottom: 4rem; background-color: #f5f5f5; }
 .cc-container      { width: 100%; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; max-width: 1280px; }
 
 /* Section headings */
-.cc-h1 { font-size: 2.5rem; font-weight: 900; color: #2e1150; text-transform: uppercase; letter-spacing: -0.025em; line-height: 1.1; }
-.cc-h2 { font-size: 1.75rem; font-weight: 900; color: #2e1150; text-transform: uppercase; letter-spacing: -0.025em; }
-.cc-h3 { font-size: 1.25rem; font-weight: 700; color: #2e1150; }
-.cc-label { font-size: 0.875rem; font-weight: 600; color: #5c2d91; margin-top: 0.5rem; }
+.cc-h1 { font-size: 2.5rem; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: -0.025em; line-height: 1.1; }
+.cc-h2 { font-size: 1.75rem; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: -0.025em; }
+.cc-h3 { font-size: 1.25rem; font-weight: 700; color: #000000; }
+.cc-label { font-size: 0.875rem; font-weight: 600; color: #000000; margin-top: 0.5rem; }
 .cc-section-divider { border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem; margin-bottom: 2.5rem; }
 
 /* Cards */
 .cc-card { background: white; border: 1px solid #f3f4f6; transition: border-color 0.2s, box-shadow 0.2s; }
-.cc-card:hover { border-color: #5c2d91; box-shadow: 0 8px 24px rgba(92,45,145,0.10); }
+.cc-card:hover { border-color: #000000;   box-shadow: 0 8px 24px rgba(0,0,0,0.10); }
 .cc-card-body { padding: 1.5rem 2rem; }
 
 /* Accent icon block */
-.cc-icon-block { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem; background-color: #f7f4fc; color: #5c2d91; transition: background-color 0.2s, color 0.2s; }
-.cc-icon-block:hover, .group:hover .cc-icon-block { background-color: #5c2d91; color: white; }
+.cc-icon-block { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem; background-color: #f5f5f5; color: #000000; transition: background-color 0.2s, color 0.2s; }
+.cc-icon-block:hover, .group:hover .cc-icon-block { background-color: #000000; color: white; }
 
 /* Buttons */
-.cc-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background-color: #5c2d91; color: white; font-weight: 700; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.75rem 1.75rem; transition: background-color 0.2s; }
-.cc-btn-primary:hover { background-color: #2e1150; }
-.cc-btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; border: 2px solid #5c2d91; color: #5c2d91; font-weight: 700; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.75rem 1.75rem; transition: all 0.2s; background: transparent; }
-.cc-btn-outline:hover { background-color: #5c2d91; color: white; }
+.cc-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background-color: #000000; color: white; font-weight: 700; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.75rem 1.75rem; transition: background-color 0.2s; }
+.cc-btn-primary:hover { background-color: #000000; }
+.cc-btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; border: 2px solid #000000; color: #000000; font-weight: 700; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.75rem 1.75rem; transition: all 0.2s; background: transparent; }
+.cc-btn-outline:hover { background-color: #000000; color: white; }
 
 /* Table styling */
 .cc-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-.cc-table thead { background-color: #2e1150; color: white; }
+.cc-table thead { background-color: #000000; color: white; }
 .cc-table th { padding: 0.875rem 1.25rem; font-weight: 700; text-align: left; }
 .cc-table td { padding: 0.875rem 1.25rem; border-bottom: 1px solid #f3f4f6; }
-.cc-table tr:hover td { background-color: #faf9ff; }
+.cc-table tr:hover td { background-color: #fafafa; }
 .cc-table tbody tr:last-child td { border-bottom: none; }
 
 @media (min-width: 768px) {
@@ -78,7 +78,7 @@
 .aalto-side-navigation {
     width: 100%;
     height: 100%;
-    background-color: #5c2d91;
+    background-color: #000000;
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -253,7 +253,7 @@
 }
 
 .ck-editor__editable blockquote, .ck-content blockquote {
-  border-left: 8px solid #5c2d91;
+  border-left: 8px solid #000000;
   padding: 1.5rem 2rem;
   background: #f9f9f9;
   font-style: italic;
@@ -281,30 +281,30 @@
 }
 
 .faq-content {
-  color: #2e1150 !important;
+  color: #000000 !important;
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #2e1150;
+  --foreground: #000000;
 
-  --color-primary: #5c2d91;
+  --color-primary: #000000;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #2e1150;
+  --color-secondary: #000000;
   --color-secondary-foreground: #ffffff;
-  --color-accent: #9b51e0;
+  --color-accent: #000000;
   --color-accent-foreground: #ffffff;
 
-  --color-black: #2e1150;
+  --color-black: #000000;
   --color-neutral-900: #2d2d2d;
   --color-background: #ffffff;
-  --color-foreground: #2e1150;
+  --color-foreground: #000000;
 
-  --color-muted: #f7f4fc;
-  --color-muted-foreground: #2e1150;
+  --color-muted: #f5f5f5;
+  --color-muted-foreground: #000000;
 
-  --color-card: #f7f4fc;
-  --color-card-foreground: #2e1150;
+  --color-card: #f5f5f5;
+  --color-card-foreground: #000000;
 
   --color-border: #e2e8f0;
   --color-input: #e2e8f0;
@@ -450,7 +450,7 @@ strong, b {
 
 /* Selection color for Purple theme */
 ::selection {
-  background: #5c2d91;
+  background: #000000;
   color: #ffffff;
 }
 

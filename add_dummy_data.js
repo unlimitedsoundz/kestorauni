@@ -1,4 +1,4 @@
-require('dotenv').config();
+﻿require('dotenv').config();
 const { createClient } = require('@supabase/supabase-js');
 
 const supabase = createClient(
@@ -11,10 +11,10 @@ async function addDummyData() {
     console.log('Adding dummy news...');
     const dummyNews = [
       {
-        title: 'Welcome to Penkka University 2026',
+        title: 'Welcome to Kestora University 2026',
         slug: 'welcome-2026',
         content: 'We are excited to welcome our new students for the 2026 academic year. Our campus is ready with state-of-the-art facilities and dedicated faculty.',
-        excerpt: 'Exciting start to the 2026 academic year at Penkka University.',
+        excerpt: 'Exciting start to the 2026 academic year at Kestora University.',
         imageUrl: '/images/campus-welcome.jpg',
         publishDate: new Date('2026-04-01T00:00:00Z').toISOString(),
         published: true
@@ -22,7 +22,7 @@ async function addDummyData() {
       {
         title: 'New Research Partnership Announced',
         slug: 'research-partnership-2026',
-        content: 'Penkka University has partnered with leading research institutions to advance innovation in technology and science.',
+        content: 'Kestora University has partnered with leading research institutions to advance innovation in technology and science.',
         excerpt: 'Groundbreaking research partnership to drive innovation.',
         imageUrl: '/images/research.jpg',
         publishDate: new Date('2026-04-05T00:00:00Z').toISOString(),

@@ -6,10 +6,10 @@ import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { SchemaLD } from '@/components/seo/SchemaLD';
 
 export const metadata = {
-    title: 'Collaboration & Partnerships | Cannoga College',
-    description: 'Partner with Cannoga College for research, innovation, and education. Join our network of industry leaders driving systemic change.',
+    title: 'Collaboration & Partnerships | Kestora University',
+    description: 'Partner with Kestora University for research, innovation, and education. Join our network of industry leaders driving systemic change.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/collaboration/',
+        canonical: 'https://kestora.online/collaboration/',
     },
 };
 
@@ -24,9 +24,9 @@ export default function CollaborationPage() {
             <SchemaLD data={{
                 "@context": "https://schema.org",
                 "@type": "WebPage",
-                "name": "Collaboration & Partnerships at Cannoga College",
-                "url": "https://cannogacollege.ca/collaboration",
-                "description": "Information on industry partnerships, collaborative research, and corporate training at Cannoga College."
+                "name": "Collaboration & Partnerships at Kestora University",
+                "url": "https://kestora.online/collaboration",
+                "description": "Information on industry partnerships, collaborative research, and corporate training at Kestora University."
             }} />
 
             {/* HERO SECTION */}
@@ -35,7 +35,7 @@ export default function CollaborationPage() {
                     {/* Left Content */}
                     <div className="lg:w-1/2 space-y-6 relative z-10 flex flex-col justify-center h-full pt-2 lg:pt-0 px-4 md:px-0 text-left">
                         <h1 className="font-bold leading-[1.1] tracking-tight pt-2 text-black uppercase" style={{ fontSize: '40px' }}>
-                            Partner with Cannoga College
+                            Partner with Kestora University
                         </h1>
                         <p className="text-[21px] text-black max-w-xl leading-relaxed">
                             Join our network of global industry leaders, research institutions, and dynamic startups. Together, we bridge the gap between academic theory and market-ready solutions.
@@ -72,7 +72,7 @@ export default function CollaborationPage() {
                     <div className="text-center mb-16 max-w-3xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Partner with Us?</h2>
                         <p className="text-lg text-neutral-600 leading-relaxed">
-                            Cannoga College offers a dynamic ecosystem where organizations can access top-tier talent, engage agile R&D capabilities, and upskill their workforce.
+                            Kestora University offers a dynamic ecosystem where organizations can access top-tier talent, engage agile R&D capabilities, and upskill their workforce.
                         </p>
                     </div>
 
@@ -165,7 +165,7 @@ export default function CollaborationPage() {
                                 </p>
                                 <div className="space-y-2">
                                     <p className="font-bold text-xl">Corporate Relations Office</p>
-                                    <a href="mailto:partnerships@cannogacollege.ca" className="text-white text-lg hover:opacity-70 transition-colors underline">partnerships@cannogacollege.ca</a>
+                                    <a href="mailto:partnerships@kestora.online" className="text-white text-lg hover:opacity-70 transition-colors underline">partnerships@kestora.online</a>
                                 </div>
                             </div>
 

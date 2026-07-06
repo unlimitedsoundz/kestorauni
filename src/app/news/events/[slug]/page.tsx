@@ -31,10 +31,10 @@ export async function generateMetadata({ params }: Props) {
     if (!event) return { title: 'Event Not Found' };
 
     return {
-        title: `${event.title} | Cannoga College Events`,
-        description: event.content?.substring(0, 160) || `Join us for ${event.title} at Cannoga College.`,
+        title: `${event.title} | Kestora University Events`,
+        description: event.content?.substring(0, 160) || `Join us for ${event.title} at Kestora University.`,
         alternates: {
-            canonical: `https://cannogacollege.ca/news/events/${slug}/`,
+            canonical: `https://kestora.online/news/events/${slug}/`,
         },
     };
 }
@@ -72,22 +72,22 @@ export default async function EventDetailPage({ params }: Props) {
         eventStatus: 'https://schema.org/EventScheduled',
         location: {
             '@type': 'Place',
-            name: item.location || 'Cannoga College – Ottawa Campus',
+            name: item.location || 'Kestora University – Helsinki Campus',
             address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Pohjoisesplanadi 51',
-                addressLocality: 'Ottawa',
+                addressLocality: 'Helsinki',
                 postalCode: '00150',
                 addressRegion: 'Uusimaa',
                 addressCountry: 'FI'
             }
         },
         image: item.imageUrl ? [item.imageUrl] : undefined,
-        description: item.content?.substring(0, 160) || `Join us for ${item.title} at Cannoga College.`,
+        description: item.content?.substring(0, 160) || `Join us for ${item.title} at Kestora University.`,
         organizer: {
             '@type': 'EducationalOrganization',
-            name: 'Cannoga College',
-            url: 'https://cannogacollege.ca'
+            name: 'Kestora University',
+            url: 'https://kestora.online'
         }
     };
 

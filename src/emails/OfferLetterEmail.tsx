@@ -24,7 +24,7 @@ export default function OfferLetterEmail({
     firstName = 'Student',
     courseTitle = 'Applied Sciences',
 }: OfferLetterEmailProps) {
-    const previewText = `Conditional Admission Offer - Cannoga College Next Steps`;
+    const previewText = `Conditional Admission Offer - Kestora University Next Steps`;
 
     return (
         <Html>
@@ -35,16 +35,16 @@ export default function OfferLetterEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://cannogacollege.ca/logo-cannoga.png"
+                                src="https://kestora.online/logo-kestora.png"
                                 width="64"
                                 height="64"
-                                alt="Cannoga College"
+                                alt="Kestora University"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
                         <Section className="mt-[16px]">
                             <Img
-                                src="https://cannogacollege.ca/images/scholarships.png"
+                                src="https://kestora.online/images/scholarships.png"
                                 width="465"
                                 height="150"
                                 alt="Scholarships"
@@ -53,7 +53,7 @@ export default function OfferLetterEmail({
                         </Section>
 
                         <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-                            Cannoga College Admission
+                            Kestora University Admission
                         </Heading>
 
                         <Heading className="text-black text-[18px] font-normal text-center p-0 mb-[20px] mx-0">
@@ -65,7 +65,7 @@ export default function OfferLetterEmail({
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            We are delighted to inform you that you have been offered a conditional place to study at Cannoga College.
+                            We are delighted to inform you that you have been offered a conditional place to study at Kestora University.
                         </Text>
 
                         <Section className="my-[20px]">
@@ -99,7 +99,7 @@ export default function OfferLetterEmail({
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            We are very impressed by your application and look forward to welcoming you to our creative community in Ottawa, Canada.
+                            We are very impressed by your application and look forward to welcoming you to our creative community in Helsinki, Finland.
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
@@ -110,13 +110,13 @@ export default function OfferLetterEmail({
                             Admissions Office
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            Cannoga College
+                            Kestora University
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            admissions@cannogacollege.ca
+                            admissions@kestora.online
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            https://cannogacollege.ca
+                            https://kestora.online
                         </Text>
                     </Container>
                 </Body>

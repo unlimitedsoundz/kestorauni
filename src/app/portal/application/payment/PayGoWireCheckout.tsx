@@ -150,8 +150,8 @@ export default function PayGoWireCheckout({
         if (country === 'India') {
             methods.unshift({ id: 'upi', name: 'UPI', description: 'GPay, PhonePe, Paytm', type: 'WALLET', icon: Wallet, processingTime: '10-30 minutes' });
             methods.push({ id: 'in_bank', name: 'Net Banking', description: 'Direct transfer from Indian banks', type: 'BANK', icon: BankIcon, processingTime: '1-2 business days' });
-        } else if (country === 'Ottawa, Canada' || country === 'France' || country === 'Germany') {
-            if (country === 'Ottawa, Canada') methods.push({ id: 'nordea', name: 'Nordea Online', description: 'Local Finnish bank login', type: 'BANK', icon: BankIcon, processingTime: 'Instant' });
+        } else if (country === 'Helsinki, Finland' || country === 'France' || country === 'Germany') {
+            if (country === 'Helsinki, Finland') methods.push({ id: 'nordea', name: 'Nordea Online', description: 'Local Finnish bank login', type: 'BANK', icon: BankIcon, processingTime: 'Instant' });
         } else if (country === 'Nigeria' && ngnEnabled) {
             methods.unshift({ 
                 id: 'ng_bank', 
@@ -210,7 +210,7 @@ export default function PayGoWireCheckout({
         else if (selectedCountry === 'United Arab Emirates') { rate = 2.69; localCurrency = 'AED'; }
         else if (selectedCountry === 'Cameroon') { rate = 440.00; localCurrency = 'XAF'; }
         else if (['France', 'Germany'].includes(selectedCountry)) { rate = 0.68; localCurrency = 'EUR'; }
-        else if (selectedCountry === 'Ottawa, Canada') { rate = 1.0; localCurrency = 'CAD'; }
+        else if (selectedCountry === 'Helsinki, Finland') { rate = 1.0; localCurrency = 'EUR'; }
 
         // Special handling for EUR wire method which has a flat 25 EUR fee
         let localAmount = (amount * rate).toFixed(2);
@@ -301,7 +301,7 @@ export default function PayGoWireCheckout({
                     </div>
 
                     <div className="flex flex-col text-right">
-                        <span className="text-black uppercase tracking-widest mb-0.5">Cannoga College receives</span>
+                        <span className="text-black uppercase tracking-widest mb-0.5">Kestora University receives</span>
                         <span className="font-normal text-black text-sm md:text-base">
                             $ {amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
@@ -473,7 +473,7 @@ export default function PayGoWireCheckout({
                                     <p className="text-2xl md:text-3xl font-normal">{fxData.localCurrency} {Number(fxData.localAmount).toLocaleString()}</p>
                                 </div>
                                 <div className="text-right">
-                                    <p className="text-[10px] md:text-sm font-normal text-black uppercase tracking-widest mb-1">Settlement (CAD)</p>
+                                    <p className="text-[10px] md:text-sm font-normal text-black uppercase tracking-widest mb-1">Settlement (EUR)</p>
                                     <p className="text-xl md:text-2xl font-normal">$ {amount.toLocaleString()}</p>
                                 </div>
                             </div>
@@ -481,7 +481,7 @@ export default function PayGoWireCheckout({
                             <div className="pt-6 space-y-3">
                                 <div className="flex justify-between text-xs md:text-sm font-normal">
                                     <span className="text-black">Exchange Rate</span>
-                                    <span className="text-[#147BD1] font-normal">1 CAD = {fxData.rate} {fxData.localCurrency}</span>
+                                    <span className="text-[#147BD1] font-normal">1 EUR = {fxData.rate} {fxData.localCurrency}</span>
                                 </div>
                                 <div className="flex justify-between text-xs md:text-sm font-normal pt-2">
                                     <span>Total Payable</span>
@@ -737,7 +737,9 @@ export default function PayGoWireCheckout({
                                     <>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Bank</span>
-                                            <span className="text-sm text-black font-normal text-right">KUDA BANK</span>
+                                            <span className="text-sm text-black font-normal text-right">OPAY MFB</span>
+                                            <span className="text-sm text-black font-normal text-right">Account No</span>
+                                            <span className="text-sm text-black font-normal text-right">6500021843</span>
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Account Number</span>

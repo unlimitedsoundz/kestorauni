@@ -1,10 +1,10 @@
 import TermsContent from '@/components/legal/TermsContent';
 
 export const metadata = {
-    title: 'Terms of Use and Conditions | Cannoga College',
-    description: 'The terms governing the use of Cannoga College digital platforms and services.',
+    title: 'Terms of Use and Conditions | Kestora University',
+    description: 'The terms governing the use of Kestora University digital platforms and services.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/terms/',
+        canonical: 'https://kestora.online/terms/',
     },
 };
 

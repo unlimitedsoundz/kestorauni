@@ -4,10 +4,10 @@ import { Link } from "@aalto-dx/react-components";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'Research Projects — Cannoga College | Sustainability & Innovation Research',
-    description: 'Browse active and completed research projects at Cannoga College. Interdisciplinary projects in sustainability, technology, design, and social innovation.',
+    title: 'Research Projects — Kestora University | Sustainability & Innovation Research',
+    description: 'Browse active and completed research projects at Kestora University. Interdisciplinary projects in sustainability, technology, design, and social innovation.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/research/projects/',
+        canonical: 'https://kestora.online/research/projects/',
     },
 };
 

@@ -30,10 +30,10 @@ export async function generateMetadata({ params }: Props) {
     }
 
     return {
-        title: `${school.name} — Cannoga College | Research & Programmes`,
-        description: school.description || `Explore the ${school.name} at Cannoga College. Departments, research, and degree programmes.`,
+        title: `${school.name} — Kestora University | Research & Programmes`,
+        description: school.description || `Explore the ${school.name} at Kestora University. Departments, research, and degree programmes.`,
         alternates: {
-            canonical: `https://cannogacollege.ca/schools/${slug}/`,
+            canonical: `https://kestora.online/schools/${slug}/`,
         },
     };
 }
@@ -109,13 +109,13 @@ export default async function SchoolDetails({ params }: Props) {
                 backgroundColor={
                     slug === 'arts' ? '#d946ef' :
                     slug === 'business' ? '#3b82f6' :
-                    slug === 'science' ? '#10b981' :
+                    slug === 'science' ? '#000000' :
                     slug === 'technology' ? '#f97316' :
                     slug === 'health-community' ? '#06b6d4' :
                     slug === 'hospitality-tourism' ? '#eab308' :
                     slug === 'education-social-sciences' ? '#ec4899' :
                     slug === 'transportation-aviation' ? '#6366f1' :
-                    '#5c2d91'
+                    '#000000'
                 }
                 tinted
                 lightText={true}
@@ -193,7 +193,7 @@ export default async function SchoolDetails({ params }: Props) {
                                             fallbackSrc={school.imageUrl || '/images/placeholders/design.png'}
                                             fill
                                             className="object-cover object-top"
-                                            alt={`Study ${course.title} at Cannoga College`}
+                                            alt={`Study ${course.title} at Kestora University`}
                                             sizes="(max-width: 768px) 100vw, 25vw"
                                         />
                                         <span className="absolute top-2 right-2 bg-white/90 text-xs font-bold px-2 py-1 rounded text-neutral-800 z-10">
@@ -341,19 +341,19 @@ export default async function SchoolDetails({ params }: Props) {
                             <div className="space-y-8">
                                 <div className="flex gap-4 items-start">
                                     <div className="bg-neutral-100 p-10 border border-black">
-                                        <p className="font-bold text-lg">Cannoga College – Ottawa Campus</p>
-                                        <p className="font-medium text-neutral-800">2368 Midway Ave, Ottawa, ON K2B 5J8, Canada</p>
+                                        <p className="font-bold text-lg">Kestora University – Helsinki Campus</p>
+                                        <p className="font-medium text-neutral-800">Pohjoisesplanadi 51, 00150 Helsinki, Uusimaa, Finland</p>
                                     </div>
                                 </div>
                                 <div className="space-y-4">
                                     <div className="flex gap-4 items-center">
-                                        <span className="font-medium">General: {school.slug}@cannogacollege.ca</span>
+                                        <span className="font-medium">General: {school.slug}@kestora.online</span>
                                     </div>
                                     <div className="flex gap-4 items-center">
-                                        <span className="font-medium">Admissions: {school.slug}.admissions@cannogacollege.ca</span>
+                                        <span className="font-medium">Admissions: {school.slug}.admissions@kestora.online</span>
                                     </div>
                                     <div className="flex gap-4 items-center">
-                                        <span className="font-medium">Partnerships: {school.slug}.partners@cannogacollege.ca</span>
+                                        <span className="font-medium">Partnerships: {school.slug}.partners@kestora.online</span>
                                     </div>
                                 </div>
                                 <Link href="/contact" className="inline-flex items-center gap-2 font-bold group">

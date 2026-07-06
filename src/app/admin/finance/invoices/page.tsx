@@ -16,12 +16,14 @@ export default function AdminInvoicesPage() {
     // Default global fees reference, we could fetch from DB but keeping simple for now
     // A production scenario would fetch these from tuition_rates table
     const defaultFees: Record<string, number> = {
-        'CERTIFICATE': 1200,
-        'DIPLOMA': 2100,
-        'ADVANCED_DIPLOMA': 3000,
-        'BSc': 4500,
-        'PG_DIPLOMA': 3500,
-        'MASTERS': 5000,
+        'CERTIFICATE': 2500,
+        'DIPLOMA': 2500,
+        'ADVANCED_DIPLOMA': 2500,
+        'BSc': 4000,
+        'BACHELOR': 4000,
+        'PG_DIPLOMA': 2500,
+        'MASTERS': 6000,
+        'MASTER': 6000,
     };
 
     const fetchApplications = async () => {
@@ -59,17 +61,17 @@ export default function AdminInvoicesPage() {
                 const title = (program?.title || '').toUpperCase();
                 
                 const nationality = app.personal_info?.nationality;
-                const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'canada' || nationality.toLowerCase().trim() === 'canadian' || nationality.toLowerCase().trim() === 'domestic') : false;
+                const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'finland' || nationality.toLowerCase().trim() === 'finnish' || nationality.toLowerCase().trim() === 'eu' || nationality.toLowerCase().trim() === 'domestic') : false;
 
                 let defaultFee = 2500;
                 if (title.includes('CERTIFICATE') || title.includes('DIPLOMA') || title.includes('ADVANCED')) {
-                    defaultFee = isDomestic ? 750 : 2500;
+                    defaultFee = isDomestic ? 1500 : 2500;
                 } else if (title.includes('BACHELOR') || title.includes('BSC')) {
-                    defaultFee = isDomestic ? 1250 : 3500;
+                    defaultFee = isDomestic ? 2500 : 4000;
                 } else if (title.includes('MASTER') || title.includes('MSC')) {
-                    defaultFee = isDomestic ? 2000 : 5000;
+                    defaultFee = isDomestic ? 3500 : 6000;
                 } else if (title.includes('POSTGRADUATE') || title.includes('PG')) {
-                    defaultFee = isDomestic ? 2000 : 5000;
+                    defaultFee = isDomestic ? 3500 : 6000;
                 }
 
                 return {
@@ -110,7 +112,7 @@ export default function AdminInvoicesPage() {
         const feeToPush = customFee[appId] !== undefined ? customFee[appId] : currentFee;
         const invoiceType = customInvoiceType[appId] || 'TUITION_DEPOSIT';
 
-        if (!confirm(`Are you sure you want to push a ${invoiceType.replace(/_/g, ' ')} invoice of $${feeToPush} to this student?`)) return;
+        if (!confirm(`Are you sure you want to push a ${invoiceType.replace(/_/g, ' ')} invoice of €${feeToPush} (tuition) + €700 ancillary = €${feeToPush + 700} total to this student?`)) return;
 
         try {
             setActionLoading(appId);
@@ -150,7 +152,7 @@ export default function AdminInvoicesPage() {
                             <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Applicant</th>
                             <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Program</th>
                             <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Status</th>
-                            <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Fee ($)</th>
+                            <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Fee (€ incl. €700 ancillary)</th>
                             <th className="p-4 font-bold text-neutral-600 text-xs uppercase text-right">Actions</th>
                         </tr>
                     </thead>
@@ -182,7 +184,7 @@ export default function AdminInvoicesPage() {
                                             <div className="flex items-center gap-2">
                                                 <span className="md:hidden text-[10px] font-bold text-neutral-400 uppercase tracking-widest">Status:</span>
                                                 {isEnrolledOrPaid ? (
-                                                    <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-none text-[9px] font-bold uppercase flex items-center gap-1 w-fit">
+                                                    <span className="px-2 py-1 bg-neutral-100 text-neutral-700 rounded-none text-[9px] font-bold uppercase flex items-center gap-1 w-fit">
                                                         <CheckCircle size={10} weight="bold" /> Paid
                                                     </span>
                                                 ) : isPushed ? (
@@ -203,7 +205,7 @@ export default function AdminInvoicesPage() {
                                                                 ...prev,
                                                                 [app.id]: e.target.checked
                                                             }))}
-                                                            className="rounded border-neutral-300 text-emerald-600 focus:ring-emerald-500 h-3.5 w-3.5"
+                                                            className="rounded border-neutral-300 text-neutral-600 focus:ring-neutral-500 h-3.5 w-3.5 border-2"
                                                         />
                                                         Always Issue
                                                     </label>
@@ -223,7 +225,7 @@ export default function AdminInvoicesPage() {
                                                     <option value="FULL_PROGRAM_TUITION">Full</option>
                                                 </select>
                                                 <div className="flex items-center gap-2">
-                                                    <span className="text-xs font-bold text-neutral-900">$</span>
+                                                    <span className="text-xs font-bold text-neutral-900">€</span>
                                                     <input
                                                         type="number"
                                                         className="border border-neutral-300 rounded-none px-2 py-1.5 w-full md:w-24 text-sm disabled:opacity-50 font-bold"
@@ -247,7 +249,7 @@ export default function AdminInvoicesPage() {
                                                         ? 'bg-neutral-200 text-neutral-400 cursor-not-allowed'
                                                         : isPushed
                                                             ? 'bg-neutral-900 text-white hover:bg-neutral-700'
-                                                            : 'bg-emerald-600 text-white hover:bg-emerald-700'
+                                                            : 'bg-neutral-600 text-white hover:bg-neutral-700'
                                                     } ${actionLoading === app.id ? 'opacity-50 cursor-not-allowed' : ''}`}
                                             >
                                                 {actionLoading === app.id ? (

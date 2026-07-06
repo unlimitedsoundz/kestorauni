@@ -13,10 +13,10 @@ const sections = [
 ];
 
 export const metadata = {
-    title: 'Programs & Degrees | Cannoga College',
-    description: 'Explore our comprehensive range of Certificate, Diploma, Advanced Diploma, Bachelor\'s, and Master\'s degree programs at Cannoga College in Ottawa, Canada.',
+    title: 'Programs & Degrees | Kestora University',
+    description: 'Explore our comprehensive range of Certificate, Diploma, Advanced Diploma, Bachelor\'s, and Master\'s degree programs at Kestora University in Helsinki, Finland.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/degree-programmes/',
+        canonical: 'https://kestora.online/degree-programmes/',
     },
 };
 
@@ -28,7 +28,7 @@ function ProgramCard({ id, duration, title, overview, requirements, admissionHre
         <section id={id} className="scroll-mt-32">
             <div className="cc-section-divider flex items-center justify-between">
                 <h2 className="cc-h2">{title}</h2>
-                <span className="text-xs font-bold uppercase tracking-widest bg-[#5c2d91] text-white px-4 py-1.5 shrink-0">{duration}</span>
+                <span className="text-xs font-bold uppercase tracking-widest bg-[#000000] text-white px-4 py-1.5 shrink-0">{duration}</span>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
                 <div className="md:col-span-2 cc-card cc-card-body space-y-4">
@@ -41,7 +41,7 @@ function ProgramCard({ id, duration, title, overview, requirements, admissionHre
                         <ul className="space-y-3 text-neutral-600 text-sm">
                             {requirements.map((r, i) => (
                                 <li key={i} className="flex items-start gap-2">
-                                    <ArrowRight size={16} className="text-[#5c2d91] shrink-0 mt-0.5" />
+                                    <ArrowRight size={16} className="text-[#000000] shrink-0 mt-0.5" />
                                     <span>{r}</span>
                                 </li>
                             ))}
@@ -63,13 +63,13 @@ export default function DegreeProgrammesPage() {
                 <div className="cc-container py-8 md:py-16 space-y-16 md:space-y-24">
 
                     {/* Hero */}
-                    <section className="border-b-2 border-[#5c2d91] pb-12">
+                    <section className="border-b-2 border-[#000000] pb-12">
                         <p className="cc-label uppercase tracking-widest mb-3">Academic Offerings</p>
                         <h1 className="cc-h1 mb-6">Programs &amp; Degrees</h1>
                         <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl">
                             Discover our diverse range of career-focused programs designed to prepare you for success.
-                            From certificates and diplomas to undergraduate and graduate degrees, we offer world-class education in Ottawa.
-                            All academic programs at Cannoga College are eligible for the Post-Graduation Work Permit (PGWP).
+                            From certificates and diplomas to undergraduate and graduate degrees, we offer world-class education in Helsinki.
+                            All academic programs at Kestora University are eligible for the Post-Graduation Work Permit (PGWP).
                         </p>
                         <div className="flex flex-wrap gap-4 mt-8">
                             <Link href="/admissions" className="cc-btn-primary no-underline">Apply Now <ArrowRight size={14} weight="bold" /></Link>
@@ -81,7 +81,7 @@ export default function DegreeProgrammesPage() {
                         id="certificates"
                         duration="6 Months – 1 Year"
                         title="Certificate Programs"
-                        overview="Our certificate programs provide rapid, focused training in specific technical or business domains. Perfect for professionals looking to upskill, transition careers, or gain fundamental entry-level knowledge. These programs emphasize hands-on, practical skills directly aligned with immediate industry needs in Ottawa's job market."
+                        overview="Our certificate programs provide rapid, focused training in specific technical or business domains. Perfect for professionals looking to upskill, transition careers, or gain fundamental entry-level knowledge. These programs emphasize hands-on, practical skills directly aligned with immediate industry needs in Helsinki's job market."
                         requirements={[
                             "High school diploma or equivalent",
                             "English language proficiency (IELTS 6.0 or equivalent)",
@@ -120,7 +120,7 @@ export default function DegreeProgrammesPage() {
                         id="bachelor"
                         duration="4 Years"
                         title="Bachelor's Degree Programs"
-                        overview="Our 4-year undergraduate degree programs offer rigorous academic instruction combined with professional training. Fusing analytical thinking, research methodologies, and leadership skills, these degrees prepare students for high-level careers or postgraduate research. Program structures include comprehensive co-op semesters in Ottawa's public and private sectors."
+                        overview="Our 4-year undergraduate degree programs offer rigorous academic instruction combined with professional training. Fusing analytical thinking, research methodologies, and leadership skills, these degrees prepare students for high-level careers or postgraduate research. Program structures include comprehensive co-op semesters in Helsinki's public and private sectors."
                         requirements={[
                             "High school diploma with competitive GPA (70%+)",
                             "English language proficiency (IELTS 6.5, no band below 6.0)",
@@ -149,22 +149,22 @@ export default function DegreeProgrammesPage() {
                         </div>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="cc-card cc-card-body">
-                                <h3 className="cc-h3 mb-6">Undergraduate <span className="text-[#5c2d91]">(Certificates &amp; Diplomas)</span></h3>
+                                <h3 className="cc-h3 mb-6">Undergraduate <span className="text-[#000000]">(Certificates &amp; Diplomas)</span></h3>
                                 <ul className="space-y-4">
                                     {["High school diploma or equivalent", "Minimum GPA requirements", "English language proficiency", "Academic transcripts of secondary education"].map((r, i) => (
                                         <li key={i} className="flex items-start gap-3 text-neutral-600">
-                                            <ArrowRight size={18} weight="bold" className="text-[#5c2d91] flex-shrink-0 mt-0.5" />
+                                            <ArrowRight size={18} weight="bold" className="text-[#000000] flex-shrink-0 mt-0.5" />
                                             {r}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                             <div className="cc-card cc-card-body">
-                                <h3 className="cc-h3 mb-6">Degrees <span className="text-[#5c2d91]">(Bachelor's &amp; Master's)</span></h3>
+                                <h3 className="cc-h3 mb-6">Degrees <span className="text-[#000000]">(Bachelor's &amp; Master's)</span></h3>
                                 <ul className="space-y-4">
                                     {["Bachelor's degree or equivalent (for Master's)", "High school diploma with required subject prerequisites (for Bachelor's)", "Academic transcripts and letters of recommendation", "Statement of purpose or portfolio (where applicable)"].map((r, i) => (
                                         <li key={i} className="flex items-start gap-3 text-neutral-600">
-                                            <ArrowRight size={18} weight="bold" className="text-[#5c2d91] flex-shrink-0 mt-0.5" />
+                                            <ArrowRight size={18} weight="bold" className="text-[#000000] flex-shrink-0 mt-0.5" />
                                             {r}
                                         </li>
                                     ))}
@@ -190,7 +190,7 @@ export default function DegreeProgrammesPage() {
                                     ].map(([label, price]) => (
                                         <div key={label} className="flex justify-between items-center border-b border-neutral-100 pb-3">
                                             <span className="text-neutral-600 text-sm">{label}</span>
-                                            <span className="font-bold text-lg text-[#5c2d91]">{price}</span>
+                                            <span className="font-bold text-lg text-[#000000]">{price}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -205,7 +205,7 @@ export default function DegreeProgrammesPage() {
                                     ].map(([label, price]) => (
                                         <div key={label} className="flex justify-between items-center border-b border-neutral-100 pb-3">
                                             <span className="text-neutral-600 text-sm">{label}</span>
-                                            <span className="font-bold text-lg text-[#5c2d91]">{price}</span>
+                                            <span className="font-bold text-lg text-[#000000]">{price}</span>
                                         </div>
                                     ))}
                                 </div>

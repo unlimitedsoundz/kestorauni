@@ -76,7 +76,7 @@ export default function CoursesClient({ courses }: CoursesClientProps) {
                                 <td className="p-4 font-medium text-neutral-900">{course.title}</td>
                                 <td className="p-4">
                                     <span className={`px-2 py-1 rounded text-xs font-bold ${course.degreeLevel === 'MASTER'
-                                        ? 'bg-purple-100 text-purple-700'
+                                        ? 'bg-neutral-100 text-neutral-700'
                                         : 'bg-amber-100 text-amber-700'
                                         }`}>
                                         {course.degreeLevel}

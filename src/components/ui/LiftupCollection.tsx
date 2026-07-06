@@ -38,7 +38,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 /**
- * Standardized LiftupCollection component for Cannoga College.
+ * Standardized LiftupCollection component for Kestora University.
  * Aliased from @aalto-dx/react-modules.
  */
 export function LiftupCollection({ tiles, tilesPerRow = 3 }: LiftupCollectionProps) {

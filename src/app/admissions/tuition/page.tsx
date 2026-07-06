@@ -10,20 +10,16 @@ import { createStaticClient } from '@/lib/supabase/static';
 import TuitionEstimator from '@/components/admissions/TuitionEstimator';
 
 export const metadata = {
-    title: 'Paying the Tuition Fee | Cannoga College',
-    description: 'Structure of tuition fees, payment methods (Bank Transfer), and refund policies for international students at Cannoga College.',
+    title: 'Paying the Tuition Fee | Kestora University',
+    description: 'Structure of tuition fees, payment methods (Bank Transfer), and refund policies for international students at Kestora University.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/admissions/tuition/',
+        canonical: 'https://kestora.online/admissions/tuition/',
     },
 };
 
 const sections = [
     { id: 'fee-structure', title: 'Fee Structure', content: '' },
     { id: 'tuition-estimator', title: 'Tuition & Fees Estimator', content: '' },
-    { id: 'certificate-fees', title: 'Certificate Fees', content: '' },
-    { id: 'diploma-fees', title: 'Diploma Fees', content: '' },
-    { id: 'bachelor-fees', title: 'Bachelor\u2019s Fees', content: '' },
-    { id: 'master-fees', title: 'Master\u2019s Fees', content: '' },
     { id: 'merit-scholarship', title: 'Merit Scholarship', content: '' },
     { id: 'payment-methods', title: 'Payment Methods', content: '' },
     { id: 'timing', title: 'Payment Schedule', content: '' },
@@ -74,7 +70,7 @@ export default async function TuitionPaymentPage() {
                         fallbackContent={getSectionDefault('hero_subtitle') || 'Information on tuition fee structure, payment methods, and scholarship opportunities for international students.'}
                     />
                 }
-                backgroundColor="#a987ff"
+                backgroundColor="#000000"
                 tinted
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
@@ -97,7 +93,49 @@ export default async function TuitionPaymentPage() {
                         <div className="cc-section-divider">
                             <h2 className="cc-h2">How Much is the Tuition Fee?</h2>
                         </div>
-                        <DbPageContent pageSlug={pageSlug} sectionKey="fee_structure_content" fallbackContent={getSectionDefault('fee_structure_content')} />
+                        <div className="overflow-x-auto">
+                            <table className="w-full border-collapse border border-neutral-200 rounded-lg overflow-hidden">
+                                <thead>
+                                    <tr className="bg-neutral-900 text-white">
+                                        <th className="border border-neutral-700 px-4 py-3 text-left text-xs font-black uppercase tracking-widest">Programme</th>
+                                        <th className="border border-neutral-700 px-4 py-3 text-left text-xs font-black uppercase tracking-widest">Duration</th>
+                                        <th className="border border-neutral-700 px-4 py-3 text-left text-xs font-black uppercase tracking-widest">Credits</th>
+                                        <th className="border border-neutral-700 px-4 py-3 text-right text-xs font-black uppercase tracking-widest">Domestic Students</th>
+                                        <th className="border border-neutral-700 px-4 py-3 text-right text-xs font-black uppercase tracking-widest">International Students</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr className="bg-white">
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm font-bold text-black">Certificate</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black">1 Year</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black">60 ECTS</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black text-right">€1,500/year</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black text-right">€2,500/year</td>
+                                    </tr>
+                                    <tr className="bg-neutral-50">
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm font-bold text-black">Diploma</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black">2 Years</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black">120 ECTS</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black text-right">€1,500/year</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black text-right">€2,500/year</td>
+                                    </tr>
+                                    <tr className="bg-white">
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm font-bold text-black">Bachelor's</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black">3 Years</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black">180 ECTS</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black text-right">€2,500/year</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black text-right">€4,000/year</td>
+                                    </tr>
+                                    <tr className="bg-neutral-50">
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm font-bold text-black">Master's</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black">2 Years</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black">120 ECTS</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black text-right">€3,500/year</td>
+                                        <td className="border border-neutral-200 px-4 py-3 text-sm text-black text-right">€6,000/year</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
 
                     <section id="tuition-estimator" className="scroll-mt-32">
@@ -106,38 +144,6 @@ export default async function TuitionPaymentPage() {
                             <p className="cc-label">Estimate your tuition and ancillary fees per semester</p>
                         </div>
                         <TuitionEstimator courses={courses || []} />
-                    </section>
-
-                    <section id="certificate-fees" className="scroll-mt-32">
-                        <div className="cc-section-divider">
-                            <h2 className="cc-h2">Certificate Programs</h2>
-                            <p className="cc-label">6 months – 1 year · Domestic $3,500 / International $9,500 per year</p>
-                        </div>
-                        <DbPageContent pageSlug={pageSlug} sectionKey="certificate_fees_content" fallbackContent={getSectionDefault('certificate_fees_content')} />
-                    </section>
-
-                    <section id="diploma-fees" className="scroll-mt-32">
-                        <div className="cc-section-divider">
-                            <h2 className="cc-h2">Diploma &amp; Advanced Diploma Programs</h2>
-                            <p className="cc-label">2–3 years · Domestic $3,500 / International $9,500 per year</p>
-                        </div>
-                        <DbPageContent pageSlug={pageSlug} sectionKey="diploma_fees_content" fallbackContent={getSectionDefault('diploma_fees_content')} />
-                    </section>
-
-                    <section id="bachelor-fees" className="scroll-mt-32">
-                        <div className="cc-section-divider">
-                            <h2 className="cc-h2">Bachelor's Programmes</h2>
-                            <p className="cc-label">4 years · Domestic $6,200 / International $12,500 per year</p>
-                        </div>
-                        <DbPageContent pageSlug={pageSlug} sectionKey="bachelor_fees_content" fallbackContent={getSectionDefault('bachelor_fees_content')} />
-                    </section>
-
-                    <section id="master-fees" className="scroll-mt-32">
-                        <div className="cc-section-divider">
-                            <h2 className="cc-h2">Master's Fees</h2>
-                            <p className="cc-label">2 years · Domestic $8,500 / International $18,000 per year</p>
-                        </div>
-                        <DbPageContent pageSlug={pageSlug} sectionKey="master_fees_content" fallbackContent={getSectionDefault('master_fees_content')} />
                     </section>
 
                     <section id="merit-scholarship" className="scroll-mt-32">

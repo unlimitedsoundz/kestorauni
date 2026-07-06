@@ -18,7 +18,7 @@ const html = `
 <body style="background-color: white; margin: auto; font-family: sans-serif;">
   <div style="border: 1px solid #eaeaea; border-radius: 4px; margin: 40px auto; padding: 20px; width: 465px;">
     <div style="margin-top: 32px;">
-      <img src="https://penkka.fi/logo-penkka.png" width="40" height="40" alt="Penkka University" style="margin: 0 auto;" />
+      <img src="https://kestora.online/logo-kestora.png" width="40" height="40" alt="Kestora University" style="margin: 0 auto;" />
     </div>
 
     <h1 style="color: black; font-size: 24px; font-weight: normal; text-align: center; padding: 0; margin: 30px 0;">Invoice Ready for Payment</h1>
@@ -41,13 +41,13 @@ const html = `
     <p style="color: black; font-size: 14px; line-height: 24px;">Please proceed to your student portal to complete the payment and secure your place in the programme.</p>
 
     <div style="text-align: center; margin: 32px 0;">
-      <a href="https://penkka.fi/portal/application/payment" style="background-color: #000000; border-radius: 4px; color: white; font-size: 12px; font-weight: 600; text-decoration: none; text-align: center; padding: 12px 20px;">Pay Invoice</a>
+      <a href="https://kestora.online/portal/application/payment" style="background-color: #000000; border-radius: 4px; color: white; font-size: 12px; font-weight: 600; text-decoration: none; text-align: center; padding: 12px 20px;">Pay Invoice</a>
     </div>
 
     <hr style="border: 1px solid #eaeaea; margin: 26px 0; width: 100%;" />
 
     <p style="color: #666666; font-size: 12px; line-height: 24px;">If you have any questions, please contact our admissions team.</p>
-    <p style="color: #666666; font-size: 12px; line-height: 24px;">Finance Department, Penkka University.</p>
+    <p style="color: #666666; font-size: 12px; line-height: 24px;">Finance Department, Kestora University.</p>
   </div>
 </body>
 </html>
@@ -56,7 +56,7 @@ const html = `
 async function sendTestEmail() {
     try {
         const { data, error } = await resend.emails.send({
-            from: 'Penkka University <admissions@penkka.fi>',
+            from: 'Kestora University <admissions@kestora.online>',
             to: ['unlymitedsoundz@gmail.com'],
             subject: 'Test Invoice Ready for Payment',
             html: html,

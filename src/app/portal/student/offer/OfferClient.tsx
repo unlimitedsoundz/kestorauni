@@ -77,7 +77,7 @@ export function OfferClient({ admission }: OfferClientProps) {
     const isEarlyBird = (admission.discount_amount || 0) > 0;
 
     const nationality = app.personal_info?.nationality;
-    const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'canada' || nationality.toLowerCase().trim() === 'canadian' || nationality.toLowerCase().trim() === 'domestic') : false;
+    const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'finland' || nationality.toLowerCase().trim() === 'finnish' || nationality.toLowerCase().trim() === 'eu' || nationality.toLowerCase().trim() === 'domestic') : false;
 
     const annualFee = getAnnualFeeFromTotal(admission.tuition_fee || 0, admission.discount_amount || 0, years);
     const firstYearFee = isEarlyBird ? calculateDiscountedFee(annualFee) : annualFee;
@@ -142,7 +142,7 @@ export function OfferClient({ admission }: OfferClientProps) {
                             <div className="flex justify-between items-end">
                                 <div>
                                     <p className="text-[9px] font-black uppercase text-neutral-400 mb-1">Tuition Deposit</p>
-                                    <p className="text-3xl font-black tracking-tight leading-none text-emerald-400">
+                                    <p className="text-3xl font-black tracking-tight leading-none text-neutral-900">
                                         ${depositAmount.toLocaleString()}
                                     </p>
                                 </div>
@@ -162,8 +162,8 @@ export function OfferClient({ admission }: OfferClientProps) {
                                     <p className="text-[9px] text-neutral-500 font-bold uppercase mt-0.5">Deposit to Secure Place</p>
                                 </div>
                                 {admission.discount_amount > 0 && (
-                                    <div className="bg-emerald-500/20 text-emerald-400 px-3 py-1.5 rounded-xl border border-emerald-500/30 flex items-center gap-2">
-                                        <span className="text-[10px] font-black uppercase">Early Bird Applied</span>
+                                    <div className="bg-neutral-500/20 text-white px-3 py-1.5 rounded-xl border border-neutral-500/30 flex items-center gap-2">
+                                        <span className="text-[10px] font-black uppercase">Discount Applied</span>
                                     </div>
                                 )}
                             </div>
@@ -178,7 +178,7 @@ export function OfferClient({ admission }: OfferClientProps) {
                             <div className="flex flex-col items-center">
                                 <div className="space-y-6 max-w-2xl w-full">
                                     <div className="text-center space-y-2 border-b border-neutral-200 pb-6">
-                                        <h2 className="text-2xl font-bold text-neutral-900">Welcome to Cannoga College!</h2>
+                                        <h2 className="text-2xl font-bold text-neutral-900">Welcome to Kestora University!</h2>
                                         <p className="text-sm text-neutral-600">
                                             Your Journey Starts Here
                                         </p>
@@ -214,7 +214,7 @@ export function OfferClient({ admission }: OfferClientProps) {
                                         {isLetterGenerated && admission.application_status !== 'PAYMENT_SUBMITTED' && (
                                             <button
                                                 onClick={handlePayment}
-                                                className="w-full bg-emerald-600 text-white font-bold py-4 rounded-xl hover:bg-emerald-700 transition-all flex items-center justify-center gap-3 shadow-lg shadow-emerald-200 group active:scale-[0.98]"
+                                                 className="w-full bg-neutral-600 text-white font-bold py-4 rounded-xl hover:bg-neutral-700 transition-all flex items-center justify-center gap-3 shadow-lg shadow-neutral-200 group active:scale-[0.98]"
                                             >
                                                 Pay Tuition Fees
                                             </button>

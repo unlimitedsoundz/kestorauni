@@ -52,7 +52,7 @@ export const searchablePages: SearchablePage[] = [
     { title: "Campus Information", href: "/student-guide", category: "Student Life & Guides" },
 
     // About Cannoga
-    { title: "Our Story", href: "/about-cannoga-college", category: "About Cannoga" },
+    { title: "Our Story", href: "/about-kestora-university", category: "About Cannoga" },
     { title: "Contact Information", href: "/contact", category: "About Cannoga" },
     { title: "News & Events", href: "/news", category: "About Cannoga" },
     { title: "Collaboration", href: "/collaboration", category: "About Cannoga" },

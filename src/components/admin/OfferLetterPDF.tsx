@@ -215,12 +215,12 @@ export const OfferLetterPDF = ({ data }: OfferLetterProps) => {
                     </View>
                     <View style={styles.contactInfo}>
                         <Text style={{ color: '#000', fontWeight: 'bold', fontSize: 11, marginBottom: 2 }}>CANNOGA COLLEGE</Text>
-                        <Text style={{ color: '#444', fontSize: 8, marginBottom: 4 }}>– Ottawa Campus</Text>
+                        <Text style={{ color: '#444', fontSize: 8, marginBottom: 4 }}>– Helsinki Campus</Text>
                         <Text>Pohjoisesplanadi 51</Text>
-                        <Text>00150 Ottawa, Canada</Text>
+                        <Text>00150 Helsinki, Finland</Text>
                         <Text>Phone: +358 09 42721884</Text>
-                        <Text>cannogacollege.ca</Text>
-                        <Text>admissions@cannogacollege.ca</Text>
+                        <Text>kestora.online</Text>
+                        <Text>admissions@kestora.online</Text>
                     </View>
                 </View>
 
@@ -277,7 +277,7 @@ export const OfferLetterPDF = ({ data }: OfferLetterProps) => {
                 {/* Formal Offer Statement */}
                 <View style={styles.highlightBox}>
                     <Text style={styles.highlightText}>
-                        “We are pleased to inform you that you have been offered a place in the above-named programme at Cannoga College, subject to the conditions outlined in this letter.”
+                        “We are pleased to inform you that you have been offered a place in the above-named programme at Kestora University, subject to the conditions outlined in this letter.”
                     </Text>
                 </View>
 
@@ -327,7 +327,7 @@ export const OfferLetterPDF = ({ data }: OfferLetterProps) => {
                     <View style={styles.signatureBlock}>
                         {data.signature_path && <Image src={data.signature_path} style={styles.signatureImage} />}
                         <Text style={styles.signatoryName}>Admissions Office</Text>
-                        <Text style={styles.signatoryTitle}>Cannoga College | Ottawa, Canada</Text>
+                        <Text style={styles.signatoryTitle}>Kestora University | Helsinki, Finland</Text>
                     </View>
                     <View style={{ width: '40%', textAlign: 'right' }}>
                         <Text style={{ fontSize: 7, color: '#999' }}>Verified Document ID</Text>

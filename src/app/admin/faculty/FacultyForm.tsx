@@ -154,7 +154,7 @@ export default function FacultyForm({ id, isNew, facultyMember, schools, departm
                                             defaultValue={facultyMember?.email || ''}
                                             required
                                             className="w-full p-4 pl-12 bg-neutral-50 border border-neutral-200 rounded-2xl focus:ring-2 focus:ring-black outline-none transition-all"
-                                            placeholder="jane.doe@cannogacollege.ca"
+                                            placeholder="jane.doe@kestora.online"
                                         />
                                     </div>
                                 </div>
@@ -243,7 +243,7 @@ export default function FacultyForm({ id, isNew, facultyMember, schools, departm
                                                     disabled={!selectedDepartmentId}
                                                     checked={isHeadOfDept}
                                                     onChange={(e) => setIsHeadOfDept(e.target.checked)}
-                                                    className="mt-1 w-5 h-5 rounded border-neutral-300 text-amber-500 focus:ring-amber-500"
+                                                    className="mt-1 w-5 h-5 rounded border-neutral-300 text-amber-500 focus:ring-amber-500 border-2"
                                                 />
                                                 <div className={!selectedDepartmentId ? 'opacity-50' : ''}>
                                                     <span className="block font-bold text-sm text-neutral-900">Assign as Head of Department</span>

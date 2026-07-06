@@ -129,7 +129,7 @@ serve(async (req) => {
 
         // Configuration
         const adminEmail = Deno.env.get("ADMIN_NOTIFICATION_EMAIL") || "unlymitedsoundz@gmail.com";
-        const sender = "Penkka University <admissions@penkka.fi>";
+        const sender = "Kestora University <admissions@kestora.online>";
 
         // Fetch User Info if missing
         let userEmail = applicationData?.email;
@@ -169,24 +169,41 @@ serve(async (req) => {
         let adminSubject = "";
         let adminHtml = "";
 
-        const portalUrl = "https://penkka.fi/portal";
+        const portalUrl = "https://kestora.online/portal";
+
+        // Pre-compute tuition values for email templates
+        const appNationality = (applicationData?.personal_info?.nationality || applicationData?.user?.country_of_residence || '').toLowerCase();
+        const isAppDomestic = appNationality === 'finland' || appNationality === 'finnish' || appNationality === 'eu' || appNationality === 'domestic';
+        const appDegreeLevel = (applicationData?.course_degree_level || '').toUpperCase();
+        let appAnnualTuition = 2500;
+        let appDepositTuition = 1250;
+        if (appDegreeLevel.includes('CERTIFICATE') || appDegreeLevel.includes('DIPLOMA')) {
+            appAnnualTuition = isAppDomestic ? 1500 : 2500;
+            appDepositTuition = isAppDomestic ? 750 : 1250;
+        } else if (appDegreeLevel.includes('BACHELOR')) {
+            appAnnualTuition = isAppDomestic ? 2500 : 4000;
+            appDepositTuition = isAppDomestic ? 1250 : 2000;
+        } else if (appDegreeLevel.includes('MASTER')) {
+            appAnnualTuition = isAppDomestic ? 3500 : 6000;
+            appDepositTuition = isAppDomestic ? 1750 : 3000;
+        }
 
         switch (notificationType) {
             case 'APPLICATION_SUBMITTED':
-                studentSubject = "Application In Review - Penkka University";
+                studentSubject = "Application In Review - Kestora University";
                 studentHtml = `
                     <p>Dear ${fullName},</p>
-                    <p>Thank you for submitting your application to Penkka University.</p>
+                    <p>Thank you for submitting your application to Kestora University.</p>
                     <p>We are pleased to inform you that your application has been successfully received and is currently being reviewed by our admissions team.</p>
                     <p>All submitted documents will be carefully evaluated before a final decision is made. Please be assured that your application is active and under full consideration at this stage.</p>
                     <p>Provided that all required documents have been submitted correctly, you can expect to receive an admission decision within 3-5 days from your application date.</p>
                     <p>If any additional information or documentation is needed during the review process, you will be contacted promptly via this email address.</p>
-                    <p>We appreciate your interest in Penkka University and thank you for your patience. A formal decision will be communicated to you once the review process has been completed.</p>
+                    <p>We appreciate your interest in Kestora University and thank you for your patience. A formal decision will be communicated to you once the review process has been completed.</p>
                     <p>Kind regards,<br>
                     Admissions Office<br>
-                    Penkka University<br>
-                    admissions@penkka.fi<br>
-                    https://penkka.fi</p>
+                    Kestora University<br>
+                    admissions@kestora.online<br>
+                    https://kestora.online</p>
                 `;
                 adminSubject = `New Application: ${fullName}`;
                 adminHtml = `
@@ -194,32 +211,31 @@ serve(async (req) => {
                     <p><strong>Student:</strong> ${fullName}</p>
                     <p><strong>Email:</strong> ${userEmail}</p>
                     <p><strong>Program:</strong> ${applicationData?.course_title || 'N/A'}</p>
-                    <a href="https://penkka.fi/admin/admissions" style="display:inline-block;background:#000;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Process in Admin Panel</a>
+                    <a href="https://kestora.online/admin/admissions" style="display:inline-block;background:#000;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Process in Admin Panel</a>
                 `;
                 break;
 
             case 'OFFER_LETTER_READY':
-                studentSubject = "Conditional Admission Offer - Penkka University Next Steps";
+                studentSubject = "Conditional Admission Offer - Kestora University Next Steps";
                 studentHtml = `
-                    <img src="https://penkka.fi/images/scholarships.png" alt="Penkka University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
-                    <h1 style="text-align: center; font-size: 24px; margin: 20px 0;">Penkka University Admission</h1>
+                    <img src="https://kestora.online/images/scholarships.png" alt="Kestora University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
+                    <h1 style="text-align: center; font-size: 24px; margin: 20px 0;">Kestora University Admission</h1>
                     <h2 style="text-align: center; font-size: 18px; margin-bottom: 15px;">Congratulations on Your Offer!</h2>
                     <p>Dear ${firstName},</p>
-                    <p>We are delighted to inform you that you have been offered a conditional place to study at Penkka University.</p>
+                    <p>We are delighted to inform you that you have been offered a conditional place to study at Kestora University.</p>
                     <div style="margin: 20px 0;">
                         <p style="margin: 0 0 5px 0; font-weight: bold; text-decoration: underline;">Programme Details:</p>
                         <p style="margin: 0 0 5px 0;"><strong>Programme:</strong> ${applicationData?.course_title || 'Your Degree Programme'}</p>
-                        <p style="margin: 0 0 5px 0;"><strong>Degree Level:</strong> ${applicationData?.course_degree_level === 'MASTER' ? "Master's Degree" : "Bachelor's Degree"}</p>
+                        <p style="margin: 0 0 5px 0;"><strong>Degree Level:</strong> ${applicationData?.course_degree_level === 'MASTER' ? "Master's Degree" : applicationData?.course_degree_level === 'BACHELOR' ? "Bachelor's Degree" : applicationData?.course_degree_level === 'DIPLOMA' ? "Diploma" : applicationData?.course_degree_level === 'CERTIFICATE' ? "Certificate" : "Bachelor's Degree"}</p>
                         <p style="margin: 0 0 5px 0;"><strong>Intake:</strong> August 2026 (Autumn Semester)</p>
-                        <p style="margin: 0 0 5px 0;"><strong>Duration:</strong> 17.08.2026 – ${applicationData?.course_degree_level === 'MASTER' ? '17.08.2028' : '17.08.2029'}</p>
-                        <p style="margin: 0 0 5px 0;"><strong>Total Credits:</strong> ${applicationData?.course_degree_level === 'MASTER' ? '120 ECTS' : '180 ECTS'}</p>
+                        <p style="margin: 0 0 5px 0;"><strong>Duration:</strong> 17.08.2026 – ${applicationData?.course_degree_level === 'MASTER' ? '17.08.2028' : applicationData?.course_degree_level === 'BACHELOR' ? '17.08.2029' : applicationData?.course_degree_level === 'DIPLOMA' ? '17.08.2028' : '17.08.2027'}</p>
+                        <p style="margin: 0 0 5px 0;"><strong>Total Credits:</strong> ${applicationData?.course_degree_level === 'MASTER' ? '120 ECTS' : applicationData?.course_degree_level === 'BACHELOR' ? '180 ECTS' : applicationData?.course_degree_level === 'DIPLOMA' ? '120 ECTS' : '60 ECTS'}</p>
                     </div>
                     <div style="margin: 20px 0;">
                         <p style="margin: 0 0 5px 0; font-weight: bold; text-decoration: underline;">Financial Summary (1st Year):</p>
-                        <p style="margin: 0 0 5px 0;">Annual Tuition Fee: €${applicationData?.course_title?.toLowerCase().includes('science') ? '12,000' : '8,000'} EUR</p>
-                        <p style="margin: 0 0 5px 0;">Early Bird Waiver (25%): -€${applicationData?.course_title?.toLowerCase().includes('science') ? '3,000' : '2,000'} EUR</p>
-                        <p style="margin: 0 0 5px 0;">Net First Year Fee: €${applicationData?.course_title?.toLowerCase().includes('science') ? '9,000' : '6,000'} EUR</p>
-                        <p style="margin: 0; font-weight: bold;">Tuition Deposit (50% to Secure Place): €${applicationData?.course_title?.toLowerCase().includes('science') ? '6,000' : '4,000'} EUR</p>
+                        <p style="margin: 0 0 5px 0;">Annual Tuition Fee: €${appAnnualTuition.toLocaleString()} EUR</p>
+                        <p style="margin: 0 0 5px 0;">Net First Year Fee: €${appAnnualTuition.toLocaleString()} EUR</p>
+                        <p style="margin: 0; font-weight: bold;">Tuition Deposit (50% to Secure Place): €${appDepositTuition.toLocaleString()} EUR</p>
                     </div>
                     <div style="margin: 20px 0;">
                         <p><strong>What Does a Conditional Offer Mean?</strong></p>
@@ -234,14 +250,14 @@ serve(async (req) => {
                             <li>Fulfill Your Conditions: Fulfill the conditions outlined in your offer letter (such as paying your tuition fee deposit). Once the conditions are met, your offer will become unconditional, and your Official Admission Letter will be issued.</li>
                         </ul>
                     </div>
-                    <div style="text-align: center;"><a href="https://penkka.fi/portal" style="display: inline-block; background: #034737; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">Log In and View Offer</a></div>
+                    <div style="text-align: center;"><a href="https://kestora.online/portal" style="display: inline-block; background: #034737; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">Log In and View Offer</a></div>
                     <p>Important Request: Please act promptly to accept your offer and fulfill the conditions, as places are limited and allocated on a first-come, first-served basis once conditions are met.</p>
                     <p>We are very impressed by your application and look forward to welcoming you to our creative community in Finland.</p>
                     <p>Warm regards,</p>
                     <p>Admissions Office</p>
-                    <p>Penkka University</p>
-                    <p>admissions@penkka.fi</p>
-                    <p>https://penkka.fi</p>
+                    <p>Kestora University</p>
+                    <p>admissions@kestora.online</p>
+                    <p>https://kestora.online</p>
                 `;
                 // Admin already likely knows (triggered by status change), but can send alert if needed
                 break;
@@ -262,24 +278,24 @@ serve(async (req) => {
                 if (applicationData?.manually_enrolled) {
                     break;
                 }
-                studentSubject = "Congratulations on Your Admission to Penkka University – Next Steps";
+                studentSubject = "Congratulations on Your Admission to Kestora University – Next Steps";
                 studentHtml = `
-                    <img src="https://penkka.fi/images/scholarships.png" alt="Penkka University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
-                    <h1 style="text-align: center; font-size: 24px; margin: 20px 0;">Penkka University Admission</h1>
+                    <img src="https://kestora.online/images/scholarships.png" alt="Kestora University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
+                    <h1 style="text-align: center; font-size: 24px; margin: 20px 0;">Kestora University Admission</h1>
                     <h2 style="text-align: center; font-size: 18px; margin-bottom: 15px;">Congratulations!</h2>
                     <p>Dear ${firstName},</p>
-                    <p>We are delighted to officially confirm your admission to Penkka University following the successful confirmation of your tuition payment.</p>
+                    <p>We are delighted to officially confirm your admission to Kestora University following the successful confirmation of your tuition payment.</p>
                     <p>You have been admitted to study:</p>
                     <div style="margin: 20px 0;">
                         <p style="margin: 0 0 5px 0; font-weight: bold; text-decoration: underline;">Enrolment Details:</p>
                         <p style="margin: 0 0 5px 0;"><strong>Programme:</strong> ${applicationData?.course_title || 'Your Degree Programme'}</p>
-                        <p style="margin: 0 0 5px 0;"><strong>Degree Level:</strong> ${applicationData?.course_degree_level === 'MASTER' ? "Master's Degree" : "Bachelor's Degree"}</p>
+                        <p style="margin: 0 0 5px 0;"><strong>Degree Level:</strong> ${applicationData?.course_degree_level === 'MASTER' ? "Master's Degree" : applicationData?.course_degree_level === 'BACHELOR' ? "Bachelor's Degree" : applicationData?.course_degree_level === 'DIPLOMA' ? "Diploma" : applicationData?.course_degree_level === 'CERTIFICATE' ? "Certificate" : "Bachelor's Degree"}</p>
                         <p style="margin: 0 0 5px 0;"><strong>Intake:</strong> ${applicationData?.intake || 'August 2026 (Autumn Semester)'}</p>
-                        <p style="margin: 0 0 5px 0;"><strong>Duration:</strong> 17.08.2026 – ${applicationData?.course_degree_level === 'MASTER' ? '17.08.2028' : '17.08.2029'}</p>
-                        <p style="margin: 0 0 5px 0;"><strong>Total Credits:</strong> ${applicationData?.course_degree_level === 'MASTER' ? '120 ECTS' : '180 ECTS'}</p>
+                        <p style="margin: 0 0 5px 0;"><strong>Duration:</strong> 17.08.2026 – ${applicationData?.course_degree_level === 'MASTER' ? '17.08.2028' : applicationData?.course_degree_level === 'BACHELOR' ? '17.08.2029' : applicationData?.course_degree_level === 'DIPLOMA' ? '17.08.2028' : '17.08.2027'}</p>
+                        <p style="margin: 0 0 5px 0;"><strong>Total Credits:</strong> ${applicationData?.course_degree_level === 'MASTER' ? '120 ECTS' : applicationData?.course_degree_level === 'BACHELOR' ? '180 ECTS' : applicationData?.course_degree_level === 'DIPLOMA' ? '120 ECTS' : '60 ECTS'}</p>
                         <p style="margin: 0;"><strong>Student ID:</strong> ${applicationData?.student_id || ''}</p>
                     </div>
-                    <p>This marks a significant milestone, and we are confident that you will thrive academically and personally as part of the Penkka community.</p>
+                    <p>This marks a significant milestone, and we are confident that you will thrive academically and personally as part of the Kestora community.</p>
                     <div style="margin: 20px 0;">
                         <p><strong>What Happens Next</strong></p>
                         <p>Now that your admission has been secured, you will begin the next critical phase of your journey – your Study Permit (Residence Permit) application.</p>
@@ -307,7 +323,7 @@ serve(async (req) => {
                     <p>Log In to Your Dashboard</p>
                     <div style="margin: 20px 0;">
                         <p><strong>Accommodation & Student Life</strong></p>
-                        <p>At Penkka University, we ensure that your transition into Finland is as seamless as possible.</p>
+                        <p>At Kestora University, we ensure that your transition into Finland is as seamless as possible.</p>
                         <p>Once your payment is confirmed, your accommodation information will be made available in your dashboard, including:</p>
                         <ul>
                             <li>Student housing options (shared and private apartments)</li>
@@ -318,8 +334,8 @@ serve(async (req) => {
                         <p>Finland offers a safe, modern, and student-friendly environment, with excellent public services, efficient transport systems, and a high quality of life.</p>
                     </div>
                     <div style="margin: 20px 0;">
-                        <p><strong>What to Look Forward To at Penkka University</strong></p>
-                        <p>As a Penkka student, you will experience:</p>
+                        <p><strong>What to Look Forward To at Kestora University</strong></p>
+                        <p>As a Kestora student, you will experience:</p>
                         <ul>
                             <li>A globally relevant curriculum designed for modern careers</li>
                             <li>A diverse and international student community</li>
@@ -330,14 +346,14 @@ serve(async (req) => {
                         <p>You will also gain exposure to Finland's innovation-driven ecosystem, positioning you for global opportunities after graduation.</p>
                     </div>
                     <p>Important Note: As a confirmed student for the August 2026 intake, it is essential that you proceed with your study permit application immediately, as timelines are strict and processing times must be carefully considered.</p>
-                    <p>We are excited to have you join Penkka University and look forward to supporting you every step of the way.</p>
+                    <p>We are excited to have you join Kestora University and look forward to supporting you every step of the way.</p>
                     <p>Welcome to your next chapter.</p>
-                    <div style="text-align: center;"><a href="https://penkka.fi/portal/student" style="display: inline-block; background: #000; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">Enter student Portal</a></div>
+                    <div style="text-align: center;"><a href="https://kestora.online/portal/student" style="display: inline-block; background: #000; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">Enter student Portal</a></div>
                     <p>Warm regards,</p>
                     <p>Admissions Office</p>
-                    <p>Penkka University</p>
-                    <p>admissions@penkka.fi</p>
-                    <p>https://penkka.fi</p>
+                    <p>Kestora University</p>
+                    <p>admissions@kestora.online</p>
+                    <p>https://kestora.online</p>
                 `;
                 break;
 
@@ -345,7 +361,7 @@ serve(async (req) => {
                 studentSubject = "Payment Received - Pending Verification";
                 const isHousingRec = additionalData?.paymentType === 'HOUSING';
                 studentHtml = `
-                    <img src="https://penkka.fi/images/scholarships.png" alt="Penkka University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
+                    <img src="https://kestora.online/images/scholarships.png" alt="Kestora University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
                     <h1>Payment Received</h1>
                     <p>Hello ${firstName}, we have received your payment of <strong>${additionalData?.amount} ${additionalData?.currency || 'EUR'}</strong>.</p>
                     <p><strong>Reference:</strong> ${additionalData?.reference || 'N/A'}</p>
@@ -358,14 +374,14 @@ serve(async (req) => {
                     <p><strong>Amount:</strong> ${additionalData?.amount} ${additionalData?.currency || 'EUR'}</p>
                     <p><strong>Ref:</strong> ${additionalData?.reference || 'N/A'}</p>
                     <p><strong>Type:</strong> ${additionalData?.paymentType || 'TUITION'}</p>
-                    <a href="https://penkka.fi/admin/registrar" style="display:inline-block;background:#000;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Verify in Registrar Panel</a>
+                    <a href="https://kestora.online/admin/registrar" style="display:inline-block;background:#000;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Verify in Registrar Panel</a>
                 `;
                 break;
 
             case 'TUITION_PAYMENT_VERIFIED':
                 studentSubject = "Payment Verified - Enrollment Confirmed!";
                 studentHtml = `
-                    <img src="https://penkka.fi/images/scholarships.png" alt="Penkka University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
+                    <img src="https://kestora.online/images/scholarships.png" alt="Kestora University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
                     <h1 style="color: #034737; font-size: 24px; margin: 20px 0;">Payment Verified!</h1>
                     <p>Hello ${firstName},</p>
                     <p>Great news! Your tuition payment has been officially verified by our registrar's office.</p>
@@ -384,7 +400,7 @@ serve(async (req) => {
                 break;
 
             case 'HOUSING_SUBMITTED':
-                studentSubject = "Housing Application Received - Penkka University";
+                studentSubject = "Housing Application Received - Kestora University";
                 studentHtml = `
                     <h1>Housing Request Received</h1>
                     <p>Hello ${firstName}, thank you for applying for student housing.</p>
@@ -397,15 +413,15 @@ serve(async (req) => {
                     <p><strong>Semester:</strong> ${additionalData?.semesterName || 'N/A'}</p>
                     <p><strong>Building Pref:</strong> ${additionalData?.preferredBuilding || 'N/A'}</p>
                     <p><strong>Move-in:</strong> ${additionalData?.moveInDate || 'N/A'}</p>
-                    <a href="https://penkka.fi/admin/housing" style="display:inline-block;background:#000;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Manage Housing</a>
+                    <a href="https://kestora.online/admin/housing" style="display:inline-block;background:#000;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Manage Housing</a>
                 `;
                 break;
             
             case 'HOUSING_ASSIGNED':
-                studentSubject = "Your Housing Assignment is Ready! - Penkka University";
+                studentSubject = "Your Housing Assignment is Ready! - Kestora University";
                 studentHtml = `
                     <div style="text-align: center; margin-bottom: 25px;">
-                        <img src="https://penkka.fi/images/scholarships.png" alt="Housing" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" />
+                        <img src="https://kestora.online/images/scholarships.png" alt="Housing" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" />
                     </div>
                     <h1 style="color: #000; font-size: 24px; margin-bottom: 20px;">Housing Confirmed!</h1>
                     <p>Hello ${firstName},</p>
@@ -421,7 +437,7 @@ serve(async (req) => {
                     <p>You can now view your housing details, download your receipt, and check arrival instructions in the student portal.</p>
                     
                     <div style="text-align: center; margin: 30px 0;">
-                        <a href="https://penkka.fi/portal/student/housing" style="display: inline-block; background: #000; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">View Housing Dashboard</a>
+                        <a href="https://kestora.online/portal/student/housing" style="display: inline-block; background: #000; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">View Housing Dashboard</a>
                     </div>
                     
                     <p>We look forward to welcoming you to campus!</p>
@@ -429,15 +445,15 @@ serve(async (req) => {
                 break;
 
             case 'APPLICATION_REJECTED':
-                studentSubject = "Application Update - Penkka University";
+                studentSubject = "Application Update - Kestora University";
                 studentHtml = `
                     <p>Dear ${firstName},</p>
-                    <p>Thank you for your interest in Penkka University. After careful review of your application, we regret to inform you that we cannot offer you admission at this time.</p>
+                    <p>Thank you for your interest in Kestora University. After careful review of your application, we regret to inform you that we cannot offer you admission at this time.</p>
                     <p>We wish you the best in your future creative endeavors.</p>
                 `;
                 break;
             case 'DOCS_REQUIRED':
-                studentSubject = "Action Required: Documents Requested - Penkka University";
+                studentSubject = "Action Required: Documents Requested - Kestora University";
                 const docsList = (additionalData?.requestedDocuments as string[]) ||
                     (applicationData?.requested_documents as string[]) || [];
                 const note = additionalData?.note || applicationData?.document_request_note || "";
@@ -473,12 +489,12 @@ serve(async (req) => {
                     word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
                 ).join(' ');
                 const invAmt = additionalData?.amount ? new Intl.NumberFormat('en-IE', { style: 'currency', currency: additionalData?.currency || 'EUR', maximumFractionDigits: 0 }).format(additionalData.amount) : 'TBD';
-                const invHero = "https://penkka.fi/images/scholarships.png";
+                const invHero = "https://kestora.online/images/scholarships.png";
 
-                studentSubject = `${invType} Invoice Ready for Payment - Penkka University`;
+                studentSubject = `${invType} Invoice Ready for Payment - Kestora University`;
                 studentHtml = `
                     <div style="text-align: center; margin-bottom: 25px;">
-                        <img src="${invHero}" alt="Penkka University" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" />
+                        <img src="${invHero}" alt="Kestora University" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" />
                     </div>
                     
                     <h1 style="text-align: center; font-size: 24px; margin: 20px 0; color: #1a1a1a;">Billing & Payments</h1>
@@ -500,7 +516,7 @@ serve(async (req) => {
                     
                     <p>Please proceed to your student portal to complete the payment and secure your place in the programme.</p>
                     <div style="text-align: center; margin: 25px 0;">
-                        <a href="https://penkka.fi/portal/application/payment" style="display:inline-block;background:#000000;color:#fff;padding:12px 24px;text-decoration:none;border-radius:6px;font-weight:bold;">Pay Invoice Securely</a>
+                        <a href="https://kestora.online/portal/application/payment" style="display:inline-block;background:#000000;color:#fff;padding:12px 24px;text-decoration:none;border-radius:6px;font-weight:bold;">Pay Invoice Securely</a>
                     </div>
                     <p>If you have any questions or encounter issues, please contact our Finance Department.</p>
                 `;
@@ -534,19 +550,17 @@ serve(async (req) => {
             <body>
             <div class="email-container" style="font-family: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif; max-width: 600px; margin: 10px auto; padding: 15px 10px; background: #ffffff;">
                 <div style="text-align: center; margin-bottom: 20px;">
-                    <img src="https://penkka.fi/logo-penkka.png" class="logo" style="width: 100%; height: auto; max-width: 160px;" />
+                    <img src="https://kestora.online/logo-kestora.png" class="logo" style="width: 100%; height: auto; max-width: 160px;" />
                 </div>
                 <div style="color: #1a1a1a; line-height: 1.5; font-size: 15px;">
                     ${content}
                 </div>
                 <hr style="border: 0; border-top: 1px solid #f0f0f0; margin: 30px 0;">
                 <div style="text-align: center; color: #888; font-size: 11px;">
-                    <p>&copy; ${new Date().getFullYear()} Penkka University</p>
-                    <p style="margin-bottom: 15px;">Helsinki, Finland | +358 09 42721884 | info@penkka.fi</p>
+                    <p>&copy; ${new Date().getFullYear()} Kestora University</p>
+                    <p style="margin-bottom: 15px;">Helsinki, Finland | +358 09 42721884 | info@kestora.online</p>
                     <div style="margin-top: 15px;">
-                        <a href="https://www.linkedin.com/company/penkka-university" style="color: #888; text-decoration: none; margin: 0 8px; font-weight: bold;">LinkedIn</a>
-                        <a href="https://www.tiktok.com/@penkkauniversity" style="color: #888; text-decoration: none; margin: 0 8px; font-weight: bold;">TikTok</a>
-                        <a href="https://snapchat.com/add/penkkauniversity" style="color: #888; text-decoration: none; margin: 0 8px; font-weight: bold;">Snapchat</a>
+                        <a href="https://www.tiktok.com/@Kestorauniversity" style="color: #888; text-decoration: none; margin: 0 8px; font-weight: bold;">TikTok</a>
                     </div>
                 </div>
             </div>
@@ -589,7 +603,7 @@ serve(async (req) => {
             const { data, error } = await resend.emails.send({
                 from: sender,
                 to: [adminEmail],
-                subject: `[Penkka ADMIN] ${adminSubject}`,
+                subject: `[Kestora ADMIN] ${adminSubject}`,
                 html: wrapHtml(adminHtml),
             });
             if (error) {

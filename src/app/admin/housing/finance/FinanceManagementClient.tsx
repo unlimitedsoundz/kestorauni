@@ -518,7 +518,7 @@ export default function FinanceManagementClient({
 
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Amount ($)</label>
+                                    <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Amount (€)</label>
                                     <input
                                         type="number"
                                         className="w-full px-4 py-3 border-2 border-black font-bold outline-none"
@@ -612,7 +612,7 @@ export default function FinanceManagementClient({
 
                         <div className="space-y-4 mb-8">
                             <div>
-                                <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Amount Received ($)</label>
+                                <label className="block text-[10px] font-black uppercase text-neutral-400 mb-1">Amount Received (€)</label>
                                 <input
                                     type="number"
                                     className="w-full px-4 py-3 border-2 border-black font-bold outline-none"

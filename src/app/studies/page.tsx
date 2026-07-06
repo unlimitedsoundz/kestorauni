@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'Study at Cannoga College — Bachelor, Master & Lifelong Learning',
-    description: 'Find your study path at Cannoga College. Explore our Bachelor\'s and Master\'s degree programmes, professional continuing education, and open studies.',
+    title: 'Study at Kestora University — Bachelor, Master & Lifelong Learning',
+    description: 'Find your study path at Kestora University. Explore our Bachelor\'s and Master\'s degree programmes, professional continuing education, and open studies.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/studies/',
+        canonical: 'https://kestora.online/studies/',
     },
 };
 
@@ -24,7 +24,7 @@ export default function StudiesPage() {
             ]} />
             {/* Hero */}
             <Hero
-                title="Study at Cannoga College"
+                title="Study at Kestora University"
                 body="From undergraduate degrees to executive education, we offer diverse paths for learners at every stage of their journey."
                 backgroundColor="#392d56"
                 tinted
@@ -100,7 +100,7 @@ export default function StudiesPage() {
                         {[
                             { title: "Lifelong Learning", desc: "Short courses and professional development modules.", link: "/admissions#lifelong" },
                             { title: "Open University", desc: "Flexible studies open to everyone, regardless of background.", link: "/admissions#online-opportunities" },
-                            { title: "Summer School", desc: "Intensive summer courses in Ottawa.", link: "/admissions#summer" }
+                            { title: "Summer School", desc: "Intensive summer courses in Helsinki.", link: "/admissions#summer" }
                         ].map((item, i) => (
                             <Card 
                                 key={i}

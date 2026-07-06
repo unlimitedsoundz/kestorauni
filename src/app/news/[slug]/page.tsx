@@ -30,10 +30,10 @@ export async function generateMetadata({ params }: Props) {
     if (!news) return { title: 'News Not Found' };
 
     return {
-        title: `${news.title} | Cannoga College`,
+        title: `${news.title} | Kestora University`,
         description: news.excerpt?.substring(0, 160),
         alternates: {
-            canonical: `https://cannogacollege.ca/news/${slug}/`,
+            canonical: `https://kestora.online/news/${slug}/`,
         },
     };
 }

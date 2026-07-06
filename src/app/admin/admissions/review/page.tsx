@@ -176,6 +176,11 @@ function ApplicationReviewContent() {
                             <div className="text-right">
                                 <span className="text-[10px] font-black text-neutral-500 uppercase tracking-widest block mb-1">Applying For</span>
                                 <span className="text-sm font-black uppercase tracking-tight text-amber-500">{app.course?.title}</span>
+                                {app.course?.degreeLevel && (
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-neutral-500 block mt-1">
+                                        {app.course.degreeLevel === 'BACHELOR' ? 'Bachelor' : app.course.degreeLevel === 'MASTER' ? 'Master' : app.course.degreeLevel}
+                                    </span>
+                                )}
                             </div>
                         </div>
 
@@ -282,7 +287,7 @@ function ApplicationReviewContent() {
                                     label="Request Documents"
                                     status="DOCS_REQUIRED"
                                     currentStatus={app.status}
-                                    variant="purple"
+                                    variant="success"
                                     onClick={() => setShowDocsModal(true)}
                                     disabled={updating}
                                 />
@@ -300,7 +305,7 @@ function ApplicationReviewContent() {
                                 <div className="bg-white rounded-[32px] w-full max-w-md overflow-hidden shadow-2xl border border-neutral-100 animate-in zoom-in-95 duration-300">
                                     <div className="bg-neutral-900 p-6 text-white">
                                         <h3 className="text-xl font-black uppercase tracking-tight flex items-center gap-3">
-                                            <FileText size={24} weight="bold" className="text-purple-400" />
+                                            <FileText size={24} weight="bold" className="text-neutral-400" />
                                             Request Documents
                                         </h3>
                                         <p className="text-neutral-400 text-[10px] font-black uppercase tracking-widest mt-1">Select the required files and provide details</p>
@@ -314,14 +319,14 @@ function ApplicationReviewContent() {
                                                     <label
                                                         key={doc.id}
                                                         className={`flex items-center justify-between p-4 rounded-2xl border transition-all cursor-pointer group ${selectedDocs.includes(doc.id)
-                                                            ? 'bg-purple-50 border-purple-200'
+                                                            ? 'bg-neutral-50 border-neutral-200'
                                                             : 'hover:bg-neutral-50 border-neutral-100'
                                                             }`}
                                                     >
                                                         <div className="flex items-center gap-3">
                                                             <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${selectedDocs.includes(doc.id)
-                                                                ? 'bg-purple-600 border-purple-600'
-                                                                : 'border-neutral-300 group-hover:border-purple-400'
+                                                                 ? 'bg-neutral-600 border-neutral-600'
+                                                                 : 'border-neutral-300 group-hover:border-neutral-400'
                                                                 }`}>
                                                                 {selectedDocs.includes(doc.id) && <CheckCircle2 size={14} weight="bold" className="text-white" />}
                                                             </div>
@@ -347,7 +352,7 @@ function ApplicationReviewContent() {
                                         <div className="space-y-4">
                                             <span className="text-[10px] font-black text-neutral-400 uppercase tracking-widest block mb-1">Internal Note to Student (Optional)</span>
                                             <textarea
-                                                className="w-full bg-neutral-50 border border-neutral-100 rounded-2xl p-4 text-xs font-bold outline-none focus:border-purple-500 transition-all min-h-[100px] shadow-inner"
+                                                className="w-full bg-neutral-50 border border-neutral-100 rounded-2xl p-4 text-xs font-bold outline-none focus:border-neutral-500 transition-all min-h-[100px] shadow-inner"
                                                 placeholder="e.g. Please upload high-resolution scans of your original documents..."
                                                 value={docsNote}
                                                 onChange={(e) => setDocsNote(e.target.value)}
@@ -547,7 +552,7 @@ function ApplicationReviewContent() {
                             {/* Financial Offer Form (Manual Override) */}
                             {app.status !== 'REJECTED' && app.status !== 'DRAFT' && (() => {
                                 const nationality = app.personal_info?.nationality;
-                                const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'canada' || nationality.toLowerCase().trim() === 'canadian' || nationality.toLowerCase().trim() === 'domestic') : false;
+                                const isDomestic = nationality ? (nationality.toLowerCase().trim() === 'finland' || nationality.toLowerCase().trim() === 'finnish' || nationality.toLowerCase().trim() === 'eu' || nationality.toLowerCase().trim() === 'domestic') : false;
                                 return (
                                     <div className="mt-4 pt-4 border-t border-neutral-100 border-dashed">
                                         <p className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest mb-3">Issue/Update Financial Offer</p>
@@ -606,12 +611,12 @@ function StatusDisplay({ status }: { status: string }) {
         'DRAFT': { label: 'Draft', color: 'bg-neutral-100 text-neutral-500 border-neutral-200', icon: Clock },
         'SUBMITTED': { label: 'Submitted', color: 'bg-blue-50 text-blue-600 border-blue-200', icon: AlertCircle },
         'UNDER_REVIEW': { label: 'In Review', color: 'bg-amber-50 text-amber-600 border-amber-200', icon: Clock },
-        'DOCS_REQUIRED': { label: 'Action Needed', color: 'bg-purple-50 text-purple-600 border-purple-200', icon: AlertCircle },
-        'ADMITTED': { label: 'Admitted', color: 'bg-emerald-50 text-emerald-600 border-emerald-200', icon: CheckCircle2 },
-        'OFFER_ACCEPTED': { label: 'Offer Accepted', color: 'bg-emerald-100 text-emerald-700 border-emerald-300', icon: CheckCircle2 },
+        'DOCS_REQUIRED': { label: 'Action Needed', color: 'bg-neutral-50 text-neutral-600 border-neutral-200', icon: AlertCircle },
+        'ADMITTED': { label: 'Admitted', color: 'bg-neutral-50 text-neutral-600 border-neutral-200', icon: CheckCircle2 },
+        'OFFER_ACCEPTED': { label: 'Offer Accepted', color: 'bg-neutral-100 text-neutral-700 border-neutral-300', icon: CheckCircle2 },
         'PAYMENT_SUBMITTED': { label: 'Paid', color: 'bg-cyan-50 text-cyan-600 border-cyan-200', icon: CheckCircle2 },
-        'ADMISSION_LETTER_GENERATED': { label: 'Admitted & Documented', color: 'bg-emerald-950 text-emerald-400 border-emerald-900', icon: FileText },
-        'ENROLLED': { label: 'Enrolled', color: 'bg-emerald-900 text-white border-emerald-800', icon: CheckCircle2 },
+        'ADMISSION_LETTER_GENERATED': { label: 'Admitted & Documented', color: 'bg-neutral-950 text-neutral-400 border-neutral-900', icon: FileText },
+        'ENROLLED': { label: 'Enrolled', color: 'bg-neutral-900 text-white border-neutral-800', icon: CheckCircle2 },
         'REJECTED': { label: 'Rejected', color: 'bg-red-50 text-red-600 border-red-200', icon: XCircle },
     };
 
@@ -629,10 +634,10 @@ function StatusDisplay({ status }: { status: string }) {
 function StatusBtn({ label, status, currentStatus, variant, onClick, disabled }: { label: string, status: string, currentStatus: string, variant: string, onClick: (s: string) => void, disabled: boolean }) {
     if (currentStatus === status) return null;
     const variantClasses: Record<string, string> = {
-        'success': 'bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white',
+        'success': 'bg-neutral-50 text-neutral-700 hover:bg-neutral-600 hover:text-white',
         'warning': 'bg-amber-50 text-amber-700 hover:bg-amber-600 hover:text-white',
         'danger': 'bg-red-50 text-red-700 hover:bg-red-600 hover:text-white',
-        'purple': 'bg-purple-50 text-purple-700 hover:bg-purple-600 hover:text-white',
+        'purple': 'bg-neutral-50 text-neutral-700 hover:bg-neutral-600 hover:text-white',
     };
     return (
         <button

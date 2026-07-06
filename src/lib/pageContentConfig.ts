@@ -44,7 +44,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions-application-process',
         sectionKey: 'hero_subtitle',
         label: 'Hero Subtitle',
-        defaultContent: 'Follow our step-by-step guide to ensure a smooth application process for your studies at Cannoga College.',
+        defaultContent: 'Follow our step-by-step guide to ensure a smooth application process for your studies at Kestora University.',
     },
     {
         pageSlug: 'admissions-application-process',
@@ -224,8 +224,8 @@ export const pageContentSections: PageContentSection[] = [
         defaultContent: `<table style="width:100%;border-collapse:collapse;font-size:inherit;">
     <thead><tr><th style="text-align:left;padding:10px 16px;border-bottom:2px solid #000;font-weight:700;">Intake</th><th style="text-align:left;padding:10px 16px;border-bottom:2px solid #000;font-weight:700;">Application Window</th><th style="text-align:left;padding:10px 16px;border-bottom:2px solid #000;font-weight:700;">Best Time to Apply</th></tr></thead>
     <tbody>
-        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">September Intake</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">October – February</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;color:#5c2d91;font-weight:600;">Early application: October – December</td></tr>
-        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">January Intake</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">June – September</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;color:#5c2d91;font-weight:600;">Early application: June – August</td></tr>
+        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">September Intake</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">October – February</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;color:#000000;font-weight:600;">Early application: October – December</td></tr>
+        <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">January Intake</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">June – September</td><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;color:#000000;font-weight:600;">Early application: June – August</td></tr>
         <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">Evaluation phase</td><td colspan="2" style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">Applications reviewed by the admissions committee and faculty within 4–6 weeks.</td></tr>
         <tr><td style="padding:10px 16px;border-bottom:1px solid #e5e5e5;vertical-align:top;font-weight:600;">Decision</td><td colspan="2" style="padding:10px 16px;border-bottom:1px solid #e5e5e5;">Admission decision communicated by email within 1 week of evaluation.</td></tr>
         <tr><td style="padding:10px 16px;vertical-align:top;font-weight:600;">Studies start</td><td colspan="2" style="padding:10px 16px;">September (Autumn) or January (Winter)</td></tr>
@@ -236,7 +236,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/master',
         sectionKey: 'study_options_content',
         label: 'Study Options Section',
-        defaultContent: `<p class="text-lg text-black leading-relaxed">Cannoga College offers Master’s programmes in several fields. Applicants may apply to a maximum of two programmes per application.</p>
+        defaultContent: `<p class="text-lg text-black leading-relaxed">Kestora University offers Master’s programmes in several fields. Applicants may apply to a maximum of two programmes per application.</p>
 <div class="grid md:grid-cols-3 gap-6">
     <div class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl text-black shadow-sm"><h3 class="font-bold text-xl mb-2">Business & Economics</h3><p class="text-sm leading-relaxed">MSc in Accounting & Finance, Strategic Management, and related areas.</p></div>
     <div class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl text-black shadow-sm"><h3 class="font-bold text-xl mb-2">Art & Design</h3><p class="text-sm leading-relaxed">MA in Design, Architecture, and Visual Arts.</p></div>
@@ -247,7 +247,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/master',
         sectionKey: 'scholarships_content',
         label: 'Scholarships Section',
-        defaultContent: `<p class="text-lg text-black leading-relaxed">At Cannoga College, we believe in rewarding academic excellence and supporting students through various financial aid options. Our scholarship programme is designed to help international talent thrive in Ottawa, Canada.</p>
+        defaultContent: `<p class="text-lg text-black leading-relaxed">At Kestora University, we believe in rewarding academic excellence and supporting students through various financial aid options. Our scholarship programme is designed to help international talent thrive in Helsinki, Finland.</p>
 <ul class="space-y-4">
     <li class="flex gap-4 items-start">Merit-Based Scholarships Awarded to top-performing applicants based on academic record.</li>
     <li class="flex gap-4 items-start">Performance Waivers Maintain a 3.5 GPA and 55 credits/year for a 50% waiver from the 2nd year onwards.</li>
@@ -319,7 +319,7 @@ export const pageContentSections: PageContentSection[] = [
         <p class="leading-relaxed">English language proficiency is mandatory for all Master’s programmes taught in English. Demonstrate your skills via an accepted language test or previous studies.</p>
         <ul class="space-y-6 pt-6 flex flex-col">
             <li><div class="font-bold uppercase tracking-widest text-[10px] mb-1">Tests</div><div class="text-sm leading-relaxed">Acceptable tests: IELTS Academic, TOEFL iBT, PTE Academic, or C1 Advanced/C2 Proficiency.</div></li>
-            <li><div class="font-bold uppercase tracking-widest text-[10px] mb-1">Exemptions</div><div class="text-sm leading-relaxed">Applicants who completed a degree taught entirely in English in Canada, Australia, New Zealand, the USA, or the UK may be exempt from language requirements.</div></li>
+            <li><div class="font-bold uppercase tracking-widest text-[10px] mb-1">Exemptions</div><div class="text-sm leading-relaxed">Applicants who completed a degree taught entirely in English in Finland, Australia, New Zealand, the USA, or the UK may be exempt from language requirements.</div></li>
         </ul>
     </div>
 </div>`,
@@ -334,7 +334,7 @@ export const pageContentSections: PageContentSection[] = [
         <li>Minimum Focus Edition score: 555</li>
         <li>GRE General Test equivalent accepted</li>
     </ul>
-    <p class="mt-8 text-sm">Scores must be sent directly by the testing organization to Cannoga College.</p>
+    <p class="mt-8 text-sm">Scores must be sent directly by the testing organization to Kestora University.</p>
 </div>`,
     },
     {
@@ -357,7 +357,7 @@ export const pageContentSections: PageContentSection[] = [
     </ul>
     <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
         <h4 class="font-bold mb-2">International Students</h4>
-        <p class="text-sm leading-relaxed mb-6">moving to Ottawa, Canada requires planning. Read our comprehensive guide on residence permits, housing, and arrival.</p>
+        <p class="text-sm leading-relaxed mb-6">moving to Helsinki, Finland requires planning. Read our comprehensive guide on residence permits, housing, and arrival.</p>
         <a href="/student-guide/international" class="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm">Open International Student Guide →</a>
     </div>
 </div>`,
@@ -378,7 +378,7 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/tuition',
         sectionKey: 'fee_structure_content',
         label: 'Fee Structure Section',
-        defaultContent: `<p class="text-lg leading-relaxed mb-6">Tuition fees at Cannoga College depend on your degree level, field of study, and start date. The exact amount for your programme is always listed in your personal admission letter.</p>
+        defaultContent: `<p class="text-lg leading-relaxed mb-6">Tuition fees at Kestora University depend on your degree level, field of study, and start date. The exact amount for your programme is always listed in your personal admission letter.</p>
 <div class="bg-gray-100 p-6 md:p-12 pl-6 md:pl-16 rounded-xl"><p class="font-medium">Note: Students whose right to study began on or before 1 August 2025 may have different fee levels. The tables below apply to new students starting in 2026.</p></div>`,
     },
     {
@@ -420,8 +420,8 @@ export const pageContentSections: PageContentSection[] = [
     <table class="w-full text-left border-collapse">
         <thead class="bg-black text-white"><tr><th class="p-4 font-bold">Student Residency</th><th class="p-4 font-bold">Tuition Fee / Year</th><th class="p-4 font-bold">Tuition Deposit</th></tr></thead>
         <tbody class="divide-y divide-neutral-200 text-black">
-            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">Domestic Students</td><td class="p-4">$6,200</td><td class="p-4">$1,250</td></tr>
-            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">International Students</td><td class="p-4">$12,500</td><td class="p-4">$3,500</td></tr>
+            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">Domestic Students</td><td class="p-4">$2,000</td><td class="p-4">$1,000</td></tr>
+            <tr class="hover:bg-neutral-50"><td class="p-4 font-medium">International Students</td><td class="p-4">$4,000</td><td class="p-4">$2,000</td></tr>
         </tbody>
     </table>
 </div>`,
@@ -445,31 +445,31 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/tuition',
         sectionKey: 'merit_scholarship_content',
         label: 'Merit Scholarship Section',
-        defaultContent: `<div class="mb-8"><h3 class="text-2xl font-bold mb-4">Continuing Merit Scholarship</h3><p class="text-lg leading-relaxed mb-6">Cannoga College rewards academic excellence. After the first year, international students can apply for a merit scholarship covering 50% of tuition for the next academic year.</p><div class="grid md:grid-cols-2 gap-8"><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Academic Criteria</h4><ul class="space-y-3"><li>Complete at least 55 credits per academic year</li><li>Maintain a minimum weighted GPA of 3.5 / 5.0</li></ul></div><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Application & Review</h4><p class="text-sm leading-relaxed">Scholarship eligibility is automatically reviewed every August and eligible students will be notified before the autumn tuition deadline.</p></div></div></div>`,
+        defaultContent: `<div class="mb-8"><h3 class="text-2xl font-bold mb-4">Continuing Merit Scholarship</h3><p class="text-lg leading-relaxed mb-6">Kestora University rewards academic excellence. After the first year, international students can apply for a merit scholarship covering 50% of tuition for the next academic year.</p><div class="grid md:grid-cols-2 gap-8"><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Academic Criteria</h4><ul class="space-y-3"><li>Complete at least 55 credits per academic year</li><li>Maintain a minimum weighted GPA of 3.5 / 5.0</li></ul></div><div class="space-y-4"><h4 class="font-bold text-sm uppercase tracking-widest mb-2">Application & Review</h4><p class="text-sm leading-relaxed">Scholarship eligibility is automatically reviewed every August and eligible students will be notified before the autumn tuition deadline.</p></div></div></div>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'payment_methods_content',
         label: 'Payment Methods Section',
-        defaultContent: `<div class="space-y-8"><div class="bg-gray-100 p-6 md:p-12 rounded-2xl"><p class="text-lg leading-relaxed mb-4">Cannoga provides secure, convenient payment options using local and international channels through our integrated payment gateway.</p><p class="leading-relaxed">All tuition payments are processed through our secure portal for accurate tracking, faster confirmation, and proper allocation to your student account.</p></div><div class="bg-card p-6 md:p-12 shadow-sm rounded-xl"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Step-by-Step Payment Process</h3><div class="space-y-6"><div><h4 class="font-bold mb-1">Accept Your Offer</h4><p class="text-sm leading-relaxed">Once you accept your offer through the portal, you will be redirected to the secure payment page.</p></div><div><h4 class="font-bold mb-1">Choose Where You’re Paying From</h4><p class="text-sm leading-relaxed">Select the country from which you will make your payment. The portal shows local payment options specific to your location.</p></div><div><h4 class="font-bold mb-1">Review Payment Details</h4><p class="text-sm leading-relaxed">Confirm your full name, student ID, programme, amount payable, and payment reference before submitting.</p></div><div><h4 class="font-bold mb-1">Select Your Payment Method</h4><p class="text-sm leading-relaxed">Choose one of the available payment methods based on your country and preference.</p></div><div><h4 class="font-bold mb-1">Complete the Payment</h4><p class="text-sm leading-relaxed">Follow the on-screen instructions to pay securely.</p></div><div><h4 class="font-bold mb-1">Payment Confirmation</h4><p class="text-sm leading-relaxed">Once payment is confirmed, your payment status updates automatically and an official receipt is issued.</p></div></div></div><div class="grid md:grid-cols-2 gap-6"><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Processing Time</h3><p class="leading-relaxed">Most payments are confirmed within 24–72 hours, depending on the selected payment method.</p></div><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">Need Help With Payment?</h3><p class="leading-relaxed">If you experience any difficulties, contact the Admissions Office through your student portal or by email.</p><a href="mailto:admissions@cannogacollege.ca" class="inline-flex items-center gap-2 font-bold uppercase tracking-widest text-black underline">Email Admissions</a></div></div><div class="bg-gray-100 p-6 rounded-xl shadow-sm"><p class="text-sm">Please pay by the deadline indicated in your official offer of admission to confirm your enrollment.</p></div></div>`,
+        defaultContent: `<div class="space-y-8"><div class="bg-gray-100 p-6 md:p-12 rounded-2xl"><p class="text-lg leading-relaxed mb-4">Cannoga provides secure, convenient payment options using local and international channels through our integrated payment gateway.</p><p class="leading-relaxed">All tuition payments are processed through our secure portal for accurate tracking, faster confirmation, and proper allocation to your student account.</p></div><div class="bg-card p-6 md:p-12 shadow-sm rounded-xl"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Step-by-Step Payment Process</h3><div class="space-y-6"><div><h4 class="font-bold mb-1">Accept Your Offer</h4><p class="text-sm leading-relaxed">Once you accept your offer through the portal, you will be redirected to the secure payment page.</p></div><div><h4 class="font-bold mb-1">Choose Where You’re Paying From</h4><p class="text-sm leading-relaxed">Select the country from which you will make your payment. The portal shows local payment options specific to your location.</p></div><div><h4 class="font-bold mb-1">Review Payment Details</h4><p class="text-sm leading-relaxed">Confirm your full name, student ID, programme, amount payable, and payment reference before submitting.</p></div><div><h4 class="font-bold mb-1">Select Your Payment Method</h4><p class="text-sm leading-relaxed">Choose one of the available payment methods based on your country and preference.</p></div><div><h4 class="font-bold mb-1">Complete the Payment</h4><p class="text-sm leading-relaxed">Follow the on-screen instructions to pay securely.</p></div><div><h4 class="font-bold mb-1">Payment Confirmation</h4><p class="text-sm leading-relaxed">Once payment is confirmed, your payment status updates automatically and an official receipt is issued.</p></div></div></div><div class="grid md:grid-cols-2 gap-6"><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Processing Time</h3><p class="leading-relaxed">Most payments are confirmed within 24–72 hours, depending on the selected payment method.</p></div><div class="bg-gray-100 p-8 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">Need Help With Payment?</h3><p class="leading-relaxed">If you experience any difficulties, contact the Admissions Office through your student portal or by email.</p><a href="mailto:admissions@kestora.online" class="inline-flex items-center gap-2 font-bold uppercase tracking-widest text-black underline">Email Admissions</a></div></div><div class="bg-gray-100 p-6 rounded-xl shadow-sm"><p class="text-sm">Please pay by the deadline indicated in your official offer of admission to confirm your enrollment.</p></div></div>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'timing_content',
         label: 'Payment Schedule Section',
-        defaultContent: `<div class="grid md:grid-cols-2 gap-8"><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">First Academic Year</h3><p class="leading-relaxed">After accepting the admission offer, pay the full tuition fee in a single instalment. Payment in multiple instalments is not permitted for first-year enrolment.</p></div><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">After the First Year</h3><p class="leading-relaxed">Students are encouraged to pay the full fee in one instalment during the annual enrolment period. Alternatively, two instalments may be allowed, but this can affect your attendance status.</p><div class="mt-4 p-4 bg-gray-100 rounded-lg text-sm">Important: Non-attending status may affect visa or residence permit conditions.</div></div></div><p class="mt-8 text-black text-center">For further details, consult the official Cannoga College enrolment guidelines.</p>`,
+        defaultContent: `<div class="grid md:grid-cols-2 gap-8"><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">First Academic Year</h3><p class="leading-relaxed">After accepting the admission offer, pay the full tuition fee in a single instalment. Payment in multiple instalments is not permitted for first-year enrolment.</p></div><div class="bg-gray-100 p-6 rounded-2xl shadow-sm"><h3 class="text-xl font-bold mb-4">After the First Year</h3><p class="leading-relaxed">Students are encouraged to pay the full fee in one instalment during the annual enrolment period. Alternatively, two instalments may be allowed, but this can affect your attendance status.</p><div class="mt-4 p-4 bg-gray-100 rounded-lg text-sm">Important: Non-attending status may affect visa or residence permit conditions.</div></div></div><p class="mt-8 text-black text-center">For further details, consult the official Kestora University enrolment guidelines.</p>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'additional_fees_content',
         label: 'Additional Fees Section',
-        defaultContent: `<div class="space-y-16"><div class="max-w-4xl"><h3 class="text-2xl font-bold mb-6">Financial Requirements &amp; Living Costs</h3><p class="text-neutral-600 leading-relaxed mb-8">Beyond tuition, ensure you have sufficient funds for rent, personal expenses, transportation, meals, insurance, and any Immigration, Refugees and Citizenship Canada (IRCC) requirements.</p><div class="p-8 bg-gray-100 rounded-2xl shadow-sm"><p class="font-bold">Cannoga College supports international students in finding accommodation in Ottawa, Canada. Our housing guide covers all major providers and neighbourhoods.</p></div></div><div class="grid md:grid-cols-2 gap-8"><div class="p-8 bg-gray-100 rounded-3xl shadow-sm"><h3 class="text-xl font-bold mb-4">What's Included?</h3><p class="mb-6">The tuition fee includes teaching and access to modern learning facilities. Core student services are free of charge.</p><ul class="grid grid-cols-1 gap-3 text-sm font-medium"><li>Library access</li><li>Student Services</li><li>Career Services</li><li>Exchange Services</li><li>Study support</li></ul></div><div class="p-8 bg-black text-white rounded-3xl shadow-md"><h3 class="text-xl font-bold mb-4">Cannoga Student Association</h3><p class="leading-relaxed mb-6">All enrolled students are members of the Cannoga Student Association (CSA), offering advocacy, events, discounts, and community.</p><div class="space-y-3"><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">Campus dining discounts</div><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">OC Transpo U-Pass subsidy</div></div></div></div></div>`,
+        defaultContent: `<div class="space-y-16"><div class="max-w-4xl"><h3 class="text-2xl font-bold mb-6">Financial Requirements &amp; Living Costs</h3><p class="text-neutral-600 leading-relaxed mb-8">Beyond tuition, ensure you have sufficient funds for rent, personal expenses, transportation, meals, insurance, and any Immigration, Refugees and Citizenship Finland (IRCC) requirements.</p><div class="p-8 bg-gray-100 rounded-2xl shadow-sm"><p class="font-bold">Kestora University supports international students in finding accommodation in Helsinki, Finland. Our housing guide covers all major providers and neighbourhoods.</p></div></div><div class="grid md:grid-cols-2 gap-8"><div class="p-8 bg-gray-100 rounded-3xl shadow-sm"><h3 class="text-xl font-bold mb-4">What's Included?</h3><p class="mb-6">The tuition fee includes teaching and access to modern learning facilities. Core student services are free of charge.</p><ul class="grid grid-cols-1 gap-3 text-sm font-medium"><li>Library access</li><li>Student Services</li><li>Career Services</li><li>Exchange Services</li><li>Study support</li></ul></div><div class="p-8 bg-black text-white rounded-3xl shadow-md"><h3 class="text-xl font-bold mb-4">Cannoga Student Association</h3><p class="leading-relaxed mb-6">All enrolled students are members of the Cannoga Student Association (CSA), offering advocacy, events, discounts, and community.</p><div class="space-y-3"><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">Campus dining discounts</div><div class="p-3 bg-white/20 rounded-xl text-xs font-bold uppercase tracking-widest">OC Transpo U-Pass subsidy</div></div></div></div></div>`,
     },
     {
         pageSlug: 'admissions/tuition',
         sectionKey: 'health_insurance_content',
         label: 'Health Insurance Section',
-        defaultContent: `<div class="bg-gray-100 rounded-2xl p-6 md:p-12 shadow-sm"><div class="flex flex-col md:flex-row items-start gap-6"><div><h3 class="text-xl font-bold mb-3">Health Insurance in Canada</h3><p class="leading-relaxed mb-4">International students coming to Ontario are eligible for OHIP (Ontario Health Insurance Plan) after a 3-month waiting period. During this time, you must have private health insurance. We recommend obtaining coverage before departure.</p><ul class="space-y-2 mb-6 text-sm"><li>Medical consultations and hospitalization</li><li>Emergency repatriation and evacuation</li><li>Dental emergencies and mental health support</li><li>Coverage accepted for Canadian study permit applications</li></ul><p class="text-sm">After 3 months: <a href="https://www.ontario.ca/page/apply-ohip-and-get-health-card" target="_blank" rel="noopener noreferrer" class="inline-block text-black underline font-bold">Apply for OHIP at ServiceOntario →</a></p></div></div></div>`,
+        defaultContent: `<div class="bg-gray-100 rounded-2xl p-6 md:p-12 shadow-sm"><div class="flex flex-col md:flex-row items-start gap-6"><div><h3 class="text-xl font-bold mb-3">Health Insurance in Finland</h3><p class="leading-relaxed mb-4">International students coming to Ontario are eligible for OHIP (Ontario Health Insurance Plan) after a 3-month waiting period. During this time, you must have private health insurance. We recommend obtaining coverage before departure.</p><ul class="space-y-2 mb-6 text-sm"><li>Medical consultations and hospitalization</li><li>Emergency repatriation and evacuation</li><li>Dental emergencies and mental health support</li><li>Coverage accepted for Canadian study permit applications</li></ul><p class="text-sm">After 3 months: <a href="https://www.ontario.ca/page/apply-ohip-and-get-health-card" target="_blank" rel="noopener noreferrer" class="inline-block text-black underline font-bold">Apply for OHIP at ServiceOntario →</a></p></div></div></div>`,
     },
     {
         pageSlug: 'admissions/tuition',
@@ -481,19 +481,19 @@ export const pageContentSections: PageContentSection[] = [
         pageSlug: 'admissions/tuition',
         sectionKey: 'contact_content',
         label: 'Contact Section',
-        defaultContent: `<p class="text-white mb-10 max-w-2xl mx-auto text-lg leading-relaxed">If you have questions about payment processes, deadlines, or refunds, contact the Tuition Fee Office.</p><a href="mailto:tuition@cannogacollege.ca" class="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-md">Contact Tuition Office</a>`,
+        defaultContent: `<p class="text-white mb-10 max-w-2xl mx-auto text-lg leading-relaxed">If you have questions about payment processes, deadlines, or refunds, contact the Tuition Fee Office.</p><a href="mailto:tuition@kestora.online" class="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-md">Contact Tuition Office</a>`,
     },
     {
         pageSlug: 'admissions',
         sectionKey: 'hero_title',
         label: 'Hero Title',
-        defaultContent: 'Admissions to Cannoga College',
+        defaultContent: 'Admissions to Kestora University',
     },
     {
         pageSlug: 'admissions',
         sectionKey: 'hero_subtitle',
         label: 'Hero Subtitle',
-        defaultContent: 'Apply to Cannoga College Ottawa and begin your Bachelor’s or Master’s studies in an internationally focused learning environment. Our admissions process is transparent, supportive, and open to students from around the world.',
+        defaultContent: 'Apply to Kestora University Helsinki and begin your Bachelor’s or Master’s studies in an internationally focused learning environment. Our admissions process is transparent, supportive, and open to students from around the world.',
     },
 ];
 

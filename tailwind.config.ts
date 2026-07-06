@@ -16,7 +16,7 @@ const config: Config = {
         },
         extend: {
             colors: {
-                black: "#2e1150",
+                black: "#000000",
                 primary: {
                     DEFAULT: "var(--color-primary)",
                     foreground: "var(--color-primary-foreground)",

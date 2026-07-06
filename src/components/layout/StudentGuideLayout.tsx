@@ -40,7 +40,7 @@ export default function GuideSidebarLayout({ sections, children }: Props) {
       {/* Sidebar */}
       <aside
         className={`fixed left-0 w-80 border-r border-white/10 overflow-y-auto transition-all duration-300 ease-aalto-in-out z-40 ${tocOpen ? 'translate-x-0' : '-translate-x-full'} ${tocOpen ? 'lg:block' : 'lg:hidden'}`}
-        style={{ top: '144px', height: 'calc(100vh - 144px)', backgroundColor: '#5c2d91' }}
+        style={{ top: '144px', height: 'calc(100vh - 144px)', backgroundColor: '#000000' }}
       >
         <SideNavigation sections={navSections} />
       </aside>
@@ -52,7 +52,7 @@ export default function GuideSidebarLayout({ sections, children }: Props) {
       >
         <button
           onClick={() => setTocOpen(!tocOpen)}
-          style={{ backgroundColor: '#5c2d91' }}
+          style={{ backgroundColor: '#000000' }}
           className="text-white px-2 py-6 rounded-r shadow-none hover:opacity-90 flex items-center justify-center transition-opacity"
           aria-label={tocOpen ? "Close sidebar" : "Open sidebar"}
         >
