@@ -243,7 +243,7 @@ export default function AdminInvoicesPage() {
                                         </td>
                                         <td className="block md:table-cell pt-4 pb-2 md:p-4 text-right">
                                             <button
-                                                onClick={() => handlePushInvoice(app.id, app.defaultFee)}
+                                                onClick={() => handlePushInvoice(app.id, feeValue)}
                                                 disabled={actionLoading === app.id || (isEnrolledOrPaid && !overrideSettled[app.id])}
                                                 className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-none text-xs font-bold uppercase tracking-widest transition-colors ${(isEnrolledOrPaid && !overrideSettled[app.id])
                                                         ? 'bg-neutral-200 text-neutral-400 cursor-not-allowed'
