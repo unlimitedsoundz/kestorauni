@@ -6,10 +6,10 @@ import { formatToDDMMYYYY } from '@/utils/date';
 import { Calendar, MapPin, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'News & Events | Cannoga College',
-    description: 'The latest news, announcements, and upcoming events from Cannoga College.',
+    title: 'News & Events | Kestora University',
+    description: 'The latest news, announcements, and upcoming events from Kestora University.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/news/',
+        canonical: 'https://kestora.online/news/',
     },
 };
 
@@ -22,9 +22,9 @@ export default async function NewsPage() {
     const staticArticles = [
         {
             id: 'static-why-study-ottawa-canada',
-            title: 'Why Study in Ottawa Canada? 10 Reasons International Students Choose Ottawa',
+            title: 'Why Study in Helsinki Finland? 10 Reasons International Students Choose Helsinki',
             slug: 'why-study-in-ottawa-canada',
-            excerpt: 'Canada has become one of North America\'s most attractive study destinations. From world-class education to a thriving tech scene, discover why students are flocking to Ottawa.',
+            excerpt: 'Finland has become one of North America\'s most attractive study destinations. From world-class education to a thriving tech scene, discover why students are flocking to Helsinki.',
             imageUrl: '/images/news/helsinki-study-hero.png',
             publishDate: '2026.02.14',
             type: 'news',
@@ -36,21 +36,17 @@ export default async function NewsPage() {
     return (
         <div className="min-h-screen bg-white text-black font-sans">
             {/* HERO SECTION */}
-            <Hero
-                title="News & Events"
-                body="Stay up to date with the latest stories, research breakthroughs, and upcoming events from Cannoga College."
-                backgroundColor="#dc6ade"
-                tinted
-                lightText={true}
-                breadcrumbs={[
-                    { label: 'Home', href: '/' },
-                    { label: 'News & Events' }
-                ]}
-                image={{
-                    src: "/images/news/helsinki-study-hero.png",
-                    alt: "Cannoga College News & Events"
-                }}
-            />
+<Hero
+                 title="News & Events"
+                 body="Stay up to date with the latest stories, research breakthroughs, and upcoming events from Kestora University."
+                 backgroundColor="#ffeb3b"
+                 tinted={false}
+                 lightText={false}
+                 breadcrumbs={[
+                     { label: 'Home', href: '/' },
+                     { label: 'News & Events' }
+                 ]}
+             />
 
             <div className="cc-container cc-section">
                 <NewsList staticArticles={staticArticles} />

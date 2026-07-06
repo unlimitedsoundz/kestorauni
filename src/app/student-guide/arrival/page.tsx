@@ -8,17 +8,17 @@ import { ContentBox } from '@/components/ui/ContentBox';
 import { CTA } from "@aalto-dx/react-modules";
 
 export const metadata = {
-    title: 'Arrival Guide | Cannoga College',
-    description: 'Prepare for your journey to Cannoga College. Enrolment, visa, housing, and settling in instructions.',
+    title: 'Arrival Guide | Kestora University',
+    description: 'Prepare for your journey to Kestora University. Enrolment, visa, housing, and settling in instructions.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/student-guide/arrival/',
+        canonical: 'https://kestora.online/student-guide/arrival/',
     },
 };
 
 const sections = [
     { id: 'before-you-arrive', title: 'Before You Arrive', content: '' },
     { id: 'arriving', title: 'Arriving in the Country', content: '' },
-    { id: 'starting', title: 'Starting at Cannoga', content: '' },
+    { id: 'starting', title: 'Starting at Kestora', content: '' },
     { id: 'living', title: 'Living & Studying', content: '' },
     { id: 'welcome', title: 'Welcome Message', content: '' },
 ];
@@ -31,7 +31,7 @@ export default function ArrivalGuidePage() {
             {/* Hero Section */}
             <Hero
                 title="Arrival Guide"
-                body="Starting your studies at Cannoga College is an exciting step. This guide helps you prepare, settle in, and feel confident."
+                body="Starting your studies at Kestora University is an exciting step. This guide helps you prepare, settle in, and feel confident."
                 backgroundColor="#dc6ade"
                 tinted
                 lightText={true}
@@ -41,8 +41,8 @@ export default function ArrivalGuidePage() {
                     { label: 'Arrival Guide' }
                 ]}
                 image={{
-                    src: "/images/arrival-hero.png",
-                    alt: "Cannoga Arrival"
+                    src: "/images/a94d255c3f1f28ee24fe6a4fe25383e2.jpg",
+                    alt: "Finnish Housing Style"
                 }}
             />
 
@@ -64,7 +64,7 @@ export default function ArrivalGuidePage() {
                             />
                             <Card
                                 title="Accommodation"
-                                body="Secure housing before arrival. Cannoga assists with the application process for on-campus options."
+                                body="Secure housing before arrival. Kestora assists with the application process for on-campus options."
                                 badge={{ label: "Housing" }}
                             />
                             <Card
@@ -104,12 +104,12 @@ export default function ArrivalGuidePage() {
                         />
                     </section>
 
-                    {/* Starting at Cannoga */}
+                    {/* Starting at Kestora */}
                     <section id="starting" className="scroll-mt-32">
                         <ContentBox
                             size="large"
                             icon="graduationCap"
-                            title="Starting at Cannoga"
+                            title="Starting at Kestora"
                             body={
                                 <div className="grid md:grid-cols-2 gap-12 text-left">
                                     <div>
@@ -139,13 +139,13 @@ export default function ArrivalGuidePage() {
                             />
                             <Card
                                 title="Stay Connected"
-                                body="Check your Cannoga email and student portal regularly for updates, schedules, and important announcements."
+                                body="Check your Kestora email and student portal regularly for updates, schedules, and important announcements."
                             />
                         </div>
                         <div className="mt-12">
                         <CTA
                             title="Learn the Language"
-                            body="While English is the primary language, Ottawa is a bilingual city. Learning some French can enrich your experience and improve career opportunities."
+                            body="While English is the primary language, Helsinki is a bilingual city. Learning some French can enrich your experience and improve career opportunities."
                             cta={{
                                 label: "Explore Language Resources",
                                 linkComponentProps: {
@@ -161,7 +161,7 @@ export default function ArrivalGuidePage() {
                     <section id="welcome" className="scroll-mt-32">
                         <CTA
                             title="We Are Glad You Are Here"
-                            body="Arriving in a new place can feel overwhelming, but Cannoga College is here to support you from arrival through graduation."
+                            body="Arriving in a new place can feel overwhelming, but Kestora University is here to support you from arrival through graduation."
                             cta={{
                                 label: "Explore Student Guide",
                                 linkComponentProps: {

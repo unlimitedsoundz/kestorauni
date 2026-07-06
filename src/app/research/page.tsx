@@ -6,31 +6,27 @@ import { TagGroup } from '@/components/ui/TagGroup';
 import { LiftupCollection } from '@aalto-dx/react-modules';
 
 export const metadata = {
-    title: 'Research at Cannoga College — Sustainability, Innovation & Technology',
-    description: 'Explore research at Cannoga College. Funded projects in sustainability, clean technology, design, and social innovation. Publications, labs, and collaboration opportunities.',
+    title: 'Research at Kestora University — Sustainability, Innovation & Technology',
+    description: 'Explore research at Kestora University. Funded projects in sustainability, clean technology, design, and social innovation. Publications, labs, and collaboration opportunities.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/research/',
+        canonical: 'https://kestora.online/research/',
     },
 };
 
 export default function ResearchPage() {
     return (
         <div className="min-h-screen bg-white text-black font-sans">
-            <Hero
-                title="Research & Creative Exploration"
-                body="Where curiosity meets creation, connecting theory with hands-on practice in the heart of Ottawa."
-                backgroundColor="#3f581f"
-                tinted
-                lightText={true}
-                breadcrumbs={[
-                    { label: 'Home', href: '/' },
-                    { label: 'Research' }
-                ]}
-                image={{
-                    src: "/images/research-hero.jpg",
-                    alt: "Research & Creative Exploration"
-                }}
-            />
+<Hero
+                 title="Research & Creative Exploration"
+                 body="Where curiosity meets creation, connecting theory with hands-on practice in the heart of Helsinki."
+                 backgroundColor="#1e3a8a"
+                 tinted={false}
+                 lightText={false}
+                 breadcrumbs={[
+                     { label: 'Home', href: '/' },
+                     { label: 'Research' }
+                 ]}
+             />
 
             {/* Intro Grid */}
             <div className="cc-container cc-section">
@@ -39,7 +35,7 @@ export default function ResearchPage() {
                 </div>
                 <div className="prose prose-lg text-neutral-600 max-w-3xl leading-relaxed">
                     <p className="mb-6">
-                        At <strong className="text-[#2e1150]">Cannoga College</strong>, research is not locked away in labs or journals — it lives in studios, classrooms, communities, and real-world projects. We explore questions that matter now and ideas that shape what comes next, blending <strong className="text-[#2e1150]">technology, design, business, science, and culture</strong> into a shared space of experimentation and discovery.
+                        At <strong className="text-[#000000]">Kestora University</strong>, research is not locked away in labs or journals — it lives in studios, classrooms, communities, and real-world projects. We explore questions that matter now and ideas that shape what comes next, blending <strong className="text-[#000000]">technology, design, business, science, and culture</strong> into a shared space of experimentation and discovery.
                     </p>
                     <p>
                         Our research culture welcomes both analytical thinkers and creative makers. Whether through data, design, systems, or stories, we believe knowledge grows stronger when disciplines cross paths.
@@ -62,7 +58,7 @@ export default function ResearchPage() {
                                 "Empower students to challenge norms and create alternatives"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-3 text-neutral-700 font-medium">
-                                    <ArrowRight size={18} weight="bold" className="shrink-0 text-[#5c2d91]" />
+                                    <ArrowRight size={18} weight="bold" className="shrink-0 text-[#000000]" />
                                     <span>{item}</span>
                                 </li>
                             ))}
@@ -117,8 +113,8 @@ export default function ResearchPage() {
                                 tags: ["Architecture", "Urban", "Inclusive"]
                             }
                         ].map((theme, i) => (
-                            <div key={i} className="cc-card p-8 group hover:bg-[#2e1150] transition-all">
-                                <h3 className="text-lg font-bold text-[#2e1150] uppercase tracking-tight mb-3 group-hover:text-white transition-colors">{theme.title}</h3>
+                            <div key={i} className="cc-card p-8 group hover:bg-[#000000] transition-all">
+                                <h3 className="text-lg font-bold text-[#000000] uppercase tracking-tight mb-3 group-hover:text-white transition-colors">{theme.title}</h3>
                                 <p className="text-neutral-600 mb-6 leading-relaxed text-sm group-hover:text-white/80 transition-colors">{theme.desc}</p>
                                 <TagGroup tags={theme.tags.map(tag => ({ label: tag }))} />
                             </div>
@@ -135,7 +131,6 @@ export default function ResearchPage() {
                         tilesPerRow={3}
                         tiles={[
                             {
-                                image: { src: "/images/research/liftup-0.jpg", alt: "Liftup 0" },
                                 title: "Integrated Systems Research",
                                 body: "Exploring the boundary between physical infrastructure and digital twins. Our research into integrated systems aims to create more resilient urban environments through data-driven design and real-time monitoring.",
                                 cta: {
@@ -145,7 +140,6 @@ export default function ResearchPage() {
                                 icon: "chevron-right",
                             },
                             {
-                                image: { src: "/images/research/liftup-1.jpg", alt: "Liftup 1" },
                                 title: "Future Materials Lab",
                                 body: "Developing biodegradable alternatives to structural polymers. This project combines synthetic biology with architectural engineering to grow the next generation of building materials.",
                                 cta: {
@@ -155,7 +149,6 @@ export default function ResearchPage() {
                                 icon: "arrow-download",
                             },
                             {
-                                image: { src: "/images/research/liftup-2.jpg", alt: "Liftup 2" },
                                 title: "Ethical AI Frameworks",
                                 body: "Defining human-centric AI governance for creative industries. We are building the tools that ensure artificial intelligence serves human creativity without compromising individual integrity.",
                                 cta: {
@@ -166,7 +159,6 @@ export default function ResearchPage() {
                                 icon: "chevron-right",
                             },
                             {
-                                image: { src: "/images/research/liftup-3.jpg", alt: "Liftup 3" },
                                 title: "Urban Biodiversity",
                                 body: "Mapping the intersection of urban density and ecological health. This project uses satellite imagery and ground sensors to design cityscapes that actively support local flora and fauna.",
                                 cta: {
@@ -176,7 +168,6 @@ export default function ResearchPage() {
                                 icon: "chevron-right",
                             },
                             {
-                                image: { src: "/images/research/liftup-4.jpg", alt: "Liftup 4" },
                                 title: "Circular Economy Models",
                                 body: "Rethinking the lifecycle of consumer electronics. Our team is developing modular hardware standards that enable 100% component recovery and secondary market utility.",
                                 cta: {
@@ -186,9 +177,8 @@ export default function ResearchPage() {
                                 icon: "chevron-right",
                             },
                             {
-                                image: { src: "/images/research/liftup-5.jpg", alt: "Liftup 5" },
                                 title: "Social Innovation Lab",
-                                body: "Prototyping community-led housing solutions in Ottawa. We connect architectural students with local residents to design living spaces that foster collective well-being and affordability.",
+                                body: "Prototyping community-led housing solutions in Helsinki. We connect architectural students with local residents to design living spaces that foster collective well-being and affordability.",
                                 cta: {
                                     label: "Read Case Study",
                                     linkComponentProps: { href: "/research/social-lab" },
@@ -201,7 +191,7 @@ export default function ResearchPage() {
             </div>
 
             {/* Experimental Framework */}
-            <div className="py-16 md:py-24 bg-[#2e1150] text-white">
+            <div className="py-16 md:py-24 bg-[#000000] text-white">
                 <div className="cc-container">
                     <div className="cc-section-divider border-white/20 mb-12">
                         <h2 className="cc-h2 text-white">Experimental Framework</h2>
@@ -213,8 +203,8 @@ export default function ResearchPage() {
                             { title: "Open-minded", text: "Welcoming radical questions" },
                             { title: "Ethical", text: "Guided by integrity" }
                         ].map((way, i) => (
-                            <div key={i} className="p-8 bg-white/5 border border-white/10 hover:bg-white hover:text-[#2e1150] transition-all group">
-                                <h3 className="text-lg font-bold uppercase tracking-tight mb-3 group-hover:text-[#2e1150]">{way.title}</h3>
+                            <div key={i} className="p-8 bg-white/5 border border-white/10 hover:bg-white hover:text-[#000000] transition-all group">
+                                <h3 className="text-lg font-bold uppercase tracking-tight mb-3 group-hover:text-[#000000]">{way.title}</h3>
                                 <p className="text-white/60 group-hover:text-neutral-500 text-sm leading-relaxed">{way.text}</p>
                             </div>
                         ))}
@@ -249,7 +239,7 @@ export default function ResearchPage() {
                     <div>
                         <h2 className="text-4xl font-semibold mb-10 uppercase tracking-tighter">Ethics & Integrity</h2>
                         <p className="text-xl text-black mb-10 leading-relaxed font-medium">
-                            All research and creative activity at Cannoga College follows clear ethical guidelines and quality standards. Integrity, transparency, and accountability are central to how we work.
+                            All research and creative activity at Kestora University follows clear ethical guidelines and quality standards. Integrity, transparency, and accountability are central to how we work.
                         </p>
                         <h3 className="text-2xl font-semibold uppercase tracking-tighter mb-6">Support Infrastructure</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -268,7 +258,7 @@ export default function ResearchPage() {
                     <p className="cc-label uppercase tracking-widest mb-3">Join the Research Community</p>
                     <h2 className="cc-h2 mb-6">Manifest Your Research</h2>
                     <p className="text-lg text-neutral-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-                        Students and staff are invited to actively engage in exploration. At Cannoga College, research is not just something you study — <strong>it's something you do</strong>.
+                        Students and staff are invited to actively engage in exploration. At Kestora University, research is not just something you study — <strong>it's something you do</strong>.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link href="/research/projects" className="cc-btn-primary no-underline">

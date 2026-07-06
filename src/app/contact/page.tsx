@@ -8,10 +8,10 @@ import { ContentBox } from '@/components/ui/ContentBox';
 import { Card } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
-    title: 'Contact Information | Cannoga College',
-    description: 'Contact details for Cannoga College including Registry, Admissions, Student Services, and general inquiries.',
+    title: 'Contact Information | Kestora University',
+    description: 'Contact details for Kestora University including Registry, Admissions, Student Services, and general inquiries.',
     alternates: {
-        canonical: 'https://cannogacollege.ca/contact/',
+        canonical: 'https://kestora.online/contact/',
     },
 };
 
@@ -26,17 +26,17 @@ export default function ContactPage() {
             <SchemaLD data={{
                 "@context": "https://schema.org",
                 "@type": "ContactPage",
-                "name": "Contact Cannoga College",
-                "url": "https://cannogacollege.ca/contact",
+                "name": "Contact Kestora University",
+                "url": "https://kestora.online/contact",
                 "mainEntity": {
                     "@type": "EducationalOrganization",
-                    "name": "Cannoga College",
-                    "email": "Cannoga@cannogacollege.ca",
+                    "name": "Kestora University",
+                    "email": "Kestora@kestora.online",
                     "address": {
                         "@type": "PostalAddress",
-                        "streetAddress": "2368 Midway Ave",
-                        "addressLocality": "Ottawa",
-                        "postalCode": "K2B 5J8",
+                        "streetAddress": "Pohjoisesplanadi 51",
+                        "addressLocality": "Helsinki",
+                        "postalCode": "00150",
                         "addressCountry": "CA"
                     }
                 }
@@ -44,7 +44,7 @@ export default function ContactPage() {
             {/* HERO SECTION */}
             <Hero
                 title="Contact Information"
-                body="Cannoga College provides contact information for administrative services including Registry, Admissions, Student Services and general inquiries to support students, applicants, staff and partners."
+                body="Kestora University provides contact information for administrative services including Registry, Admissions, Student Services and general inquiries to support students, applicants, staff and partners."
                 backgroundColor="#ff8d4f"
                 tinted
                 lightText={true}
@@ -54,7 +54,7 @@ export default function ContactPage() {
                 ]}
                 image={{
                     src: "https://i.pinimg.com/736x/fa/28/ed/fa28ed6017e508a4291beda999617f25.jpg",
-                    alt: "Contact Cannoga College"
+                    alt: "Contact Kestora University"
                 }}
             />
 
@@ -71,9 +71,9 @@ export default function ContactPage() {
                                     <div>
                                         <a href="tel:+3580942721884" className="inline-flex items-center gap-2 text-xl font-bold text-black mb-2 underline underline-offset-4 hover:opacity-80 transition-opacity">
                                             <Phone size={24} weight="fill" />
-                                            Talk to Cannoga
+                                            Talk to Kestora
                                         </a>
-                                        <p className="text-neutral-500 font-bold uppercase tracking-widest text-xs">Ottawa, Canada resident enquiries</p>
+                                        <p className="text-neutral-500 font-bold uppercase tracking-widest text-xs">Helsinki, Finland resident enquiries</p>
                                     </div>
                                     <div>
                                         <a href="tel:+19842062656" className="inline-flex items-center gap-2 text-xl font-bold text-black mb-2 underline underline-offset-4 hover:opacity-80 transition-opacity">
@@ -85,10 +85,10 @@ export default function ContactPage() {
                                     <div>
                                          <h4 className="font-bold text-black uppercase tracking-[0.2em] text-xs mb-4">Postal Address</h4>
                                         <address className="not-italic text-neutral-600 leading-relaxed text-sm font-bold">
-                                            Cannoga College – Ottawa Campus<br />
-                                            2368 Midway Ave,<br />
-                                            Ottawa, ON K2B 5J8,<br />
-                                            Canada
+                                            Kestora University – Helsinki Campus<br />
+                                            Pohjoisesplanadi 51,<br />
+                                            00150 Helsinki, Uusimaa,<br />
+                                            Finland
                                         </address>
                                     </div>
                                 </div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Responsible for receiving official correspondence and documentation.</p>
-                                    <a href="mailto:registry@cannogacollege.ca" className="block font-bold underline">registry@cannogacollege.ca</a>
+                                    <a href="mailto:registry@kestora.online" className="block font-bold underline">registry@kestora.online</a>
                                 </div>
                             }
                         />
@@ -114,7 +114,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Information on programmes, applications, scholarships, and deadlines.</p>
-                                    <a href="mailto:admissions@cannogacollege.ca" className="block font-bold underline">admissions@cannogacollege.ca</a>
+                                    <a href="mailto:admissions@kestora.online" className="block font-bold underline">admissions@kestora.online</a>
                                 </div>
                             }
                         />
@@ -124,7 +124,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Support for enrolled students including study planning and wellbeing.</p>
-                                    <a href="mailto:studentservices@cannogacollege.ca" className="block font-bold underline">studentservices@cannogacollege.ca</a>
+                                    <a href="mailto:studentservices@kestora.online" className="block font-bold underline">studentservices@kestora.online</a>
                                 </div>
                             }
                         />
@@ -134,7 +134,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Storage of permanent records and official documentation.</p>
-                                    <a href="mailto:archives@cannogacollege.ca" className="block font-bold underline">archives@cannogacollege.ca</a>
+                                    <a href="mailto:archives@kestora.online" className="block font-bold underline">archives@kestora.online</a>
                                 </div>
                             }
                         />
