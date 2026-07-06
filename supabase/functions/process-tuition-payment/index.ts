@@ -82,12 +82,15 @@ Deno.serve(async (req) => {
                 { name: 'Program Transcript Fee', amount: 100 },
                 { name: 'Student Experience Fee', amount: 100 }
             ];
+            const totalAncillaryForNotification = ancillaryFees.reduce((acc, item) => acc + item.amount, 0);
+            const baseTuitionForNotification = Math.max(0, amount - totalAncillaryForNotification);
+
             await adminClient.functions.invoke('send-notification', {
                 body: {
                     type: 'PAYMENT_RECEIVED',
                     applicationId: applicationId,
                     additionalData: {
-                        amount: amount,
+                        amount: baseTuitionForNotification,
                         currency: details.currency,
                         reference: reference,
                         paymentType: invoiceType || 'TUITION',
