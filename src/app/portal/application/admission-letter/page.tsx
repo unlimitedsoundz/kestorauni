@@ -143,12 +143,19 @@ function AdmissionLetterContent() {
 
     // Current Date
     const today = new Date();
-    const issueDate = admission?.created_at
-        ? format(new Date(admission.created_at), "MMMM d, yyyy")
-        : format(today, "MMMM d, yyyy");
+    const admissionTimestamp = (admission?.accepted_at || admission?.created_at || application.updated_at || application.submitted_at || application.created_at || today.toISOString());
+    const issueDate = format(new Date(admissionTimestamp), "MMMM d, yyyy");
 
     const academicYear = "2026 - 2027";
-    const intake = "August / Autumn 2026";
+    const intake = "September / Fall 2026";
+
+    const degreeLevelRaw = (application.course?.degreeLevel || '').toUpperCase();
+    const degreeLevelLabel =
+        degreeLevelRaw === 'MASTER' ? "Master's Degree"
+            : degreeLevelRaw === 'BACHELOR' ? "Bachelor's Degree"
+                : degreeLevelRaw === 'DIPLOMA' ? 'Diploma'
+                    : degreeLevelRaw === 'CERTIFICATE' ? 'Certificate'
+                        : "Bachelor's Degree";
 
     // Dynamic Student ID (if available, otherwise fallback)
     const displayStudentId = student?.student_id || admission?.student_id || profile?.student_id || application.user?.student_id || "Generating...";
@@ -169,7 +176,7 @@ function AdmissionLetterContent() {
         </>
     ) : 'Address Pending';
 
-    const programStart = '24th August 2026'; // Hardcoded as per previous logic
+    const programStart = '11th September 2026'; // Fall 2026 start date
     const admissionRef = admission?.admission_reference || application.application_number || application.id.slice(0, 8).toUpperCase();
 
     return (
@@ -214,7 +221,7 @@ function AdmissionLetterContent() {
                             <strong className="text-black block mb-1 text-[10px]">Kestora University – Helsinki Campus</strong>
                             Pohjoisesplanadi 51,<br />
                             00150 Helsinki, Uusimaa, Finland<br />
-                            Phone: +1-613-727-4723<br />
+                            Phone: +358-09-42721884<br />
                             <div className="mt-1 text-[8px]">
                                 kestora.online | admissions@kestora.online
                             </div>
@@ -252,8 +259,9 @@ function AdmissionLetterContent() {
                                 { label: 'Date of Admission', value: issueDate },
                                 { label: 'Academic Year', value: academicYear },
                                 { label: 'Intake', value: intake },
-                                { label: 'Programme Start Date', value: '17.08.2026' },
-                                { label: 'Programme End Date', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '17.08.2028' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '17.08.2029' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '17.08.2028' : '17.08.2027' },
+                                { label: 'Degree Level', value: degreeLevelLabel },
+                                { label: 'Programme Start Date', value: '17.09.2026' },
+                                { label: 'Programme End Date', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '10.08.2028' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '10.08.2029' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '10.08.2028' : '10.08.2027' },
                                 { label: 'Total Credits', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 ECTS' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '180 ECTS' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '120 ECTS' : '60 ECTS' },
                                 { label: 'Programme of Study', value: `${application.course?.title} (${application.course?.programType || 'Full-time'})` }
                             ].map((row, idx) => (
@@ -273,7 +281,7 @@ function AdmissionLetterContent() {
                         <div>
                             <h4 className="text-[9px] font-bold text-black uppercase tracking-widest mb-1">Official Use</h4>
                             <p className="text-[10px] text-black leading-tight italic">
-                                Certificate of admission for Canadian study permit (IRCC) and other official immigration applications.
+                                Certificate of admission and may be used for visa applications, residence permit processing (Migri), and other official purposes requiring proof of student status in Helsinki, Finland.
                             </p>
                         </div>
                         <div>
@@ -312,7 +320,7 @@ function AdmissionLetterContent() {
 
                     <div className="mt-6 text-center">
                         <p className="text-[10px] text-black italic">
-                            Generated electronically via Cannoga SIS. Valid without physical signature if verified online.
+                            Generated electronically via Kestora SIS. Valid without physical signature if verified online.
                         </p>
                     </div>
                 </div>

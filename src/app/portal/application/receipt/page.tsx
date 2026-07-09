@@ -8,6 +8,7 @@ import { formatToDDMMYYYY } from '@/utils/date';
 import PrintButton from '@/components/portal/PrintButton';
 import Image from 'next/image';
 import { useState, useEffect, Suspense } from 'react';
+import { getTuitionFee } from '@/utils/tuition';
 
 function ReceiptContent() {
     const router = useRouter();
@@ -107,7 +108,7 @@ function ReceiptContent() {
         ? application.offer[0]
         : application?.offer;
 
-    // Safely extract payment
+// Safely extract payment
     const payment = offer?.payments?.[0];
 
     if (!payment || (application.status !== 'ENROLLED' && application.status !== 'PAYMENT_SUBMITTED')) {
@@ -116,13 +117,25 @@ function ReceiptContent() {
                 <p className="text-xl font-normal text-black">Receipt Not Available</p>
                 <p className="text-sm text-neutral-500 max-w-md text-center">Your payment receipt is not available yet. This may be because the payment is still being processed.</p>
                 <div className="flex gap-4">
-                    <button onClick={() => window.location.reload()} className="px-6 py-2 bg-black text-white text-[11px] font-normal rounded-sm">Retry</button>
-                    <Link href="/portal/dashboard" className="px-6 py-2 border border-neutral-200 text-[11px] font-normal rounded-sm">Dashboard</Link>
+                    <button onClick={() => window.location.reload()} className="px-6 py-2 bg-black text-white border border-white text-[11px] font-normal rounded-sm hover:bg-neutral-800 transition-all">Retry</button>
+                    <Link href="/portal/dashboard" className="px-6 py-2 bg-black text-white border border-white text-[11px] font-normal rounded-sm hover:bg-neutral-800 transition-all">Dashboard</Link>
                 </div>
             </div>
         );
     }
 
+    // Calculate deposit status and other needed values
+    const level = application.course?.level || 'BACHELOR';
+    const field = application.course?.field || 'TECHNOLOGY';
+    const isDomestic = application.personal_info?.country === 'Finland';
+    const tuitionFee = getTuitionFee(level, field, isDomestic);
+    const depositAmount = Math.round(tuitionFee * 0.5);
+    const isDeposit = Math.round(payment.amount) === depositAmount;
+    const isPending = application.status === 'PAYMENT_SUBMITTED';
+
+    // Payment type sourced from the actual tuition_payments.invoice_type (deposit vs full)
+    const paymentTypeRaw = payment?.invoice_type || (isDeposit ? 'TUITION_DEPOSIT' : 'TUITION_FULL');
+    const paymentTypeLabel = paymentTypeRaw === 'TUITION_FULL' ? 'Full Tuition' : 'Tuition Deposit';
 
     // Locks the receipt page if passing through verification
     if (application.status === 'PAYMENT_SUBMITTED') {
@@ -130,7 +143,7 @@ function ReceiptContent() {
             <div className="flex items-center justify-center min-h-[60vh] font-rubik px-4">
                 <div className="max-w-md w-full bg-white border border-neutral-200 p-8 rounded-sm text-center shadow-sm">
                     <div className="w-12 h-12 bg-neutral-50 text-black rounded-full flex items-center justify-center mx-auto mb-4 border border-neutral-200">
-                        <Suspense><div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div></Suspense>
+                        <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
                     </div>
                     <h2 className="text-lg font-normal text-black mb-2">Payment Under Review</h2>
                     <p className="text-xs text-neutral-500 font-normal leading-relaxed mb-8">
@@ -159,9 +172,8 @@ function ReceiptContent() {
     ];
     const totalAncillary = ancillaryFees.reduce((acc, item) => acc + item.amount, 0);
     const receiptTotal = (payment?.amount || 0);
-    const intake = admission?.intake || 'Autumn 2026';
+    const intake = admission?.intake || 'September Fall 2026';
     const academicYear = admission?.academic_year || '2026/2027';
-    const isPending = application.status === 'PAYMENT_SUBMITTED';
 
     const formatPaymentMethod = (methodId: string | undefined) => {
         if (!methodId) return 'N/A';
@@ -223,6 +235,7 @@ function ReceiptContent() {
                         <div className="text-sm">
                             Transaction ID: <span className="font-mono">{payment?.transaction_reference || 'N/A'}</span><br />
                             Date: {formatToDDMMYYYY(payment?.created_at)}<br />
+                            Payment Type: {paymentTypeLabel}<br />
                             Status: {isPending ? 'Pending Verification' : 'Verified & Completed'}
                         </div>
                     </div>
@@ -247,7 +260,7 @@ function ReceiptContent() {
                         </div>
                         <div className="flex justify-between py-2">
                             <span>
-                                {isDeposit ? 'Tuition Deposit' : 'Tuition Fees'} - {application.course?.title}<br />
+                                {paymentTypeLabel} - {application.course?.title}<br />
                                 <span className="text-[11px] text-neutral-500">Academic Year {academicYear}</span>
                             </span>
                             <span>€ {payment.amount.toLocaleString()}</span>
@@ -276,7 +289,7 @@ function ReceiptContent() {
                                 className="mix-blend-multiply"
                             />
                         </div>
-                        <div className="text-sm font-bold">Alex Moulton</div>
+                        <div className="text-sm font-bold">Alek Laimer</div>
                         <div className="text-[10px] text-neutral-500 uppercase tracking-widest">College Registrar</div>
                     </div>
                     

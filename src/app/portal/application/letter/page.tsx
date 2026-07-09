@@ -127,6 +127,14 @@ function AdmissionLetterContent() {
 
     const application = data;
 
+    const degreeLevelRaw = (application.course?.degreeLevel || '').toUpperCase();
+    const degreeLevelLabel =
+        degreeLevelRaw === 'MASTER' ? "Master's Degree"
+            : degreeLevelRaw === 'BACHELOR' ? "Bachelor's Degree"
+                : degreeLevelRaw === 'DIPLOMA' ? 'Diploma'
+                    : degreeLevelRaw === 'CERTIFICATE' ? 'Certificate'
+                        : "Bachelor's Degree";
+
     // Determine Fees (Annual based for Deposit calculation)
     let displayOffer = Array.isArray(data.offer) ? data.offer[0] : data.offer;
     displayOffer = displayOffer || {};
@@ -151,6 +159,8 @@ function AdmissionLetterContent() {
 
     const today = new Date();
     const showAcceptButton = application.status === 'ADMITTED';
+    const admissionTimestamp = displayOffer?.accepted_at || displayOffer?.created_at || application.updated_at || application.submitted_at || application.created_at || today.toISOString();
+    const admissionDateLabel = formatToDDMMYYYY(admissionTimestamp);
 
     return (
         <div className="min-h-screen bg-neutral-50 py-12 px-4 sm:px-6">
@@ -271,11 +281,12 @@ function AdmissionLetterContent() {
                         {/* Details Table */}
                         <div className="space-y-0.5 mb-8 print:mb-4">
                             {[
-                                { label: 'Date of Admission', value: formatToDDMMYYYY(today.toISOString()) },
+                                { label: 'Date of Admission', value: admissionDateLabel },
                                 { label: 'Academic Year', value: '2026 - 2027' },
-                                { label: 'Intake', value: 'August / Autumn 2026' },
-                                { label: 'Programme Start Date', value: '17.08.2026' },
-                                { label: 'Programme End Date', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '17.08.2028' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '17.08.2029' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '17.08.2028' : '17.08.2027' },
+                                { label: 'Intake', value: 'Fall 2026' },
+                                { label: 'Degree Level', value: degreeLevelLabel },
+                                { label: 'Programme Start Date', value: '17.09.2026' },
+                                { label: 'Programme End Date', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '10.08.2028' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '10.08.2029' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '10.08.2028' : '10.08.2027' },
                                 { label: 'Total Credits', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 ECTS' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '180 ECTS' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '120 ECTS' : '60 ECTS' },
                                 { label: 'Programme of Study', value: `${application.course?.title} (${application.course?.programType || 'Full-time'})` }
                             ].map((row, idx) => (
@@ -382,7 +393,7 @@ function AdmissionLetterContent() {
                                 </div>
                                 <div>
                                     <div className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 print:mb-0">Intake & Year</div>
-                                    <div className="text-sm print:text-xs font-bold text-black">Autumn Semester 2026</div>
+                                    <div className="text-sm print:text-xs font-bold text-black">Fall Semester 2026</div>
                                 </div>
                                 <div>
                                     <div className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 print:mb-0">Intended Programme</div>
@@ -398,7 +409,7 @@ function AdmissionLetterContent() {
                                 </div>
                                 <div>
                                     <div className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 print:mb-0">Programme Duration</div>
-                                    <div className="text-sm print:text-xs font-bold text-black">17.08.2026 – {(application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '17.08.2028' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '17.08.2029' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '17.08.2028' : '17.08.2027'}</div>
+                                    <div className="text-sm print:text-xs font-bold text-black">17.09.2026 – {(application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '10.08.2028' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '10.08.2029' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '10.08.2028' : '10.08.2027'}</div>
                                 </div>
                                 <div>
                                     <div className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 print:mb-0">Total Credits</div>
@@ -414,7 +425,7 @@ function AdmissionLetterContent() {
                                 Dear {application.personal_info?.firstName},
                             </p>
                             <p className="text-sm print:text-xs leading-relaxed text-black mb-3 print:mb-1">
-                                We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Kestora University has decided to offer you a place in the <strong>{application.course?.title}</strong> ({application.course?.programType || 'Full-time'}) programme for the <strong>Autumn 2026</strong> intake.
+                                We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Kestora University has decided to offer you a place in the <strong>{application.course?.title}</strong> ({application.course?.programType || 'Full-time'}) programme for the <strong>Fall 2026</strong> intake.
                             </p>
                             <p className="text-sm print:text-xs leading-relaxed text-black">
                                 This offer is subject to the conditions outlined below, including acceptance of the offer via the student portal and confirmation of tuition payment by the specified deadline. Upon fulfillment of these conditions, an official Letter of Admission will be issued confirming your enrollment.
