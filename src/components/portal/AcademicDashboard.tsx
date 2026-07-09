@@ -80,7 +80,7 @@ export default function AcademicDashboard({ student }: AcademicDashboardProps) {
                         <h3 className="font-bold text-[13px] md:text-[15px] pb-2 md:pb-3 mb-3">Urgent Notifications</h3>
                         <div className="bg-neutral-50 p-4 md:p-6 border-l-2 border-black">
                             <p className="text-[13px] md:text-[15px] font-semibold mb-1">Orientation Week Starts</p>
-                            <p className="text-[11px] md:text-[13px] text-black">Monday, 10th August • 09:00 AM • Tomakinen Hall</p>
+                            <p className="text-[11px] md:text-[13px] text-black">Friday, 17th September</p>
                         </div>
                     </div>
 

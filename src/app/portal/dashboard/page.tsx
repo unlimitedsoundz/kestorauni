@@ -142,6 +142,11 @@ export default function DashboardPage() {
                 )}
             </div>
 
+            {/* Payment Status - sourced from the students table (tuition deposit & housing fees) */}
+            {student && (
+                <PaymentStatusCard student={student} dark />
+            )}
+
             {/* Enrolled Student Alert Card - Only show if fully ENROLLED (Admin approved) */}
             {student && applications.some(app => app.id === student.application_id && app.status === 'ENROLLED') && (
                 <div className="flex items-start justify-between border-2 border-white p-6 md:p-8 rounded-sm text-white relative overflow-hidden bg-neutral-900">
@@ -175,11 +180,6 @@ export default function DashboardPage() {
                         </div>
                     </div>
                 </div>
-            )}
-
-            {/* Payment Status - sourced from the students table */}
-            {student && (
-                <PaymentStatusCard student={student} dark />
             )}
 
             {/* Applications List */}
