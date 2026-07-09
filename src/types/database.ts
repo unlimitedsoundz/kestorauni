@@ -316,6 +316,8 @@ export interface Database {
           lms_access_data: Record<string, any>
           tuition_deposit_paid: boolean
           tuition_deposit_paid_at: string | null
+          full_tuition_paid: boolean
+          full_tuition_paid_at: string | null
           housing_fee_paid: boolean
           housing_fee_paid_at: string | null
           created_at: string
@@ -335,6 +337,8 @@ export interface Database {
           lms_access_data?: Record<string, any>
           tuition_deposit_paid?: boolean
           tuition_deposit_paid_at?: string | null
+          full_tuition_paid?: boolean
+          full_tuition_paid_at?: string | null
           housing_fee_paid?: boolean
           housing_fee_paid_at?: string | null
           created_at?: string
@@ -354,6 +358,8 @@ export interface Database {
           lms_access_data?: Record<string, any>
           tuition_deposit_paid?: boolean
           tuition_deposit_paid_at?: string | null
+          full_tuition_paid?: boolean
+          full_tuition_paid_at?: string | null
           housing_fee_paid?: boolean
           housing_fee_paid_at?: string | null
           created_at?: string

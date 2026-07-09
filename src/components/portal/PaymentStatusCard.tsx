@@ -55,6 +55,8 @@ export default function PaymentStatusCard({
     student: {
         tuition_deposit_paid?: boolean;
         tuition_deposit_paid_at?: string | null;
+        full_tuition_paid?: boolean;
+        full_tuition_paid_at?: string | null;
         housing_fee_paid?: boolean;
         housing_fee_paid_at?: string | null;
     } | null;
@@ -73,6 +75,11 @@ export default function PaymentStatusCard({
                 <PaymentStatusRow
                     label="Tuition Deposit"
                     state={{ paid: !!student.tuition_deposit_paid, paidAt: student.tuition_deposit_paid_at ?? null }}
+                    dark={dark}
+                />
+                <PaymentStatusRow
+                    label="Full Tuition"
+                    state={{ paid: !!student.full_tuition_paid, paidAt: student.full_tuition_paid_at ?? null }}
                     dark={dark}
                 />
                 <PaymentStatusRow
