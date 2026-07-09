@@ -52,7 +52,7 @@ export default function AlumniPage() {
                                 The Master’s Alumni of Kestora University represent a growing global community of professionals who have completed advanced postgraduate studies at the institution.
                             </p>
                             <p className="text-aalto-3 text-black font-medium leading-relaxed max-w-4xl">
-                                Our alumni are equipped with strong academic foundations, practical expertise, and a commitment to sustainable impact leadership and innovation. Graduates become lifelong members of the Cannoga alumni community and continue to contribute to positive change across industries and societies.
+                                Our alumni are equipped with strong academic foundations, practical expertise, and a commitment to sustainable impact leadership and innovation. Graduates become lifelong members of the Kestora alumni community and continue to contribute to positive change across industries and societies.
                             </p>
                         </div>
                     </section>

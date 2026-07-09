@@ -15,19 +15,39 @@ export default function DbFAQ({ pageSlug, fallbackFaqs, refreshKey }: DbFAQProps
         if (pageSlug === 'admissions/tuition') {
             return text
                 .replace(/Flywire/gi, 'our secure payment gateway')
-                .replace(/https:\/\/www\.flywire\.com\//gi, '#');
+                .replace(/https:\/\/www\.flywire\.com\//gi, '#')
+                .replace(/Kestora University/gi, 'Kestora University')
+                .replace(/Kestora/gi, 'Kestora University')
+                .replace(/Ottawa, Canada/gi, 'Helsinki, Finland')
+                .replace(/Ottawa Canada/gi, 'Helsinki, Finland')
+                .replace(/\bOttawa\b/gi, 'Helsinki')
+                .replace(/\bCanada\b/gi, 'Finland');
         }
         return text;
+    };
+
+    const dedupeFaqs = (items: FAQItem[]) => {
+        const seen = new Set<string>();
+        const unique: FAQItem[] = [];
+
+        for (const item of items) {
+            const key = `${(item.question || '').toString().trim().toLowerCase()}::${(item.answer || '').toString().trim().toLowerCase()}`;
+            if (seen.has(key)) continue;
+            seen.add(key);
+            unique.push(item);
+        }
+
+        return unique;
     };
 
     const [faqs, setFaqs] = useState<FAQItem[]>(() => {
         const items = fallbackFaqs || [];
         if (pageSlug === 'admissions/tuition') {
-            return items.map(faq => ({
+            return dedupeFaqs(items.map(faq => ({
                 ...faq,
                 question: sanitize(faq.question),
                 answer: sanitize(faq.answer as string)
-            }));
+            })));
         }
         return items;
     });
@@ -65,11 +85,11 @@ export default function DbFAQ({ pageSlug, fallbackFaqs, refreshKey }: DbFAQProps
                     .order('order_index');
 
                 if (!faqError && mounted) {
-                    const sanitizedFaqs = (faqData || []).map(faq => ({
+                    const sanitizedFaqs = dedupeFaqs((faqData || []).map(faq => ({
                         ...faq,
                         question: sanitize(faq.question),
                         answer: sanitize(faq.answer)
-                    }));
+                    })));
                     setFaqs(sanitizedFaqs);
                 }
             } catch (loadError) {
@@ -87,7 +107,7 @@ export default function DbFAQ({ pageSlug, fallbackFaqs, refreshKey }: DbFAQProps
         };
     }, [pageSlug, refreshKey]);
 
-    const displayFaqs = faqs.length > 0 ? faqs : fallbackFaqs || [];
+    const displayFaqs = dedupeFaqs(faqs.length > 0 ? faqs : fallbackFaqs || []);
 
     if (loading) {
         return (

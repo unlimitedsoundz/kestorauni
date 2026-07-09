@@ -25,8 +25,8 @@ interface AdmissionLetterEmailProps {
 export default function AdmissionLetterEmail({
     firstName = 'Student',
     courseTitle = 'Applied Sciences',
-    intake = 'August 2026',
-    studentId = 'KCXXXXXXX',
+    intake = 'September 2026',
+    studentId = 'KUXXXXXXX',
 }: AdmissionLetterEmailProps) {
     const previewText = `Congratulations on Your Admission to Kestora University – Next Steps`;
 
@@ -83,7 +83,7 @@ export default function AdmissionLetterEmail({
                         </Section>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            This marks a significant milestone, and we are confident that you will thrive academically and personally as part of the Cannoga community.
+                            This marks a significant milestone, and we are confident that you will thrive academically and personally as part of the Kestora community.
                         </Text>
 
                         <Section className="my-[20px]">
@@ -106,7 +106,7 @@ export default function AdmissionLetterEmail({
                             <Text className="text-black text-[14px] font-semibold leading-[24px]">Your Immediate Next Steps</Text>
                             <Text className="text-black text-[14px] leading-[24px]">To ensure a smooth process, please follow these steps carefully:</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Download Your Documents: Log in to your application dashboard and download all issued documents.</Text>
-                            <Text className="text-black text-[14px] leading-[24px]">• Begin Your Study Permit Application: Apply for your Canadian study permit via the official Immigration, Refugees and Citizenship Finland (IRCC) portal.</Text>
+                            <Text className="text-black text-[14px] leading-[24px]">• Begin Your Residence Permit Application: Apply for your Finnish residence permit via the official Enter Finland (Migri) portal.</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Book Your VFS Appointment: Schedule and attend your biometric appointment at the nearest VFS center.</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Prepare Required Documents: Ensure you have: valid international passport, proof of funds, health insurance, and academic documents.</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Follow All Guidance Provided: Our team will support you throughout this process to ensure accuracy and success.</Text>
@@ -135,7 +135,7 @@ export default function AdmissionLetterEmail({
 
                         <Section className="my-[20px]">
                             <Text className="text-black text-[14px] font-semibold leading-[24px]">What to Look Forward To at Kestora University</Text>
-                            <Text className="text-black text-[14px] leading-[24px]">As a Cannoga student, you will experience:</Text>
+                            <Text className="text-black text-[14px] leading-[24px]">As a Kestora student, you will experience:</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• A globally relevant curriculum designed for modern careers</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• A diverse and international student community</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Career-focused learning with practical insights</Text>
@@ -147,7 +147,7 @@ export default function AdmissionLetterEmail({
                         </Section>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            Important Note: As a confirmed student for the August 2026 intake, it is essential that you proceed with your study permit application immediately, as timelines are strict and processing times must be carefully considered.
+                            Important Note: As a confirmed student for the September 2026 intake, it is essential that you proceed with your study permit application immediately, as timelines are strict and processing times must be carefully considered.
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">

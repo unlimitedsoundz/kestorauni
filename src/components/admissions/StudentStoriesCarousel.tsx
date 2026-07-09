@@ -16,7 +16,7 @@ const stories = [
         id: 2,
         name: 'Maria Petrova',
         programme: "Master's in Design Management",
-        quote: "Studying in Helsinki, Finland has been a life-changing experience. The focus on work-life balance and deep collaborative research at Cannoga is truly world-class.",
+        quote: "Studying in Helsinki, Finland has been a life-changing experience. The focus on work-life balance and deep collaborative research at Kestora is truly world-class.",
         image: '/images/admissions/student_stories_maria.jpg'
     }
 ];

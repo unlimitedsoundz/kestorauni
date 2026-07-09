@@ -303,7 +303,7 @@ export default function PayGoWireCheckout({
                     <div className="flex flex-col text-right">
                         <span className="text-black uppercase tracking-widest mb-0.5">Kestora University receives</span>
                         <span className="font-normal text-black text-sm md:text-base">
-                            $ {amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                            € {amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
                     </div>
                 </div>
@@ -474,7 +474,7 @@ export default function PayGoWireCheckout({
                                 </div>
                                 <div className="text-right">
                                     <p className="text-[10px] md:text-sm font-normal text-black uppercase tracking-widest mb-1">Settlement (EUR)</p>
-                                    <p className="text-xl md:text-2xl font-normal">$ {amount.toLocaleString()}</p>
+                                    <p className="text-xl md:text-2xl font-normal">€ {amount.toLocaleString()}</p>
                                 </div>
                             </div>
 
@@ -538,7 +538,7 @@ export default function PayGoWireCheckout({
                         <button
                             onClick={() => {
                                 if (selectedMethod?.id === 'flutterwave_uae' || selectedMethod?.id === 'flutterwave_cm_momo') {
-                                    window.open('https://flutterwave.com/pay/Cannoga', '_blank');
+                                    window.open('https://flutterwave.com/pay/Kestora', '_blank');
                                     handleConfirmPayment();
                                 } else if (selectedMethod?.id === 'ng_bank' || selectedMethod?.id === 'usd_wire' || selectedMethod?.id === 'eur_wire' || selectedMethod?.id === 'gbp_wire' || selectedMethod?.id === 'wire' || selectedMethod?.id === 'sepa') {
                                     handleStepChange('BANK_INSTRUCTIONS');
@@ -626,7 +626,7 @@ export default function PayGoWireCheckout({
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Beneficiary</span>
-                                            <span className="text-sm text-black font-normal text-right">CANNOGA COLLEGE/FLYWIRE</span>
+                                            <span className="text-sm text-black font-normal text-right">SYKLI EDUCATIONAL SERVICES</span>
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Reference</span>
@@ -663,7 +663,7 @@ export default function PayGoWireCheckout({
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Beneficiary</span>
-                                            <span className="text-sm text-black font-normal text-right">CANNOGA COLLEGE/FLYWIRE</span>
+                                            <span className="text-sm text-black font-normal text-right">SYKLI EDUCATIONAL SERVICES</span>
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Reference</span>
@@ -718,7 +718,7 @@ export default function PayGoWireCheckout({
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Beneficiary</span>
-                                            <span className="text-sm text-black font-normal text-right">CANNOGA COLLEGE/FLYWIRE</span>
+                                            <span className="text-sm text-black font-normal text-right">SYKLI EDUCATIONAL SERVICES</span>
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Reference</span>
@@ -735,22 +735,20 @@ export default function PayGoWireCheckout({
                                     </>
                                 ) : (
                                     <>
-                                        <div className="flex justify-between items-center pb-3 md:pb-4">
-                                            <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Bank</span>
-                                            <span className="text-sm text-black font-normal text-right">OPAY MFB</span>
-                                            <span className="text-sm text-black font-normal text-right">Account No</span>
-                                            <span className="text-sm text-black font-normal text-right">6500021843</span>
-                                        </div>
-                                        <div className="flex justify-between items-center pb-3 md:pb-4">
-                                            <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Account Number</span>
-                                            <div className="flex items-center gap-3">
-                                                <CopyButton text="3003469520" label="Account Number" />
-                                                <span className="text-sm text-black font-normal tracking-wider">3003469520</span>
-                                            </div>
-                                        </div>
+<div className="flex justify-between items-center pb-3 md:pb-4">
+                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Bank</span>
+                                             <span className="text-sm text-black font-normal text-right">OPAY MFB</span>
+                                         </div>
+                                         <div className="flex justify-between items-center pb-3 md:pb-4">
+                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Account Number</span>
+                                             <div className="flex items-center gap-3">
+                                                 <CopyButton text="6500021843" label="Account Number" />
+                                                 <span className="text-sm text-black font-normal tracking-wider">6500021843</span>
+                                             </div>
+                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Beneficiary</span>
-                                            <span className="text-sm text-black font-normal text-right">CANNOGA COLLEGE/FLYWIRE</span>
+                                            <span className="text-sm text-black font-normal text-right">SYKLI EDUCATIONAL SERVICES</span>
                                         </div>
                                         <div className="flex justify-between items-center pb-3 md:pb-4">
                                             <span className="text-[10px] md:text-sm text-neutral-500 uppercase tracking-widest">Reference</span>

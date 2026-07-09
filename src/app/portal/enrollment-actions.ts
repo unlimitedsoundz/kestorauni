@@ -81,7 +81,7 @@ export async function confirmEnrollment(applicationId: string) {
         }
 
         const firstName = studentUser.first_name || 'Student';
-        const lastName = studentUser.last_name || 'Cannoga';
+        const lastName = studentUser.last_name || 'Kestora';
         let institutionalEmail = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@kestora.online`.replace(/\s/g, '');
         let emailCounter = 0;
 
@@ -99,6 +99,8 @@ export async function confirmEnrollment(applicationId: string) {
         }
 
         // 4. Create Student Record (SIS Handover)
+        const admittedAt = offer?.accepted_at || offer?.created_at || application.updated_at || application.submitted_at || application.created_at || new Date().toISOString();
+
         const { error: studentError, data: newStudent } = await adminClient
             .from('students')
             .insert({
@@ -109,7 +111,7 @@ export async function confirmEnrollment(applicationId: string) {
                 enrollment_status: 'ACTIVE',
                 institutional_email: institutionalEmail,
                 personal_email: studentUser.email,
-                start_date: new Date().toISOString(),
+                start_date: admittedAt,
                 expected_graduation_date: new Date(new Date().setFullYear(new Date().getFullYear() + 3)).toISOString(),
             })
             .select()
@@ -133,7 +135,7 @@ export async function confirmEnrollment(applicationId: string) {
             .from('profiles')
             .update({
                 student_id: studentId,
-                enrollment_date: new Date().toISOString(),
+                enrollment_date: admittedAt,
                 updated_at: new Date().toISOString()
             })
             .eq('id', application.user_id);

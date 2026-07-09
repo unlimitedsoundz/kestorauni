@@ -115,12 +115,12 @@ export default function CollaborationPage() {
                 <section className="mb-32">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
-                            <h2 className="text-3xl md:text-4xl font-bold leading-tight">Ways to Engage with the Cannoga Community</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold leading-tight">Ways to Engage with the Kestora Community</h2>
                             <ul className="space-y-6">
                                 {[
                                     { title: "Student Enterprise Projects", desc: "Sponsor a project and have teams of students solve your real-world business challenges under faculty supervision." },
                                     { title: "Guest Lectures & Workshops", desc: "Share industry insights, build your brand presence, and inspire the next generation of professionals." },
-                                    { title: "Startup Incubation", desc: "Connect with the Cannoga Entrepreneurship Hub to mentor or invest in early-stage student ventures." }
+                                    { title: "Startup Incubation", desc: "Connect with the Kestora Entrepreneurship Hub to mentor or invest in early-stage student ventures." }
                                 ].map((item, i) => (
                                     <li key={i} className="flex gap-4 p-6 bg-white border border-neutral-100">
                                         <div className="mt-1">
@@ -143,7 +143,7 @@ export default function CollaborationPage() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-10">
                                 <p className="text-white text-xl font-medium leading-relaxed">
-                                    "Our partnership with Cannoga allows us to tap into fresh perspectives while tackling complex engineering challenges."<br />
+                                    "Our partnership with Kestora allows us to tap into fresh perspectives while tackling complex engineering challenges."<br />
                                     <span className="text-sm uppercase tracking-widest opacity-80 block mt-4 font-bold">— Tech Innovations Oy</span>
                                 </p>
                             </div>

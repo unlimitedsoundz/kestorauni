@@ -296,7 +296,7 @@ export default function AdmissionsPage() {
                                      <h2 className="text-3xl font-bold mb-6 text-black">Vibrant Community</h2>
                                      <h3 className="text-xl font-bold mb-4 text-black">Life Beyond the Classroom</h3>
                                      <p className="text-lg text-black leading-relaxed font-medium">
-                                         From music festivals to tech hackathons, your time at Cannoga is about more than just studies.
+                                         From music festivals to tech hackathons, your time at Kestora is about more than just studies.
                                      </p>
                                  </div>
 
@@ -304,7 +304,7 @@ export default function AdmissionsPage() {
                                  <div className="relative aspect-square lg:aspect-auto overflow-hidden">
                                      <Image
                                          src="/images/news/helsinki_study_hero_1771086748710.png"
-                                         alt="Cannoga Community"
+                                         alt="Kestora Community"
                                          fill
                                          className="object-cover object-top"
                                          sizes="(max-width: 1024px) 100vw, 50vw"

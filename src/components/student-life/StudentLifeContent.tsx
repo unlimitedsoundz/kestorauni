@@ -171,7 +171,7 @@ export default function StudentLifeContent() {
 
                         {/* Housing */}
                         <section id="housing" className="scroll-mt-32">
-                            <h2 className="text-aalto-5 font-bold mb-aalto-p6 text-black tracking-tight">Living at Cannoga</h2>
+                            <h2 className="text-aalto-5 font-bold mb-aalto-p6 text-black tracking-tight">Living at Kestora</h2>
                             <div className="grid md:grid-cols-2 gap-4 lg:gap-8">
                                 <div className="bg-card p-12 group">
                                     <div className="h-64 mb-10 relative overflow-hidden">

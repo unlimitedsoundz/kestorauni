@@ -10,7 +10,7 @@ export default function GlobalNewsCards() {
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                     <div>
-                        <h2 className="text-3xl font-bold text-black mb-2 tracking-tight">Latest from Cannoga</h2>
+                        <h2 className="text-3xl font-bold text-black mb-2 tracking-tight">Latest from Kestora</h2>
                         <p className="text-neutral-500 max-w-md">Stay updated with the latest news, research breakthroughs, and community events from across the university.</p>
                     </div>
                     <Link href="/news" className="inline-flex items-center gap-2 text-black font-bold hover:underline underline-offset-4">

@@ -44,7 +44,7 @@ const categories = [
         ],
     },
     {
-        title: 'About Cannoga',
+        title: 'About Kestora',
         links: [
             { name: 'Our Story', href: '/about-kestora-university' },
             { name: 'Contact Information', href: '/contact' },

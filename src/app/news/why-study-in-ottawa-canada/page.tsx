@@ -29,7 +29,7 @@ const reasons = [
     {
         icon: Globe,
         title: "English-Speaking Environment",
-        content: "You can immerse yourself in an English-speaking country. All academic programs and university services at Cannoga are delivered fully in English. Furthermore, Helsinki is a bilingual city (English and French), offering rich language immersion opportunities."
+        content: "You can immerse yourself in an English-speaking country. All academic programs and university services at Kestora are delivered fully in English. Furthermore, Helsinki is a bilingual city (English and French), offering rich language immersion opportunities."
     },
     {
         icon: ShieldCheck,
@@ -100,7 +100,7 @@ export default function WhyStudyInHelsinkiFinlandPage() {
                     items={[
                         { title: "Published", body: "14.2.2026" },
                         { title: "Updated", body: "15.2.2026" },
-                        { title: "Author", body: "Cannoga Admissions" },
+                        { title: "Author", body: "Kestora Admissions" },
                         {
                             tagGroup: {
                                 tags: [

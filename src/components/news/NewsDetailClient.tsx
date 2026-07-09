@@ -78,7 +78,7 @@ export default function NewsDetailClient({ initialNews }: NewsDetailClientProps)
                 <Info 
                     items={[
                         { title: "Published", body: formatToDDMMYYYY(currentNews.publishDate) },
-                        { title: "Type", body: "Cannoga News" },
+                        { title: "Type", body: "Kestora News" },
                         {
                             tagGroup: {
                                 tags: [

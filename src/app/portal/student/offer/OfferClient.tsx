@@ -201,7 +201,7 @@ export function OfferClient({ admission }: OfferClientProps) {
                                                     <h4 className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Next Steps for Enrollment:</h4>
                                                     <div className="grid gap-4">
                                                         <WelcomeStep number="01" title="Tuition Clearance" description="Proceed to the finance section to settle your initial tuition fees." />
-                                                        <WelcomeStep number="02" title="IT Credentials" description="You will receive your Cannoga credentials once the payment is confirmed." />
+                                                        <WelcomeStep number="02" title="IT Credentials" description="You will receive your Kestora credentials once the payment is confirmed." />
                                                         <WelcomeStep number="03" title="Orientation" description="Check your portal for the upcoming orientation schedule." />
                                                     </div>
                                                 </div>

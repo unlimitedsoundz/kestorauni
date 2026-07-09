@@ -157,7 +157,7 @@ export default function BachelorAdmissionsPage() {
                          {/* Learn More */}
                          <section id="more" className="scroll-mt-32">
                              <div className="cc-section-divider">
-                                 <h2 className="cc-h2">Learn More About Studying at Cannoga</h2>
+                                 <h2 className="cc-h2">Learn More About Studying at Kestora</h2>
                              </div>
                              <div className="prose-arrows">
                                  <DbPageContent
