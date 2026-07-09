@@ -175,7 +175,9 @@ function ReceiptContent() {
         { name: 'Program Transcript Fee', amount: 100 },
         { name: 'Student Experience Fee', amount: 100 }
     ];
-    const totalAncillary = ancillaryFees.reduce((acc, item) => acc + item.amount, 0);
+    // Ancillary fees are only charged on the first invoice; reflect what was actually paid
+    const includeAncillary = payment?.ancillary_included ?? true;
+    const totalAncillary = includeAncillary ? ancillaryFees.reduce((acc, item) => acc + item.amount, 0) : 0;
     const receiptTotal = (payment?.amount || 0);
     const intake = admission?.intake || 'September Fall 2026';
     const academicYear = admission?.academic_year || '2026/2027';
@@ -270,7 +272,7 @@ function ReceiptContent() {
                             </span>
                             <span>€ {payment.amount.toLocaleString()}</span>
                         </div>
-                        {ancillaryFees.map((fee) => (
+                        {includeAncillary && ancillaryFees.map((fee) => (
                             <div key={fee.name} className="flex justify-between py-2">
                                 <span>{fee.name}</span>
                                 <span>€ {fee.amount.toLocaleString()}</span>

@@ -31,7 +31,9 @@ export default function TuitionPaymentPage({ admissionOffer, application }: {
         { name: 'Program Transcript Fee', amount: 100 },
         { name: 'Student Experience Fee', amount: 100 }
     ];
-    const totalAncillary = ancillaryFees.reduce((acc, item) => acc + item.amount, 0);
+    // Ancillary fees are only charged on the first (initial) invoice
+    const includeAncillary = !admissionOffer.ancillary_charged;
+    const totalAncillary = includeAncillary ? ancillaryFees.reduce((acc, item) => acc + item.amount, 0) : 0;
     const invoiceTotal = finalAmount + totalAncillary;
 
     const handlePaymentComplete = async (details: {
@@ -199,6 +201,12 @@ export default function TuitionPaymentPage({ admissionOffer, application }: {
                                 <span className="text-black font-normal uppercase tracking-wider">{invoiceTypeLabel}</span>
                                 <span className="font-normal text-black text-right">€ {invoiceTotal.toLocaleString()}</span>
                             </div>
+                            {includeAncillary && (
+                                <div className="flex justify-between text-sm text-neutral-500">
+                                    <span className="uppercase tracking-wider">Ancillary Fees</span>
+                                    <span className="text-right">€ {totalAncillary.toLocaleString()}</span>
+                                </div>
+                            )}
                             <div className="flex justify-between pt-2 font-normal text-lg text-black">
                                 <span>TOTAL</span>
                                 <span className="font-normal">€ {invoiceTotal.toLocaleString()}</span>

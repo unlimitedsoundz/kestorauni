@@ -110,6 +110,16 @@ export default function DashboardPage() {
         );
     }
 
+    // Detect a pushed but unpaid tuition invoice (e.g. admin pushes a new invoice to an enrolled student)
+    const studentApp = applications.find(app => app.id === student?.application_id);
+    const studentOffer = Array.isArray(studentApp?.offer) ? studentApp?.offer?.[0] : studentApp?.offer;
+    const pendingInvoice =
+        !!student &&
+        !!studentOffer?.invoice_pushed &&
+        ((studentOffer.invoice_type === 'TUITION_DEPOSIT' && !student.tuition_deposit_paid) ||
+            (studentOffer.invoice_type !== 'TUITION_DEPOSIT' && !student.full_tuition_paid));
+    const pendingInvoiceType = studentOffer?.invoice_type ? studentOffer.invoice_type.replace(/_/g, ' ') : 'TUITION DEPOSIT';
+
     return (
         <div className="space-y-8 text-black min-h-screen p-4 md:p-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -145,6 +155,29 @@ export default function DashboardPage() {
             {/* Payment Status - sourced from the students table (tuition deposit & housing fees) */}
             {student && (
                 <PaymentStatusCard student={student} dark />
+            )}
+
+            {/* New Invoice Banner - shows when admin pushes an unpaid invoice to an enrolled student */}
+            {student && pendingInvoice && (
+                <div className="flex items-start justify-between border-2 border-white p-6 md:p-8 rounded-sm text-white relative overflow-hidden bg-neutral-900 shadow-[6px_6px_0px_0px_rgba(255,255,255,0.2)] mb-4">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
+                        <div>
+                            <h4 className="font-black text-[13px] flex items-center gap-2">
+                                <CreditCard size={16} weight="bold" /> New Invoice Available
+                            </h4>
+                            <p className="text-white text-[11px] font-bold mt-1">
+                                A new {pendingInvoiceType} invoice has been issued. Please review and complete your payment to keep your enrollment active.
+                            </p>
+                        </div>
+                        <div className="flex flex-col md:flex-row gap-2">
+                            <Link
+                                label={`Pay ${pendingInvoiceType}`}
+                                linkComponentProps={{ href: `/portal/application/payment?id=${studentApp?.id}` }}
+                                className="bg-white text-black border border-black px-6 py-3 rounded-sm text-[11px] font-black hover:bg-neutral-200 transition-all whitespace-nowrap"
+                            />
+                        </div>
+                    </div>
+                </div>
             )}
 
             {/* Enrolled Student Alert Card - Only show if fully ENROLLED (Admin approved) */}

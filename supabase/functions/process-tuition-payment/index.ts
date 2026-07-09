@@ -45,6 +45,14 @@ Deno.serve(async (req) => {
 
         const reference = `TXN_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
 
+        // Determine if ancillary fees should be included (only on the first invoice)
+        const { data: offerData } = await adminClient
+            .from('admission_offers')
+            .select('ancillary_charged')
+            .eq('id', offerId)
+            .single();
+        const ancillaryIncluded = !(offerData?.ancillary_charged ?? false);
+
         // 2. Insert Payment Record
         const { error: paymentError } = await adminClient
             .from('tuition_payments')
@@ -55,12 +63,19 @@ Deno.serve(async (req) => {
                 payment_method: details.method,
                 transaction_reference: reference,
                 invoice_type: invoiceType || 'TUITION_DEPOSIT',
+                ancillary_included: ancillaryIncluded,
                 country: details.country,
                 currency: details.currency,
                 fx_metadata: details.fxMetadata
             });
 
         if (paymentError) throw paymentError;
+
+        // Mark ancillary as charged for this offer so future invoices exclude it
+        await adminClient
+            .from('admission_offers')
+            .update({ ancillary_charged: true, updated_at: new Date().toISOString() })
+            .eq('id', offerId);
 
         // 3. Update Application Status to PAYMENT_SUBMITTED (No Auto-Enroll)
         // This triggers the "Pending Verification" UI in the PaymentView

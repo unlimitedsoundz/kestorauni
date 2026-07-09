@@ -136,8 +136,12 @@ export default function AdminInvoicesPage() {
     const handlePushInvoice = async (appId: string, currentFee: number) => {
         const feeToPush = customFee[appId] !== undefined ? customFee[appId] : currentFee;
         const invoiceType = customInvoiceType[appId] || 'TUITION_DEPOSIT';
+        // Ancillary fees are only charged on the first (initial) invoice
+        const app = applications.find(a => a.id === appId);
+        const isFirstInvoice = !app?.offer?.ancillary_charged;
+        const ancillaryTotal = isFirstInvoice ? 700 : 0;
 
-        if (!confirm(`Are you sure you want to push a ${invoiceType.replace(/_/g, ' ')} invoice of €${feeToPush} (tuition) + €700 ancillary = €${feeToPush + 700} total to this student?`)) return;
+        if (!confirm(`Are you sure you want to push a ${invoiceType.replace(/_/g, ' ')} invoice of €${feeToPush} (tuition)${isFirstInvoice ? ' + €700 ancillary' : ''} = €${feeToPush + ancillaryTotal} total to this student?`)) return;
 
         try {
             setActionLoading(appId);

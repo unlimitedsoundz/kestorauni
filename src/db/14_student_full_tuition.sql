@@ -26,6 +26,9 @@ BEGIN
             UPDATE public.students
             SET full_tuition_paid = TRUE,
                 full_tuition_paid_at = COALESCE(NEW.created_at, NOW()),
+                -- Paying the full tuition also satisfies the tuition deposit
+                tuition_deposit_paid = TRUE,
+                tuition_deposit_paid_at = COALESCE(tuition_deposit_paid_at, NEW.created_at, NOW()),
                 updated_at = NOW()
             WHERE id = v_student_id;
         END IF;
@@ -49,9 +52,17 @@ SET full_tuition_paid = TRUE,
         WHERE a.id = s.application_id AND tp.status = 'COMPLETED' AND tp.invoice_type = 'TUITION_FULL'
     ),
     updated_at = NOW()
-WHERE EXISTS (
-    SELECT 1 FROM public.tuition_payments tp
-    JOIN public.admission_offers ao ON ao.id = tp.offer_id
-    JOIN public.applications a ON a.id = ao.application_id
-    WHERE a.id = s.application_id AND tp.status = 'COMPLETED' AND tp.invoice_type = 'TUITION_FULL'
-);
+    WHERE EXISTS (
+        SELECT 1 FROM public.tuition_payments tp
+        JOIN public.admission_offers ao ON ao.id = tp.offer_id
+        JOIN public.applications a ON a.id = ao.application_id
+        WHERE a.id = s.application_id AND tp.status = 'COMPLETED' AND tp.invoice_type = 'TUITION_FULL'
+    );
+
+-- 4. Backfill: a completed full-tuition payment also satisfies the tuition deposit
+UPDATE public.students s
+SET tuition_deposit_paid = TRUE,
+    tuition_deposit_paid_at = COALESCE(tuition_deposit_paid_at, s.full_tuition_paid_at, NOW()),
+    updated_at = NOW()
+WHERE s.full_tuition_paid = TRUE;
+
