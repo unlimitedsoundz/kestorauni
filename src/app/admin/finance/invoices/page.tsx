@@ -4,6 +4,7 @@ import { createClient } from '@/utils/supabase/client';
 import { CreditCard, Envelope, FileText, CheckCircle, Clock, CircleNotch as Loader2 } from '@phosphor-icons/react';
 import { useState, useEffect } from 'react';
 import { pushInvoice } from '../actions';
+import { getProgramYears } from '@/utils/tuition';
 
 export default function AdminInvoicesPage() {
     const [applications, setApplications] = useState<any[]>([]);
@@ -101,11 +102,35 @@ export default function AdminInvoicesPage() {
         }));
     };
 
+    // Compute the tuition amount that should be pre-filled for a given invoice type.
+    // The stored offer tuition_fee / defaultFee is treated as the deposit (50% of first-year).
+    const computeFeeForType = (app: any, type: string): number => {
+        const base = app.offer?.tuition_fee || app.defaultFee || 0;
+        const years = getProgramYears(app.program?.duration, app.program?.title);
+        switch (type) {
+            case 'FULL_PROGRAM_TUITION':
+                return Math.round(base * 2 * years);
+            case 'FIRST_YEAR_TUITION':
+                return Math.round(base * 2);
+            case 'TUITION_DEPOSIT':
+            default:
+                return Math.round(base);
+        }
+    };
+
     const handleInvoiceTypeChange = (appId: string, val: string) => {
+        const app = applications.find(a => a.id === appId);
         setCustomInvoiceType(prev => ({
             ...prev,
             [appId]: val
         }));
+        // Update the tuition amount input to the type-appropriate default
+        if (app) {
+            setCustomFee(prev => ({
+                ...prev,
+                [appId]: computeFeeForType(app, val)
+            }));
+        }
     };
 
     const handlePushInvoice = async (appId: string, currentFee: number) => {
