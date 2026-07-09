@@ -58,7 +58,7 @@ export default function RegisterPage() {
         return (
             <div className="max-w-md mx-auto mt-12 bg-white p-8 border border-neutral-100 text-center space-y-6 animate-in zoom-in-95 duration-500 text-[#2d2d2d]">
                 <div className="space-y-1">
-                    <h1 className="text-2xl font-black uppercase tracking-tight">Welcome to Cannoga</h1>
+                    <h1 className="text-2xl font-black uppercase tracking-tight">Welcome to Kestora University</h1>
                     <p className="text-xs font-medium">Your account has been successfully created.</p>
                 </div>
 
