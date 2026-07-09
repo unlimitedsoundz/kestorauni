@@ -1,8 +1,43 @@
 
 import { Student, Course, Profile } from '@/types/database'; // Import from database types
-import { Layout } from '@phosphor-icons/react/dist/ssr';
+import { Layout, CheckCircle, Clock, CurrencyEur as DollarSign, WarningCircle as AlertCircle } from "@phosphor-icons/react/dist/ssr";
 import { Link } from "@aalto-dx/react-components";
 import Image from 'next/image';
+
+type PaymentState = { paid: boolean; paidAt: string | null };
+
+function PaymentStatusRow({
+    icon,
+    label,
+    state,
+}: {
+    icon: React.ReactNode;
+    label: string;
+    state: PaymentState;
+}) {
+    return (
+        <div className="flex items-center justify-between gap-4 py-3 px-4 border border-neutral-200 rounded-sm bg-white">
+            <div className="flex items-center gap-3">
+                <div className={`p-2 rounded-full ${state.paid ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}`}>
+                    {icon}
+                </div>
+                <div>
+                    <p className="text-[13px] font-bold text-black leading-tight">{label}</p>
+                    <p className="text-[10px] font-bold text-neutral-500">
+                        {state.paid
+                            ? state.paidAt
+                                ? `Paid on ${new Date(state.paidAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}`
+                                : 'Paid'
+                            : 'Awaiting payment'}
+                    </p>
+                </div>
+            </div>
+            <span className={`text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-wider ${state.paid ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}`}>
+                {state.paid ? 'Paid' : 'Pending'}
+            </span>
+        </div>
+    );
+}
 
 
 interface AcademicDashboardProps {
@@ -78,6 +113,25 @@ export default function AcademicDashboard({ student }: AcademicDashboardProps) {
                         </p>
                         <div className="mt-3 md:mt-4 flex gap-3 text-[11px] md:text-[13px] text-black">
                             <span className="bg-white/50 px-2 py-1 rounded"><strong>Institutional Email:</strong> {student.institutional_email}</span>
+                        </div>
+                    </div>
+
+                    {/* Payment Status - sourced from the students table (kept in sync with tuition_payments & housing_payments) */}
+                    <div>
+                        <h3 className="font-bold text-[13px] md:text-[15px] pb-2 md:pb-3 mb-3 flex items-center gap-2">
+                            <DollarSign size={16} weight="bold" /> Payment Status
+                        </h3>
+                        <div className="space-y-2 md:space-y-3">
+                            <PaymentStatusRow
+                                icon={<CheckCircle size={16} weight="bold" />}
+                                label="Tuition Deposit"
+                                state={{ paid: !!student.tuition_deposit_paid, paidAt: student.tuition_deposit_paid_at }}
+                            />
+                            <PaymentStatusRow
+                                icon={<CheckCircle size={16} weight="bold" />}
+                                label="Housing Fees"
+                                state={{ paid: !!student.housing_fee_paid, paidAt: student.housing_fee_paid_at }}
+                            />
                         </div>
                     </div>
 

@@ -314,6 +314,10 @@ export interface Database {
           start_date: string
           expected_graduation_date: string
           lms_access_data: Record<string, any>
+          tuition_deposit_paid: boolean
+          tuition_deposit_paid_at: string | null
+          housing_fee_paid: boolean
+          housing_fee_paid_at: string | null
           created_at: string
           updated_at: string
         }
@@ -329,6 +333,10 @@ export interface Database {
           start_date: string
           expected_graduation_date: string
           lms_access_data?: Record<string, any>
+          tuition_deposit_paid?: boolean
+          tuition_deposit_paid_at?: string | null
+          housing_fee_paid?: boolean
+          housing_fee_paid_at?: string | null
           created_at?: string
           updated_at?: string
         }
@@ -344,6 +352,10 @@ export interface Database {
           start_date?: string
           expected_graduation_date?: string
           lms_access_data?: Record<string, any>
+          tuition_deposit_paid?: boolean
+          tuition_deposit_paid_at?: string | null
+          housing_fee_paid?: boolean
+          housing_fee_paid_at?: string | null
           created_at?: string
           updated_at?: string
         }
