@@ -108,8 +108,13 @@ function ReceiptContent() {
         ? application.offer[0]
         : application?.offer;
 
-// Safely extract payment
-    const payment = offer?.payments?.[0];
+ // Safely extract payment
+    const payments = offer?.payments || [];
+    // Prefer a completed full-tuition payment; otherwise the latest payment on record
+    const payment =
+        payments.find((p: any) => p.invoice_type === 'TUITION_FULL' && p.status === 'COMPLETED') ||
+        payments[payments.length - 1] ||
+        payments[0];
 
     if (!payment || (application.status !== 'ENROLLED' && application.status !== 'PAYMENT_SUBMITTED')) {
         return (
