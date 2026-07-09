@@ -80,13 +80,16 @@ export default function TuitionPaymentPage({ admissionOffer, application }: {
 
             // Extra safety: Update application status directly from client to ensure DB is in sync
             // before redirecting, just in case edge function update had any replication lag or issue.
-            await supabase
-                .from('applications')
-                .update({
-                    status: 'PAYMENT_SUBMITTED',
-                    updated_at: new Date().toISOString()
-                })
-                .eq('id', application.id);
+            // Do NOT downgrade an already-enrolled student (e.g. when paying a 2nd invoice).
+            if (application.status !== 'ENROLLED' && application.status !== 'ADMISSION_LETTER_GENERATED') {
+                await supabase
+                    .from('applications')
+                    .update({
+                        status: 'PAYMENT_SUBMITTED',
+                        updated_at: new Date().toISOString()
+                    })
+                    .eq('id', application.id);
+            }
 
             console.log('PaymentView: Status reinforced. Redirecting to dashboard...');
             // Force full page reload to ensure all states (DB, Cache, UI) are completely fresh
