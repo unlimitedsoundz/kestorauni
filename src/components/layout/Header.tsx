@@ -83,6 +83,7 @@ const navigation: NavItem[] = [
         href: "/admissions",
         children: [
             { name: "Degree Programs", href: "/degree-programmes" },
+            { name: "Certificate & Diploma Programs", href: "/degree-programmes#certificates" },
             { name: "How to Apply", href: "/admissions/application-process" },
             { name: "Bachelor's Admission", href: "/admissions/bachelor" },
             { name: "Master's Admissions", href: "/admissions/master" },
@@ -342,7 +343,7 @@ export function Header() {
 
                         <div className="p-4">
                             <Link href="/admissions/application-process" className="flex w-full h-[50px] items-center justify-center bg-[#000000] hover:bg-[#000000] text-white font-bold no-underline transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-                                Apply to Cannoga
+                                Apply to Kestora
                             </Link>
                         </div>
                     </div>

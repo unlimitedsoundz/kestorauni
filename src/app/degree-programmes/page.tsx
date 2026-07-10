@@ -103,8 +103,21 @@ export default function DegreeProgrammesPage() {
                     />
 
                     <ProgramCard
+                        id="advanced-diplomas"
+                        duration="2.5 Years"
+                        title="Advanced Diploma Programs"
+                        overview="Our advanced diploma programmes are designed for students who want a deeper specialization and stronger professional preparation in applied technical or business fields. They combine advanced study, project work and workplace-ready skills for career advancement and further academic progression."
+                        requirements={[
+                            "Relevant diploma or equivalent qualification",
+                            "English language proficiency (IELTS 6.0 or equivalent)",
+                            "Prior academic or professional experience in the field",
+                        ]}
+                        admissionHref="/admissions"
+                    />
+
+                    <ProgramCard
                         id="bachelor"
-                        duration="3 Years"
+                        duration="4 Years"
                         title="Bachelor's Degree Programs"
                         overview="Our 4-year undergraduate degree programs offer rigorous academic instruction combined with professional training. Fusing analytical thinking, research methodologies, and leadership skills, these degrees prepare students for high-level careers or postgraduate research. Program structures include comprehensive co-op semesters in Helsinki's public and private sectors."
                         requirements={[

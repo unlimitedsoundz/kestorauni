@@ -76,7 +76,7 @@ export default function ContactPage() {
                                         <p className="text-neutral-500 font-bold uppercase tracking-widest text-xs">Helsinki, Finland resident enquiries</p>
                                     </div>
                                     <div>
-                                        <a href="tel:+19842062656" className="inline-flex items-center gap-2 text-xl font-bold text-black mb-2 underline underline-offset-4 hover:opacity-80 transition-opacity">
+                                        <a href="tel:+15026865522" className="inline-flex items-center gap-2 text-xl font-bold text-black mb-2 underline underline-offset-4 hover:opacity-80 transition-opacity">
                                             <Phone size={24} weight="fill" />
                                             Talk to Admissions
                                         </a>

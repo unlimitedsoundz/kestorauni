@@ -463,8 +463,6 @@ export async function acceptOffer(applicationId: string) {
 }
 
 
-import { sendEmail } from '@/lib/email';
-import OfferRejectionEmail from '@/emails/OfferRejectionEmail';
 import PaymentConfirmationEmail from '@/emails/PaymentConfirmationEmail';
 
 export async function rejectOffer(applicationId: string) {
@@ -520,23 +518,16 @@ export async function rejectOffer(applicationId: string) {
 
     if (appError) throw new Error('Failed to update application status');
 
-    // 3. Send Email Notification
-    // We do this asynchronously and don't block the UI response if it fails (log error though)
+    // 3. Send Notification via Supabase Edge Function
     try {
-        const userProfile = app.user as any;
-        const courseTitle = (app.course as any)?.title || 'Program';
-
-        await sendEmail({
-            to: userProfile?.email || user.email || '',
-            subject: 'Admission Offer Declined - Kestora University',
-            react: OfferRejectionEmail({
-                firstName: userProfile?.first_name || 'Applicant',
-                applicationId: app.id,
-                courseName: courseTitle,
-            }),
+        await supabase.functions.invoke('send-notification', {
+            body: {
+                applicationId: applicationId,
+                type: 'APPLICATION_REJECTED'
+            }
         });
     } catch (emailError) {
-        console.error('Failed to send rejection confirmation email:', emailError);
+        console.error('Failed to trigger rejection notification via edge function:', emailError);
     }
 }
 

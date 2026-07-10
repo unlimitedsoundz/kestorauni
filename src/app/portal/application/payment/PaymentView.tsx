@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/utils/supabase/client';
 import { invokeEdgeFunction } from '@/utils/supabase/invoke';
@@ -35,6 +35,32 @@ export default function TuitionPaymentPage({ admissionOffer, application }: {
     const includeAncillary = !admissionOffer.ancillary_charged;
     const totalAncillary = includeAncillary ? ancillaryFees.reduce((acc, item) => acc + item.amount, 0) : 0;
     const invoiceTotal = finalAmount + totalAncillary;
+
+    // Track the actual payment records for this offer so we can show the real
+    // checkout for additional (2nd, 3rd...) invoices instead of a stuck
+    // "payment successful" screen once a student is already enrolled.
+    const [payments, setPayments] = useState<any[]>([]);
+    const [paymentsLoaded, setPaymentsLoaded] = useState(false);
+
+    useEffect(() => {
+        const fetchPayments = async () => {
+            try {
+                const supabase = createClient();
+                const { data } = await supabase
+                    .from('tuition_payments')
+                    .select('*')
+                    .eq('offer_id', admissionOffer.id)
+                    .order('created_at', { ascending: false });
+                setPayments(data || []);
+            } catch (e) {
+                console.error('PaymentView: Error fetching payments', e);
+                setPayments([]);
+            } finally {
+                setPaymentsLoaded(true);
+            }
+        };
+        fetchPayments();
+    }, [admissionOffer.id]);
 
     const handlePaymentComplete = async (details: {
         method: string;
@@ -91,33 +117,65 @@ export default function TuitionPaymentPage({ admissionOffer, application }: {
                     .eq('id', application.id);
             }
 
-            console.log('PaymentView: Status reinforced. Redirecting to dashboard...');
-            // Force full page reload to ensure all states (DB, Cache, UI) are completely fresh
-            window.location.href = '/portal/dashboard';
+            console.log('PaymentView: Status reinforced. Redirecting to awaiting confirmation...');
+            // Redirect to the payment page so the student sees the explicit
+            // "Payment Verification Pending" (awaiting confirmation) screen.
+            window.location.href = `/portal/application/payment?id=${application.id}`;
         } catch (e: any) {
             console.error('Payment Error (Caught in View):', e);
-            setError(e.message || 'Payment failed');
+            const raw = e?.message || '';
+            // "Failed to fetch" is a browser-level network error (request never
+            // reached the payment server), not a logical error from the function.
+            const message = raw.includes('Failed to fetch')
+                ? 'We could not reach the payment server. Check your internet connection, disable any ad/privacy blockers, and try again.'
+                : (raw || 'Payment failed. Please try again.');
+            setError(message);
             setIsProcessing(false);
         }
     };
 
-    if (application.status === 'ENROLLED' || application.status === 'PAYMENT_SUBMITTED') {
-        const isEnrolled = application.status === 'ENROLLED';
+    // Determine the payment state for the CURRENT invoice (matched by invoice_type).
+    // This ensures already-enrolled students can still pay additional (2nd, 3rd…)
+    // invoices through the real PayGoWire checkout, and only see the success screen
+    // once the current invoice's payment has actually been verified.
+    const currentInvoicePayments = payments.filter(
+        (p: any) => p.invoice_type === rawInvoiceType
+    );
+    const currentInvoicePaid = currentInvoicePayments.some(
+        (p: any) => p.status === 'COMPLETED' || p.status === 'verified'
+    );
+    const currentInvoicePending = currentInvoicePayments.some(
+        (p: any) => p.status === 'PENDING_VERIFICATION'
+    );
+
+    if (!paymentsLoaded) {
+        return (
+            <div className="flex items-center justify-center min-h-[60vh]">
+                <div className="flex flex-col items-center gap-4">
+                    <div className="w-12 h-12 border-4 border-neutral-100 border-t-primary rounded-full animate-spin"></div>
+                    <p className="text-sm font-medium uppercase tracking-widest text-neutral-400">Loading Invoice…</p>
+                </div>
+            </div>
+        );
+    }
+
+    if (currentInvoicePaid || currentInvoicePending) {
+        const isPaid = currentInvoicePaid;
         return (
             <div className="max-w-md mx-auto mt-6 md:mt-12 bg-white p-6 md:p-12 rounded-4px text-center shadow-sm animate-in fade-in zoom-in-95 duration-500">
                 <div className="w-20 h-20 bg-neutral-50 border border-neutral-100 text-black force-circle flex items-center justify-center mx-auto mb-8">
                 </div>
                 <h2 className="text-2xl font-normal text-black mb-4 tracking-tighter">
-                    {isEnrolled ? 'Tuition Paid Successfully' : 'Payment Verification Pending'}
+                    {isPaid ? 'Tuition Paid Successfully' : 'Payment Verification Pending'}
                 </h2>
                 <p className="text-sm text-black mb-8 max-w-[280px] mx-auto leading-relaxed">
-                    {isEnrolled
-                        ? <>Your enrollment is now confirmed. Welcome to <span className="font-semibold text-black">Kestora University</span>.</>
+                    {isPaid
+                        ? <>Your payment for this invoice has been confirmed. Your receipt is available below.</>
                         : <>Your payment has been recorded and is currently under review. <span className="font-semibold text-black">Access to student services is paused</span> until our finance team verifies the transaction.</>
                     }
                 </p>
                 <div className="flex flex-col items-center gap-3">
-                    {isEnrolled && (
+                    {isPaid && (
                         <button
                             onClick={() => router.push(`/portal/application/receipt?id=${application.id}`)}
                             className="w-fit min-w-[240px] h-[48px] bg-black text-white px-8 rounded-4px text-[11px] font-normal uppercase tracking-widest transition-all hover:bg-neutral-800 shadow-lg shadow-black/5"
@@ -127,7 +185,7 @@ export default function TuitionPaymentPage({ admissionOffer, application }: {
                     )}
                     <button
                         onClick={() => router.push('/portal/dashboard')}
-                        className={`w-fit min-w-[240px] h-[48px] px-8 rounded-4px text-[11px] font-normal uppercase tracking-widest transition-all ${isEnrolled ? 'bg-white text-black border border-neutral-200 hover:bg-neutral-50' : 'bg-black text-white hover:bg-neutral-800 shadow-lg shadow-black/5'}`}
+                        className={`w-fit min-w-[240px] h-[48px] px-8 rounded-4px text-[11px] font-normal uppercase tracking-widest transition-all ${isPaid ? 'bg-white text-black border border-neutral-200 hover:bg-neutral-50' : 'bg-black text-white hover:bg-neutral-800 shadow-lg shadow-black/5'}`}
                     >
                         Return to Dashboard
                     </button>

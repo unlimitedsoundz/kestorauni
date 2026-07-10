@@ -130,7 +130,10 @@ serve(async (req) => {
         const degreeLevel = app.course?.degreeLevel === 'MASTER' ? "Master's Degree" : app.course?.degreeLevel === 'BACHELOR' ? "Bachelor's Degree" : app.course?.degreeLevel === 'DIPLOMA' ? "Diploma" : app.course?.degreeLevel === 'CERTIFICATE' ? "Certificate" : "Bachelor's Degree";
         const studentId = app.user?.student_id || 'PENDING';
         const today = new Date();
-        const dateStr = today.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        const admissionTimestamp = offerData?.accepted_at || offerData?.created_at || app.updated_at || app.submitted_at || app.created_at || today.toISOString();
+        const dateStr = !isOffer
+            ? new Date(admissionTimestamp).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+            : today.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
         const refPrefix = isOffer ? 'OFFR' : 'ADMN';
         const refId = `${refPrefix}-${applicationId.substring(0, 8).toUpperCase()}`;
 
@@ -253,13 +256,13 @@ serve(async (req) => {
             const dl = [
                 { label: 'FULL NAME (PASSPORT MATCH)', value: fullName },
                 { label: 'INTENDED PROGRAMME', value: programTitle },
-                { label: 'PROGRAMME START DATE', value: '17.08.2026' },
+                { label: 'PROGRAMME START DATE', value: '17.09.2026' },
                 { label: 'TOTAL CREDITS', value: courseDegreeLevel === 'MASTER' ? '120 ECTS' : '180 ECTS' },
             ];
             const dr = [
-                { label: 'INTAKE & YEAR', value: 'Autumn Semester 2026' },
+                { label: 'INTAKE & YEAR', value: 'Fall Semester 2026' },
                 { label: 'DEGREE LEVEL', value: degreeLevel },
-                { label: 'PROGRAMME END DATE', value: courseDegreeLevel === 'MASTER' ? '17.08.2028' : '17.08.2029' },
+                { label: 'PROGRAMME END DATE', value: courseDegreeLevel === 'MASTER' ? '10.08.2028' : '10.08.2029' },
                 { label: 'CAMPUS LOCATION', value: 'Helsinki, Finland' },
             ];
 
@@ -277,7 +280,7 @@ serve(async (req) => {
             const offerPara1 = `Dear ${firstName},`;
             y = drawParagraph(page, offerPara1, margin, y, regularFont, 9, cw, black);
             y -= 6;
-            const offerPara2 = `We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Kestora University has decided to offer you a place in the ${programTitle} (${degreeLevel}) programme for the Autumn 2026 intake.`;
+            const offerPara2 = `We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Kestora University has decided to offer you a place in the ${programTitle} (${degreeLevel}) programme for the Fall 2026 intake.`;
             y = drawParagraph(page, offerPara2, margin, y, regularFont, 9, cw, darkGrey);
             y -= 6;
             const offerPara3 = `This offer is subject to the conditions outlined below, including acceptance of the offer via the student portal and confirmation of tuition payment by the specified deadline. Upon fulfillment of these conditions, an official Letter of Admission will be issued confirming your enrollment.`;
@@ -435,9 +438,9 @@ serve(async (req) => {
             const details = [
                 { label: 'Date of Admission', value: dateStr },
                 { label: 'Academic Year', value: '2026 - 2027' },
-                { label: 'Intake', value: 'Autumn 2026' },
-                { label: 'Programme Start Date', value: '17.08.2026' },
-                { label: 'Programme End Date', value: courseDegreeLevel === 'MASTER' ? '17.08.2028' : '17.08.2029' },
+                { label: 'Intake', value: 'Fall 2026' },
+                { label: 'Programme Start Date', value: '17.09.2026' },
+                { label: 'Programme End Date', value: courseDegreeLevel === 'MASTER' ? '10.08.2028' : '10.08.2029' },
                 { label: 'Total ECTS', value: courseDegreeLevel === 'MASTER' ? '120 ECTS' : '180 ECTS' },
                 { label: 'Programme of Study', value: `${programTitle} (${app.course?.programType || 'Full-time'})` },
             ];

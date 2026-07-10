@@ -59,7 +59,7 @@ export default function ArrivalGuidePage() {
                             />
                             <Card
                                 title="Visa & Permits"
-                                body="International students should apply for a Canadian study permit as soon as possible after accepting their offer. Ensure your passport is valid."
+                                body="International students should apply for a Finnish residence permit as soon as possible after accepting their offer. Ensure your passport is valid."
                                 badge={{ label: "Legal" }}
                             />
                             <Card
@@ -145,7 +145,7 @@ export default function ArrivalGuidePage() {
                         <div className="mt-12">
                         <CTA
                             title="Learn the Language"
-                            body="While English is the primary language, Helsinki is a bilingual city. Learning some French can enrich your experience and improve career opportunities."
+                            body="While English is the primary language, Helsinki is a bilingual city. Learning some Finnish or Swedish can enrich your experience and improve career opportunities."
                             cta={{
                                 label: "Explore Language Resources",
                                 linkComponentProps: {

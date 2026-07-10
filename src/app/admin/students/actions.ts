@@ -14,7 +14,8 @@ export async function enrollStudent(applicationId: string) {
             .select(`
                 *,
                 user:profiles!user_id(*),
-                course:Course(*)
+                course:Course(*),
+                offer:admission_offers(*)
             `)
             .eq('id', applicationId)
             .single();
@@ -26,6 +27,8 @@ export async function enrollStudent(applicationId: string) {
 
         const user = application.user;
         const currentYear = new Date().getFullYear();
+        const offer = Array.isArray(application.offer) ? application.offer[0] : application.offer;
+        const admittedAt = offer?.accepted_at || offer?.created_at || application.updated_at || application.submitted_at || application.created_at || new Date().toISOString();
 
         // 2. Student ID Handling
         // Force 'KU' prefix, even if profile has an old ID (like 'SYK' or 'KC')
@@ -64,7 +67,7 @@ export async function enrollStudent(applicationId: string) {
                 institutional_email: institutionalEmail,
                 personal_email: user.email,
                 enrollment_status: 'ACTIVE',
-                start_date: new Date().toISOString(),
+                start_date: admittedAt,
                 expected_graduation_date: new Date(new Date().setFullYear(new Date().getFullYear() + 3)).toISOString()
             }, {
                 onConflict: 'application_id'
@@ -100,17 +103,17 @@ export async function enrollStudent(applicationId: string) {
             .eq('id', user.id);
 
         // 7. Verify Payment Record (Atomic Update)
-        const { data: offer } = await supabase
+        const { data: offerRecord } = await supabase
             .from('admission_offers')
             .select('id')
             .eq('application_id', applicationId)
             .maybeSingle();
 
-        if (offer) {
+        if (offerRecord) {
             await supabase
                 .from('tuition_payments')
                 .update({ status: 'verified' })
-                .eq('offer_id', offer.id)
+                .eq('offer_id', offerRecord.id)
                 .eq('status', 'PENDING_VERIFICATION');
         }
 

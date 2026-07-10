@@ -81,22 +81,22 @@ export default function WelcomeEmail({
                         </Text>
 
                         <Section className="text-center mt-[32px] mb-[32px]">
-                            <Link
-                                className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
-                                href="https://kestora.online/portal/account/login"
-                            >
-                                Enter Student Portal
-                            </Link>
+<Link
+                                 className="bg-white rounded text-black text-[12px] font-semibold no-underline text-center px-5 py-3"
+                                 href="https://kestora.online/portal/account/login"
+                             >
+                                 Enter Student Portal
+                             </Link>
                         </Section>
 
-                        <Text className="text-black text-[14px] leading-[24px]">
+                        <Text className="text-white text-[14px] leading-[24px]">
                             If you have any questions or need assistance, please feel free to reach out to our Admissions Office at <Link href="mailto:admissions@kestora.online" className="text-blue-600 no-underline font-bold">admissions@kestora.online</Link>.
                         </Text>
 
                         <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
                         <Section className="text-center mt-[10px] mb-[20px]">
                             <Text className="m-0">
-                                <Link href="https://www.tiktok.com/@cannogauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
+                                <Link href="https://www.tiktok.com/@kestorauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
                             </Text>
                         </Section>
 

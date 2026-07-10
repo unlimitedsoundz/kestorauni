@@ -134,7 +134,7 @@ export default function AdmissionsContactInfo() {
                                                 </div>
                                                 <div className="flex flex-col">
                                                     <span className="text-xs font-bold uppercase tracking-widest text-black mb-1">Admissions office International students only</span>
-                                                    <a href="tel:+19842062656" className="inline-flex items-center gap-2 text-black font-semibold text-base underline underline-offset-4 hover:opacity-80 transition-opacity">
+                                                    <a href="tel:+15026865522" className="inline-flex items-center gap-2 text-black font-semibold text-base underline underline-offset-4 hover:opacity-80 transition-opacity">
                                                         <Phone size={18} weight="fill" />
                                                         Talk to Admissions
                                                     </a>

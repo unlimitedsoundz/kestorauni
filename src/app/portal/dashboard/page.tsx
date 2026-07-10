@@ -38,7 +38,7 @@ export default function DashboardPage() {
             console.log('Dashboard: Fetching data for user:', sbUser.id);
             const [profileRes, appsRes, studentRes, admissionRes] = await Promise.all([
                 supabase.from('profiles').select('*').eq('id', sbUser.id).single(),
-                supabase.from('applications').select('*, course:Course(title, duration), offer:admission_offers(*)').eq('user_id', sbUser.id).order('updated_at', { ascending: false }),
+                supabase.from('applications').select('*, course:Course(title, duration), offer:admission_offers(*, payments:tuition_payments(*))').eq('user_id', sbUser.id).order('updated_at', { ascending: false }),
                 supabase.from('students').select('*, program:Course(*), user:profiles(*)').eq('user_id', sbUser.id).maybeSingle(),
                 Promise.resolve({ data: [], error: null }) // Temporarily disable admissions query until table exists
                 // supabase.from('admissions').select('*').eq('user_id', sbUser.id)
@@ -110,14 +110,17 @@ export default function DashboardPage() {
         );
     }
 
-    // Detect a pushed but unpaid tuition invoice (e.g. admin pushes a new invoice to an enrolled student)
+    // Detect a pushed but unpaid tuition invoice (e.g. admin pushes a new invoice to an enrolled student).
+    // An invoice is considered paid only when a COMPLETED payment exists matching its invoice_type.
     const studentApp = applications.find(app => app.id === student?.application_id);
     const studentOffer = Array.isArray(studentApp?.offer) ? studentApp?.offer?.[0] : studentApp?.offer;
-    const pendingInvoice =
-        !!student &&
-        !!studentOffer?.invoice_pushed &&
-        ((studentOffer.invoice_type === 'TUITION_DEPOSIT' && !student.tuition_deposit_paid) ||
-            (studentOffer.invoice_type !== 'TUITION_DEPOSIT' && !student.full_tuition_paid));
+    const studentOfferPayments = Array.isArray(studentOffer?.payments)
+        ? studentOffer.payments
+        : (studentOffer?.payments ? [studentOffer.payments] : []);
+    const invoicePaid = studentOfferPayments.some(
+        (p: any) => p.invoice_type === studentOffer?.invoice_type && (p.status === 'COMPLETED' || p.status === 'verified')
+    );
+    const pendingInvoice = !!student && !!studentOffer?.invoice_pushed && !invoicePaid;
     const pendingInvoiceType = studentOffer?.invoice_type ? studentOffer.invoice_type.replace(/_/g, ' ') : 'TUITION DEPOSIT';
 
     return (

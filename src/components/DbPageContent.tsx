@@ -26,7 +26,13 @@ export default function DbPageContent({
         if (pageSlug === 'admissions/tuition') {
             return text
                 .replace(/Flywire/gi, 'our secure payment portal')
-                .replace(/https:\/\/www\.flywire\.com\//gi, '#');
+                .replace(/https:\/\/www\.flywire\.com\//gi, '#')
+                .replace(/mailto:admissions@cannoga\.fi/gi, 'mailto:admissions@kestora.online')
+                .replace(/admissions@cannoga\.fi/gi, 'admissions@kestora.online')
+                .replace(/cannoga\.fi/gi, 'kestora.online')
+                .replace(/https:\/\/www\.ontario\.ca\/page\/apply-ohip-and-get-health-card/gi, 'https://www.kela.fi/web/en')
+                .replace(/Apply for OHIP at ServiceOntario/gi, 'Apply for Kela')
+                .replace(/ServiceOntario/gi, 'Kela');
         }
         return text;
     };
@@ -52,7 +58,13 @@ export default function DbPageContent({
                     if (pageSlug === 'admissions/tuition') {
                         sanitizedContent = sanitizedContent
                             .replace(/Flywire/gi, 'our secure payment portal')
-                            .replace(/https:\/\/www\.flywire\.com\//gi, '#');
+                            .replace(/https:\/\/www\.flywire\.com\//gi, '#')
+                            .replace(/mailto:admissions@cannoga\.fi/gi, 'mailto:admissions@kestora.online')
+                            .replace(/admissions@cannoga\.fi/gi, 'admissions@kestora.online')
+                            .replace(/cannoga\.fi/gi, 'kestora.online')
+                            .replace(/https:\/\/www\.ontario\.ca\/page\/apply-ohip-and-get-health-card/gi, 'https://www.kela.fi/web/en')
+                            .replace(/Apply for OHIP at ServiceOntario/gi, 'Apply for Kela')
+                            .replace(/ServiceOntario/gi, 'Kela');
                     }
                     setContent(sanitizedContent);
                 }

@@ -8,6 +8,9 @@ export interface SearchablePage {
 export const searchablePages: SearchablePage[] = [
     // Study & Admissions
     { title: "Admissions Overview", href: "/admissions", category: "Study & Admissions" },
+    { title: "Certificate Programs", href: "/degree-programmes#certificates", category: "Study & Admissions" },
+    { title: "Diploma Programs", href: "/degree-programmes#diplomas", category: "Study & Admissions" },
+    { title: "Advanced Diploma Programs", href: "/degree-programmes#advanced-diplomas", category: "Study & Admissions" },
     { title: "Bachelor's Programmes", href: "/admissions/bachelor", category: "Study & Admissions" },
     { title: "Master's Programmes", href: "/admissions/master", category: "Study & Admissions" },
     { title: "Tuition Fees & Scholarships", href: "/admissions/tuition", category: "Study & Admissions" },
@@ -51,12 +54,12 @@ export const searchablePages: SearchablePage[] = [
     { title: "Student Life", href: "/student-life", category: "Student Life & Guides" },
     { title: "Campus Information", href: "/student-guide", category: "Student Life & Guides" },
 
-    // About Cannoga
-    { title: "Our Story", href: "/about-kestora-university", category: "About Cannoga" },
-    { title: "Contact Information", href: "/contact", category: "About Cannoga" },
-    { title: "News & Events", href: "/news", category: "About Cannoga" },
-    { title: "Collaboration", href: "/collaboration", category: "About Cannoga" },
-    { title: "Innovation", href: "/innovation", category: "About Cannoga" },
+    // About Kestora
+    { title: "Our Story", href: "/about-kestora-university", category: "About Kestora" },
+    { title: "Contact Information", href: "/contact", category: "About Kestora" },
+    { title: "News & Events", href: "/news", category: "About Kestora" },
+    { title: "Collaboration", href: "/collaboration", category: "About Kestora" },
+    { title: "Innovation", href: "/innovation", category: "About Kestora" },
 
     // Legal & Privacy
     { title: "Privacy Policy", href: "/privacy", category: "Legal & Privacy" },

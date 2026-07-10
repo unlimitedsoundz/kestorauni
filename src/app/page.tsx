@@ -41,12 +41,12 @@ export default async function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: "Programs A-Z", desc: "Browse all Bachelor's and Master's degrees", href: "/studies" },
-              { name: "Credential Types", desc: "Explore academic certs and degrees", href: "/admissions" },
-              { name: "Areas of Interest", desc: "Find courses based on your passions", href: "/schools" },
-              { name: "Schools & Institutes", desc: "Discover our four specialized faculties", href: "/schools" },
-              { name: "Helsinki Campus Info", desc: "Explore facilities and student hubs", href: "/contact" },
-              { name: "Courses A-Z", desc: "Detailed schedule and syllabus search", href: "/studies" },
+              { name: "Certificate Programs", desc: "Short, career-focused pathways for practical skill-building and fast entry into the workforce", href: "/degree-programmes#certificates" },
+              { name: "Diploma Programs", desc: "Two-year applied study options with project-based learning and strong industry relevance", href: "/degree-programmes#diplomas" },
+              { name: "Bachelor's & Master's Degrees", desc: "Flexible undergraduate and graduate study routes for academic and professional growth", href: "/degree-programmes" },
+              { name: "Schools & Institutes", desc: "Discover the academic schools that shape our certificate, diploma and degree offerings", href: "/schools" },
+              { name: "Programs A-Z", desc: "Browse all academic pathways, courses and credentials in one place", href: "/studies" },
+              { name: "Helsinki Campus Info", desc: "Explore campus facilities, support services and study-life resources", href: "/contact" },
             ].map((card) => (
               <Link
                 key={card.name}

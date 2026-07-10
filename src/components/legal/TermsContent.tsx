@@ -208,7 +208,7 @@ export default function TermsContent() {
                                 <h2 className="text-2xl font-bold mb-8  pb-10 pl-2">11. Governing Law and Jurisdiction</h2>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        These Terms are governed by the laws of Finland. Any disputes arising in connection with these Terms shall be subject to the jurisdiction of Canadian courts unless otherwise required by law.
+                                        These Terms are governed by the laws of Finland. Any disputes arising in connection with these Terms shall be subject to the jurisdiction of Finnish courts unless otherwise required by law.
                                     </p>
                                 </div>
                             </section>

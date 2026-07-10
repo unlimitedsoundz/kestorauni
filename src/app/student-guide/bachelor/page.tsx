@@ -105,8 +105,8 @@ export default function BachelorsGuidePage() {
                         <section id="residence" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">3. Residence Permit</h2>
                             <div className="grid md:grid-cols-3 gap-6">
-                                <Card title="International Students" body="Apply for a Canadian study permit immediately after accepting your offer. Processing typically takes 4–12 weeks." />
-                                <Card title="Canadian Citizens / PR" body="No study permit required. Register for your programme and complete enrolment online." />
+                                <Card title="International Students" body="Apply for a Finnish residence permit for studies immediately after accepting your offer. Processing typically takes 1-3 months." />
+                                <Card title="EU/EEA Citizens" body="No residence permit required. Register for your programme and complete enrolment online." />
                                 <Card title="Nordic" body="Register with the Population Info System upon arrival for a personal ID code." />
                             </div>
                         </section>
@@ -180,11 +180,11 @@ export default function BachelorsGuidePage() {
                             <div className="grid md:grid-cols-2 gap-8">
                                 <Card
                                     title="Housing"
-                                    body="Apply immediately. Cannoga assists with the application process for student housing."
+                                    body="Apply immediately. Kestora assists with the application process for student housing."
                                 />
                                 <Card
                                     title="Financial Aid"
-                                    body="Check eligibility for Canadian student aid (OSAP) early and apply before the deadline."
+                                    body="Check eligibility for Finnish student financial aid (Kela) early and apply before the deadline."
                                 />
                             </div>
                         </section>

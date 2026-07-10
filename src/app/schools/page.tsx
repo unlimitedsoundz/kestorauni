@@ -5,7 +5,7 @@ import { School } from '@/types/database';
 
 export const metadata = {
     title: 'Academic Schools — Kestora University Helsinki, Finland | Arts, Business, Science, Technology',
-    description: 'Kestora University is organized into four schools: Arts & Architecture, Business, Science, and Technology. Explore departments, research, and degree programmes.',
+    description: 'Kestora University is organized into eight schools, including Arts & Architecture, Business, Science, Technology, Health & Community, Hospitality & Tourism, Education & Social Sciences, and Transportation & Aviation. Explore departments, research, and degree programmes.',
     alternates: {
         canonical: 'https://kestora.online/schools/',
     },
@@ -14,20 +14,11 @@ export const metadata = {
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { Hero } from '@/components/layout/Hero';
 
-import { createStaticClient } from '@/lib/supabase/static';
 import { Card } from '@/components/ui/Card';
+import { STATIC_SCHOOLS } from '@/lib/schools';
 
 export default async function SchoolsPage() {
-    const supabase = createStaticClient();
-    const { data: schools, error } = await supabase
-        .from('School')
-        .select('*')
-        .order('name');
-
-    if (error) {
-        console.error('Error fetching schools:', error);
-        return <div>Error loading schools.</div>;
-    }
+    const schools = STATIC_SCHOOLS;
 
     return (
         <div className="min-h-screen bg-white">
@@ -38,7 +29,7 @@ export default async function SchoolsPage() {
             {/* Hero Section */}
             <Hero
                 title="Our Schools"
-                body="Kestora University is organized into specialized schools, each driving innovation in technology, business, science, and design through world-class research and English-taught Bachelor’s and Master’s programmes."
+                body="Kestora University is organized into specialized schools, each driving innovation in technology, business, science, and design through world-class research and English-taught certificate, diploma, bachelor’s and master’s programmes."
                 backgroundColor="#000000"
                 tinted
                 lightText={true}

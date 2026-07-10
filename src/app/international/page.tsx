@@ -13,14 +13,14 @@ export default function InternationalPage() {
 
                 <div className="prose prose-lg max-w-none text-neutral-600 mb-12">
                     <p>
-                        Welcome to Cannoga! Each year, we welcome hundreds of students from around the world. We are committed to making your transition to Helsinki, Finland as smooth as possible.
+                        Welcome to Kestora! Each year, we welcome hundreds of students from around the world. We are committed to making your transition to Helsinki, Finland as smooth as possible.
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 mb-16">
                     <div className="bg-neutral-100 p-10 rounded-xl">
                         <h3 className="text-xl font-bold mb-4 text-neutral-800">🛂 Residence Permits</h3>
-                        <p className="mb-4 text-sm">Most international students require a Canadian study permit. You should apply as soon as you receive your acceptance letter from Kestora University.</p>
+                         <p className="mb-4 text-sm">Most international students require a Finnish residence permit. You should apply as soon as you receive your acceptance letter from Kestora University.</p>
                         <a href="#" className="text-neutral-600 font-bold text-sm underline">Read Migri.fi Guide</a>
                     </div>
                     <div className="bg-neutral-100 p-10 rounded-xl">

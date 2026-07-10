@@ -1,4 +1,5 @@
 import { createClient } from '@/utils/supabase/client';
+import { invokeEdgeFunction } from '@/utils/supabase/invoke';
 // Action triggered from Finance Admin UI
 
 export async function pushInvoice(applicationId: string, customFee: number, invoiceType: string) {
@@ -85,6 +86,27 @@ export async function pushInvoice(applicationId: string, customFee: number, invo
     }
 
     return { success: true };
+}
+
+// Verify and accept a subsequent (2nd, 3rd...) tuition invoice payment that the
+// student submitted through the checkout. Routes through a service-role Edge
+// Function because the admin's browser client cannot UPDATE tuition_payments
+// (no admin/UPDATE RLS policy) — the function bypasses RLS so verification
+// actually persists, then the DB trigger notifies the student.
+export async function verifyTuitionPayment(paymentId: string, applicationId: string) {
+    try {
+        const { data, error } = await invokeEdgeFunction('verify-tuition-payment', {
+            body: { paymentId, applicationId }
+        });
+
+        if (error) throw new Error(error.message || 'Failed to verify payment');
+        if (!data?.success) throw new Error('Verification failed');
+
+        return { success: true };
+    } catch (err: any) {
+        console.error('verifyTuitionPayment error:', err);
+        throw new Error(err.message || 'Failed to verify payment');
+    }
 }
 
 export async function getSystemSetting(key: string) {

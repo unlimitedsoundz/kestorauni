@@ -50,7 +50,7 @@ export default function StudiesPage() {
                     <div className="group relative bg-black overflow-hidden aspect-[4/3] md:aspect-auto md:min-h-[500px]">
                         <div className="absolute inset-0">
                             <Image
-                                src="/images/bachelors-group-v2.png"
+                                src="/images/1d68041835324a83583595071e6eb95c.jpg"
                                 alt="Bachelor's"
                                 fill
                                 className="object-cover object-top transition-transform duration-1000 group-hover:scale-105 opacity-60"
@@ -73,7 +73,7 @@ export default function StudiesPage() {
                     <div className="group relative bg-black overflow-hidden aspect-[4/3] md:aspect-auto md:min-h-[500px]">
                         <div className="absolute inset-0">
                             <Image
-                                src="/images/admissions/master_hero_refined.jpg"
+                                src="/images/1775945541604-019d7e99-907d-7ab4-82ed-0977a1243bc3.png"
                                 alt="Master's"
                                 fill
                                 className="object-cover object-top transition-transform duration-1000 group-hover:scale-105 opacity-60"
@@ -90,6 +90,33 @@ export default function StudiesPage() {
                                  View Master's Programmes <ArrowRight size={20} weight="bold" className="align-middle" />
                              </Link>
                         </div>
+                    </div>
+                </div>
+
+                <div className="mt-24">
+                    <div className="text-center max-w-2xl mx-auto mb-12">
+                        <p className="text-sm font-bold uppercase tracking-[0.2em] text-neutral-500 mb-3">Credential Types</p>
+                        <h2 className="text-aalto-5 font-bold uppercase tracking-aalto-3">Explore by academic level</h2>
+                    </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {[
+                            { title: "Certificate Programs", desc: "Short, career-focused pathways for practical skill-building and fast entry into the workforce.", link: "/degree-programmes#certificates" },
+                            { title: "Diploma Programs", desc: "Two-year applied study options with strong industry relevance and project-based learning.", link: "/degree-programmes#diplomas" },
+                            { title: "Bachelor's Degrees", desc: "Three-year undergraduate study with a strong foundation in theory, practice and professional readiness.", link: "/degree-programmes#bachelor" },
+                            { title: "Master's Degrees", desc: "Advanced postgraduate study for leadership, research and specialist professional roles.", link: "/degree-programmes#master" }
+                        ].map((item, i) => (
+                            <Card 
+                                key={i}
+                                title={item.title}
+                                body={item.desc}
+                                cta={{
+                                    label: "Learn more",
+                                    linkComponentProps: {
+                                        href: item.link
+                                    }
+                                }}
+                            />
+                        ))}
                     </div>
                 </div>
 

@@ -53,7 +53,7 @@ const FEE_DESCRIPTIONS: Record<string, string> = {
 export default function TuitionEstimator({ courses }: TuitionEstimatorProps) {
     const [tuitionRates, setTuitionRates] = useState<TuitionRate[]>([]);
     const [campus, setCampus] = useState('Helsinki');
-    const [startTerm, setStartTerm] = useState('2026 Autumn');
+    const [startTerm, setStartTerm] = useState('2026 Fall');
     const [residency, setResidency] = useState('International');
     const [selectedCourseId, setSelectedCourseId] = useState('');
     const [submittedData, setSubmittedData] = useState<any | null>(null);
@@ -149,7 +149,7 @@ export default function TuitionEstimator({ courses }: TuitionEstimatorProps) {
     // Reset Form
     const handleReset = () => {
         setCampus('Helsinki');
-        setStartTerm('2026 Autumn');
+        setStartTerm('2026 Fall');
         setResidency('International');
         setSelectedCourseId('');
         setSubmittedData(null);
@@ -200,8 +200,9 @@ export default function TuitionEstimator({ courses }: TuitionEstimatorProps) {
                             onChange={(e) => setStartTerm(e.target.value)}
                             className="w-full bg-white border border-[#e2e8f0] px-4 py-3 text-sm font-bold text-black focus:outline-none focus:border-[#000000] transition-colors"
                         >
-                            <option value="2026 Autumn">2026 Autumn</option>
-                            <option value="2027 Autumn">2027 Autumn</option>
+                            <option value="2026 Fall">2026 Fall</option>
+                            <option value="2027 Winter">2027 Winter</option>
+                            <option value="2027 Fall">2027 Fall</option>
                         </select>
                     </div>
 

@@ -1094,7 +1094,7 @@ export default function RegistrarClient({
                                 <label className="text-[10px] font-black uppercase tracking-widest text-neutral-400 block ml-1">Term Name</label>
                                 <input
                                     type="text"
-                                    placeholder="e.g. Autumn Semester 2026"
+                                    placeholder="e.g. Fall Semester 2026"
                                     value={semesterFormData.name}
                                     onChange={(e) => setSemesterFormData({ ...semesterFormData, name: e.target.value })}
                                     className="w-full bg-neutral-50 border border-neutral-100 p-3 rounded-xl text-sm font-bold focus:ring-2 focus:ring-black outline-none transition-all"

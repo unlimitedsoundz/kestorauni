@@ -150,7 +150,16 @@ export default async function TuitionPaymentPage() {
                         <div className="cc-section-divider">
                             <h2 className="cc-h2">Merit Scholarship</h2>
                         </div>
-                        <DbPageContent pageSlug={pageSlug} sectionKey="merit_scholarship_content" fallbackContent={getSectionDefault('merit_scholarship_content')} />
+                        <div className="space-y-4">
+                            <DbPageContent pageSlug={pageSlug} sectionKey="merit_scholarship_content" fallbackContent={getSectionDefault('merit_scholarship_content')} />
+                            <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-6">
+                                <h3 className="text-lg font-bold text-black mb-2">Apply for Kela support</h3>
+                                <p className="text-sm text-neutral-600 mb-4">If you are eligible for Finnish social security support, you can start your Kela application directly through the official portal.</p>
+                                <Link href="https://www.kela.fi/web/en" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-bold text-black underline underline-offset-4 hover:text-neutral-700">
+                                    Go to Kela <ArrowRight size={16} weight="bold" />
+                                </Link>
+                            </div>
+                        </div>
                     </section>
 
                     <section id="payment-methods" className="scroll-mt-32">

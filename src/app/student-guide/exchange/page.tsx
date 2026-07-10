@@ -57,7 +57,7 @@ export default function ExchangeStudentsPage() {
                             body={
                                 <div className="space-y-8 text-left">
                                     <p className="text-aalto-3 text-black font-medium leading-relaxed">
-                                        Completing an exchange at Kestora University is a unique opportunity to experience Canadian education, culture, and student life.
+                                         Completing an exchange at Kestora University is a unique opportunity to experience Finnish education, culture, and student life.
                                     </p>
                                     <div className="grid md:grid-cols-2 gap-8">
                                         <div>

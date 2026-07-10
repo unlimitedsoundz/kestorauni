@@ -133,8 +133,8 @@ export default function MastersGuidePage() {
                         <section id="residence" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">4. Residence Permit</h2>
                             <div className="grid md:grid-cols-3 gap-6">
-                                <Card title="International Students" body="Apply for a Canadian study permit immediately. Schedule your visa application centre appointment early." />
-                                <Card title="Canadian Citizens / PR" body="No study permit required. Complete enrolment online and ensure your provincial health coverage is active." />
+                                <Card title="International Students" body="Apply for a Finnish residence permit for studies immediately. Schedule your Migri appointment early." />
+                                <Card title="EU/EEA Citizens" body="No residence permit required. Complete enrolment online and ensure your Kela health coverage is active." />
                             </div>
                         </section>
 
@@ -167,7 +167,7 @@ export default function MastersGuidePage() {
                             <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">6. Apply for Student Housing</h2>
                             <Card
                                 title="Start Your Application"
-                                body="Apply as soon as you accept your study place. Queue times are long. Cannoga assists with the application process for student housing."
+                                 body="Apply as soon as you accept your study place. Queue times are long. Kestora assists with the application process for student housing."
                                 cta={{ label: "Housing Guide", linkComponentProps: { href: "/student-guide/housing-for-students" } }}
                             />
                         </section>

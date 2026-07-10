@@ -1,9 +1,9 @@
 'use client';
 
 import { createClient } from '@/utils/supabase/client';
-import { CreditCard, Envelope, FileText, CheckCircle, Clock, CircleNotch as Loader2 } from '@phosphor-icons/react';
+import { CreditCard, Envelope, FileText, CheckCircle, Clock, CircleNotch as Loader2, ShieldCheck } from "@phosphor-icons/react";
 import { useState, useEffect } from 'react';
-import { pushInvoice } from '../actions';
+import { pushInvoice, verifyTuitionPayment } from '../actions';
 import { getProgramYears } from '@/utils/tuition';
 
 export default function AdminInvoicesPage() {
@@ -13,6 +13,8 @@ export default function AdminInvoicesPage() {
     const [customFee, setCustomFee] = useState<Record<string, number>>({});
     const [customInvoiceType, setCustomInvoiceType] = useState<Record<string, string>>({});
     const [overrideSettled, setOverrideSettled] = useState<Record<string, boolean>>({});
+    const [pendingPayments, setPendingPayments] = useState<any[]>([]);
+    const [verifyLoading, setVerifyLoading] = useState<string | null>(null);
 
     // Default global fees reference, we could fetch from DB but keeping simple for now
     // A production scenario would fetch these from tuition_rates table
@@ -84,6 +86,29 @@ export default function AdminInvoicesPage() {
             }) || [];
 
             setApplications(formattedApps);
+
+            // Fetch tuition payments awaiting verification (subsequent invoices).
+            // These are payments the student submitted through the checkout but
+            // that still need an admin to confirm and issue the receipt.
+            try {
+                const { data: pending, error: pendingError } = await supabase
+                    .from('tuition_payments')
+                    .select('id, amount, currency, invoice_type, transaction_reference, created_at, offer_id, status')
+                    .eq('status', 'PENDING_VERIFICATION')
+                    .order('created_at', { ascending: false });
+
+                if (!pendingError && pending) {
+                    const enriched = pending
+                        .map((p: any) => {
+                            const app = formattedApps.find((a: any) => a.offer?.id === p.offer_id);
+                            return { ...p, app };
+                        })
+                        .filter((p: any) => p.app);
+                    setPendingPayments(enriched);
+                }
+            } catch (pendingErr) {
+                console.error("Error fetching pending payments:", pendingErr);
+            }
         } catch (error) {
             console.error("Error in fetchApplications:", error);
         } finally {
@@ -154,6 +179,23 @@ export default function AdminInvoicesPage() {
             alert(`Failed to push invoice: ${error.message || 'Unknown error'}`);
         } finally {
             setActionLoading(null);
+        }
+    };
+
+    const handleVerifyPayment = async (payment: any) => {
+        if (!confirm(`Confirm you have received this ${payment.invoice_type?.replace(/_/g, ' ')} payment of €${payment.amount}? This will issue the receipt to the student.`)) return;
+
+        try {
+            setVerifyLoading(payment.id);
+            const result = await verifyTuitionPayment(payment.id, payment.app.id);
+            if (result.success) {
+                alert("Payment verified. Receipt issued to student.");
+                fetchApplications();
+            }
+        } catch (error: any) {
+            alert(`Failed to verify payment: ${error.message || 'Unknown error'}`);
+        } finally {
+            setVerifyLoading(null);
         }
     };
 
@@ -295,6 +337,83 @@ export default function AdminInvoicesPage() {
                         )}
                     </tbody>
                 </table>
+            </div>
+
+            {/* PAYMENTS AWAITING VERIFICATION (subsequent invoices) */}
+            <div className="mt-12">
+                <h2 className="text-xl font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                    <ShieldCheck size={20} weight="bold" className="text-amber-500" />
+                    Payments Awaiting Verification
+                    {pendingPayments.length > 0 && (
+                        <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">{pendingPayments.length}</span>
+                    )}
+                </h2>
+                <p className="text-neutral-500 text-sm mb-4">
+                    These are payments students submitted through the secure checkout for additional invoices (e.g. 2nd instalments). Verify and accept each one to issue the official receipt.
+                </p>
+
+                <div className="bg-white border border-neutral-200 overflow-hidden">
+                    <table className="w-full text-left">
+                        <thead className="hidden md:table-header-group bg-neutral-50 border-b border-neutral-200">
+                            <tr>
+                                <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Applicant</th>
+                                <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Program</th>
+                                <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Invoice</th>
+                                <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Amount</th>
+                                <th className="p-4 font-bold text-neutral-600 text-xs uppercase">Ref</th>
+                                <th className="p-4 font-bold text-neutral-600 text-xs uppercase text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-neutral-100 block md:table-row-group">
+                            {pendingPayments.length === 0 ? (
+                                <tr>
+                                    <td colSpan={6} className="p-8 text-center text-neutral-400 text-sm">
+                                        No payments awaiting verification.
+                                    </td>
+                                </tr>
+                            ) : (
+                                pendingPayments.map((payment: any) => (
+                                    <tr key={payment.id} className="hover:bg-neutral-50 transition-colors block md:table-row p-4 md:p-0">
+                                        <td className="block md:table-cell py-2 md:p-4">
+                                            <div className="font-bold text-neutral-900 text-sm">
+                                                {payment.app.personal_info?.firstName} {payment.app.personal_info?.lastName}
+                                            </div>
+                                            <div className="text-xs text-neutral-500">{payment.app.personal_info?.email}</div>
+                                        </td>
+                                        <td className="block md:table-cell py-1 md:p-4 text-xs font-medium text-neutral-600">
+                                            {payment.app.program?.title}
+                                        </td>
+                                        <td className="block md:table-cell py-2 md:p-4">
+                                            <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-none text-[9px] font-bold uppercase flex items-center gap-1 w-fit">
+                                                {payment.invoice_type?.replace(/_/g, ' ')}
+                                            </span>
+                                        </td>
+                                        <td className="block md:table-cell py-1 md:p-4 text-sm font-bold text-neutral-900">
+                                            € {payment.amount?.toLocaleString()}
+                                        </td>
+                                        <td className="block md:table-cell py-1 md:p-4 text-xs font-mono text-neutral-500 uppercase">
+                                            {payment.transaction_reference || 'N/A'}
+                                        </td>
+                                        <td className="block md:table-cell pt-4 pb-2 md:p-4 text-right">
+                                            <button
+                                                onClick={() => handleVerifyPayment(payment)}
+                                                disabled={verifyLoading === payment.id}
+                                                className="inline-flex items-center justify-center gap-2 bg-neutral-900 text-white px-4 py-2 rounded-none text-xs font-bold uppercase tracking-widest hover:bg-neutral-700 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                                            >
+                                                {verifyLoading === payment.id ? (
+                                                    <Loader2 size={14} className="animate-spin" />
+                                                ) : (
+                                                    <ShieldCheck size={14} weight="bold" />
+                                                )}
+                                                {verifyLoading === payment.id ? 'Verifying...' : 'Verify & Accept'}
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

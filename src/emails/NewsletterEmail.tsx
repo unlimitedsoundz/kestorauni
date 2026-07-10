@@ -31,7 +31,7 @@ export default function NewsletterEmail({
             <Tailwind>
                 <Body className="bg-[#f8f9fa] my-auto mx-auto font-sans text-[#1a1a1a]">
                     <Container className="bg-white my-[40px] mx-auto overflow-hidden w-[600px]">
-                        
+
                         {/* Header */}
                         <Section className="bg-white p-[30px] text-center border-b border-solid border-[#eeeeee]">
                             <Img
@@ -72,7 +72,7 @@ export default function NewsletterEmail({
                                 Important Update
                             </Heading>
                             <Text className="text-[15px] leading-[1.5] text-[#333333] m-0">
-                                The August 2026 intake is approaching capacity and will be closing shortly. To ensure your placement, please complete your application, formally accept your offer, and finalize your tuition payment.
+                                The Fall 2026 intake is approaching capacity and will be closing shortly. To ensure your placement, please complete your application, formally accept your offer, and finalize your tuition payment.
                             </Text>
                         </Section>
 
@@ -94,8 +94,8 @@ export default function NewsletterEmail({
                             <Text className="text-[15px] leading-[1.6] text-[#444444] mb-[20px]">
                                 Engage with fellow students and ambassadors through our dedicated communication platform for real-time support and peer networking.
                             </Text>
-                            <Link 
-                                href="https://students.kestora.online/" 
+                            <Link
+                                href="https://students.kestora.online/"
                                 className="bg-black text-white text-[14px] font-bold no-underline text-center px-[35px] py-[16px] inline-block uppercase tracking-[1px] rounded-[2px]"
                             >
                                 Student Community
@@ -111,7 +111,7 @@ export default function NewsletterEmail({
                                 &bull; Review and accept your formal admission offer<br />
                                 &bull; Finalize the required tuition deposit<br />
                                 &bull; Download your official admission and visa support letters<br />
-                                &bull; Initiate your Canadian study permit (visa) application process
+                                &bull; Initiate your Finnish study permit (visa) application process
                             </Text>
                         </Section>
 

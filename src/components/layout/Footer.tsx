@@ -3,7 +3,7 @@
 import { Link } from "@aalto-dx/react-components"
 import { usePathname } from "next/navigation"
 import { Logo } from "@/components/ui/Logo"
-import { EnvelopeSimple, MapPin, Phone } from "@phosphor-icons/react"
+import { EnvelopeSimple, MapPin, Phone, TiktokLogo } from "@phosphor-icons/react"
 
 export function Footer() {
     const pathname = usePathname();
@@ -17,14 +17,19 @@ export function Footer() {
             {/* Main Footer Content */}
             <div className="container mx-auto px-4 pt-16 pb-10">
 
-                {/* Top Row: Brand + Social */}
-                <div className="mb-12 pb-10 border-b border-white/10">
-                    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-                        <div>
-                            <Logo className="h-10 md:h-12 text-white mb-3" />
-                        </div>
-                    </div>
-                </div>
+{/* Top Row: Brand + Social */}
+                 <div className="mb-12 pb-10 border-b border-white/10">
+                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+                         <div>
+                             <Logo className="h-10 md:h-12 text-white mb-3" />
+                         </div>
+                         <div className="flex space-x-4">
+<a href="https://www.tiktok.com/@kestorauniversity" target="_blank" rel="noopener noreferrer" className="text-white hover:text-opacity-75 transition-colors">
+                                  <TiktokLogo className="h-6 w-6" />
+                              </a>
+                         </div>
+                     </div>
+                 </div>
 
                 {/* Link Columns */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 mb-12">

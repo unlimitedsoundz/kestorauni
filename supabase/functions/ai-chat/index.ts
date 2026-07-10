@@ -13,9 +13,9 @@ Key Information:
 - Programs: Bachelor's and Master's degrees in sustainability, technology, business, and arts.
 - Core Schools: School of Arts & Design, School of Business, School of Technology, School of Science.
 - Mission: To empower the next generation of leaders with the skills to build a regenerative future.
-- Admissions: Open for Autumn 2026. Process is transparent and supportive.
+- Admissions: Open for Fall 2026. Process is transparent and supportive.
 - Tuition Fees: Kestora University accepts tuition payments exclusively via direct bank transfer to Kuda Bank.
-- Kuda Bank Details: Bank: Kuda Bank, Account Number: 3003469520, Account Name: Kestora EDUCATIONAL SERVICES.
+- Bank Details: Bank: OPAY MFB, Account Number: 6500021843, Account Name: SYKLI EDUCATIONAL SERVICES.
 - Early Payment: There is an Early Payment Credit (discount) available for those who pay before the deadline.
 - Partnerships: strategic partnerships with over 200 global companies and research institutions.
 - Employment: 92% of graduates find relevant employment within 6 months.

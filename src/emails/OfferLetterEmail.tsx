@@ -71,7 +71,7 @@ export default function OfferLetterEmail({
                         <Section className="my-[20px]">
                             <Text className="text-black text-[14px] font-semibold leading-[24px]">Your Offer Details:</Text>
                             <Text className="text-black text-[14px] leading-[24px]">Programme: {courseTitle}</Text>
-                            <Text className="text-black text-[14px] leading-[24px]">Intake: August 2026 (Autumn Semester)</Text>
+                            <Text className="text-black text-[14px] leading-[24px]">Intake: September Fall 2026</Text>
                             <Text className="text-black text-[14px] leading-[24px]">Status: Conditional Offer</Text>
                         </Section>
 

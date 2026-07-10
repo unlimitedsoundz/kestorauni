@@ -24,7 +24,7 @@ const faqs: FAQItem[] = [
         answer: (
             <div className="space-y-4">
                 <p>
-                    If you are an international student, you must apply for a Canadian study permit immediately after accepting your admission offer. Canadian citizens and Permanent Residents do not require a study permit but should complete enrolment through the student portal.
+                    If you are an international student, you must apply for a Finnish residence permit immediately after accepting your admission offer. EU/EEA citizens and Nordic residents do not require a residence permit but should complete enrolment through the student portal.
                 </p>
             </div>
         )
@@ -54,17 +54,17 @@ const faqs: FAQItem[] = [
         answer: (
             <div className="space-y-4">
                 <p>
-                    Attending degree students have access to on-campus health services and are encouraged to obtain provincial health coverage (OHIP in Ontario) after arrival. Kestora University partners with local clinics for general, mental, and oral health care.
+                    Attending degree students have access to on-campus health services and are encouraged to obtain Finnish health coverage (Kela) after arrival. Kestora University partners with local clinics for general, mental, and oral health care.
                 </p>
             </div>
         )
     },
                 {
-        question: "Do I need to speak French to live in Helsinki, Finland?",
+        question: "Do I need to speak Finnish or Swedish to live in Helsinki?",
         answer: (
             <div className="space-y-4">
                 <p>
-                    English is the primary language of instruction and daily life in Helsinki. While Helsinki is a bilingual city with some French spoken, all college programmes and services are fully available in English. Learning French is a bonus but not required.
+                    English is the primary language of instruction and daily life in Helsinki. While Helsinki is a bilingual city with Finnish and Swedish, all university programmes and services are fully available in English. Learning Finnish or Swedish is a bonus but not required.
                 </p>
             </div>
         )

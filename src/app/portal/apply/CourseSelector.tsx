@@ -125,7 +125,7 @@ export default function CourseSelector({ initialCourses, initialSelected }: Cour
             <div className="flex flex-col md:flex-row gap-4 justify-between items-end md:items-center bg-neutral-50 p-6 rounded-sm border border-neutral-100">
                 <div className="flex flex-col gap-2 w-full md:w-auto">
                     <span className="text-[11px] font-bold text-black">Filter by Level</span>
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2">
                         {(['ALL', 'CERTIFICATE', 'DIPLOMA', 'BACHELOR', 'MASTER'] as const).map((level) => (
                             <button
                                 key={level}

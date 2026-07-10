@@ -104,7 +104,7 @@ function EnrollmentContent() {
                     <div>
                         <div className="mb-4 relative w-48 h-16">
                             <Image
-                                src="/logo-cannoga.png"
+                                src="/logo-kestora.png"
                                 alt="Kestora University Official Logo"
                                 fill
                                 style={{ objectFit: 'contain', objectPosition: 'left center' }}

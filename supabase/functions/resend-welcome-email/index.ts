@@ -40,7 +40,7 @@ serve(async (req) => {
                     .select('student_id, first_name')
                     .eq('email', email)
                     .single();
-                
+
                 if (data) {
                     student_id = data.student_id;
                     if (data.first_name && first_name === 'Student') {

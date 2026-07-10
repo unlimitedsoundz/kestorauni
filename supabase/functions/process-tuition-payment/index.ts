@@ -78,13 +78,24 @@ Deno.serve(async (req) => {
             .eq('id', offerId);
 
         // 3. Update Application Status to PAYMENT_SUBMITTED (No Auto-Enroll)
-        // This triggers the "Pending Verification" UI in the PaymentView
-        const { error: appError } = await adminClient
+        // This triggers the "Pending Verification" UI in the PaymentView.
+        // IMPORTANT: Do NOT downgrade an already-enrolled student (e.g. when they
+        // pay a subsequent / 2nd invoice). Downgrading would make them lose access
+        // to the Active Student portal (Admission Letter, Receipt, Enter Student Portal).
+        const { data: currentApp } = await adminClient
             .from('applications')
-            .update({ status: 'PAYMENT_SUBMITTED' })
-            .eq('id', applicationId);
+            .select('status')
+            .eq('id', applicationId)
+            .single();
 
-        if (appError) throw appError;
+        if (currentApp && currentApp.status !== 'ENROLLED' && currentApp.status !== 'ADMISSION_LETTER_GENERATED') {
+            const { error: appError } = await adminClient
+                .from('applications')
+                .update({ status: 'PAYMENT_SUBMITTED', updated_at: new Date().toISOString() })
+                .eq('id', applicationId);
+
+            if (appError) throw appError;
+        }
 
         // 4. Notify Admin
         try {

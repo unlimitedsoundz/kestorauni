@@ -32,6 +32,20 @@ export default function PaymentConfirmationEmail({
 }: PaymentConfirmationEmailProps) {
     const previewText = `Payment Received: Your tuition for ${courseTitle} has been successfully processed.`;
 
+    const getCurrencySymbol = (code: string): string => {
+        const symbols: Record<string, string> = {
+            'EUR': '€',
+            'USD': '$',
+            'NGN': '₦',
+            'GBP': '£',
+            'SEK': 'kr',
+            'NOK': 'kr',
+            'DKK': 'kr',
+            'FCFA': 'FCFA',
+        };
+        return symbols[code.toUpperCase()] || code;
+    };
+
     return (
         <Html>
             <Head />
@@ -64,7 +78,7 @@ export default function PaymentConfirmationEmail({
                         <Section className="bg-neutral-50 rounded-lg p-6 my-8 border border-neutral-100">
                             <div className="flex justify-between mb-2">
                                 <Text className="text-neutral-500 text-[10px] uppercase font-bold tracking-widest my-0">Amount Paid</Text>
-                                <Text className="text-black text-[14px] font-bold my-0">{currency} {amount.toLocaleString()}</Text>
+                                <Text className="text-black text-[14px] font-bold my-0">{getCurrencySymbol(currency)} {amount.toLocaleString()}</Text>
                             </div>
                             <div className="flex justify-between">
                                 <Text className="text-neutral-500 text-[10px] uppercase font-bold tracking-widest my-0">Transaction ID</Text>
@@ -101,7 +115,7 @@ export default function PaymentConfirmationEmail({
 
                         <Section className="text-center mt-[10px] mb-[20px]">
                             <Text className="m-0">
-                                <Link href="https://www.tiktok.com/@cannogauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
+                                <Link href="https://www.tiktok.com/@kestorauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
                             </Text>
                         </Section>
 

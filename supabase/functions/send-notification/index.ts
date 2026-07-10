@@ -227,8 +227,8 @@ serve(async (req) => {
                         <p style="margin: 0 0 5px 0; font-weight: bold; text-decoration: underline;">Programme Details:</p>
                         <p style="margin: 0 0 5px 0;"><strong>Programme:</strong> ${applicationData?.course_title || 'Your Degree Programme'}</p>
                         <p style="margin: 0 0 5px 0;"><strong>Degree Level:</strong> ${applicationData?.course_degree_level === 'MASTER' ? "Master's Degree" : applicationData?.course_degree_level === 'BACHELOR' ? "Bachelor's Degree" : applicationData?.course_degree_level === 'DIPLOMA' ? "Diploma" : applicationData?.course_degree_level === 'CERTIFICATE' ? "Certificate" : "Bachelor's Degree"}</p>
-                        <p style="margin: 0 0 5px 0;"><strong>Intake:</strong> August 2026 (Autumn Semester)</p>
-                        <p style="margin: 0 0 5px 0;"><strong>Duration:</strong> 17.08.2026 – ${applicationData?.course_degree_level === 'MASTER' ? '17.08.2028' : applicationData?.course_degree_level === 'BACHELOR' ? '17.08.2029' : applicationData?.course_degree_level === 'DIPLOMA' ? '17.08.2028' : '17.08.2027'}</p>
+                        <p style="margin: 0 0 5px 0;"><strong>Intake:</strong> Fall 2026</p>
+                        <p style="margin: 0 0 5px 0;"><strong>Duration:</strong> 11.09.2026 - ${applicationData?.course_degree_level === 'MASTER' ? '11.09.2028' : applicationData?.course_degree_level === 'BACHELOR' ? '11.09.2029' : applicationData?.course_degree_level === 'DIPLOMA' ? '11.09.2028' : '11.09.2027'}</p>
                         <p style="margin: 0 0 5px 0;"><strong>Total Credits:</strong> ${applicationData?.course_degree_level === 'MASTER' ? '120 ECTS' : applicationData?.course_degree_level === 'BACHELOR' ? '180 ECTS' : applicationData?.course_degree_level === 'DIPLOMA' ? '120 ECTS' : '60 ECTS'}</p>
                     </div>
                     <div style="margin: 20px 0;">
@@ -290,8 +290,8 @@ serve(async (req) => {
                         <p style="margin: 0 0 5px 0; font-weight: bold; text-decoration: underline;">Enrolment Details:</p>
                         <p style="margin: 0 0 5px 0;"><strong>Programme:</strong> ${applicationData?.course_title || 'Your Degree Programme'}</p>
                         <p style="margin: 0 0 5px 0;"><strong>Degree Level:</strong> ${applicationData?.course_degree_level === 'MASTER' ? "Master's Degree" : applicationData?.course_degree_level === 'BACHELOR' ? "Bachelor's Degree" : applicationData?.course_degree_level === 'DIPLOMA' ? "Diploma" : applicationData?.course_degree_level === 'CERTIFICATE' ? "Certificate" : "Bachelor's Degree"}</p>
-                        <p style="margin: 0 0 5px 0;"><strong>Intake:</strong> ${applicationData?.intake || 'August 2026 (Autumn Semester)'}</p>
-                        <p style="margin: 0 0 5px 0;"><strong>Duration:</strong> 17.08.2026 – ${applicationData?.course_degree_level === 'MASTER' ? '17.08.2028' : applicationData?.course_degree_level === 'BACHELOR' ? '17.08.2029' : applicationData?.course_degree_level === 'DIPLOMA' ? '17.08.2028' : '17.08.2027'}</p>
+                        <p style="margin: 0 0 5px 0;"><strong>Intake:</strong> ${applicationData?.intake || 'Fall 2026'}</p>
+                        <p style="margin: 0 0 5px 0;"><strong>Duration:</strong> 11.09.2026 - ${applicationData?.course_degree_level === 'MASTER' ? '11.09.2028' : applicationData?.course_degree_level === 'BACHELOR' ? '11.09.2029' : applicationData?.course_degree_level === 'DIPLOMA' ? '11.09.2028' : '11.09.2027'}</p>
                         <p style="margin: 0 0 5px 0;"><strong>Total Credits:</strong> ${applicationData?.course_degree_level === 'MASTER' ? '120 ECTS' : applicationData?.course_degree_level === 'BACHELOR' ? '180 ECTS' : applicationData?.course_degree_level === 'DIPLOMA' ? '120 ECTS' : '60 ECTS'}</p>
                         <p style="margin: 0;"><strong>Student ID:</strong> ${applicationData?.student_id || ''}</p>
                     </div>
