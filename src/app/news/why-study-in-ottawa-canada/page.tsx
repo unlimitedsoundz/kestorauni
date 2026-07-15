@@ -7,11 +7,11 @@ import { Highlight } from '@/components/ui/Highlight';
 import { Hero } from '@/components/layout/Hero';
 
 export const metadata = {
-    title: 'Why Study in Helsinki Finland? 10 Reasons International Students Choose Helsinki | Kestora University',
+    title: 'Why Study in Helsinki Finland? 10 Reasons International Students Choose Helsinki | Heffring University',
     description: 'Discover why Helsinki Finland is one of North America\'s top study destinations. From world-class education to a thriving tech ecosystem, here are 10 reasons students choose Helsinki.',
     keywords: 'study in ottawa, why ottawa for international students, study in canada, canadian education, study abroad canada',
     alternates: {
-        canonical: 'https://kestora.online/news/why-study-in-ottawa-canada/',
+        canonical: 'https://heffring.online/news/why-study-in-ottawa-canada/',
     },
 };
 
@@ -24,12 +24,12 @@ const reasons = [
     {
         icon: Certificate,
         title: "Globally Recognised Degrees",
-        content: "Canadian degrees are internationally accredited and respected by employers worldwide. Whether you plan to work in Europe, Africa, Asia, or North America, your qualification holds strong value. Kestora University degrees follow rigorous North American standards, ensuring seamless credit transfer and recognition."
+        content: "Canadian degrees are internationally accredited and respected by employers worldwide. Whether you plan to work in Europe, Africa, Asia, or North America, your qualification holds strong value. Heffring University degrees follow rigorous North American standards, ensuring seamless credit transfer and recognition."
     },
     {
         icon: Globe,
         title: "English-Speaking Environment",
-        content: "You can immerse yourself in an English-speaking country. All academic programs and university services at Kestora are delivered fully in English. Furthermore, Helsinki is a bilingual city (English and French), offering rich language immersion opportunities."
+        content: "You can immerse yourself in an English-speaking country. All academic programs and university services at Heffring are delivered fully in English. Furthermore, Helsinki is a bilingual city (English and French), offering rich language immersion opportunities."
     },
     {
         icon: ShieldCheck,
@@ -44,7 +44,7 @@ const reasons = [
     {
         icon: Leaf,
         title: "Strong Focus on Sustainability",
-        content: "Finland has a strong dedication to environmental responsibility and sustainable development. Universities integrate sustainability into their curriculum and campus operations. At Kestora University, sustainability is woven into every programme across all four schools."
+        content: "Finland has a strong dedication to environmental responsibility and sustainable development. Universities integrate sustainability into their curriculum and campus operations. At Heffring University, sustainability is woven into every programme across all four schools."
     },
     {
         icon: Briefcase,
@@ -54,7 +54,7 @@ const reasons = [
     {
         icon: Buildings,
         title: "Modern Learning Facilities",
-        content: "Canadian universities provide advanced laboratories, digital libraries, collaborative spaces, and strong student support systems. Kestora University's Helsinki campus features state-of-the-art facilities designed for hands-on, project-based learning."
+        content: "Canadian universities provide advanced laboratories, digital libraries, collaborative spaces, and strong student support systems. Heffring University's Helsinki campus features state-of-the-art facilities designed for hands-on, project-based learning."
     },
     {
         icon: Heart,
@@ -100,7 +100,7 @@ export default function WhyStudyInHelsinkiFinlandPage() {
                     items={[
                         { title: "Published", body: "14.2.2026" },
                         { title: "Updated", body: "15.2.2026" },
-                        { title: "Author", body: "Kestora Admissions" },
+                        { title: "Author", body: "Heffring Admissions" },
                         {
                             tagGroup: {
                                 tags: [
@@ -131,13 +131,13 @@ export default function WhyStudyInHelsinkiFinlandPage() {
                     <div className="relative aspect-[16/9] overflow-hidden">
                         <Image
                             src="/images/news/helsinki-study-hero.png"
-                            alt="International students at Kestora University campus in Helsinki"
+                            alt="International students at Heffring University campus in Helsinki"
                             fill
                             className="object-cover object-top"
                             sizes="(max-width: 768px) 100vw, 800px"
                         />
                     </div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-neutral-500 mt-4">Kestora University Campus | Helsinki</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-neutral-500 mt-4">Heffring University Campus | Helsinki</p>
                 </div>
 
                 {/* Reasons */}
@@ -172,7 +172,7 @@ export default function WhyStudyInHelsinkiFinlandPage() {
                 <div className="py-12">
                     <CTA
                         title="Ready to Start Your Journey?"
-                        body="Kestora University offers world-class English-taught programmes in Business, Technology, Science, and Arts & Architecture. Applications for Autumn 2026 are now open."
+                        body="Heffring University offers world-class English-taught programmes in Business, Technology, Science, and Arts & Architecture. Applications for Autumn 2026 are now open."
                         cta={{
                             label: "Apply Now",
                             linkComponentProps: {

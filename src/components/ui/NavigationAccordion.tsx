@@ -25,7 +25,7 @@ interface NavigationAccordionProps {
 }
 
 /**
- * Standardized NavigationAccordion component for Kestora University.
+ * Standardized NavigationAccordion component for Heffring University.
  * Aliased from @aalto-dx/react-modules.
  */
 export function NavigationAccordion({ sections, onChange }: NavigationAccordionProps) {

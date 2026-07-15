@@ -13,12 +13,12 @@ import { SchemaLD } from '@/components/seo/SchemaLD';
 import { Breadcrumbs } from '@aalto-dx/react-modules';
 
 export const metadata = {
-    title: 'Bachelor\'s Admissions | Kestora University',
-    description: 'Apply to Bachelor\'s Programmes in English at Kestora University. Information on benefits, progression, scholarships, and admissions.',
+    title: 'Bachelor\'s Admissions | Heffring University',
+    description: 'Apply to Bachelor\'s Programmes in English at Heffring University. Information on benefits, progression, scholarships, and admissions.',
     alternates: {
-        canonical: 'https://kestora.online/admissions/bachelor/',
+        canonical: 'https://heffring.online/admissions/bachelor/',
         languages: {
-            'en': 'https://kestora.online/admissions/bachelor/',
+            'en': 'https://heffring.online/admissions/bachelor/',
         },
     },
 };
@@ -157,7 +157,7 @@ export default function BachelorAdmissionsPage() {
                          {/* Learn More */}
                          <section id="more" className="scroll-mt-32">
                              <div className="cc-section-divider">
-                                 <h2 className="cc-h2">Learn More About Studying at Kestora</h2>
+                                 <h2 className="cc-h2">Learn More About Studying at Heffring</h2>
                              </div>
                              <div className="prose-arrows">
                                  <DbPageContent
@@ -202,11 +202,11 @@ export default function BachelorAdmissionsPage() {
                 "@context": "https://schema.org",
                 "@type": "EducationalOccupationalProgram",
                 "name": "Bachelor's Degree Programmes",
-                "description": "Information on Bachelor's degree programmes taught in English at Kestora University.",
+                "description": "Information on Bachelor's degree programmes taught in English at Heffring University.",
                 "provider": {
                     "@type": "UniversityOrUniversity",
-                    "name": "Kestora University",
-                    "url": "https://kestora.online"
+                    "name": "Heffring University",
+                    "url": "https://heffring.online"
                 },
                 "educationalLevel": "Bachelor",
                 "offers": {

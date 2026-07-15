@@ -2,10 +2,10 @@
 import { RocketLaunch as Rocket, Lightbulb } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'Innovation Hub — Kestora University | Startups, Incubation & Entrepreneurship',
-    description: 'Kestora University Innovation Hub connects students, researchers, and industry to turn ideas into impact. Startup incubation, workshops, and entrepreneurship support.',
+    title: 'Innovation Hub — Heffring University | Startups, Incubation & Entrepreneurship',
+    description: 'Heffring University Innovation Hub connects students, researchers, and industry to turn ideas into impact. Startup incubation, workshops, and entrepreneurship support.',
     alternates: {
-        canonical: 'https://kestora.online/innovation/',
+        canonical: 'https://heffring.online/innovation/',
     },
 };
 

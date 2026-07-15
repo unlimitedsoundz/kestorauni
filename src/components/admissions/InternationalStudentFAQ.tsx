@@ -54,7 +54,7 @@ const faqs: FAQItem[] = [
         answer: (
             <div className="space-y-4">
                 <p>
-                    Attending degree students have access to on-campus health services and are encouraged to obtain Finnish health coverage (Kela) after arrival. Kestora University partners with local clinics for general, mental, and oral health care.
+                    Attending degree students have access to on-campus health services and are encouraged to obtain Finnish health coverage (Kela) after arrival. Heffring University partners with local clinics for general, mental, and oral health care.
                 </p>
             </div>
         )

@@ -51,10 +51,10 @@ export async function generateMetadata({ params }: Props) {
         .single();
 
     return {
-        title: dept ? `${dept.name} — ${(Array.isArray(dept.school) ? dept.school[0] : dept.school)?.name || 'School'} | Kestora University` : 'Department | Kestora University',
-        description: dept?.description?.substring(0, 160) || `Learn about the ${dept?.name} at Kestora University. Research, faculty, and academic programs.`,
+        title: dept ? `${dept.name} — ${(Array.isArray(dept.school) ? dept.school[0] : dept.school)?.name || 'School'} | Heffring University` : 'Department | Heffring University',
+        description: dept?.description?.substring(0, 160) || `Learn about the ${dept?.name} at Heffring University. Research, faculty, and academic programs.`,
         alternates: {
-            canonical: `https://kestora.online/schools/${resolvedParams.slug}/${dept_slug}/`,
+            canonical: `https://heffring.online/schools/${resolvedParams.slug}/${dept_slug}/`,
         },
     };
 }
@@ -173,7 +173,7 @@ export default async function DepartmentDetailPage({ params }: Props) {
                         {dept.name}
                     </h1>
                     <p className="text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed mt-4">
-                        {(dept.description || "Advancing knowledge and innovation through world-class research and education.").replace(/SYKLI|College/g, 'Kestora University')}
+                        {(dept.description || "Advancing knowledge and innovation through world-class research and education.").replace(/SYKLI|College/g, 'Heffring University')}
                     </p>
                 </div>
             </section>
@@ -216,7 +216,7 @@ export default async function DepartmentDetailPage({ params }: Props) {
                                     <div className="flex justify-between items-start">
                                         <div>
                                             <h3 className="text-xl font-bold text-white mb-1">{course.title}</h3>
-                                            <p className="text-white text-sm line-clamp-2 mb-4">{(course.description || "").replace(/SYKLI|College/g, 'Kestora University')}</p>
+                                            <p className="text-white text-sm line-clamp-2 mb-4">{(course.description || "").replace(/SYKLI|College/g, 'Heffring University')}</p>
 
                                             {/* Program Details Grid */}
                                             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-sm mt-4 pt-4 border-t border-white/10">
@@ -226,7 +226,7 @@ export default async function DepartmentDetailPage({ params }: Props) {
                                                 </div>
                                                 <div>
                                                     <p className="text-white uppercase tracking-wider text-[10px] font-bold mb-1">Start</p>
-                                                    <p className="font-semibold text-white">September 2026</p>
+                                                    <p className="font-semibold text-white">Fall 2026</p>
                                                 </div>
                                                 <div>
                                                     <p className="text-white uppercase tracking-wider text-[10px] font-bold mb-1">Campus</p>

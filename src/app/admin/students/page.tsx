@@ -219,24 +219,24 @@ export default function AdminStudentsPage() {
                     </button>
                     <button
                         onClick={async () => {
-                            if (!confirm("This will convert all SYK or KC student IDs to KU. Continue?")) return;
+                            if (!confirm("This will convert all SYK, KC, or KU student IDs to HU. Continue?")) return;
                             setActionLoading('convert');
                             try {
                                 const { data: profiles } = await supabase
                                     .from('profiles')
                                     .select('id, student_id')
-                                    .or('student_id.ilike.SYK%,student_id.ilike.KU%');
+                                    .or('student_id.ilike.SYK%,student_id.ilike.KC%,student_id.ilike.KU%');
 
                                 if (profiles) {
                                     for (const profile of profiles) {
-                                        const newId = profile.student_id.replace(/^(SYK|KC)/, 'KU');
+                                        const newId = profile.student_id.replace(/^(SYK|KC|KU)/, 'HU');
                                         await supabase
                                             .from('profiles')
                                             .update({ student_id: newId })
                                             .eq('id', profile.id);
                                     }
                                 }
-                                alert('Student IDs converted to KU successfully!');
+                                alert('Student IDs converted to HU successfully!');
                                 await fetchData();
                             } catch (error) {
                                 console.error('Convert error:', error);

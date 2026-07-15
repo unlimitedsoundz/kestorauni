@@ -48,6 +48,45 @@ function drawParagraph(page: any, text: string, x: number, y: number, font: any,
     return y;
 }
 
+// Canonical intake start dates
+const INTAKE_START_DATES: Record<string, string> = {
+    'Fall 2026': '11.09.2026',
+    'Winter 2027': '18.1.2027',
+    'Fall 2027': '11.09.2027',
+};
+
+function getIntakeStartDate(intake?: string | null): string {
+    return INTAKE_START_DATES[(intake || '').trim()] || '11.09.2026';
+}
+
+function getProgramYearsByLevel(level?: string): number {
+    const lvl = (level || '').toUpperCase();
+    if (lvl.includes('BACHELOR') || lvl.includes('BSC')) return 3;
+    if (lvl.includes('MASTER') || lvl.includes('MSC')) return 2;
+    if (lvl.includes('DIPLOMA')) return 2;
+    if (lvl.includes('CERTIFICATE')) return 1;
+    return 1;
+}
+
+function addYearsToDate(dateStr: string, years: number): string {
+    const parts = dateStr.split('.');
+    const dayOrig = parts[0];
+    const monthOrig = parts[1];
+    const year = Number(parts[2]) + years;
+    const fmt = (n: number, orig: string) =>
+        orig.length === 2 && orig.startsWith('0') ? String(n).padStart(2, '0') : String(n);
+    return `${fmt(Number(dayOrig), dayOrig)}.${fmt(Number(monthOrig), monthOrig)}.${year}`;
+}
+
+function getProgramEndDate(intake?: string | null, level?: string): string {
+    return addYearsToDate(getIntakeStartDate(intake), getProgramYearsByLevel(level));
+}
+
+function getIntakeAcademicYear(intake?: string | null): string {
+    const year = Number(getIntakeStartDate(intake).split('.')[2]);
+    return `${year} - ${year + 1}`;
+}
+
 serve(async (req) => {
     if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
@@ -140,12 +179,12 @@ serve(async (req) => {
         // =====================================================
         // SECTION 1: HEADER — Institution + Address
         // =====================================================
-        page.drawText('KESTORA UNIVERSITY', { x: margin, y, size: 14, font: boldFont, color: black });
+        page.drawText('HEFFRING UNIVERSITY', { x: margin, y, size: 14, font: boldFont, color: black });
         y -= 16;
         page.drawText('\u2013 Helsinki Campus', { x: margin, y, size: 9, font: regularFont, color: darkGrey });
 
         // Right-aligned address
-        const addr = ['Pohjoisesplanadi 51', '00150 Helsinki, Finland', 'Phone: +358 09 42721884', 'kestora.online', 'admissions@kestora.online'];
+        const addr = ['Kaarrostie 38', '00960 Helsinki, Finland', 'Phone: +358 09 42721884', 'heffring.online', 'admissions@heffring.online'];
         let ay = height - margin;
         for (const line of addr) {
             const lw = regularFont.widthOfTextAtSize(line, 8);
@@ -238,6 +277,7 @@ serve(async (req) => {
         const isDomestic = nationality === 'finland' || nationality === 'finnish' || nationality === 'eu' || nationality === 'domestic';
         const courseDegreeLevel = app.course?.degreeLevel || 'BACHELOR';
         const programYears = getProgramYears(courseDegreeLevel, app.course?.duration);
+        const intakeLabel = app.intake || 'Fall 2026';
         const baseAnnualFee = getTuitionFee(courseDegreeLevel, isDomestic);
         const fullProgramFee = baseAnnualFee * programYears;
         
@@ -256,13 +296,13 @@ serve(async (req) => {
             const dl = [
                 { label: 'FULL NAME (PASSPORT MATCH)', value: fullName },
                 { label: 'INTENDED PROGRAMME', value: programTitle },
-                { label: 'PROGRAMME START DATE', value: '17.09.2026' },
+                { label: 'PROGRAMME START DATE', value: getIntakeStartDate(app.intake) },
                 { label: 'TOTAL CREDITS', value: courseDegreeLevel === 'MASTER' ? '120 ECTS' : '180 ECTS' },
             ];
             const dr = [
-                { label: 'INTAKE & YEAR', value: 'Fall Semester 2026' },
+                { label: 'INTAKE & YEAR', value: intakeLabel },
                 { label: 'DEGREE LEVEL', value: degreeLevel },
-                { label: 'PROGRAMME END DATE', value: courseDegreeLevel === 'MASTER' ? '10.08.2028' : '10.08.2029' },
+                { label: 'PROGRAMME END DATE', value: getProgramEndDate(app.intake, courseDegreeLevel) },
                 { label: 'CAMPUS LOCATION', value: 'Helsinki, Finland' },
             ];
 
@@ -280,7 +320,7 @@ serve(async (req) => {
             const offerPara1 = `Dear ${firstName},`;
             y = drawParagraph(page, offerPara1, margin, y, regularFont, 9, cw, black);
             y -= 6;
-            const offerPara2 = `We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Kestora University has decided to offer you a place in the ${programTitle} (${degreeLevel}) programme for the Fall 2026 intake.`;
+            const offerPara2 = `We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Heffring University has decided to offer you a place in the ${programTitle} (${degreeLevel}) programme for the ${intakeLabel} intake.`;
             y = drawParagraph(page, offerPara2, margin, y, regularFont, 9, cw, darkGrey);
             y -= 6;
             const offerPara3 = `This offer is subject to the conditions outlined below, including acceptance of the offer via the student portal and confirmation of tuition payment by the specified deadline. Upon fulfillment of these conditions, an official Letter of Admission will be issued confirming your enrollment.`;
@@ -361,7 +401,7 @@ serve(async (req) => {
             y -= 10; drawLine(page, margin, y, cw, 0.5); y -= 30;
             page.drawText('Admissions Office', { x: margin, y, size: 10, font: boldFont, color: black });
             y -= 13;
-            page.drawText('Kestora University | Helsinki, Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
+            page.drawText('Heffring University | Helsinki, Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
             const did1 = 'Verified Document ID';
             const dw1 = regularFont.widthOfTextAtSize(did1, 8);
             page.drawText(did1, { x: width - margin - dw1, y: y + 13, size: 8, font: regularFont, color: lightGrey });
@@ -429,7 +469,7 @@ serve(async (req) => {
             const dobRaw = app.user?.date_of_birth || personal.dateOfBirth || personal.dob;
             const dobDisplay = dobRaw ? new Date(dobRaw).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : 'N/A';
             
-            const officialStatement = `This letter serves as official notification that ${fullName} (Passport: ${passport}, DOB: ${dobDisplay}) has been formally admitted and fully enrolled as a degree student at Kestora University for the 2026 - 2027 academic year. Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the ${programTitle} (${app.course?.programType || 'Full-time'}). This program is a full-time course of study conducted in the English language at our Helsinki campus location (Pohjoisesplanadi 51, 00150 Helsinki, Finland).`;
+            const officialStatement = `This letter serves as official notification that ${fullName} (Passport: ${passport}, DOB: ${dobDisplay}) has been formally admitted and fully enrolled as a degree student at Heffring University for the 2026 - 2027 academic year. Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the ${programTitle} (${app.course?.programType || 'Full-time'}). This program is a full-time course of study conducted in the English language at our Helsinki campus location (Kaarrostie 38, 00960 Helsinki, Finland).`;
             
             y = drawParagraph(page, officialStatement, margin, y, regularFont, 10, cw, black, 16);
             y -= 25;
@@ -437,10 +477,10 @@ serve(async (req) => {
             // 5. Details Table
             const details = [
                 { label: 'Date of Admission', value: dateStr },
-                { label: 'Academic Year', value: '2026 - 2027' },
-                { label: 'Intake', value: 'Fall 2026' },
-                { label: 'Programme Start Date', value: '17.09.2026' },
-                { label: 'Programme End Date', value: courseDegreeLevel === 'MASTER' ? '10.08.2028' : '10.08.2029' },
+                { label: 'Academic Year', value: getIntakeAcademicYear(app.intake) },
+                { label: 'Intake', value: intakeLabel },
+                { label: 'Programme Start Date', value: getIntakeStartDate(app.intake) },
+                { label: 'Programme End Date', value: getProgramEndDate(app.intake, courseDegreeLevel) },
                 { label: 'Total ECTS', value: courseDegreeLevel === 'MASTER' ? '120 ECTS' : '180 ECTS' },
                 { label: 'Programme of Study', value: `${programTitle} (${app.course?.programType || 'Full-time'})` },
             ];
@@ -469,7 +509,7 @@ serve(async (req) => {
                 },
                 {
                     title: 'Refund Policy',
-                    content: 'Tuition fees are subject to the university\u2019s refund policy. Full details can be found at https://kestora.online/refund-withdrawal-policy/.'
+                    content: 'Tuition fees are subject to the university\u2019s refund policy. Full details can be found at https://heffring.online/refund-withdrawal-policy/.'
                 }
             ];
 
@@ -493,11 +533,11 @@ serve(async (req) => {
             y -= 13;
             page.drawText('Dosentti (Docent) Anna Virtanen, FT (Doctor of Philosophy)', { x: margin, y, size: 9, font: regularFont, color: black });
             y -= 12;
-            page.drawText('Kestora University | Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
+            page.drawText('Heffring University | Finland', { x: margin, y, size: 8, font: regularFont, color: lightGrey });
 
             // Footer
             y = 40;
-            const footerText = 'Generated electronically via Kestora SIS. Valid without physical signature if verified online.';
+            const footerText = 'Generated electronically via Heffring SIS. Valid without physical signature if verified online.';
             const fw = regularFont.widthOfTextAtSize(footerText, 8);
             page.drawText(footerText, { x: (width - fw) / 2, y, size: 8, font: italicFont, color: grey });
         }

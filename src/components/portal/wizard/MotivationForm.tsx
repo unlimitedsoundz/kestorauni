@@ -65,7 +65,7 @@ export default function MotivationForm({ applicationId, initialData, onUpdate }:
                 <div>
                     <label className="block text-[13px] font-semibold text-black mb-1">Motivation Letter / Statement of Purpose <span className="text-red-500">*</span></label>
                     <p className="text-[13px] text-[#2d2d2d] mb-2 leading-relaxed">
-                        Tell us why you want to study at Kestora University and why you are a good fit for this programme.
+                        Tell us why you want to study at Heffring University and why you are a good fit for this programme.
                     </p>
                     <textarea
                         {...form.register('statementOfPurpose')}

@@ -151,7 +151,7 @@ function generateCredentials(assetType: string) {
     switch (assetType) {
         case 'EMAIL':
             return {
-                email: `student${Math.floor(Math.random() * 10000)}@kestora.online`,
+                email: `student${Math.floor(Math.random() * 10000)}@heffring.online`,
                 password: 'SET_ON_FIRST_LOGIN'
             };
         case 'LMS':
@@ -162,7 +162,7 @@ function generateCredentials(assetType: string) {
         case 'VPN':
             return {
                 vpn_key: generateToken(),
-                config_url: 'https://vpn.kestora.online/config'
+                config_url: 'https://vpn.heffring.online/config'
             };
         case 'LIBRARY':
             return {
@@ -172,7 +172,7 @@ function generateCredentials(assetType: string) {
         case 'VIRTUAL_LAB':
             return {
                 lab_username: `vlab_${Math.floor(Math.random() * 10000)}`,
-                access_url: 'https://labs.kestora.online'
+                access_url: 'https://labs.heffring.online'
             };
         default:
             return {

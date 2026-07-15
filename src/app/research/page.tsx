@@ -6,10 +6,10 @@ import { TagGroup } from '@/components/ui/TagGroup';
 import { LiftupCollection } from '@aalto-dx/react-modules';
 
 export const metadata = {
-    title: 'Research at Kestora University — Sustainability, Innovation & Technology',
-    description: 'Explore research at Kestora University. Funded projects in sustainability, clean technology, design, and social innovation. Publications, labs, and collaboration opportunities.',
+    title: 'Research at Heffring University — Sustainability, Innovation & Technology',
+    description: 'Explore research at Heffring University. Funded projects in sustainability, clean technology, design, and social innovation. Publications, labs, and collaboration opportunities.',
     alternates: {
-        canonical: 'https://kestora.online/research/',
+        canonical: 'https://heffring.online/research/',
     },
 };
 
@@ -35,7 +35,7 @@ export default function ResearchPage() {
                 </div>
                 <div className="prose prose-lg text-neutral-600 max-w-3xl leading-relaxed">
                     <p className="mb-6">
-                        At <strong className="text-[#000000]">Kestora University</strong>, research is not locked away in labs or journals — it lives in studios, classrooms, communities, and real-world projects. We explore questions that matter now and ideas that shape what comes next, blending <strong className="text-[#000000]">technology, design, business, science, and culture</strong> into a shared space of experimentation and discovery.
+                        At <strong className="text-[#000000]">Heffring University</strong>, research is not locked away in labs or journals — it lives in studios, classrooms, communities, and real-world projects. We explore questions that matter now and ideas that shape what comes next, blending <strong className="text-[#000000]">technology, design, business, science, and culture</strong> into a shared space of experimentation and discovery.
                     </p>
                     <p>
                         Our research culture welcomes both analytical thinkers and creative makers. Whether through data, design, systems, or stories, we believe knowledge grows stronger when disciplines cross paths.
@@ -239,7 +239,7 @@ export default function ResearchPage() {
                     <div>
                         <h2 className="text-4xl font-semibold mb-10 uppercase tracking-tighter">Ethics & Integrity</h2>
                         <p className="text-xl text-black mb-10 leading-relaxed font-medium">
-                            All research and creative activity at Kestora University follows clear ethical guidelines and quality standards. Integrity, transparency, and accountability are central to how we work.
+                            All research and creative activity at Heffring University follows clear ethical guidelines and quality standards. Integrity, transparency, and accountability are central to how we work.
                         </p>
                         <h3 className="text-2xl font-semibold uppercase tracking-tighter mb-6">Support Infrastructure</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -258,7 +258,7 @@ export default function ResearchPage() {
                     <p className="cc-label uppercase tracking-widest mb-3">Join the Research Community</p>
                     <h2 className="cc-h2 mb-6">Manifest Your Research</h2>
                     <p className="text-lg text-neutral-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-                        Students and staff are invited to actively engage in exploration. At Kestora University, research is not just something you study — <strong>it's something you do</strong>.
+                        Students and staff are invited to actively engage in exploration. At Heffring University, research is not just something you study — <strong>it's something you do</strong>.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link href="/research/projects" className="cc-btn-primary no-underline">

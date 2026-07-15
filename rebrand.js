@@ -1,21 +1,21 @@
 const fs = require('fs');
 const path = require('path');
 
-const dir = 'c:\\Users\\eltig\\OneDrive\\Documents\\kestoracollege';
+const dir = 'c:\\Users\\eltig\\OneDrive\\Documents\\heffringcollege';
 
 const replacements = [
-    { search: /Suomen ympäristöopisto SYKLI/g, replace: 'Kestora University' },
+    { search: /Suomen ympäristöopisto SYKLI/g, replace: 'Heffring University' },
     { search: /Environmental College/g, replace: 'Independent higher education institution' },
-    { search: /SYKLI College/g, replace: 'Kestora University' },
-    { search: /Sykli College/g, replace: 'Kestora University' },
-    { search: /SKYLl College/g, replace: 'Kestora University' },
-    { search: /syklicollege\.fi/g, replace: 'kestora.online' },
-    { search: /syklicollege/g, replace: 'kestora' },
-    { search: /SYKLI/g, replace: 'Kestora' },
-    { search: /Sykli/g, replace: 'Kestora' },
-    { search: /SKYLl/g, replace: 'Kestora' },
-    { search: /sykli\.fi/g, replace: 'kestora.online' },
-    { search: /sykli/g, replace: 'kestora' },
+    { search: /SYKLI College/g, replace: 'Heffring University' },
+    { search: /Sykli College/g, replace: 'Heffring University' },
+    { search: /SKYLl College/g, replace: 'Heffring University' },
+    { search: /syklicollege\.fi/g, replace: 'heffring.online' },
+    { search: /syklicollege/g, replace: 'heffring' },
+    { search: /SYKLI/g, replace: 'Heffring' },
+    { search: /Sykli/g, replace: 'Heffring' },
+    { search: /SKYLl/g, replace: 'Heffring' },
+    { search: /sykli\.fi/g, replace: 'heffring.online' },
+    { search: /sykli/g, replace: 'heffring' },
     { search: /College/g, replace: 'University' },
     { search: /college/g, replace: 'university' },
 ];

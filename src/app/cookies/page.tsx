@@ -1,10 +1,10 @@
 import CookiesContent from '@/components/legal/CookiesContent';
 
 export const metadata = {
-    title: 'Cookie Policy | Kestora University',
-    description: 'How Kestora University uses cookies and similar technologies to ensure proper functionality and improve user experience.',
+    title: 'Cookie Policy | Heffring University',
+    description: 'How Heffring University uses cookies and similar technologies to ensure proper functionality and improve user experience.',
     alternates: {
-        canonical: 'https://kestora.online/cookies/',
+        canonical: 'https://heffring.online/cookies/',
     },
 };
 

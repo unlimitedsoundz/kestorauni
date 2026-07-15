@@ -8,10 +8,10 @@ import { Card } from '@/components/ui/Card';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata = {
-    title: 'Chat with Students | Kestora University',
-    description: 'Connect with current Kestora University students and ambassadors to learn more about student life in Ottawa, Canada.',
+    title: 'Chat with Students | Heffring University',
+    description: 'Connect with current Heffring University students and ambassadors to learn more about student life in Ottawa, Canada.',
     alternates: {
-        canonical: 'https://kestora.online/student-guide/chat-with-cannoga-students/',
+        canonical: 'https://heffring.online/student-guide/chat-with-heffring-students/',
     },
 };
 
@@ -28,10 +28,10 @@ export default function ChatWithStudentsPage() {
                 {/* Hero Section */}
                 <Hero
                     title="Chat with our Students"
-                    body="Get a first-hand perspective on what it's like to study at Kestora University. Our student ambassadors are here to answer your questions about academics, campus life, and living in Canada."
+                    body="Get a first-hand perspective on what it's like to study at Heffring University. Our student ambassadors are here to answer your questions about academics, campus life, and living in Canada."
                     backgroundColor="#a987ff"
                     tinted
-                    lightText={false}
+                    lightText={true}
                     breadcrumbs={[
                         { label: 'Home', href: '/' },
                         { label: 'Student Guide', href: '/student-guide' },
@@ -39,7 +39,7 @@ export default function ChatWithStudentsPage() {
                     ]}
                     image={{
                         src: "/images/student-ambassadors.png",
-                        alt: "Kestora University Students"
+                        alt: "Heffring University Students"
                     }}
                 />
 
@@ -68,18 +68,18 @@ export default function ChatWithStudentsPage() {
                             <div className="bg-neutral-100 p-1 rounded-2xl border border-neutral-200 shadow-xl overflow-hidden">
                                 <div className="bg-card" style={{ height: '800px' }}>
                                     <iframe 
-                                        src="https://students.kestora.online/" 
+                                        src="https://students.heffring.online/" 
                                         width="100%"
                                         height="100%"
                                         className="w-full h-full border-none"
-                                        title="Chat with Kestora Students"
+                                        title="Chat with Heffring Students"
                                         allow="camera; microphone; clipboard-read; clipboard-write; display-capture; geolocation; fullscreen; payment; autoplay; midi; encrypted-media"
                                         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-downloads"
                                     />
                                 </div>
                                 <div className="p-4 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-black">
                                     <span>Interactive Student Platform</span>
-                                    <Link href="https://students.kestora.online/" target="_blank" className="underline hover:text-black">Open in New Tab</Link>
+                                    <Link href="https://students.heffring.online/" target="_blank" className="underline hover:text-black">Open in New Tab</Link>
                                 </div>
                             </div>
                         </section>
@@ -97,10 +97,10 @@ export default function ChatWithStudentsPage() {
                                 body={
                                     <div className="space-y-8 text-left">
                                         <p className="text-sm font-bold text-black leading-relaxed">
-                                            Our ambassadors represent different schools and programs. They are passionate about Kestora and eager to share their experiences.
+                                            Our ambassadors represent different schools and programs. They are passionate about Heffring and eager to share their experiences.
                                         </p>
                                         <Link 
-                                            href="https://ourblogs.kestora.online/" 
+                                            href="https://ourblogs.heffring.online/" 
                                             className="inline-flex items-center gap-3 text-black font-bold underline hover:opacity-70 transition-all text-sm"
                                         >
                                             Read their stories <ArrowRight size={16} weight="bold" />
@@ -114,11 +114,11 @@ export default function ChatWithStudentsPage() {
                         <section className="scroll-mt-32">
                             <CTA
                                 title="Ready to start the conversation?"
-                                body="Join our community platform and connect with the people who make Kestora University what it is."
+                                body="Join our community platform and connect with the people who make Heffring University what it is."
                                 cta={{
                                     label: "Connect with Ambassadors",
                                     linkComponentProps: {
-                                        href: "https://ourblogs.kestora.online/",
+                                        href: "https://ourblogs.heffring.online/",
                                     },
                                 }}
                             />

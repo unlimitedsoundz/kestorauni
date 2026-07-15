@@ -2,10 +2,10 @@ import { Link } from "@aalto-dx/react-components";
 import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'Refund & Withdrawal Policy | Kestora University',
-    description: 'Guidelines on financial obligations, withdrawals, and refunds for tuition, fees, and housing at Kestora University.',
+    title: 'Refund & Withdrawal Policy | Heffring University',
+    description: 'Guidelines on financial obligations, withdrawals, and refunds for tuition, fees, and housing at Heffring University.',
     alternates: {
-        canonical: 'https://kestora.online/refund-withdrawal-policy/',
+        canonical: 'https://heffring.online/refund-withdrawal-policy/',
     },
 };
 
@@ -48,7 +48,7 @@ export default function RefundWithdrawalPolicyPage() {
                                     <li>Ensure fairness, transparency, and compliance with institutional regulations.</li>
                                 </ul>
                                 <p className="text-lg leading-relaxed mt-6">
-                                    This policy applies to all students enrolled at Kestora University, including Bachelor’s, Master’s, full-time, and part-time students.
+                                    This policy applies to all students enrolled at Heffring University, including Bachelor’s, Master’s, full-time, and part-time students.
                                 </p>
                             </div>
                         </div>

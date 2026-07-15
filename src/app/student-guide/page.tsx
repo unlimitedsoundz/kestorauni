@@ -12,10 +12,10 @@ import { TagGroup } from '@/components/ui/TagGroup';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata = {
-    title: 'Student Guide | Kestora University',
-    description: 'Discover the tools, resources, and support available throughout your time at Kestora University.',
+    title: 'Student Guide | Heffring University',
+    description: 'Discover the tools, resources, and support available throughout your time at Heffring University.',
     alternates: {
-        canonical: 'https://kestora.online/student-guide/',
+        canonical: 'https://heffring.online/student-guide/',
     },
 };
 
@@ -78,7 +78,7 @@ export default function StudentGuidePage() {
             items: [
                 { title: "Bachelor's Students", href: "/student-guide/bachelor" },
                 { title: "Master's Students", href: "/student-guide/master" },
-                { title: "Chat with Students", href: "/student-guide/chat-with-kestora-students" },
+                { title: "Chat with Students", href: "/student-guide/chat-with-heffring-students" },
                 { title: "International Students", href: "/student-guide/international" },
                 { title: "Exchange Students", href: "/student-guide/exchange" },
             ]
@@ -104,7 +104,7 @@ export default function StudentGuidePage() {
             {/* HERO SECTION */}
             <Hero
                 title="Student Guide"
-                body="Discover the tools, resources, and support available throughout your time at Kestora University. Whether you're navigating academics, student services, or campus life, you'll find the guidance you need every step of the way."
+                body="Discover the tools, resources, and support available throughout your time at Heffring University. Whether you're navigating academics, student services, or campus life, you'll find the guidance you need every step of the way."
                 backgroundColor="#472247"
                 tinted
                 lightText={true}
@@ -114,7 +114,7 @@ export default function StudentGuidePage() {
                 ]}
                 image={{
                     src: "/images/student-guide-cover.png",
-                    alt: "Students collaborating at Kestora University"
+                    alt: "Students collaborating at Heffring University"
                 }}
             >
                 <Link href="#programmes" className="text-aalto-3 font-bold underline underline-offset-8 decoration-white hover:opacity-70 transition-colors flex items-center gap-2 text-white">
@@ -137,10 +137,10 @@ export default function StudentGuidePage() {
                         {/* Degree Programmes */}
                         <section id="programmes" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">
-                                Programs &amp; Degrees at Kestora University
+                                Programs &amp; Degrees at Heffring University
                             </h2>
                             <p className="text-aalto-3 text-black mb-8">
-                                Kestora University offers Certificate, Diploma, Advanced Diploma, Bachelor’s, and Master’s programmes across business, economics, management, finance, information systems, entrepreneurship, and interdisciplinary fields. All academic programs at Kestora University are eligible for the Post-Graduation Work Permit (PGWP).
+                                Heffring University offers Certificate, Diploma, Advanced Diploma, Bachelor’s, and Master’s programmes across business, economics, management, finance, information systems, entrepreneurship, and interdisciplinary fields. All academic programs at Heffring University are eligible for the Post-Graduation Work Permit (PGWP).
                             </p>
 
                             <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -199,7 +199,7 @@ export default function StudentGuidePage() {
                                     <h3 className="text-xl font-bold mb-3">Choosing a Minor</h3>
                                     <ul className="space-y-3 mb-6 text-black font-medium">
                                         <li className="flex gap-2 underline"><ArrowRight size={18} weight="bold" className="mt-1 flex-shrink-0" /> Within their own school</li>
-                                        <li className="flex gap-2 underline"><ArrowRight size={18} weight="bold" className="mt-1 flex-shrink-0" /> From other schools at Kestora University</li>
+                                        <li className="flex gap-2 underline"><ArrowRight size={18} weight="bold" className="mt-1 flex-shrink-0" /> From other schools at Heffring University</li>
                                         <li className="flex gap-2 underline"><ArrowRight size={18} weight="bold" className="mt-1 flex-shrink-0" /> From interdisciplinary or entrepreneurship offerings</li>
                                     </ul>
                                 </div>
@@ -386,8 +386,8 @@ export default function StudentGuidePage() {
                                 <Card
                                     title="Chat with Students"
                                     image={{ src: "/images/chat-with-students-hero.jpg", alt: "Chat with Students" }}
-                                    body="Connect with current students and ambassadors to learn about life at Kestora."
-                                    cta={{ label: "Chat now", linkComponentProps: { href: "/student-guide/chat-with-kestora-students" } }}
+                                    body="Connect with current students and ambassadors to learn about life at Heffring."
+                                    cta={{ label: "Chat now", linkComponentProps: { href: "/student-guide/chat-with-heffring-students" } }}
                                 />
                                 <Card
                                     title="International Students"

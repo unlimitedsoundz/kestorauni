@@ -21,7 +21,7 @@ async function updateFacultyEmails() {
     let updated = 0;
     for (const faculty of facultyList) {
         if (faculty.email && faculty.email.includes('@cannogacollege.ca')) {
-            const newEmail = faculty.email.replace('@cannogacollege.ca', '@kestora.online');
+            const newEmail = faculty.email.replace('@cannogacollege.ca', '@heffring.online');
             const { error: updateError } = await supabase
                 .from('Faculty')
                 .update({ email: newEmail })
@@ -35,7 +35,7 @@ async function updateFacultyEmails() {
         }
     }
 
-    console.log(`Updated ${updated} faculty emails to @kestora.online`);
+    console.log(`Updated ${updated} faculty emails to @heffring.online`);
 }
 
 updateFacultyEmails();

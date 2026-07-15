@@ -94,11 +94,11 @@ Deno.serve(async (req) => {
 
         // 3. Generate student id + institutional email (mirror enrollStudent)
         let studentId = appUser?.student_id;
-        if (!studentId || !studentId.startsWith('KU')) {
-            studentId = `KU${Math.floor(1000000 + Math.random() * 8999999)}`;
+        if (!studentId || !studentId.startsWith('HU')) {
+            studentId = `HU${Math.floor(1000000 + Math.random() * 8999999)}`;
         }
 
-        let institutionalEmail = `${appUser?.first_name ?? 'student'}.${appUser?.last_name ?? 'kestora'}@kestora.online`
+        let institutionalEmail = `${appUser?.first_name ?? 'student'}.${appUser?.last_name ?? 'heffring'}@heffring.online`
             .toLowerCase()
             .replace(/\s+/g, '');
 
@@ -109,7 +109,7 @@ Deno.serve(async (req) => {
             .maybeSingle();
 
         if (existingEmail) {
-            institutionalEmail = `${appUser?.first_name ?? 'student'}.${appUser?.last_name ?? 'kestora'}${Math.floor(Math.random() * 100)}@kestora.online`
+            institutionalEmail = `${appUser?.first_name ?? 'student'}.${appUser?.last_name ?? 'heffring'}${Math.floor(Math.random() * 100)}@heffring.online`
                 .toLowerCase()
                 .replace(/\s+/g, '');
         }

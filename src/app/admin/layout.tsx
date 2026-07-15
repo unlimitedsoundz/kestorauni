@@ -143,7 +143,7 @@ export default function AdminLayout({
         <div className="min-h-screen bg-neutral-100 flex flex-col md:flex-row font-sans text-base" data-theme="admin">
             {/* Mobile Header */}
             <header className="md:hidden bg-neutral-900 p-4 flex items-center justify-between sticky top-0 z-50">
-                <Logo className="text-white h-8" />
+                <Logo className="text-white h-12" />
                 <button
                     onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                     className="text-white p-2 hover:bg-neutral-800 rounded-lg transition-all active:scale-95"
@@ -171,7 +171,7 @@ export default function AdminLayout({
                 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
             `}>
                 <div className="p-8 hidden md:block">
-                    <Logo className="text-white h-12" />
+                    <Logo className="text-white h-16" />
                 </div>
 
                 <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto custom-scrollbar">

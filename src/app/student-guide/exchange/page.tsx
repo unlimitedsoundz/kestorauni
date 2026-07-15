@@ -7,10 +7,10 @@ import { Card } from '@/components/ui/Card';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata = {
-    title: 'Exchange Student Guide | Kestora University',
-    description: 'Detailed information for exchange students planning to study at Kestora University.',
+    title: 'Exchange Student Guide | Heffring University',
+    description: 'Detailed information for exchange students planning to study at Heffring University.',
     alternates: {
-        canonical: 'https://kestora.online/student-guide/exchange/',
+        canonical: 'https://heffring.online/student-guide/exchange/',
     },
 };
 
@@ -31,7 +31,7 @@ export default function ExchangeStudentsPage() {
             {/* Hero Section */}
             <Hero
                 title="Exchange Students Guide"
-                body="Everything you need to know for your exchange semester or year at Kestora University. We look forward to welcoming you to our vibrant international community!"
+                body="Everything you need to know for your exchange semester or year at Heffring University. We look forward to welcoming you to our vibrant international community!"
                 backgroundColor="#dc6ade"
                 tinted
                 lightText={true}
@@ -53,11 +53,11 @@ export default function ExchangeStudentsPage() {
                         <ContentBox
                             size="large"
                             icon="info"
-                            title="Welcome to Kestora University!"
+                            title="Welcome to Heffring University!"
                             body={
                                 <div className="space-y-8 text-left">
                                     <p className="text-aalto-3 text-black font-medium leading-relaxed">
-                                         Completing an exchange at Kestora University is a unique opportunity to experience Finnish education, culture, and student life.
+                                         Completing an exchange at Heffring University is a unique opportunity to experience Finnish education, culture, and student life.
                                     </p>
                                     <div className="grid md:grid-cols-2 gap-8">
                                         <div>
@@ -113,7 +113,7 @@ export default function ExchangeStudentsPage() {
                                 title="Learning Agreement"
                                 body={
                                     <ul className="space-y-3 text-sm font-bold text-black">
-                                        <li>• Signed by home university & Kestora before arrival.</li>
+                                        <li>• Signed by home university & Heffring before arrival.</li>
                                         <li>• Updateable during the first 2 weeks.</li>
                                         <li>• Standard workload: 30 credits per semester.</li>
                                     </ul>
@@ -206,7 +206,7 @@ export default function ExchangeStudentsPage() {
                                             </li>
                                         ))}
                                     </ul>
-                                    <p className="text-white text-sm italic">Questions? Contact admissions@kestora.online</p>
+                                    <p className="text-white text-sm italic">Questions? Contact admissions@heffring.online</p>
                                 </div>
                             }
                         />

@@ -55,10 +55,10 @@ export default function PaymentConfirmationEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://kestora.online/logo-kestora.png"
-                                width="40"
-                                height="40"
-                                alt="Kestora University"
+                                src="https://heffring.online/images/logo-heffring.png"
+                                width="120"
+                                height="120"
+                                alt="Heffring University"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
@@ -75,12 +75,12 @@ export default function PaymentConfirmationEmail({
                             This is to confirm that we have successfully received your tuition payment for the <strong>{courseTitle}</strong> programme.
                         </Text>
 
-                        <Section className="bg-neutral-50 rounded-lg p-6 my-8 border border-neutral-100">
-                            <div className="flex justify-between mb-2">
+                        <Section className="my-8">
+                            <div className="flex justify-between items-center mb-3" style={{ gap: '24px' }}>
                                 <Text className="text-neutral-500 text-[10px] uppercase font-bold tracking-widest my-0">Amount Paid</Text>
-                                <Text className="text-black text-[14px] font-bold my-0">{getCurrencySymbol(currency)} {amount.toLocaleString()}</Text>
+                                <Text className="text-black text-[14px] font-bold my-0">{getCurrencySymbol('EUR')} {amount.toLocaleString()}</Text>
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between items-center" style={{ gap: '24px' }}>
                                 <Text className="text-neutral-500 text-[10px] uppercase font-bold tracking-widest my-0">Transaction ID</Text>
                                 <Text className="text-black text-[10px] font-mono my-0">{transactionId}</Text>
                             </div>
@@ -93,7 +93,7 @@ export default function PaymentConfirmationEmail({
                         <Section className="text-center mt-[32px] mb-[32px]">
                             <Link
                                 className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
-                                href="https://kestora.online/portal/dashboard"
+                                href="https://heffring.online/portal/dashboard"
                             >
                                 View Dashboard
                             </Link>
@@ -115,7 +115,8 @@ export default function PaymentConfirmationEmail({
 
                         <Section className="text-center mt-[10px] mb-[20px]">
                             <Text className="m-0">
-                                <Link href="https://www.tiktok.com/@kestorauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
+                                <Link href="https://www.instagram.com/heffringuniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Instagram</Link>
+                                <Link href="https://www.tiktok.com/@heffringuniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
                             </Text>
                         </Section>
 
@@ -123,7 +124,7 @@ export default function PaymentConfirmationEmail({
                             Thank you for your prompt payment.
                         </Text>
                         <Text className="text-[#666666] text-[12px] leading-[24px]">
-                            Finance Department, Kestora University.
+                            Finance Department, Heffring University.
                         </Text>
                     </Container>
                 </Body>

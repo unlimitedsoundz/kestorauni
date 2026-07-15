@@ -177,7 +177,7 @@ export default function TuitionEstimator({ courses }: TuitionEstimatorProps) {
                     <div>
                         <div className="flex items-center gap-1.5 mb-2">
                             <label htmlFor="campus-select" className="text-xs font-bold uppercase tracking-wider text-[#000000]">Campus</label>
-                            <Tooltip text="Kestora University Helsinki Campus offers full facilities, modern classrooms, and hands-on laboratory space in the heart of the capital." />
+                            <Tooltip text="Heffring University Helsinki Campus offers full facilities, modern classrooms, and hands-on laboratory space in the heart of the capital." />
                         </div>
                         <select
                             id="campus-select"

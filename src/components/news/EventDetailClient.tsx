@@ -102,7 +102,7 @@ export default function EventDetailClient({ initialEvent }: EventDetailClientPro
                         <div className="sticky top-32 space-y-8">
                             <CTA
                                 title="Interested?"
-                                body="Join us for this exciting event at Kestora University. No registration required unless specified."
+                                body="Join us for this exciting event at Heffring University. No registration required unless specified."
                                 cta={{
                                     label: "Add to Calendar",
                                     onClick: () => { /* Handle calendar logic */ }

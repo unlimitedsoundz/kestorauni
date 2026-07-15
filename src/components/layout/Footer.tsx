@@ -3,7 +3,7 @@
 import { Link } from "@aalto-dx/react-components"
 import { usePathname } from "next/navigation"
 import { Logo } from "@/components/ui/Logo"
-import { EnvelopeSimple, MapPin, Phone, TiktokLogo } from "@phosphor-icons/react"
+import { EnvelopeSimple, MapPin, Phone, TiktokLogo, InstagramLogo } from "@phosphor-icons/react"
 
 export function Footer() {
     const pathname = usePathname();
@@ -21,13 +21,16 @@ export function Footer() {
                  <div className="mb-12 pb-10 border-b border-white/10">
                      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                          <div>
-                             <Logo className="h-10 md:h-12 text-white mb-3" />
+                              <Logo className="h-14 md:h-16 text-white mb-3" />
                          </div>
-                         <div className="flex space-x-4">
-<a href="https://www.tiktok.com/@kestorauniversity" target="_blank" rel="noopener noreferrer" className="text-white hover:text-opacity-75 transition-colors">
+                          <div className="flex space-x-4">
+                              <a href="https://www.instagram.com/heffringuniversity" target="_blank" rel="noopener noreferrer" className="text-white hover:text-opacity-75 transition-colors">
+                                  <InstagramLogo className="h-6 w-6" />
+                              </a>
+                              <a href="https://www.tiktok.com/@heffringuniversity" target="_blank" rel="noopener noreferrer" className="text-white hover:text-opacity-75 transition-colors">
                                   <TiktokLogo className="h-6 w-6" />
                               </a>
-                         </div>
+                          </div>
                      </div>
                  </div>
 
@@ -49,7 +52,7 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">About</h3>
                         <ul className="space-y-3">
-                            <li><Link href="/about-kestora-university" className="text-neutral-300 text-sm hover:text-white transition-colors no-underline">Our Story</Link></li>
+                            <li><Link href="/about-heffring-university" className="text-neutral-300 text-sm hover:text-white transition-colors no-underline">Our Story</Link></li>
                             <li><Link href="/news" className="text-neutral-300 text-sm hover:text-white transition-colors no-underline">News & Events</Link></li>
                             <li><Link href="/research" className="text-neutral-300 text-sm hover:text-white transition-colors no-underline">Research</Link></li>
                             <li><Link href="/student-life" className="text-neutral-300 text-sm hover:text-white transition-colors no-underline">Campus Life</Link></li>
@@ -78,15 +81,15 @@ export function Footer() {
                             <li className="flex items-start gap-3 text-neutral-300 text-sm">
                                 <MapPin size={16} className="shrink-0 text-neutral-400 mt-0.5" />
                                 <div className="space-y-2">
-                                    <span className="block font-semibold text-white">Kestora University – Helsinki Campus</span>
-                                    <span className="block text-xs">Pohjoisesplanadi 51,</span>
-                                    <span className="block text-xs">00150 Helsinki, Uusimaa</span>
+                                    <span className="block font-semibold text-white">Heffring University – Helsinki Campus</span>
+                                    <span className="block text-xs">Kaarrostie 38,</span>
+                                    <span className="block text-xs">00960 Helsinki, Uusimaa</span>
                                 </div>
                             </li>
                             
                             <li className="flex items-center gap-3 text-neutral-300 text-sm">
                                 <EnvelopeSimple size={16} className="shrink-0 text-neutral-400" />
-                                <a href="mailto:info@kestora.online" className="hover:text-white transition-colors no-underline">info@kestora.online</a>
+                                <a href="mailto:info@heffring.online" className="hover:text-white transition-colors no-underline">info@heffring.online</a>
                             </li>
                         </ul>
                     </div>
@@ -98,7 +101,7 @@ export function Footer() {
                 <div className="container mx-auto px-4 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-neutral-400/60 text-xs order-2 md:order-1">
-                            © 2026 Kestora University. All rights reserved.
+                            © 2026 Heffring University. All rights reserved.
                         </p>
                         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 order-1 md:order-2">
                             <Link href="/site-index" className="text-neutral-400/60 text-xs hover:text-white transition-colors no-underline">Site Index</Link>

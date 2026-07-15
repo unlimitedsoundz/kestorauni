@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'Study at Kestora University — Bachelor, Master & Lifelong Learning',
-    description: 'Find your study path at Kestora University. Explore our Bachelor\'s and Master\'s degree programmes, professional continuing education, and open studies.',
+    title: 'Study at Heffring University — Bachelor, Master & Lifelong Learning',
+    description: 'Find your study path at Heffring University. Explore our Bachelor\'s and Master\'s degree programmes, professional continuing education, and open studies.',
     alternates: {
-        canonical: 'https://kestora.online/studies/',
+        canonical: 'https://heffring.online/studies/',
     },
 };
 
@@ -24,7 +24,7 @@ export default function StudiesPage() {
             ]} />
             {/* Hero */}
             <Hero
-                title="Study at Kestora University"
+                title="Study at Heffring University"
                 body="From undergraduate degrees to executive education, we offer diverse paths for learners at every stage of their journey."
                 backgroundColor="#392d56"
                 tinted

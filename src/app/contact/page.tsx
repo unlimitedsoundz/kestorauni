@@ -8,10 +8,10 @@ import { ContentBox } from '@/components/ui/ContentBox';
 import { Card } from '@/components/ui/Card';
 
 export const metadata: Metadata = {
-    title: 'Contact Information | Kestora University',
-    description: 'Contact details for Kestora University including Registry, Admissions, Student Services, and general inquiries.',
+    title: 'Contact Information | Heffring University',
+    description: 'Contact details for Heffring University including Registry, Admissions, Student Services, and general inquiries.',
     alternates: {
-        canonical: 'https://kestora.online/contact/',
+        canonical: 'https://heffring.online/contact/',
     },
 };
 
@@ -26,17 +26,17 @@ export default function ContactPage() {
             <SchemaLD data={{
                 "@context": "https://schema.org",
                 "@type": "ContactPage",
-                "name": "Contact Kestora University",
-                "url": "https://kestora.online/contact",
+                "name": "Contact Heffring University",
+                "url": "https://heffring.online/contact",
                 "mainEntity": {
                     "@type": "EducationalOrganization",
-                    "name": "Kestora University",
-                    "email": "Kestora@kestora.online",
+                    "name": "Heffring University",
+                    "email": "Heffring@heffring.online",
                     "address": {
                         "@type": "PostalAddress",
-                        "streetAddress": "Pohjoisesplanadi 51",
+                        "streetAddress": "Kaarrostie 38",
                         "addressLocality": "Helsinki",
-                        "postalCode": "00150",
+                        "postalCode": "00960",
                         "addressCountry": "CA"
                     }
                 }
@@ -44,7 +44,7 @@ export default function ContactPage() {
             {/* HERO SECTION */}
             <Hero
                 title="Contact Information"
-                body="Kestora University provides contact information for administrative services including Registry, Admissions, Student Services and general inquiries to support students, applicants, staff and partners."
+                body="Heffring University provides contact information for administrative services including Registry, Admissions, Student Services and general inquiries to support students, applicants, staff and partners."
                 backgroundColor="#ff8d4f"
                 tinted
                 lightText={true}
@@ -54,7 +54,7 @@ export default function ContactPage() {
                 ]}
                 image={{
                     src: "https://i.pinimg.com/736x/fa/28/ed/fa28ed6017e508a4291beda999617f25.jpg",
-                    alt: "Contact Kestora University"
+                    alt: "Contact Heffring University"
                 }}
             />
 
@@ -71,7 +71,7 @@ export default function ContactPage() {
                                     <div>
                                         <a href="tel:+3580942721884" className="inline-flex items-center gap-2 text-xl font-bold text-black mb-2 underline underline-offset-4 hover:opacity-80 transition-opacity">
                                             <Phone size={24} weight="fill" />
-                                            Talk to Kestora
+                                            Talk to Heffring
                                         </a>
                                         <p className="text-neutral-500 font-bold uppercase tracking-widest text-xs">Helsinki, Finland resident enquiries</p>
                                     </div>
@@ -85,9 +85,9 @@ export default function ContactPage() {
                                     <div>
                                          <h4 className="font-bold text-black uppercase tracking-[0.2em] text-xs mb-4">Postal Address</h4>
                                         <address className="not-italic text-neutral-600 leading-relaxed text-sm font-bold">
-                                            Kestora University – Helsinki Campus<br />
-                                            Pohjoisesplanadi 51,<br />
-                                            00150 Helsinki, Uusimaa,<br />
+                                            Heffring University – Helsinki Campus<br />
+                                            Kaarrostie 38,<br />
+                                            00960 Helsinki, Uusimaa,<br />
                                             Finland
                                         </address>
                                     </div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Responsible for receiving official correspondence and documentation.</p>
-                                    <a href="mailto:registry@kestora.online" className="block font-bold underline">registry@kestora.online</a>
+                                    <a href="mailto:registry@heffring.online" className="block font-bold underline">registry@heffring.online</a>
                                 </div>
                             }
                         />
@@ -114,7 +114,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Information on programmes, applications, scholarships, and deadlines.</p>
-                                    <a href="mailto:admissions@kestora.online" className="block font-bold underline">admissions@kestora.online</a>
+                                    <a href="mailto:admissions@heffring.online" className="block font-bold underline">admissions@heffring.online</a>
                                 </div>
                             }
                         />
@@ -124,7 +124,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Support for enrolled students including study planning and wellbeing.</p>
-                                    <a href="mailto:studentservices@kestora.online" className="block font-bold underline">studentservices@kestora.online</a>
+                                    <a href="mailto:studentservices@heffring.online" className="block font-bold underline">studentservices@heffring.online</a>
                                 </div>
                             }
                         />
@@ -134,7 +134,7 @@ export default function ContactPage() {
                             body={
                                 <div className="space-y-4">
                                     <p className="text-sm font-bold text-neutral-600">Storage of permanent records and official documentation.</p>
-                                    <a href="mailto:archives@kestora.online" className="block font-bold underline">archives@kestora.online</a>
+                                    <a href="mailto:archives@heffring.online" className="block font-bold underline">archives@heffring.online</a>
                                 </div>
                             }
                         />

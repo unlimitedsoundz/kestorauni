@@ -58,7 +58,7 @@ export default function RegisterPage() {
         return (
             <div className="max-w-md mx-auto mt-12 bg-white p-8 border border-neutral-100 text-center space-y-6 animate-in zoom-in-95 duration-500 text-[#2d2d2d]">
                 <div className="space-y-1">
-                    <h1 className="text-2xl font-black uppercase tracking-tight">Welcome to Kestora University</h1>
+                    <h1 className="text-2xl font-black uppercase tracking-tight">Welcome to Heffring University</h1>
                     <p className="text-xs font-medium">Your account has been successfully created.</p>
                 </div>
 
@@ -95,7 +95,7 @@ export default function RegisterPage() {
     return (
         <div className="max-w-md mx-auto mt-12 bg-white p-8 border border-neutral-100 text-black">
             <h1 className="text-2xl font-bold mb-2">Create Account</h1>
-            <p className="mb-8">Start your application to Kestora University</p>
+            <p className="mb-8">Start your application to Heffring University</p>
 
             {message && (
                 <div className={`p-4 rounded-sm mb-6 text-xs font-bold border ${message.type === 'success' ? 'bg-neutral-50 text-black border-neutral-100' : 'bg-red-50 text-red-700 border-red-100'}`}>

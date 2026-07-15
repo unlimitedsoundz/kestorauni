@@ -24,7 +24,7 @@ export default function OfferLetterEmail({
     firstName = 'Student',
     courseTitle = 'Applied Sciences',
 }: OfferLetterEmailProps) {
-    const previewText = `Conditional Admission Offer - Kestora University Next Steps`;
+    const previewText = `Conditional Admission Offer - Heffring University Next Steps`;
 
     return (
         <Html>
@@ -35,16 +35,16 @@ export default function OfferLetterEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://kestora.online/logo-kestora.png"
-                                width="64"
-                                height="64"
-                                alt="Kestora University"
+                                src="https://heffring.online/images/logo-heffring.png"
+                                width="120"
+                                height="120"
+                                alt="Heffring University"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
                         <Section className="mt-[16px]">
                             <Img
-                                src="https://kestora.online/images/scholarships.png"
+                                src="https://heffring.online/images/scholarships.png"
                                 width="465"
                                 height="150"
                                 alt="Scholarships"
@@ -53,7 +53,7 @@ export default function OfferLetterEmail({
                         </Section>
 
                         <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-                            Kestora University Admission
+                            Heffring University Admission
                         </Heading>
 
                         <Heading className="text-black text-[18px] font-normal text-center p-0 mb-[20px] mx-0">
@@ -65,13 +65,13 @@ export default function OfferLetterEmail({
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            We are delighted to inform you that you have been offered a conditional place to study at Kestora University.
+                            We are delighted to inform you that you have been offered a conditional place to study at Heffring University.
                         </Text>
 
                         <Section className="my-[20px]">
                             <Text className="text-black text-[14px] font-semibold leading-[24px]">Your Offer Details:</Text>
                             <Text className="text-black text-[14px] leading-[24px]">Programme: {courseTitle}</Text>
-                            <Text className="text-black text-[14px] leading-[24px]">Intake: September Fall 2026</Text>
+                            <Text className="text-black text-[14px] leading-[24px]">Intake: Fall 2026</Text>
                             <Text className="text-black text-[14px] leading-[24px]">Status: Conditional Offer</Text>
                         </Section>
 
@@ -110,13 +110,13 @@ export default function OfferLetterEmail({
                             Admissions Office
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            Kestora University
+                            Heffring University
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            admissions@kestora.online
+                            admissions@heffring.online
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            https://kestora.online
+                            https://heffring.online
                         </Text>
                     </Container>
                 </Body>

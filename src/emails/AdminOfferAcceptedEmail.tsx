@@ -26,7 +26,7 @@ export default function AdminOfferAcceptedEmail({
     studentName = 'John Doe',
     courseName = 'Bachelor of Science',
     applicationId = 'APP-000',
-    studentId = 'KU0000000',
+    studentId = 'HU0000000',
 }: AdminOfferAcceptedEmailProps) {
     const previewText = `Offer Accepted: ${studentName} has accepted the offer for ${courseName}.`;
 
@@ -39,10 +39,10 @@ export default function AdminOfferAcceptedEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://kestora.online/logo-kestora.png"
-                                width="40"
-                                height="40"
-                                alt="Kestora University"
+                                src="https://heffring.online/images/logo-heffring.png"
+                                width="120"
+                                height="120"
+                                alt="Heffring University"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
@@ -69,7 +69,7 @@ export default function AdminOfferAcceptedEmail({
                         <Section className="text-center mt-[32px] mb-[32px]">
                             <Link
                                 className="bg-[#000000] rounded text-white text-[12px] font-bold no-underline text-center px-6 py-3 uppercase tracking-widest"
-                                href={`https://kestora.online/admin/students/${studentId}`}
+                                href={`https://heffring.online/admin/students/${studentId}`}
                             >
                                 View Student Record
                             </Link>
@@ -78,12 +78,13 @@ export default function AdminOfferAcceptedEmail({
                         <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
                         <Section className="text-center mt-[10px] mb-[20px]">
                             <Text className="m-0">
-                                <Link href="https://www.tiktok.com/@kestorauniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
+                                <Link href="https://www.instagram.com/heffringuniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Instagram</Link>
+                                <Link href="https://www.tiktok.com/@heffringuniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
                             </Text>
                         </Section>
 
                         <Text className="text-[#666666] text-[10px] uppercase font-bold tracking-widest leading-[24px]">
-                            Internal Notification Service — Kestora University
+                            Internal Notification Service — Heffring University
                         </Text>
                     </Container>
                 </Body>

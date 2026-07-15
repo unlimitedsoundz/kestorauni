@@ -25,10 +25,10 @@ interface AdmissionLetterEmailProps {
 export default function AdmissionLetterEmail({
     firstName = 'Student',
     courseTitle = 'Applied Sciences',
-    intake = 'September 2026',
+    intake = 'Fall 2026',
     studentId = 'KUXXXXXXX',
 }: AdmissionLetterEmailProps) {
-    const previewText = `Congratulations on Your Admission to Kestora University – Next Steps`;
+    const previewText = `Congratulations on Your Admission to Heffring University – Next Steps`;
 
     return (
         <Html>
@@ -39,16 +39,16 @@ export default function AdmissionLetterEmail({
                     <Container className="my-[20px] mx-auto px-[15px] py-[20px] w-[465px]">
                         <Section className="mt-[32px]">
                             <Img
-                                src="https://kestora.online/logo-kestora.png"
-                                width="64"
-                                height="64"
-                                alt="Kestora University"
+                                src="https://heffring.online/images/logo-heffring.png"
+                                width="120"
+                                height="120"
+                                alt="Heffring University"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
                         <Section className="mt-[16px]">
                             <Img
-                                src="https://kestora.online/images/scholarships.png"
+                                src="https://heffring.online/images/scholarships.png"
                                 width="465"
                                 height="150"
                                 alt="Scholarships"
@@ -57,7 +57,7 @@ export default function AdmissionLetterEmail({
                         </Section>
 
                         <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-                            Kestora University Admission
+                            Heffring University Admission
                         </Heading>
 
                         <Heading className="text-black text-[18px] font-normal text-center p-0 mb-[20px] mx-0">
@@ -69,7 +69,7 @@ export default function AdmissionLetterEmail({
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            We are delighted to officially confirm your admission to Kestora University following the successful confirmation of your tuition payment.
+                            We are delighted to officially confirm your admission to Heffring University following the successful confirmation of your tuition payment.
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
@@ -83,7 +83,7 @@ export default function AdmissionLetterEmail({
                         </Section>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            This marks a significant milestone, and we are confident that you will thrive academically and personally as part of the Kestora community.
+                            This marks a significant milestone, and we are confident that you will thrive academically and personally as part of the Heffring community.
                         </Text>
 
                         <Section className="my-[20px]">
@@ -119,7 +119,7 @@ export default function AdmissionLetterEmail({
                         <Section className="my-[20px]">
                             <Text className="text-black text-[14px] font-semibold leading-[24px]">Accommodation & Student Life</Text>
                             <Text className="text-black text-[14px] leading-[24px]">
-                                At Kestora University, we ensure that your transition into Finland is as seamless as possible.
+                                At Heffring University, we ensure that your transition into Finland is as seamless as possible.
                             </Text>
                             <Text className="text-black text-[14px] leading-[24px]">
                                 Once your payment is confirmed, your accommodation information will be made available in your dashboard, including:
@@ -134,8 +134,8 @@ export default function AdmissionLetterEmail({
                         </Section>
 
                         <Section className="my-[20px]">
-                            <Text className="text-black text-[14px] font-semibold leading-[24px]">What to Look Forward To at Kestora University</Text>
-                            <Text className="text-black text-[14px] leading-[24px]">As a Kestora student, you will experience:</Text>
+                            <Text className="text-black text-[14px] font-semibold leading-[24px]">What to Look Forward To at Heffring University</Text>
+                            <Text className="text-black text-[14px] leading-[24px]">As a Heffring student, you will experience:</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• A globally relevant curriculum designed for modern careers</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• A diverse and international student community</Text>
                             <Text className="text-black text-[14px] leading-[24px]">• Career-focused learning with practical insights</Text>
@@ -147,11 +147,11 @@ export default function AdmissionLetterEmail({
                         </Section>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            Important Note: As a confirmed student for the September 2026 intake, it is essential that you proceed with your study permit application immediately, as timelines are strict and processing times must be carefully considered.
+                            Important Note: As a confirmed student for the {intake} intake, it is essential that you proceed with your study permit application immediately, as timelines are strict and processing times must be carefully considered.
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
-                            We are excited to have you join Kestora University and look forward to supporting you every step of the way.
+                            We are excited to have you join Heffring University and look forward to supporting you every step of the way.
                         </Text>
 
                         <Text className="text-black text-[14px] leading-[24px]">
@@ -161,7 +161,7 @@ export default function AdmissionLetterEmail({
                         <Section className="text-center mt-[32px] mb-[32px]">
                             <Link
                                 className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
-                                href="https://kestora.online/portal/student"
+                                href="https://heffring.online/portal/student"
                             >
                                 Enter student Portal
                             </Link>
@@ -175,13 +175,13 @@ export default function AdmissionLetterEmail({
                             Admissions Office
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            Kestora University
+                            Heffring University
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            admissions@kestora.online
+                            admissions@heffring.online
                         </Text>
                         <Text className="text-black text-[14px] leading-[24px]">
-                            https://kestora.online
+                            https://heffring.online
                         </Text>
                     </Container>
                 </Body>

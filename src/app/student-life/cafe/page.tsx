@@ -5,10 +5,10 @@ import { ForkKnife as Utensils, Clock, MapPin, ArrowRight } from "@phosphor-icon
 import { Hero } from '@/components/layout/Hero';
 
 export const metadata = {
-    title: 'Opiskelija Café — Kestora University Student Restaurant | Menu & Hours',
-    description: 'Visit the Opiskelija Café at Kestora University Helsinki. Affordable student meals, coffee, and pastries. View the menu, opening hours, and location.',
+    title: 'Opiskelija Café — Heffring University Student Restaurant | Menu & Hours',
+    description: 'Visit the Opiskelija Café at Heffring University Helsinki. Affordable student meals, coffee, and pastries. View the menu, opening hours, and location.',
     alternates: {
-        canonical: 'https://kestora.online/student-life/cafe/',
+        canonical: 'https://heffring.online/student-life/cafe/',
     },
 };
 

@@ -25,7 +25,7 @@ async function diagnose() {
     }
 
     // 3. Check generated HTML
-    const html = fs.readFileSync('E:/kestorauniversity/out/schools/health-community/health-community-dept/index.html', 'utf8');
+    const html = fs.readFileSync('E:/heffringuniversity/out/schools/health-community/health-community-dept/index.html', 'utf8');
     const hasFacultySection = html.includes('Faculty');
     const hasStudyPrograms = html.includes('Study Programs');
     const hasEmptyFaculty = html.includes('No faculty listings available');

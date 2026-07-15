@@ -53,11 +53,11 @@ async function main() {
                         jsonb_replace_recursive(
                             jsonb_replace_recursive(
                                 jsonb_replace_recursive(
-                                    jsonb_replace_recursive("${column_name}", 'Cannoga College', 'Kestora University'),
-                                    'cannoga\\\\.fi', 'kestora.online'),
-                                'Cannoga', 'Kestora'),
-                            'penkka\\\\.fi', 'kestora.online'),
-                        'Penkka', 'Kestora')
+                                    jsonb_replace_recursive("${column_name}", 'Cannoga College', 'Heffring University'),
+                                    'cannoga\\\\.fi', 'heffring.online'),
+                                'Cannoga', 'Heffring'),
+                            'penkka\\\\.fi', 'heffring.online'),
+                        'Penkka', 'Heffring')
                     WHERE "${column_name}"::text ~* 'Cannoga College|cannoga\\.fi|Cannoga|penkka\\.fi|Penkka'
                 `);
             } else {
@@ -67,11 +67,11 @@ async function main() {
                         regexp_replace(
                             regexp_replace(
                                 regexp_replace(
-                                    regexp_replace("${column_name}", 'Cannoga College', 'Kestora University', 'gi'),
-                                    'cannoga\\\\.fi', 'kestora.online', 'gi'),
-                                'Cannoga', 'Kestora', 'gi'),
-                            'penkka\\\\.fi', 'kestora.online', 'gi'),
-                        'Penkka', 'Kestora', 'gi')
+                                    regexp_replace("${column_name}", 'Cannoga College', 'Heffring University', 'gi'),
+                                    'cannoga\\\\.fi', 'heffring.online', 'gi'),
+                                'Cannoga', 'Heffring', 'gi'),
+                            'penkka\\\\.fi', 'heffring.online', 'gi'),
+                        'Penkka', 'Heffring', 'gi')
                     WHERE "${column_name}" ~* 'Cannoga College|cannoga\\.fi|Cannoga|penkka\\.fi|Penkka'
                 `);
             }

@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { School } from '@/types/database';
 
 export const metadata = {
-    title: 'Academic Schools — Kestora University Helsinki, Finland | Arts, Business, Science, Technology',
-    description: 'Kestora University is organized into eight schools, including Arts & Architecture, Business, Science, Technology, Health & Community, Hospitality & Tourism, Education & Social Sciences, and Transportation & Aviation. Explore departments, research, and degree programmes.',
+    title: 'Academic Schools — Heffring University Helsinki, Finland | Arts, Business, Science, Technology',
+    description: 'Heffring University is organized into eight schools, including Arts & Architecture, Business, Science, Technology, Health & Community, Hospitality & Tourism, Education & Social Sciences, and Transportation & Aviation. Explore departments, research, and degree programmes.',
     alternates: {
-        canonical: 'https://kestora.online/schools/',
+        canonical: 'https://heffring.online/schools/',
     },
 };
 
@@ -29,7 +29,7 @@ export default async function SchoolsPage() {
             {/* Hero Section */}
             <Hero
                 title="Our Schools"
-                body="Kestora University is organized into specialized schools, each driving innovation in technology, business, science, and design through world-class research and English-taught certificate, diploma, bachelor’s and master’s programmes."
+                body="Heffring University is organized into specialized schools, each driving innovation in technology, business, science, and design through world-class research and English-taught certificate, diploma, bachelor’s and master’s programmes."
                 backgroundColor="#000000"
                 tinted
                 lightText={true}

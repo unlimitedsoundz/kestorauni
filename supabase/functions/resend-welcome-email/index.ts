@@ -1,4 +1,4 @@
-
+﻿
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.38.4";
 import { Resend } from "npm:resend@2.0.0";
@@ -64,7 +64,7 @@ serve(async (req) => {
   <meta charset="utf-8">
   <meta name="color-scheme" content="light dark">
   <meta name="supported-color-schemes" content="light dark">
-  <title>Welcome to Kestora University</title>
+  <title>Welcome to Heffring University</title>
   <style>
     :root { color-scheme: light dark; }
     @media (prefers-color-scheme: dark) {
@@ -87,11 +87,11 @@ serve(async (req) => {
 </head>
 <body>
   <div class="container">
-    <img src="https://kestora.online/images/scholarships.png" alt="Kestora University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
-    <img src="https://kestora.online/logo-kestora.png" alt="Kestora University" class="logo">
-    <h1>Welcome to Kestora University</h1>
+    <img src="https://heffring.online/images/scholarships.png" alt="Heffring University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
+    <img src="https://heffring.online/images/logo-heffring.png" alt="Heffring University" class="logo">
+    <h1>Welcome to Heffring University</h1>
     <p>Dear ${first_name || 'Student'},</p>
-    <p>Congratulations on creating your student account at Kestora University! We are excited to have you join our academic community.</p>
+    <p>Congratulations on creating your student account at Heffring University! We are excited to have you join our academic community.</p>
     
     <div class="id-box">
       <div class="id-label">Your Unique Student ID</div>
@@ -102,18 +102,18 @@ serve(async (req) => {
     <p>You can now access your dashboard to complete your application, upload documents, and track your progress.</p>
 
     <div class="button-container">
-      <a href="https://kestora.online/portal/account/login" class="button">Enter Student Portal</a>
+      <a href="https://heffring.online/portal/account/login" class="button">Enter Student Portal</a>
     </div>
 
-    <p>If you have any questions or need assistance, please reach out to our Admissions Office at <a href="mailto:admissions@kestora.online">admissions@kestora.online</a> or call us at <strong>+358 09 42721884</strong>.</p>
+    <p>If you have any questions or need assistance, please reach out to our Admissions Office at <a href="mailto:admissions@heffring.online">admissions@heffring.online</a> or call us at <strong>+358 09 42721884</strong>.</p>
 
     <div class="footer">
-      <p style="text-align: center; margin: 0;">&copy; ${new Date().getFullYear()} Kestora University<br>Helsinki, Finland | +358 09 42721884 | info@kestora.online</p>
+      <p style="text-align: center; margin: 0;">&copy; ${new Date().getFullYear()} Heffring University<br>Helsinki, Finland | +358 09 42721884 | info@heffring.online</p>
       <div style="text-align: center; margin-top: 20px;">
-        <a href="https://www.tiktok.com/@kestorauniversity" style="color: #888; text-decoration: none; margin: 0 10px; font-weight: bold;">TikTok</a>
+        <a href="https://www.tiktok.com/@heffringuniversity" style="color: #888; text-decoration: none; margin: 0 10px; font-weight: bold;">TikTok</a>
       </div>
       <br>
-      This email was sent to confirm your account registration at Kestora University.
+      This email was sent to confirm your account registration at Heffring University.
     </div>
   </div>
 </body>
@@ -121,9 +121,9 @@ serve(async (req) => {
     `;
 
         const { data, error } = await resend.emails.send({
-            from: "Kestora University <admissions@kestora.online>",
+            from: "Heffring University <admissions@heffring.online>",
             to: [email],
-            subject: "Welcome to Kestora University",
+            subject: "Welcome to Heffring University",
             html: html,
         });
 
@@ -146,3 +146,4 @@ serve(async (req) => {
         });
     }
 });
+

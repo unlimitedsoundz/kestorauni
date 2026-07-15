@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -18,6 +18,7 @@ import {
     getAnnualFeeFromTotal,
     calculateTuitionDeposit
 } from '@/utils/tuition';
+import { getIntakeStartDate, getProgramEndDate, getIntakeAcademicYear } from '@/lib/intakes';
 
 interface EnrichedApplication extends Application {
     offer?: any[];
@@ -205,8 +206,8 @@ function AdmissionLetterContent() {
                     <div>
                         <div className="mb-2 relative w-56 h-12">
                             <Image
-                                src="/logo-kestora.png"
-                                alt="Kestora University Official Logo"
+                                src="/images/logo-heffring.png"
+                                alt="Heffring University Official Logo"
                                 fill
                                 style={{ objectFit: 'contain', objectPosition: 'left center' }}
                                 priority
@@ -214,12 +215,12 @@ function AdmissionLetterContent() {
                         </div>
                     </div>
                     <div className="text-left md:text-right text-[10px] font-medium text-black leading-relaxed uppercase tracking-wide">
-                        <strong className="text-black text-xs">Kestora University – Helsinki Campus</strong><br />
-                        Pohjoisesplanadi 51<br />
-                        00150 Helsinki, Finland<br />
+                        <strong className="text-black text-xs">Heffring University – Helsinki Campus</strong><br />
+                        Kaarrostie 38<br />
+                        00960 Helsinki, Finland<br />
                         Phone: +358 09 42721884<br />
-                        kestora.online<br />
-                        admissions@kestora.online
+                        heffring.online<br />
+                        admissions@heffring.online
                     </div>
                 </div>
 
@@ -262,7 +263,7 @@ function AdmissionLetterContent() {
                             </div>
                             <div className="text-center">
                                 <span className="block text-[8px] font-bold text-black uppercase tracking-widest mb-0.5">Official Student ID</span>
-                                <span className="block font-bold text-xs font-mono text-black">{application.user?.student_id || 'KU9166922'}</span>
+                                <span className="block font-bold text-xs font-mono text-black">{application.user?.student_id || 'HU9166922'}</span>
                             </div>
                         </div>
 
@@ -270,10 +271,10 @@ function AdmissionLetterContent() {
                         {/* Official Statement */}
                         <div className="text-sm print:text-xs leading-relaxed text-black mb-6 print:mb-4">
                             <p className="mb-2 print:mb-1 text-black">
-                                This letter serves as official notification that {application.personal_info?.firstName} {application.personal_info?.lastName} (Passport: {application.personal_info?.passportNumber || 'N/A'}, DOB: {formatToDDMMYYYY(application.user?.date_of_birth || application.personal_info?.dateOfBirth || today.toISOString())}) has been formally admitted and fully enrolled as a degree student at Kestora University for the 2026 - 2027 academic year.
+                                This letter serves as official notification that {application.personal_info?.firstName} {application.personal_info?.lastName} (Passport: {application.personal_info?.passportNumber || 'N/A'}, DOB: {formatToDDMMYYYY(application.user?.date_of_birth || application.personal_info?.dateOfBirth || today.toISOString())}) has been formally admitted and fully enrolled as a degree student at Heffring University for the 2026 - 2027 academic year.
                             </p>
                             <p className="text-black">
-                                Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the <strong className="text-black">{application.course?.title} ({application.course?.programType || 'Full-time'})</strong>. This program is a full-time course of study conducted in the English language at our Helsinki Campus location (Pohjoisesplanadi 51, 00150 Helsinki, Uusimaa, Finland).
+                                Having satisfied all academic entrance criteria and fulfilled the mandated tuition fee obligations, the student is officially registered for the <strong className="text-black">{application.course?.title} ({application.course?.programType || 'Full-time'})</strong>. This program is a full-time course of study conducted in the English language at our Helsinki Campus location (Kaarrostie 38, 00960 Helsinki, Uusimaa, Finland).
                             </p>
                         </div>
 
@@ -282,11 +283,11 @@ function AdmissionLetterContent() {
                         <div className="space-y-0.5 mb-8 print:mb-4">
                             {[
                                 { label: 'Date of Admission', value: admissionDateLabel },
-                                { label: 'Academic Year', value: '2026 - 2027' },
-                                { label: 'Intake', value: 'Fall 2026' },
+                                { label: 'Academic Year', value: getIntakeAcademicYear(application.intake) },
+                                { label: 'Intake', value: application.intake || 'Fall 2026' },
                                 { label: 'Degree Level', value: degreeLevelLabel },
-                                { label: 'Programme Start Date', value: '17.09.2026' },
-                                { label: 'Programme End Date', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '10.08.2028' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '10.08.2029' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '10.08.2028' : '10.08.2027' },
+                                { label: 'Programme Start Date', value: getIntakeStartDate(application.intake) },
+                                { label: 'Programme End Date', value: getProgramEndDate(application.intake, application.course?.degreeLevel) },
                                 { label: 'Total Credits', value: (application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '120 ECTS' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '180 ECTS' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '120 ECTS' : '60 ECTS' },
                                 { label: 'Programme of Study', value: `${application.course?.title} (${application.course?.programType || 'Full-time'})` }
                             ].map((row, idx) => (
@@ -329,7 +330,7 @@ function AdmissionLetterContent() {
                             <div>
                                 <h4 className="text-[10px] font-bold text-black uppercase tracking-widest mb-2 border-b border-black pb-1 text-center">Refund Policy</h4>
                                 <p className="text-[10px] text-black leading-relaxed">
-                                    Tuition fees are subject to the university’s refund policy. Full details can be found at <a href="https://kestora.online/refund-withdrawal-policy/" className="underline text-black">kestora.online/refund-withdrawal-policy/</a>.
+                                    Tuition fees are subject to the university's refund policy. Full details can be found at <a href="https://heffring.online/refund-withdrawal-policy/" className="underline text-black">heffring.online/refund-withdrawal-policy/</a>.
                                 </p>
                             </div>
                         </div>
@@ -348,13 +349,13 @@ function AdmissionLetterContent() {
                                 </div>
                                 <div className="text-[11px] font-black text-black uppercase">Office of the Registrar</div>
                                 <div className="text-[11px] font-bold text-black mt-0.5">Alex Moulton</div>
-                                <div className="text-[10px] font-bold text-black uppercase tracking-widest mt-1">College Registrar | Kestora University, Helsinki</div>
+                                <div className="text-[10px] font-bold text-black uppercase tracking-widest mt-1">College Registrar | Heffring University, Helsinki</div>
                             </div>
                         </div>
 
                         <div className="mt-6 text-center">
                             <p className="text-[10px] text-black">
-                                Generated electronically via Kestora SIS. Valid without physical signature if verified online.
+                                Generated electronically via Heffring SIS. Valid without physical signature if verified online.
                             </p>
                         </div>
                     </div>
@@ -393,7 +394,7 @@ function AdmissionLetterContent() {
                                 </div>
                                 <div>
                                     <div className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 print:mb-0">Intake & Year</div>
-                                    <div className="text-sm print:text-xs font-bold text-black">Fall Semester 2026</div>
+                                    <div className="text-sm print:text-xs font-bold text-black">Fall 2026</div>
                                 </div>
                                 <div>
                                     <div className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 print:mb-0">Intended Programme</div>
@@ -409,7 +410,7 @@ function AdmissionLetterContent() {
                                 </div>
                                 <div>
                                     <div className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 print:mb-0">Programme Duration</div>
-                                    <div className="text-sm print:text-xs font-bold text-black">17.09.2026 – {(application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '10.08.2028' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '10.08.2029' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '10.08.2028' : '10.08.2027'}</div>
+                                    <div className="text-sm print:text-xs font-bold text-black">11.09.2026 – {(application.course?.degreeLevel || '').toUpperCase() === 'MASTER' ? '11.09.2028' : (application.course?.degreeLevel || '').toUpperCase() === 'BACHELOR' ? '11.09.2029' : (application.course?.degreeLevel || '').toUpperCase() === 'DIPLOMA' ? '11.09.2028' : '11.09.2027'}</div>
                                 </div>
                                 <div>
                                     <div className="text-[9px] font-bold text-black uppercase tracking-widest mb-1 print:mb-0">Total Credits</div>
@@ -425,7 +426,7 @@ function AdmissionLetterContent() {
                                 Dear {application.personal_info?.firstName},
                             </p>
                             <p className="text-sm print:text-xs leading-relaxed text-black mb-3 print:mb-1">
-                                We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Kestora University has decided to offer you a place in the <strong>{application.course?.title}</strong> ({application.course?.programType || 'Full-time'}) programme for the <strong>Fall 2026</strong> intake.
+                                We are pleased to inform you that, following a thorough review of your application, the Admissions Committee of Heffring University has decided to offer you a place in the <strong>{application.course?.title}</strong> ({application.course?.programType || 'Full-time'}) programme for the <strong>Fall 2026</strong> intake.
                             </p>
                             <p className="text-sm print:text-xs leading-relaxed text-black">
                                 This offer is subject to the conditions outlined below, including acceptance of the offer via the student portal and confirmation of tuition payment by the specified deadline. Upon fulfillment of these conditions, an official Letter of Admission will be issued confirming your enrollment.
@@ -507,7 +508,7 @@ function AdmissionLetterContent() {
                                     Admissions Office
                                 </div>
                                 <div className="text-[9px] font-bold text-black uppercase tracking-widest leading-none mt-1">
-                                    Kestora University | Helsinki, Finland
+                                    Heffring University | Helsinki, Finland
                                 </div>
                             </div>
 
@@ -566,3 +567,4 @@ export default function AdmissionLetterPage() {
         </Suspense>
     );
 }
+

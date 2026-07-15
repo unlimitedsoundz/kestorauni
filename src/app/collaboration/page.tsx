@@ -6,10 +6,10 @@ import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { SchemaLD } from '@/components/seo/SchemaLD';
 
 export const metadata = {
-    title: 'Collaboration & Partnerships | Kestora University',
-    description: 'Partner with Kestora University for research, innovation, and education. Join our network of industry leaders driving systemic change.',
+    title: 'Collaboration & Partnerships | Heffring University',
+    description: 'Partner with Heffring University for research, innovation, and education. Join our network of industry leaders driving systemic change.',
     alternates: {
-        canonical: 'https://kestora.online/collaboration/',
+        canonical: 'https://heffring.online/collaboration/',
     },
 };
 
@@ -24,9 +24,9 @@ export default function CollaborationPage() {
             <SchemaLD data={{
                 "@context": "https://schema.org",
                 "@type": "WebPage",
-                "name": "Collaboration & Partnerships at Kestora University",
-                "url": "https://kestora.online/collaboration",
-                "description": "Information on industry partnerships, collaborative research, and corporate training at Kestora University."
+                "name": "Collaboration & Partnerships at Heffring University",
+                "url": "https://heffring.online/collaboration",
+                "description": "Information on industry partnerships, collaborative research, and corporate training at Heffring University."
             }} />
 
             {/* HERO SECTION */}
@@ -35,7 +35,7 @@ export default function CollaborationPage() {
                     {/* Left Content */}
                     <div className="lg:w-1/2 space-y-6 relative z-10 flex flex-col justify-center h-full pt-2 lg:pt-0 px-4 md:px-0 text-left">
                         <h1 className="font-bold leading-[1.1] tracking-tight pt-2 text-black uppercase" style={{ fontSize: '40px' }}>
-                            Partner with Kestora University
+                            Partner with Heffring University
                         </h1>
                         <p className="text-[21px] text-black max-w-xl leading-relaxed">
                             Join our network of global industry leaders, research institutions, and dynamic startups. Together, we bridge the gap between academic theory and market-ready solutions.
@@ -72,7 +72,7 @@ export default function CollaborationPage() {
                     <div className="text-center mb-16 max-w-3xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Partner with Us?</h2>
                         <p className="text-lg text-neutral-600 leading-relaxed">
-                            Kestora University offers a dynamic ecosystem where organizations can access top-tier talent, engage agile R&D capabilities, and upskill their workforce.
+                            Heffring University offers a dynamic ecosystem where organizations can access top-tier talent, engage agile R&D capabilities, and upskill their workforce.
                         </p>
                     </div>
 
@@ -115,12 +115,12 @@ export default function CollaborationPage() {
                 <section className="mb-32">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
-                            <h2 className="text-3xl md:text-4xl font-bold leading-tight">Ways to Engage with the Kestora Community</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold leading-tight">Ways to Engage with the Heffring Community</h2>
                             <ul className="space-y-6">
                                 {[
                                     { title: "Student Enterprise Projects", desc: "Sponsor a project and have teams of students solve your real-world business challenges under faculty supervision." },
                                     { title: "Guest Lectures & Workshops", desc: "Share industry insights, build your brand presence, and inspire the next generation of professionals." },
-                                    { title: "Startup Incubation", desc: "Connect with the Kestora Entrepreneurship Hub to mentor or invest in early-stage student ventures." }
+                                    { title: "Startup Incubation", desc: "Connect with the Heffring Entrepreneurship Hub to mentor or invest in early-stage student ventures." }
                                 ].map((item, i) => (
                                     <li key={i} className="flex gap-4 p-6 bg-white border border-neutral-100">
                                         <div className="mt-1">
@@ -143,7 +143,7 @@ export default function CollaborationPage() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-10">
                                 <p className="text-white text-xl font-medium leading-relaxed">
-                                    "Our partnership with Kestora allows us to tap into fresh perspectives while tackling complex engineering challenges."<br />
+                                    "Our partnership with Heffring allows us to tap into fresh perspectives while tackling complex engineering challenges."<br />
                                     <span className="text-sm uppercase tracking-widest opacity-80 block mt-4 font-bold">— Tech Innovations Oy</span>
                                 </p>
                             </div>
@@ -165,7 +165,7 @@ export default function CollaborationPage() {
                                 </p>
                                 <div className="space-y-2">
                                     <p className="font-bold text-xl">Corporate Relations Office</p>
-                                    <a href="mailto:partnerships@kestora.online" className="text-white text-lg hover:opacity-70 transition-colors underline">partnerships@kestora.online</a>
+                                    <a href="mailto:partnerships@heffring.online" className="text-white text-lg hover:opacity-70 transition-colors underline">partnerships@heffring.online</a>
                                 </div>
                             </div>
 

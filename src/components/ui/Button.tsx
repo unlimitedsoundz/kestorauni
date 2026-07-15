@@ -40,7 +40,7 @@ const buttonSizes = {
 }
 
 /**
- * Standardized Button component for the Kestora University project.
+ * Standardized Button component for the Heffring University project.
  * Aliased from @aalto-dx/react-components.
  */
 const Button = React.forwardRef<HTMLElement, ButtonProps>(

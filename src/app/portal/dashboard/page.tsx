@@ -71,7 +71,7 @@ export default function DashboardPage() {
             if (studentRes.data) setStudent({ ...studentRes.data });
 
             // AUTO-ENSURE STUDENT ID IF MISSING OR INVALID
-            if (profileRes.data && (!profileRes.data.student_id || !profileRes.data.student_id.startsWith('KU') || profileRes.data.student_id.length !== 9)) {
+            if (profileRes.data && (!profileRes.data.student_id || !profileRes.data.student_id.startsWith('HU') || profileRes.data.student_id.length !== 9)) {
                 console.log('Dashboard: Student ID missing or invalid, generating...');
                 const { studentId } = await ensureStudentId();
                 if (studentId) {
@@ -81,7 +81,7 @@ export default function DashboardPage() {
 
             // Sync student record with profile if student ID is invalid or mismatched
             if (studentRes.data && profileRes.data?.student_id) {
-                const studentIdValid = studentRes.data.student_id.startsWith('KU') && studentRes.data.student_id.length === 9;
+                const studentIdValid = studentRes.data.student_id.startsWith('HU') && studentRes.data.student_id.length === 9;
                 if (!studentIdValid || studentRes.data.student_id !== profileRes.data.student_id) {
                     console.log('Dashboard: Updating student record with correct student_id from profile');
                     await supabase

@@ -8,7 +8,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: 'https://kestora.online/',
+    canonical: 'https://heffring.online/',
   },
 };
 
@@ -21,9 +21,9 @@ export default async function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "Kestora University",
-            "alternateName": "Kestora University Helsinki Campus",
-            "url": "https://kestora.online"
+            "name": "Heffring University",
+            "alternateName": "Heffring University Helsinki Campus",
+            "url": "https://heffring.online"
           })
         }}
       />

@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const root = 'E:\\Cannogacollege';
@@ -50,30 +50,30 @@ for (const file of files) {
   const replacements = [];
   
   // Brand name replacements
-  replacements.push(['Cannoga College', 'Kestora University']);
+  replacements.push(['Cannoga College', 'Heffring University']);
   
   // URL replacements
-  replacements.push(['cannogacollege\\.ca', 'kestora.online']);
-  replacements.push(['kestora\\.fi', 'kestora.online']);
+  replacements.push(['cannogacollege\\.ca', 'heffring.online']);
+  replacements.push(['heffring\\.fi', 'heffring.online']);
   
   // Logo replacements
-  replacements.push(['logo-cannoga\\.png', 'logo-kestora.png']);
+  replacements.push(['logo-cannoga\\.png', 'logo-heffring.png']);
   
   // Email replacements
-  replacements.push(['info@cannogacollege\\.ca', 'info@kestora.online']);
-  replacements.push(['admissions@cannogacollege\\.ca', 'admissions@kestora.online']);
-  replacements.push(['admissions@kestora\\.fi', 'admissions@kestora.online']);
+  replacements.push(['info@cannogacollege\\.ca', 'info@heffring.online']);
+  replacements.push(['admissions@cannogacollege\\.ca', 'admissions@heffring.online']);
+  replacements.push(['admissions@heffring\\.fi', 'admissions@heffring.online']);
   
   // Address replacements
-  replacements.push(['2368 Midway Ave', 'Pohjoisesplanadi 51']);
-  replacements.push(['Ottawa, ON K2B 5J8', '00150 Helsinki, Uusimaa']);
+  replacements.push(['2368 Midway Ave', 'Kaarrostie 38']);
+  replacements.push(['Ottawa, ON K2B 5J8', '00960 Helsinki, Uusimaa']);
   replacements.push(['Ottawa, ON', 'Helsinki, Uusimaa']);
-  replacements.push(['K2B 5J8', '00150']);
+  replacements.push(['K2B 5J8', '00960']);
   
   // Ottawa -> Helsinki (but preserve some specific cases)
   // We'll do a targeted replacement that avoids "Ottawa" in certain URLs
-  replacements.push(['Cannoga College – Ottawa Campus', 'Kestora University – Helsinki Campus']);
-  replacements.push(['Cannoga College Ottawa', 'Kestora University Helsinki Campus']);
+  replacements.push(['Cannoga College – Ottawa Campus', 'Heffring University – Helsinki Campus']);
+  replacements.push(['Cannoga College Ottawa', 'Heffring University Helsinki Campus']);
   
   // Specific Ottawa -> Helsinki replacements
   replacements.push(['our Ottawa Campus', 'our Helsinki Campus']);
@@ -98,3 +98,4 @@ for (const file of files) {
 }
 
 console.log(`\nTotal files changed: ${changed}`);
+

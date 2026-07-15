@@ -44,7 +44,7 @@ export async function ensureStudentId() {
         .single();
 
     const isValidStudentId = (id: string | undefined) => {
-        return !!id && id.startsWith('KU') && id.length === 9;
+        return !!id && id.startsWith('HU') && id.length === 9;
     };
 
     if (!isValidStudentId(profile?.student_id)) {

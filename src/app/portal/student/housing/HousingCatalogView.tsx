@@ -209,7 +209,7 @@ export const BUILDINGS_CATALOG: BuildingCatalog[] = [
     {
         id: "myrsky-kampus",
         name: "Myrsky Kampus",
-        location: "Kestora University, Helsinki",
+        location: "Heffring University, Helsinki",
         mainImages: [
             "/images/housing/Myskry/2-santakuja3.jpg",
             "/images/housing/Myskry/1-santakuja3.jpg"

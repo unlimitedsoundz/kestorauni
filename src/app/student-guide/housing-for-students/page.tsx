@@ -7,10 +7,10 @@ import { ContentBox } from '@/components/ui/ContentBox';
 import { Highlight } from '@/components/ui/Highlight';
 
 export const metadata = {
-    title: 'Housing for Students | Kestora University',
-    description: 'Find information about student housing, apartments, and rental options for students studying at Kestora University in Helsinki, Finland.',
+    title: 'Housing for Students | Heffring University',
+    description: 'Find information about student housing, apartments, and rental options for students studying at Heffring University in Helsinki, Finland.',
     alternates: {
-        canonical: 'https://kestora.online/student-guide/housing-for-students/',
+        canonical: 'https://heffring.online/student-guide/housing-for-students/',
     },
 };
 
@@ -31,7 +31,7 @@ export default function HousingGuidePage() {
                     body="Finding a comfortable place to live is essential for your academic success. This guide covers student housing options and the Helsinki rental market."
                     backgroundColor="#ffc341"
                     tinted
-                    lightText={false}
+                    lightText={true}
                     breadcrumbs={[
                         { label: 'Home', href: '/' },
                         { label: 'Student Guide', href: '/student-guide' },

@@ -30,10 +30,10 @@ export async function generateMetadata({ params }: Props) {
     }
 
     return {
-        title: `${school.name} — Kestora University | Research & Programmes`,
-        description: school.description || `Explore the ${school.name} at Kestora University. Departments, research, and degree programmes.`,
+        title: `${school.name} — Heffring University | Research & Programmes`,
+        description: school.description || `Explore the ${school.name} at Heffring University. Departments, research, and degree programmes.`,
         alternates: {
-            canonical: `https://kestora.online/schools/${slug}/`,
+            canonical: `https://heffring.online/schools/${slug}/`,
         },
     };
 }
@@ -193,7 +193,7 @@ export default async function SchoolDetails({ params }: Props) {
                                             fallbackSrc={school.imageUrl || '/images/placeholders/design.png'}
                                             fill
                                             className="object-cover object-top"
-                                            alt={`Study ${course.title} at Kestora University`}
+                                            alt={`Study ${course.title} at Heffring University`}
                                             sizes="(max-width: 768px) 100vw, 25vw"
                                         />
                                         <span className="absolute top-2 right-2 bg-white/90 text-xs font-bold px-2 py-1 rounded text-neutral-800 z-10">
@@ -341,19 +341,19 @@ export default async function SchoolDetails({ params }: Props) {
                             <div className="space-y-8">
                                 <div className="flex gap-4 items-start">
                                     <div className="bg-neutral-100 p-10 border border-black">
-                                        <p className="font-bold text-lg">Kestora University – Helsinki Campus</p>
-                                        <p className="font-medium text-neutral-800">Pohjoisesplanadi 51, 00150 Helsinki, Uusimaa, Finland</p>
+                                        <p className="font-bold text-lg">Heffring University – Helsinki Campus</p>
+                                        <p className="font-medium text-neutral-800">Kaarrostie 38, 00960 Helsinki, Uusimaa, Finland</p>
                                     </div>
                                 </div>
                                 <div className="space-y-4">
                                     <div className="flex gap-4 items-center">
-                                        <span className="font-medium">General: {school.slug}@kestora.online</span>
+                                        <span className="font-medium">General: {school.slug}@heffring.online</span>
                                     </div>
                                     <div className="flex gap-4 items-center">
-                                        <span className="font-medium">Admissions: {school.slug}.admissions@kestora.online</span>
+                                        <span className="font-medium">Admissions: {school.slug}.admissions@heffring.online</span>
                                     </div>
                                     <div className="flex gap-4 items-center">
-                                        <span className="font-medium">Partnerships: {school.slug}.partners@kestora.online</span>
+                                        <span className="font-medium">Partnerships: {school.slug}.partners@heffring.online</span>
                                     </div>
                                 </div>
                                 <Link href="/contact" className="inline-flex items-center gap-2 font-bold group">

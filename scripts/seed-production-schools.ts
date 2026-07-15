@@ -198,7 +198,7 @@ async function seed() {
                 schoolId,
                 departmentId,
                 language: 'English',
-                description: `Official ${course.title} programme at Kestora University.`,
+                description: `Official ${course.title} programme at Heffring University.`,
                 careerPaths: 'Diverse opportunities in global industries.',
             }).select('id').single();
 

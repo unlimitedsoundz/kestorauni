@@ -489,6 +489,7 @@ export type Application = {
   id: string;
   user_id: string;
   course_id: string;
+  intake?: string;
   status: ApplicationStatus;
   personal_info: {
     firstName: string;
@@ -547,6 +548,8 @@ export type Semester = {
   startDate: string;
   endDate: string;
   isActive: boolean;
+  status?: string;
+  isCurrent?: boolean;
 }
 
 export type HousingBuilding = {

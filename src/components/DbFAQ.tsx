@@ -16,8 +16,8 @@ export default function DbFAQ({ pageSlug, fallbackFaqs, refreshKey }: DbFAQProps
             return text
                 .replace(/Flywire/gi, 'our secure payment gateway')
                 .replace(/https:\/\/www\.flywire\.com\//gi, '#')
-                .replace(/Kestora University/gi, 'Kestora University')
-                .replace(/Kestora/gi, 'Kestora University')
+                .replace(/Heffring University/gi, 'Heffring University')
+                .replace(/Heffring/gi, 'Heffring University')
                 .replace(/Ottawa, Canada/gi, 'Helsinki, Finland')
                 .replace(/Ottawa Canada/gi, 'Helsinki, Finland')
                 .replace(/\bOttawa\b/gi, 'Helsinki')

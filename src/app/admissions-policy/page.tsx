@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import { Link } from "@aalto-dx/react-components";
 
 export const metadata: Metadata = {
-    title: 'Admissions Policy — Kestora University',
-    description: 'The Admissions Policy of Kestora University defines the principles, criteria, and procedures governing admission to Bachelor\'s and Master\'s programmes.',
+    title: 'Admissions Policy — Heffring University',
+    description: 'The Admissions Policy of Heffring University defines the principles, criteria, and procedures governing admission to Bachelor\'s and Master\'s programmes.',
     alternates: {
-        canonical: 'https://kestora.online/admissions-policy/',
+        canonical: 'https://heffring.online/admissions-policy/',
     },
 };
 
@@ -18,7 +18,7 @@ export default function AdmissionsPolicyPage() {
                     <p className="text-xs font-mono uppercase tracking-[0.3em] text-[#f3e600] mb-4">Official Policy</p>
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Admissions Policy</h1>
                     <p className="text-neutral-400 text-lg max-w-2xl">
-                        Defining the principles, criteria, and procedures governing admission to all programmes at Kestora University.
+                        Defining the principles, criteria, and procedures governing admission to all programmes at Heffring University.
                     </p>
                 </div>
             </section>
@@ -35,7 +35,7 @@ export default function AdmissionsPolicyPage() {
                                 <h2 className="text-2xl font-bold">Purpose</h2>
                             </div>
                             <p className="text-black leading-relaxed pl-14">
-                                The Admissions Policy of Kestora University defines the principles, criteria, and procedures governing admission to Bachelor&apos;s and Master&apos;s programmes. The policy ensures fairness, transparency, and equal opportunity for all applicants.
+                                The Admissions Policy of Heffring University defines the principles, criteria, and procedures governing admission to Bachelor&apos;s and Master&apos;s programmes. The policy ensures fairness, transparency, and equal opportunity for all applicants.
                             </p>
                         </div>
 
@@ -79,7 +79,7 @@ export default function AdmissionsPolicyPage() {
                                 <h2 className="text-2xl font-bold">General Admission Principles</h2>
                             </div>
                             <div className="pl-14">
-                                <p className="text-black mb-4">Kestora University:</p>
+                                <p className="text-black mb-4">Heffring University:</p>
                                 <ul className="space-y-2">
                                     <li className="flex items-start gap-3 text-black">
                                         <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 shrink-0"></span>
@@ -164,7 +164,7 @@ export default function AdmissionsPolicyPage() {
                             <ul className="pl-14 space-y-2">
                                 <li className="flex items-start gap-3 text-black">
                                     <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 shrink-0"></span>
-                                    Applications are submitted online through the official Kestora University application portal
+                                    Applications are submitted online through the official Heffring University application portal
                                 </li>
                                 <li className="flex items-start gap-3 text-black">
                                     <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 shrink-0"></span>
@@ -206,7 +206,7 @@ export default function AdmissionsPolicyPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <p className="text-black mb-3">Kestora University reserves the right to:</p>
+                                    <p className="text-black mb-3">Heffring University reserves the right to:</p>
                                     <ul className="space-y-2">
                                         <li className="flex items-start gap-3 text-black">
                                             <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 shrink-0"></span>
@@ -291,7 +291,7 @@ export default function AdmissionsPolicyPage() {
                                 <h2 className="text-2xl font-bold">Policy Review</h2>
                             </div>
                             <p className="text-black leading-relaxed pl-14">
-                                This policy is reviewed periodically and may be updated. The latest version is published on the Kestora University website.
+                                This policy is reviewed periodically and may be updated. The latest version is published on the Heffring University website.
                             </p>
                         </div>
 

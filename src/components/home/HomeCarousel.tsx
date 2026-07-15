@@ -16,8 +16,8 @@ interface Slide {
 const slides: Slide[] = [
     {
         title: "The future you want is yours to make",
-        body: "With practical, hands-on learning, Kestora University prepares you for success. Explore our programs and discover your potential in the heart of Helsinki, Finland.",
-        image: "/images/kestora-hero-new.png",
+        body: "With practical, hands-on learning, Heffring University prepares you for success. Explore our programs and discover your potential in the heart of Helsinki, Finland.",
+        image: "/images/heffring-hero-new.png",
         btnText: "Start your application",
         btnHref: "/admissions"
     },

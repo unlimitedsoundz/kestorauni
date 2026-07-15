@@ -204,7 +204,7 @@ export default function PayGoWireCheckout({
         if (selectedMethod?.id === 'usd_wire') { rate = 0.73; localCurrency = 'USD'; }
         else if (selectedMethod?.id === 'eur_wire') { rate = 0.68; localCurrency = 'EUR'; }
         else if (selectedMethod?.id === 'gbp_wire') { rate = 0.58; localCurrency = 'GBP'; }
-        else if (selectedCountry === 'Nigeria') { rate = 979.09; localCurrency = 'NGN'; }
+        else if (selectedCountry === 'Nigeria') { rate = 1620.50; localCurrency = 'NGN'; }
         else if (selectedCountry === 'India') { rate = 61.42; localCurrency = 'INR'; }
         else if (selectedCountry === 'United States') { rate = 0.73; localCurrency = 'USD'; }
         else if (selectedCountry === 'United Arab Emirates') { rate = 2.69; localCurrency = 'AED'; }
@@ -301,7 +301,7 @@ export default function PayGoWireCheckout({
                     </div>
 
                     <div className="flex flex-col text-right">
-                        <span className="text-black uppercase tracking-widest mb-0.5">Kestora University receives</span>
+                        <span className="text-black uppercase tracking-widest mb-0.5">Heffring University receives</span>
                         <span className="font-normal text-black text-sm md:text-base">
                             € {amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
@@ -538,7 +538,7 @@ export default function PayGoWireCheckout({
                         <button
                             onClick={() => {
                                 if (selectedMethod?.id === 'flutterwave_uae' || selectedMethod?.id === 'flutterwave_cm_momo') {
-                                    window.open('https://flutterwave.com/pay/Kestora', '_blank');
+                                    window.open('https://flutterwave.com/pay/Heffring', '_blank');
                                     handleConfirmPayment();
                                 } else if (selectedMethod?.id === 'ng_bank' || selectedMethod?.id === 'usd_wire' || selectedMethod?.id === 'eur_wire' || selectedMethod?.id === 'gbp_wire' || selectedMethod?.id === 'wire' || selectedMethod?.id === 'sepa') {
                                     handleStepChange('BANK_INSTRUCTIONS');

@@ -17,10 +17,10 @@ const sections = [
 ];
 
 export const metadata = {
-    title: 'How to Apply | Kestora University',
-    description: 'Step-by-step guide to applying to Kestora University. Deadlines, requirements, and admission procedures.',
+    title: 'How to Apply | Heffring University',
+    description: 'Step-by-step guide to applying to Heffring University. Deadlines, requirements, and admission procedures.',
     alternates: {
-        canonical: 'https://kestora.online/admissions/application-process/',
+        canonical: 'https://heffring.online/admissions/application-process/',
     },
 };
 
@@ -67,7 +67,7 @@ export default function ApplicationProcessPage() {
                             className="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed"
                             pageSlug={pageSlug}
                             sectionKey="hero_subtitle"
-                            fallbackContent={getSectionDefault('hero_subtitle') || 'Follow our step-by-step guide to ensure a smooth application to Kestora University.'}
+                            fallbackContent={getSectionDefault('hero_subtitle') || 'Follow our step-by-step guide to ensure a smooth application to Heffring University.'}
                         />
 
                         <div className="flex flex-wrap gap-4 pt-2">
@@ -105,7 +105,7 @@ export default function ApplicationProcessPage() {
                         <div className="relative w-full aspect-[4/3] lg:h-[520px] lg:aspect-auto overflow-hidden shadow-2xl">
                             <Image
                                 src="/images/admissions/application-process-hero.jpg"
-                                alt="Application Process at Kestora University"
+                                alt="Application Process at Heffring University"
                                 fill
                                 priority
                                 className="object-cover object-center opacity-90"
@@ -163,7 +163,7 @@ export default function ApplicationProcessPage() {
                     <section className="mt-4">
                         <CTA
                             title="Ready to Start Your Journey?"
-                            body="Join the next generation of global leaders at Kestora University. Create your portal account to begin your official application."
+                            body="Join the next generation of global leaders at Heffring University. Create your portal account to begin your official application."
                             cta={{
                                 label: "Create Portal Account",
                                 linkComponentProps: {

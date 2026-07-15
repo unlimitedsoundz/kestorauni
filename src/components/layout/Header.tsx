@@ -111,7 +111,7 @@ const navigation: NavItem[] = [
             { name: "Housing for Students", href: "/student-guide/housing-for-students" },
             { name: "Arrival Guide", href: "/student-guide/arrival" },
             { name: "Exchange Guide", href: "/student-guide/exchange" },
-            { name: "Chat with Students", href: "/student-guide/chat-with-kestora-students" },
+            { name: "Chat with Students", href: "/student-guide/chat-with-heffring-students" },
         ]
     },
     {
@@ -124,9 +124,9 @@ const navigation: NavItem[] = [
     },
     {
         name: "About",
-        href: "/about-kestora-university",
+        href: "/about-heffring-university",
         children: [
-            { name: "Our Story", href: "/about-kestora-university" },
+            { name: "Our Story", href: "/about-heffring-university" },
             { name: "News & Events", href: "/news" },
             { name: "Research Hub", href: "/research" },
             { name: "Careers", href: "/careers" },
@@ -171,7 +171,7 @@ export function Header() {
 
             <div className="container mx-auto px-4 h-28 flex items-center justify-between">
                 <Logo
-                    className="h-10 md:h-12 lg:mr-12 mr-4 shrink-0"
+                    className="h-14 md:h-16 lg:mr-12 mr-4 shrink-0"
                     onClick={() => setIsMobileMenuOpen(false)}
                 />
 
@@ -343,7 +343,7 @@ export function Header() {
 
                         <div className="p-4">
                             <Link href="/admissions/application-process" className="flex w-full h-[50px] items-center justify-center bg-[#000000] hover:bg-[#000000] text-white font-bold no-underline transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-                                Apply to Kestora
+                                Apply to Heffring
                             </Link>
                         </div>
                     </div>

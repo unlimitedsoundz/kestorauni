@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
@@ -234,7 +234,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                             onClick={() => setShowCheckout(false)}
                             className="absolute right-6 top-6 z-10 p-2 bg-neutral-100 rounded-full hover:bg-neutral-200 transition-colors"
                         >
-                            ✕
+                            âœ•
                         </button>
                         <div className="p-6 md:p-10">
                             <PayGoWireCheckout
@@ -268,13 +268,13 @@ export default function HousingDashboardClient({ student, application, assignmen
                             <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-black pb-6 gap-6 print:pb-4">
                                 <div className="space-y-4 print:space-y-2">
                                     <img 
-                                        src="/logo-kestora.png" 
-                                        alt="Kestora University" 
+                                        src="/images/logo-heffring.png" 
+                                        alt="Heffring University" 
                                         className="h-10 w-auto"
                                     />
                                     <div className="space-y-1">
                                         <p className="text-[10px] uppercase font-black text-black">Housing Office Receipt</p>
-                                        <p className="text-[10px] font-bold text-black opacity-60">Kestora University Official Document</p>
+                                        <p className="text-[10px] font-bold text-black opacity-60">Heffring University Official Document</p>
                                     </div>
                                 </div>
                                 <div className="text-left md:text-right space-y-1">
@@ -341,7 +341,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                                     >
                                         Print Official Receipt
                                     </button>
-                                    <p className="text-[9px] font-black uppercase text-black">Kestora University Housing Office</p>
+                                    <p className="text-[9px] font-black uppercase text-black">Heffring University Housing Office</p>
                                 </div>
                             </div>
                         </div>
@@ -619,7 +619,7 @@ export default function HousingDashboardClient({ student, application, assignmen
                                 <div className="space-y-4 pt-4 border-t border-neutral-200">
                                     <div>
                                         <h3 className="text-sm font-black uppercase text-black mb-1">Housing preference</h3>
-                                        <p className="text-xs text-black">You can apply for an apartment as soon as you are admitted to Kestora University.</p>
+                                        <p className="text-xs text-black">You can apply for an apartment as soon as you are admitted to Heffring University.</p>
                                         <p className="text-[10px] text-black mt-1">*Mandatory field</p>
                                     </div>
                                     
@@ -689,3 +689,4 @@ export default function HousingDashboardClient({ student, application, assignmen
         </div>
     );
 }
+

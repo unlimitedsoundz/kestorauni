@@ -11,7 +11,7 @@ ON CONFLICT (slug) DO NOTHING;
 -- Tuition FAQs
 INSERT INTO faq (question, answer, page_id, order_index, is_published)
 SELECT
-    'Who is required to pay tuition fees at Kestora University?',
+    'Who is required to pay tuition fees at Heffring University?',
     '<div className="space-y-4">
         <p>In accordance with Finnish legislation, tuition fees are mandatory for students who are <strong>not citizens</strong> of the European Union (EU), European Economic Area (EEA), or Switzerland, and who are enrolled in English-taught Bachelor''s or Master''s degree programmes.</p>
         <p><strong>Exemptions apply if you hold:</strong></p>
@@ -33,10 +33,10 @@ INSERT INTO faq (question, answer, page_id, order_index, is_published)
 SELECT
     'How do I pay my tuition fees?',
     '<div className="space-y-4">
-        <p>Kestora University uses a <strong>secure payment portal</strong> to process tuition payments securely and efficiently for international students.</p>
+        <p>Heffring University uses a <strong>secure payment portal</strong> to process tuition payments securely and efficiently for international students.</p>
         <p><strong>Steps to complete your payment:</strong></p>
         <ol className="list-decimal pl-5 space-y-2">
-            <li>Log in to your <strong>Kestora Applicant Portal</strong>.</li>
+            <li>Log in to your <strong>Heffring Applicant Portal</strong>.</li>
             <li>Navigate to the ''Payment'' section of your accepted application.</li>
             <li>Click ''Proceed to Payment'' to be redirected to the secure <strong>payment gateway</strong>.</li>
             <li>You must initiate the payment in the portal.</li>
@@ -63,7 +63,7 @@ SELECT
         <p><strong>Eligibility Criteria:</strong></p>
         <ul className="list-disc pl-5 space-y-2">
             <li>You must accept your study offer within <strong>14 days</strong> of receiving the admission letter.</li>
-            <li>The full (discounted) payment must reach Kestora University''s account by <strong>23 April 2026</strong>.</li>
+            <li>The full (discounted) payment must reach Heffring University''s account by <strong>23 April 2026</strong>.</li>
             <li>This discount applies ONLY to the first academic year and cannot be combined with other tuition fee waivers.</li>
         </ul>
         <p>If the payment is not received by 23 April 2026, the waiver is voided, and the full standard fee will be required to confirm your enrolment.</p>
@@ -108,7 +108,7 @@ INSERT INTO faq (question, answer, page_id, order_index, is_published)
 SELECT
     'How do I maintain my scholarship eligibility?',
     '<div className="space-y-4">
-        <p>Kestora University rewards academic dedication. Our continuing scholarships (available from the 2nd year onwards) are based on your performance during the previous academic year.</p>
+        <p>Heffring University rewards academic dedication. Our continuing scholarships (available from the 2nd year onwards) are based on your performance during the previous academic year.</p>
         <p><strong>To qualify for a 50% waiver on the next year''s fee:</strong></p>
         <ul className="list-disc pl-5 space-y-2">
             <li>You must complete at least <strong>55 ECTS credits</strong> within the academic year (Sept 1 – July 31).</li>
@@ -126,7 +126,7 @@ INSERT INTO faq (question, answer, page_id, order_index, is_published)
 SELECT
     'Is there a tuition deposit required?',
     '<div className="space-y-4">
-        <p>Yes. Depending on your program and applicant status, Kestora University may require a non-refundable tuition <strong>deposit</strong> to secure your place in the program after you receive an offer of admission.</p>
+        <p>Yes. Depending on your program and applicant status, Heffring University may require a non-refundable tuition <strong>deposit</strong> to secure your place in the program after you receive an offer of admission.</p>
         <p>This deposit is fully credited toward your first-year tuition fee. The specific deposit amount and the deadline for payment will be clearly outlined in your official Admission Letter and accepted offer details in the applicant portal.</p>
     </div>',
     (SELECT id FROM faq_pages WHERE slug = 'admissions/tuition'),
@@ -139,7 +139,7 @@ INSERT INTO faq (question, answer, page_id, order_index, is_published)
 SELECT
     'What are the admission requirements for bachelor''s programmes?',
     '<div className="space-y-4">
-        <p>Kestora University''s bachelor''s programmes are designed for motivated students ready to begin their academic journey in Helsinki, Finland.</p>
+        <p>Heffring University''s bachelor''s programmes are designed for motivated students ready to begin their academic journey in Helsinki, Finland.</p>
         <p><strong>General Requirements:</strong></p>
         <ul className="list-disc pl-5 space-y-2">
             <li>Completed secondary education (high school diploma or equivalent)</li>
@@ -233,7 +233,7 @@ INSERT INTO faq (question, answer, page_id, order_index, is_published)
 SELECT
     'How do I start my application?',
     '<div className="space-y-4">
-        <p>Beginning your application to Kestora University is straightforward.</p>
+        <p>Beginning your application to Heffring University is straightforward.</p>
         <p><strong>Steps to Apply:</strong></p>
         <ol className="list-decimal pl-5 space-y-2">
             <li><strong>Create an Account:</strong> Register on our application portal</li>

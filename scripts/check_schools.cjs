@@ -3,8 +3,8 @@ const url = "postgresql://postgres.mrqzlmkdhzwvbpljikjz:Guiliababy21%23@aws-1-eu
 const client = new Client({ connectionString: url });
 async function main() {
     await client.connect();
-    const r = await client.query(`SELECT id, name FROM "School" WHERE "name" ~* 'Cannoga|Penkka|Kestora' OR "name" ILIKE '%cannoga%' OR "name" ILIKE '%penkka%'`);
-    console.log('Schools matching Cannoga/Penkka/Kestora:');
+    const r = await client.query(`SELECT id, name FROM "School" WHERE "name" ~* 'Cannoga|Penkka|Heffring' OR "name" ILIKE '%cannoga%' OR "name" ILIKE '%penkka%'`);
+    console.log('Schools matching Cannoga/Penkka/Heffring:');
     r.rows.forEach(x => console.log('  ', x.id, '=>', x.name));
     const c = await client.query(`SELECT count(*)::int cnt, "name" FROM "Course" WHERE "name" ~* 'Cannoga|Penkka' GROUP BY "name" LIMIT 10`);
     console.log('Course names with Cannoga/Penkka:', c.rows);

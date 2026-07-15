@@ -64,7 +64,7 @@ export default function TermsContent() {
                             Terms of Use and Conditions
                         </h1>
                         <p className="text-lg text-neutral-600 leading-relaxed">
-                            The terms governing the use of Kestora University digital platforms and services.
+                            The terms governing the use of Heffring University digital platforms and services.
                         </p>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ export default function TermsContent() {
                                 <h2 className="text-2xl font-bold mb-8  pb-10 pl-2">1. Acceptance of Terms</h2>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        By accessing or using Kestora University websites digital platforms and services users agree to comply with these Terms of Use and Conditions. If a user does not agree with these terms they should refrain from using the services.
+                                        By accessing or using Heffring University websites digital platforms and services users agree to comply with these Terms of Use and Conditions. If a user does not agree with these terms they should refrain from using the services.
                                     </p>
                                 </div>
                             </section>
@@ -109,7 +109,7 @@ export default function TermsContent() {
                                 <h2 className="text-2xl font-bold mb-8  pb-10 pl-2">2. Scope of Application</h2>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        These Terms apply to all users of Kestora University digital services including prospective students enrolled students staff partners and visitors.
+                                        These Terms apply to all users of Heffring University digital services including prospective students enrolled students staff partners and visitors.
                                     </p>
                                 </div>
                             </section>
@@ -119,7 +119,7 @@ export default function TermsContent() {
                                 <h2 className="text-2xl font-bold mb-8  pb-10 pl-2">3. Use of Digital Services</h2>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        Users agree to use Kestora University services lawfully respectfully and in a manner that does not disrupt or harm systems content or other users.
+                                        Users agree to use Heffring University services lawfully respectfully and in a manner that does not disrupt or harm systems content or other users.
                                     </p>
                                     <p>
                                         Prohibited activities include unauthorised access misuse of data interference with services and any activity that violates applicable laws or institutional policies.
@@ -132,7 +132,7 @@ export default function TermsContent() {
                                 <h2 className="text-2xl font-bold mb-8  pb-10 pl-2">4. Intellectual Property</h2>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        All content on Kestora University websites including text images graphics logos documents and digital materials is the intellectual property of Kestora University or its licensors unless otherwise stated.
+                                        All content on Heffring University websites including text images graphics logos documents and digital materials is the intellectual property of Heffring University or its licensors unless otherwise stated.
                                     </p>
                                     <p>
                                         Content may not be copied reproduced modified distributed or used for commercial purposes without prior written permission.
@@ -148,7 +148,7 @@ export default function TermsContent() {
                                         Where users are permitted to submit content such as applications feedback or messages they are responsible for ensuring the accuracy legality and appropriateness of such content.
                                     </p>
                                     <p>
-                                        Kestora University reserves the right to remove or restrict content that violates these Terms or applicable laws.
+                                        Heffring University reserves the right to remove or restrict content that violates these Terms or applicable laws.
                                     </p>
                                 </div>
                             </section>
@@ -158,7 +158,7 @@ export default function TermsContent() {
                                 <h2 className="text-2xl font-bold mb-8  pb-10 pl-2">6. Availability of Services</h2>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        Kestora University aims to ensure continuous availability of its digital services but does not guarantee uninterrupted access. Services may be temporarily unavailable due to maintenance technical issues or external factors.
+                                        Heffring University aims to ensure continuous availability of its digital services but does not guarantee uninterrupted access. Services may be temporarily unavailable due to maintenance technical issues or external factors.
                                     </p>
                                 </div>
                             </section>
@@ -168,7 +168,7 @@ export default function TermsContent() {
                                 <h2 className="text-2xl font-bold mb-8  pb-10 pl-2">7. Limitation of Liability</h2>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        Kestora University is not liable for direct or indirect damages arising from the use or inability to use its digital services except where liability cannot be excluded under applicable law.
+                                        Heffring University is not liable for direct or indirect damages arising from the use or inability to use its digital services except where liability cannot be excluded under applicable law.
                                     </p>
                                 </div>
                             </section>
@@ -178,7 +178,7 @@ export default function TermsContent() {
                                 <h2 className="text-2xl font-bold mb-8  pb-10 pl-2">8. Data Protection</h2>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        The processing of personal data is governed by the Kestora University Privacy Policy. Users are encouraged to review the Privacy Policy to understand how personal data is handled.
+                                        The processing of personal data is governed by the Heffring University Privacy Policy. Users are encouraged to review the Privacy Policy to understand how personal data is handled.
                                     </p>
                                 </div>
                             </section>
@@ -188,7 +188,7 @@ export default function TermsContent() {
                                 <h2 className="text-2xl font-bold mb-8  pb-10 pl-2">9. External Links</h2>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        Kestora University websites may contain links to external websites. Kestora University is not responsible for the content or data protection practices of external sites.
+                                        Heffring University websites may contain links to external websites. Heffring University is not responsible for the content or data protection practices of external sites.
                                     </p>
                                 </div>
                             </section>
@@ -198,7 +198,7 @@ export default function TermsContent() {
                                 <h2 className="text-2xl font-bold mb-8  pb-10 pl-2">10. Changes to the Terms</h2>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        Kestora University may update these Terms of Use and Conditions at any time. Updated terms will be published on the official website and apply from the date of publication.
+                                        Heffring University may update these Terms of Use and Conditions at any time. Updated terms will be published on the official website and apply from the date of publication.
                                     </p>
                                 </div>
                             </section>
@@ -218,7 +218,7 @@ export default function TermsContent() {
                                 <h2 className="text-2xl font-bold mb-8  pb-10 pl-2">12. Contact Information</h2>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        For questions regarding these Terms of Use and Conditions please contact Kestora University through the official communication channels listed on the website.
+                                        For questions regarding these Terms of Use and Conditions please contact Heffring University through the official communication channels listed on the website.
                                     </p>
                                 </div>
                             </section>

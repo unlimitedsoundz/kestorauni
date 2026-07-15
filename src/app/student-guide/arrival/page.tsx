@@ -8,17 +8,17 @@ import { ContentBox } from '@/components/ui/ContentBox';
 import { CTA } from "@aalto-dx/react-modules";
 
 export const metadata = {
-    title: 'Arrival Guide | Kestora University',
-    description: 'Prepare for your journey to Kestora University. Enrolment, visa, housing, and settling in instructions.',
+    title: 'Arrival Guide | Heffring University',
+    description: 'Prepare for your journey to Heffring University. Enrolment, visa, housing, and settling in instructions.',
     alternates: {
-        canonical: 'https://kestora.online/student-guide/arrival/',
+        canonical: 'https://heffring.online/student-guide/arrival/',
     },
 };
 
 const sections = [
     { id: 'before-you-arrive', title: 'Before You Arrive', content: '' },
     { id: 'arriving', title: 'Arriving in the Country', content: '' },
-    { id: 'starting', title: 'Starting at Kestora', content: '' },
+    { id: 'starting', title: 'Starting at Heffring', content: '' },
     { id: 'living', title: 'Living & Studying', content: '' },
     { id: 'welcome', title: 'Welcome Message', content: '' },
 ];
@@ -31,7 +31,7 @@ export default function ArrivalGuidePage() {
             {/* Hero Section */}
             <Hero
                 title="Arrival Guide"
-                body="Starting your studies at Kestora University is an exciting step. This guide helps you prepare, settle in, and feel confident."
+                body="Starting your studies at Heffring University is an exciting step. This guide helps you prepare, settle in, and feel confident."
                 backgroundColor="#dc6ade"
                 tinted
                 lightText={true}
@@ -64,7 +64,7 @@ export default function ArrivalGuidePage() {
                             />
                             <Card
                                 title="Accommodation"
-                                body="Secure housing before arrival. Kestora assists with the application process for on-campus options."
+                                body="Secure housing before arrival. Heffring assists with the application process for on-campus options."
                                 badge={{ label: "Housing" }}
                             />
                             <Card
@@ -104,12 +104,12 @@ export default function ArrivalGuidePage() {
                         />
                     </section>
 
-                    {/* Starting at Kestora */}
+                    {/* Starting at Heffring */}
                     <section id="starting" className="scroll-mt-32">
                         <ContentBox
                             size="large"
                             icon="graduationCap"
-                            title="Starting at Kestora"
+                            title="Starting at Heffring"
                             body={
                                 <div className="grid md:grid-cols-2 gap-12 text-left">
                                     <div>
@@ -139,7 +139,7 @@ export default function ArrivalGuidePage() {
                             />
                             <Card
                                 title="Stay Connected"
-                                body="Check your Kestora email and student portal regularly for updates, schedules, and important announcements."
+                                body="Check your Heffring email and student portal regularly for updates, schedules, and important announcements."
                             />
                         </div>
                         <div className="mt-12">
@@ -161,7 +161,7 @@ export default function ArrivalGuidePage() {
                     <section id="welcome" className="scroll-mt-32">
                         <CTA
                             title="We Are Glad You Are Here"
-                            body="Arriving in a new place can feel overwhelming, but Kestora University is here to support you from arrival through graduation."
+                            body="Arriving in a new place can feel overwhelming, but Heffring University is here to support you from arrival through graduation."
                             cta={{
                                 label: "Explore Student Guide",
                                 linkComponentProps: {

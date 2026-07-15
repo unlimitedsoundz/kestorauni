@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Course } from '@/types/database';
 import { getTuitionFee, calculateDiscountedFee, mapSchoolToTuitionField } from '@/utils/tuition';
+import { CANONICAL_INTAKES } from '@/lib/intakes';
 import { createClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 
@@ -16,6 +17,7 @@ export default function CourseSelector({ initialCourses, initialSelected }: Cour
     const [searchQuery, setSearchQuery] = useState('');
     const [isSubmitting, setIsSubmitting] = useState<string | null>(null);
     const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
+    const [selectedIntake, setSelectedIntake] = useState<string>('Fall 2026');
     const router = useRouter();
     const supabase = createClient();
 
@@ -98,6 +100,16 @@ export default function CourseSelector({ initialCourses, initialSelected }: Cour
                 throw new Error(data.error);
             }
 
+            // Persist the chosen intake on the newly created application
+            try {
+                await supabase
+                    .from('applications')
+                    .update({ intake: selectedIntake })
+                    .eq('id', data.id);
+            } catch (intakeError) {
+                console.error('Failed to set intake on application:', intakeError);
+            }
+
             router.push(`/portal/application?id=${data.id}`);
         } catch (error: any) {
             console.error('Detailed Application Creation Error:', {
@@ -139,6 +151,21 @@ export default function CourseSelector({ initialCourses, initialSelected }: Cour
                             </button>
                         ))}
                     </div>
+                </div>
+
+                <div className="flex flex-col gap-2 w-full md:w-64">
+                    <span className="text-[11px] font-bold text-black">Intake</span>
+                    <select
+                        value={selectedIntake}
+                        onChange={(e) => setSelectedIntake(e.target.value)}
+                        className="bg-white border border-neutral-200 px-4 py-2 text-[11px] font-bold text-black focus:outline-none focus:border-black transition-colors w-full"
+                    >
+                        {CANONICAL_INTAKES.map((it) => (
+                            <option key={it.id} value={it.label}>
+                                {it.label} ({it.month})
+                            </option>
+                        ))}
+                    </select>
                 </div>
 
                 <div className="flex flex-col gap-2 w-full md:w-64">

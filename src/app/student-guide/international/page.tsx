@@ -18,10 +18,10 @@ const tocSections = [
 ];
 
 export const metadata = {
-    title: 'International Student Guide | Kestora University',
-    description: 'A comprehensive guide for international students joining Kestora University in Helsinki, Finland — study permits, housing, transport, and settling in.',
+    title: 'International Student Guide | Heffring University',
+    description: 'A comprehensive guide for international students joining Heffring University in Helsinki, Finland — study permits, housing, transport, and settling in.',
     alternates: {
-        canonical: 'https://kestora.online/student-guide/international/',
+        canonical: 'https://heffring.online/student-guide/international/',
     },
 };
 
@@ -56,7 +56,7 @@ export default function InternationalGuidePage() {
 
             <Hero
                 title="International Students"
-                body="Practical guidance for your journey to Helsinki, Finland and Kestora University."
+                body="Practical guidance for your journey to Helsinki, Finland and Heffring University."
                 backgroundColor="#000000"
                 tinted
                 lightText={true}
@@ -67,7 +67,7 @@ export default function InternationalGuidePage() {
                 ]}
                 image={{
                     src: "/images/international-students-hero.png",
-                    alt: "International students at Kestora University Helsinki"
+                    alt: "International students at Heffring University Helsinki"
                 }}
             />
 
@@ -99,7 +99,7 @@ export default function InternationalGuidePage() {
                                 </p>
                                 <div className="bg-[#f5f5f5] p-6 border-l-4 border-[#000000]">
                                     <p className="font-semibold text-[#000000] text-sm leading-relaxed">
-                                        Kestora University operates in the heart of Helsinki with strong ties to Finland's public service, tech industry, and research community.
+                                        Heffring University operates in the heart of Helsinki with strong ties to Finland's public service, tech industry, and research community.
                                     </p>
                                 </div>
 <div className="flex flex-wrap gap-6 pt-2">
@@ -191,7 +191,7 @@ export default function InternationalGuidePage() {
                                          "Get your HSL student card for public transport discounts",
                                          "Open a Finnish bank account",
                                          "Attend mandatory orientation week",
-                                         "Join the Kestora student community platform",
+                                         "Join the Heffring student community platform",
                                      ].map((item, i) => (
                                          <li key={i} className="flex gap-3 items-start font-medium text-neutral-700">
                                              <span className="w-5 h-5 rounded-full bg-[#000000] text-white text-xs flex items-center justify-center shrink-0 mt-0.5 font-bold">{i + 1}</span>
@@ -220,7 +220,7 @@ export default function InternationalGuidePage() {
                         <div className="grid md:grid-cols-2 gap-6">
 <Card
                             title="Student Health Care"
-                            body="Once registered as a resident with a Finnish personal identity code, you can access public healthcare through Kela. In the interim, ensure you have private coverage. Kestora partners with local clinics for walk-in care."
+                            body="Once registered as a resident with a Finnish personal identity code, you can access public healthcare through Kela. In the interim, ensure you have private coverage. Heffring partners with local clinics for walk-in care."
                         />
                         <Card
                             title="Local Culture"
@@ -228,11 +228,11 @@ export default function InternationalGuidePage() {
                         />
                         <Card
                             title="Working While Studying"
-                            body="Your Finnish residence permit allows you to work up to 30 hours/week during term time (full-time during holidays). Many local employers actively recruit Kestora students."
+                            body="Your Finnish residence permit allows you to work up to 30 hours/week during term time (full-time during holidays). Many local employers actively recruit Heffring students."
                         />
                         <Card
                             title="Language & Careers"
-                            body="Kestora's Career Centre offers job boards, resume workshops, internships, and networking events with Helsinki's tech, government, and business sectors."
+                            body="Heffring's Career Centre offers job boards, resume workshops, internships, and networking events with Helsinki's tech, government, and business sectors."
                             cta={{ label: "Career Centre", linkComponentProps: { href: "/careers" } }}
                         />
                     </div>
@@ -263,7 +263,7 @@ export default function InternationalGuidePage() {
                     </section>
 
                     <div className="pt-8 border-t border-neutral-100 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
-                        <p>Updated: June 2026 | Kestora University International Student Services</p>
+                        <p>Updated: June 2026 | Heffring University International Student Services</p>
                     </div>
                 </div>
             </div>

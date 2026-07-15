@@ -2,10 +2,10 @@
 import PublicationList from './PublicationList';
 
 export const metadata = {
-    title: 'Research Publications — Kestora University | Peer-Reviewed Journals & Papers',
-    description: 'Explore peer-reviewed publications by Kestora University faculty and researchers. Sustainable construction, smart grids, urban planning, and circular economy research.',
+    title: 'Research Publications — Heffring University | Peer-Reviewed Journals & Papers',
+    description: 'Explore peer-reviewed publications by Heffring University faculty and researchers. Sustainable construction, smart grids, urban planning, and circular economy research.',
     alternates: {
-        canonical: 'https://kestora.online/research/publications/',
+        canonical: 'https://heffring.online/research/publications/',
     },
 };
 

@@ -106,7 +106,7 @@ export default function AdminPage() {
         <div className="space-y-8 md:space-y-10 animate-in fade-in duration-500">
             <div>
                 <h1 className="text-3xl font-extrabold text-neutral-900 tracking-tight">System Overview</h1>
-                <p className="text-neutral-500 mt-2">Welcome back. Here's what's happening at Kestora University.</p>
+                <p className="text-neutral-500 mt-2">Welcome back. Here's what's happening at Heffring University.</p>
             </div>
 
             {/* Quick Stats Grid */}

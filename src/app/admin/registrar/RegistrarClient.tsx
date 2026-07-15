@@ -314,7 +314,11 @@ export default function RegistrarClient({
                                         <div className="flex justify-between items-start mb-6">
                                             <div>
                                                 <p className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1">
-                                                    {window.semester?.name}
+                                                    {(() => {
+                                                        const name = window.semester?.name || '';
+                                                        const year = window.semester?.start_date ? new Date(window.semester.start_date).getFullYear() : null;
+                                                        return year && !name.includes(String(year)) ? `${name} ${year}` : name;
+                                                    })()}
                                                 </p>
                                                 <h3 className="text-lg font-bold text-neutral-900">Course Selection Period</h3>
                                             </div>
@@ -1166,7 +1170,11 @@ export default function RegistrarClient({
                                 >
                                     <option value="">Select Term...</option>
                                     {semesters.map(s => (
-                                        <option key={s.id} value={s.id}>{s.name}</option>
+                                        <option key={s.id} value={s.id}>{(() => {
+                                            const name = s.name;
+                                            const year = s.start_date ? new Date(s.start_date).getFullYear() : null;
+                                            return year && !name.includes(String(year)) ? `${name} ${year}` : name;
+                                        })()}</option>
                                     ))}
                                 </select>
                             </div>

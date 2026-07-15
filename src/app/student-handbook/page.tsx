@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import { Link } from "@aalto-dx/react-components";
 
 export const metadata: Metadata = {
-    title: 'Student Handbook 2026–2027 — Kestora University',
-    description: 'The official Kestora University Student Handbook covering academic policies, student responsibilities, services, and institutional regulations for the 2026–2027 academic year.',
+    title: 'Student Handbook 2026–2027 — Heffring University',
+    description: 'The official Heffring University Student Handbook covering academic policies, student responsibilities, services, and institutional regulations for the 2026–2027 academic year.',
     alternates: {
-        canonical: 'https://kestora.online/student-handbook/',
+        canonical: 'https://heffring.online/student-handbook/',
     },
 };
 
@@ -38,17 +38,17 @@ export default function StudentHandbookPage() {
                     <div>
                         <div className="flex items-baseline gap-4 mb-4"><Num n={1} /><h2 className="text-2xl font-bold">Welcome Message</h2></div>
                         <div className="pl-14 space-y-4 text-black leading-relaxed">
-                            <p>Welcome to Kestora University.</p>
-                            <p>This Student Handbook is the official guide to academic life, institutional policies, student responsibilities, and available services at Kestora University. All students are required to read, understand, and comply with the regulations outlined in this handbook.</p>
-                            <p>This handbook forms part of the regulatory framework of Kestora University and applies to all enrolled Bachelor&apos;s and Master&apos;s students.</p>
+                            <p>Welcome to Heffring University.</p>
+                            <p>This Student Handbook is the official guide to academic life, institutional policies, student responsibilities, and available services at Heffring University. All students are required to read, understand, and comply with the regulations outlined in this handbook.</p>
+                            <p>This handbook forms part of the regulatory framework of Heffring University and applies to all enrolled Bachelor&apos;s and Master&apos;s students.</p>
                         </div>
                     </div>
 
                     {/* 2 */}
                     <div>
-                        <div className="flex items-baseline gap-4 mb-4"><Num n={2} /><h2 className="text-2xl font-bold">About Kestora University</h2></div>
+                        <div className="flex items-baseline gap-4 mb-4"><Num n={2} /><h2 className="text-2xl font-bold">About Heffring University</h2></div>
                         <div className="pl-14 space-y-4">
-                            <p className="text-black leading-relaxed">Kestora University is a higher education institution offering internationally oriented Bachelor&apos;s and Master&apos;s programmes. The University is committed to:</p>
+                            <p className="text-black leading-relaxed">Heffring University is a higher education institution offering internationally oriented Bachelor&apos;s and Master&apos;s programmes. The University is committed to:</p>
                             <ul className="space-y-2">
                                 <Li>Academic excellence</Li>
                                 <Li>Ethical conduct</Li>
@@ -56,7 +56,7 @@ export default function StudentHandbookPage() {
                                 <Li>Student-centred learning</Li>
                                 <Li>International accessibility</Li>
                             </ul>
-                            <p className="text-black">Kestora University operates in accordance with recognized academic standards and institutional best practices.</p>
+                            <p className="text-black">Heffring University operates in accordance with recognized academic standards and institutional best practices.</p>
                         </div>
                     </div>
 
@@ -123,7 +123,7 @@ export default function StudentHandbookPage() {
                         <div className="pl-14 space-y-8">
                             <div>
                                 <h3 className="font-bold text-lg mb-3">4.1 Programmes & Degrees</h3>
-                                <p className="text-black mb-3">Kestora University offers Bachelor&apos;s and Master&apos;s degrees. Each programme defines:</p>
+                                <p className="text-black mb-3">Heffring University offers Bachelor&apos;s and Master&apos;s degrees. Each programme defines:</p>
                                 <ul className="space-y-2">
                                     <Li>Learning outcomes</Li>
                                     <Li>Credit requirements</Li>
@@ -288,7 +288,7 @@ export default function StudentHandbookPage() {
                     <div>
                         <div className="flex items-baseline gap-4 mb-4"><Num n={11} /><h2 className="text-2xl font-bold">Housing & Campus Services</h2></div>
                         <div className="pl-14">
-                            <p className="text-black mb-3">Where applicable, Kestora University may offer:</p>
+                            <p className="text-black mb-3">Where applicable, Heffring University may offer:</p>
                             <ul className="space-y-2">
                                 <Li>Housing assistance or placements</Li>
                                 <Li>IT services</Li>
@@ -384,7 +384,7 @@ export default function StudentHandbookPage() {
                     <div>
                         <div className="flex items-baseline gap-4 mb-4"><Num n={17} /><h2 className="text-2xl font-bold">Amendments & Governance</h2></div>
                         <div className="pl-14">
-                            <p className="text-black mb-3">Kestora University reserves the right to:</p>
+                            <p className="text-black mb-3">Heffring University reserves the right to:</p>
                             <ul className="space-y-2">
                                 <Li>Update this handbook</Li>
                                 <Li>Amend regulations</Li>

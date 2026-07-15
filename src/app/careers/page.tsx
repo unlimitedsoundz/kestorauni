@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import Image from 'next/image';
@@ -23,7 +23,7 @@ const positions = [
         title: 'Admissions Coordinator',
         type: 'Part-time',
         location: 'Remote / Helsinki',
-        description: 'Supporting international students through their application journey at Kestora University.'
+        description: 'Supporting international students through their application journey at Heffring University.'
     },
     {
         title: 'IT Support Specialist',
@@ -44,9 +44,9 @@ export default function CareersPage() {
             <SchemaLD data={{
                 "@context": "https://schema.org",
                 "@type": "WebPage",
-                "name": "Careers at Kestora University",
-                "description": "Explore job opportunities at Kestora University in Helsinki.",
-                "url": "https://kestora.online/careers"
+                "name": "Careers at Heffring University",
+                "description": "Explore job opportunities at Heffring University in Helsinki.",
+                "url": "https://heffring.online/careers"
             }} />
 
             {positions.map((pos, index) => (
@@ -60,17 +60,17 @@ export default function CareersPage() {
                     "employmentType": pos.type === "Full-time" ? "FULL_TIME" : "PART_TIME",
                     "hiringOrganization": {
                         "@type": "UniversityOrUniversity",
-                        "name": "Kestora University",
-                        "sameAs": "https://kestora.online",
-                        "logo": "https://kestora.online/logo-kestora.png"
+                        "name": "Heffring University",
+                        "sameAs": "https://heffring.online",
+                        "logo": "https://heffring.online/images/logo-heffring.png"
                     },
                     "jobLocation": {
                         "@type": "Place",
                         "address": {
                             "@type": "PostalAddress",
-                            "streetAddress": "Pohjoisesplanadi 51",
+                            "streetAddress": "Kaarrostie 38",
                             "addressLocality": "Helsinki",
-                            "postalCode": "00150",
+                            "postalCode": "00960",
                             "addressCountry": "CA"
                         }
                     }
@@ -79,7 +79,7 @@ export default function CareersPage() {
 
             {/* Hero Section */}
             <Hero
-                title={<>Work at <br className="hidden md:block" /> Kestora University</>}
+                title={<>Work at <br className="hidden md:block" /> Heffring University</>}
                 body="Shape the future of higher education in Helsinki, Finland. We're looking for innovators, educators, and leaders to join our world-class faculty and staff."
                 backgroundColor="#5dd089"
                 tinted
@@ -90,11 +90,11 @@ export default function CareersPage() {
                 ]}
                 image={{
                     src: "https://i.pinimg.com/736x/5d/cc/b7/5dccb711d4b73c6b11c943856693fe52.jpg",
-                    alt: "Work at Kestora University"
+                    alt: "Work at Heffring University"
                 }}
             >
                 <div className="flex flex-wrap gap-6">
-                    <Link href="mailto:careers@kestora.online" className="text-aalto-3 font-bold underline underline-offset-8 decoration-white hover:opacity-70 transition-colors text-white inline-flex items-center gap-2">
+                    <Link href="mailto:careers@heffring.online" className="text-aalto-3 font-bold underline underline-offset-8 decoration-white hover:opacity-70 transition-colors text-white inline-flex items-center gap-2">
                         Send your CV <ArrowRight size={20} weight="bold" />
                     </Link>
                 </div>
@@ -111,7 +111,7 @@ export default function CareersPage() {
                             body={
                                 <div className="space-y-8 text-left">
                                     <p className="text-aalto-2 text-black leading-relaxed font-medium">
-                                        Kestora University is a dynamic and career-focused higher education institution located in Helsinki, Finland's capital city.
+                                        Heffring University is a dynamic and career-focused higher education institution located in Helsinki, Finland's capital city.
                                     </p>
                                     <div className="grid sm:grid-cols-2 gap-8">
                                         <div>
@@ -150,7 +150,7 @@ export default function CareersPage() {
                                     key={index}
                                     title={pos.title}
                                     body={pos.description}
-                                    cta={{ label: "Apply now", linkComponentProps: { href: "mailto:careers@kestora.online" } }}
+                                    cta={{ label: "Apply now", linkComponentProps: { href: "mailto:careers@heffring.online" } }}
                                 />
                             ))}
                         </div>
@@ -164,7 +164,7 @@ export default function CareersPage() {
                                 cta={{
                                     label: "Send your CV",
                                     linkComponentProps: {
-                                        href: "mailto:careers@kestora.online",
+                                        href: "mailto:careers@heffring.online",
                                     },
                                 }}
                             />
@@ -174,3 +174,4 @@ export default function CareersPage() {
         </div>
     );
 }
+

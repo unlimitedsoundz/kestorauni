@@ -113,7 +113,7 @@ export default function DynamicNewsSection({
                 
                 let href = `/news/${item.slug}`;
                 if (isEvent) href = `/news/events/${item.slug}`;
-                if (isBlog) href = `https://ourblogs.kestora.online/${item.slug}`;
+                if (isBlog) href = `https://ourblogs.heffring.online/${item.slug}`;
 
                 const dateLabel = formatToDDMMYYYY(item.sortDate);
                 let label = 'News';

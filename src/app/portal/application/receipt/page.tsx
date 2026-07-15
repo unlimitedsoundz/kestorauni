@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { createClient } from '@/utils/supabase/client';
 import { notFound, useRouter, useSearchParams } from 'next/navigation';
@@ -179,7 +179,7 @@ function ReceiptContent() {
     const includeAncillary = payment?.ancillary_included ?? true;
     const totalAncillary = includeAncillary ? ancillaryFees.reduce((acc, item) => acc + item.amount, 0) : 0;
     const receiptTotal = (payment?.amount || 0);
-    const intake = admission?.intake || 'September Fall 2026';
+    const intake = admission?.intake || 'Fall 2026';
     const academicYear = admission?.academic_year || '2026/2027';
 
     const formatPaymentMethod = (methodId: string | undefined) => {
@@ -221,17 +221,17 @@ function ReceiptContent() {
                 <div className="mb-12">
                     <div className="relative w-32 h-8 mb-4">
                         <Image
-                            src="/logo-kestora.png"
-                            alt="Kestora University"
+                            src="/images/logo-heffring.png"
+                            alt="Heffring University"
                             fill
                             style={{ objectFit: 'contain', objectPosition: 'left center' }}
                         />
                     </div>
                     <div className="text-[13px] uppercase tracking-wider mb-1">Official Tuition Receipt</div>
                     <div className="text-[11px] leading-relaxed">
-                        Kestora University – Helsinki Campus<br />
-                        Pohjoisesplanadi 51, 00150 Helsinki, Uusimaa, Finland<br />
-                        financial.services@kestora.online
+                        Heffring University – Helsinki Campus<br />
+                        Kaarrostie 38, 00960 Helsinki, Uusimaa, Finland<br />
+                        financial.services@heffring.online
                     </div>
                 </div>
 
@@ -301,7 +301,7 @@ function ReceiptContent() {
                     </div>
                     
                     <p className="text-[10px] text-neutral-500 leading-relaxed max-w-prose mt-8">
-                        This is an official document of Kestora University. Verified through the Kestora SIS Gateway.
+                        This is an official document of Heffring University. Verified through the Heffring SIS Gateway.
                     </p>
                 </div>
 
@@ -347,3 +347,4 @@ export default function TuitionReceiptPage() {
         </Suspense>
     );
 }
+

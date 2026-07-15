@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import { Link } from "@aalto-dx/react-components";
 
 export const metadata: Metadata = {
-    title: 'Code of Conduct — Kestora University',
-    description: 'The Code of Conduct establishes standards of behavior expected of all members of the Kestora University community, ensuring a safe, respectful, and ethical environment.',
+    title: 'Code of Conduct — Heffring University',
+    description: 'The Code of Conduct establishes standards of behavior expected of all members of the Heffring University community, ensuring a safe, respectful, and ethical environment.',
     alternates: {
-        canonical: 'https://kestora.online/code-of-conduct/',
+        canonical: 'https://heffring.online/code-of-conduct/',
     },
 };
 
@@ -36,7 +36,7 @@ export default function CodeOfConductPage() {
                             </div>
                             <div className="pl-14">
                                 <p className="text-black leading-relaxed mb-4">
-                                    The Code of Conduct of Kestora University establishes standards of behavior expected of all members of the University community. It aims to ensure a safe, respectful, ethical, and academically focused environment that supports learning and institutional integrity.
+                                    The Code of Conduct of Heffring University establishes standards of behavior expected of all members of the University community. It aims to ensure a safe, respectful, ethical, and academically focused environment that supports learning and institutional integrity.
                                 </p>
                                 <p className="text-black mb-2 font-bold">This Code applies to conduct occurring:</p>
                                 <ul className="space-y-2">
@@ -54,7 +54,7 @@ export default function CodeOfConductPage() {
                                     </li>
                                     <li className="flex items-start gap-3 text-black">
                                         <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 shrink-0"></span>
-                                        In any context where a student represents Kestora University
+                                        In any context where a student represents Heffring University
                                     </li>
                                 </ul>
                             </div>
@@ -97,7 +97,7 @@ export default function CodeOfConductPage() {
                                 <h2 className="text-2xl font-bold">Core Values</h2>
                             </div>
                             <div className="pl-14">
-                                <p className="text-black mb-4">Members of the Kestora University community are expected to uphold the following values:</p>
+                                <p className="text-black mb-4">Members of the Heffring University community are expected to uphold the following values:</p>
                                 <ul className="space-y-2">
                                     <li className="flex items-start gap-3 text-black">
                                         <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 shrink-0"></span>
@@ -256,7 +256,7 @@ export default function CodeOfConductPage() {
                                         </li>
                                         <li className="flex items-start gap-3 text-black">
                                             <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 shrink-0"></span>
-                                            Misrepresentation of affiliation with Kestora University
+                                            Misrepresentation of affiliation with Heffring University
                                         </li>
                                     </ul>
                                 </div>
@@ -536,7 +536,7 @@ export default function CodeOfConductPage() {
                                 <h2 className="text-2xl font-bold">Non-Retaliation</h2>
                             </div>
                             <div className="pl-14">
-                                <p className="text-black mb-2">Kestora University prohibits retaliation against individuals who:</p>
+                                <p className="text-black mb-2">Heffring University prohibits retaliation against individuals who:</p>
                                 <ul className="space-y-2 mb-2">
                                     <li className="flex items-start gap-3 text-black">
                                         <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 shrink-0"></span>
@@ -584,7 +584,7 @@ export default function CodeOfConductPage() {
                                 <h2 className="text-2xl font-bold">Amendments and Review</h2>
                             </div>
                             <div className="pl-14">
-                                <p className="text-black mb-2">Kestora University reserves the right to:</p>
+                                <p className="text-black mb-2">Heffring University reserves the right to:</p>
                                 <ul className="space-y-2 mb-2">
                                     <li className="flex items-start gap-3 text-black">
                                         <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 shrink-0"></span>

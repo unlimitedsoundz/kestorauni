@@ -12,10 +12,10 @@ const sections = [
 ];
 
 export const metadata = {
-    title: 'Programs & Degrees | Kestora University',
-    description: 'Explore our comprehensive range of Certificate, Diploma, Advanced Diploma, Bachelor\'s, and Master\'s degree programs at Kestora University in Helsinki, Finland.',
+    title: 'Programs & Degrees | Heffring University',
+    description: 'Explore our comprehensive range of Certificate, Diploma, Advanced Diploma, Bachelor\'s, and Master\'s degree programs at Heffring University in Helsinki, Finland.',
     alternates: {
-        canonical: 'https://kestora.online/degree-programmes/',
+        canonical: 'https://heffring.online/degree-programmes/',
     },
 };
 
@@ -68,7 +68,7 @@ export default function DegreeProgrammesPage() {
                         <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl">
                             Discover our diverse range of career-focused programs designed to prepare you for success.
                             From certificates and diplomas to undergraduate and graduate degrees, we offer world-class education in Helsinki.
-                            All academic programs at Kestora University are eligible for the Post-Graduation Work Permit (PGWP).
+                            All academic programs at Heffring University are eligible for the Post-Graduation Work Permit (PGWP).
                         </p>
                         <div className="flex flex-wrap gap-4 mt-8">
                             <Link href="/admissions" className="cc-btn-primary no-underline">Apply Now <ArrowRight size={14} weight="bold" /></Link>

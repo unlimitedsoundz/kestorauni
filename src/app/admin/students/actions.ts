@@ -31,15 +31,15 @@ export async function enrollStudent(applicationId: string) {
         const admittedAt = offer?.accepted_at || offer?.created_at || application.updated_at || application.submitted_at || application.created_at || new Date().toISOString();
 
         // 2. Student ID Handling
-        // Force 'KU' prefix, even if profile has an old ID (like 'SYK' or 'KC')
+        // Force 'HU' prefix, even if profile has an old ID (like 'SYK', 'KC', or 'KU')
         let studentId = user.student_id;
-        if (!studentId || !studentId.startsWith('KU')) {
-            // Generate KU followed by 7 random digits (e.g., KU1234567)
-            studentId = `KU${Math.floor(1000000 + Math.random() * 8999999)}`;
+        if (!studentId || !studentId.startsWith('HU')) {
+            // Generate HU followed by 7 random digits (e.g., HU1234567)
+            studentId = `HU${Math.floor(1000000 + Math.random() * 8999999)}`;
         }
 
         // 3. Generate Unique Institutional Email
-        let institutionalEmail = `${user.first_name.toLowerCase()}.${user.last_name.toLowerCase()}@kestora.online`;
+        let institutionalEmail = `${user.first_name.toLowerCase()}.${user.last_name.toLowerCase()}@heffring.online`;
 
         // Sanitize (remove spaces, etc.)
         institutionalEmail = institutionalEmail.replace(/\s+/g, '');
@@ -53,7 +53,7 @@ export async function enrollStudent(applicationId: string) {
 
         if (existingEmail) {
             // Append a random number if conflict
-            institutionalEmail = `${user.first_name.toLowerCase()}.${user.last_name.toLowerCase()}${Math.floor(Math.random() * 100)}@kestora.online`.replace(/\s+/g, '');
+            institutionalEmail = `${user.first_name.toLowerCase()}.${user.last_name.toLowerCase()}${Math.floor(Math.random() * 100)}@heffring.online`.replace(/\s+/g, '');
         }
 
         // 4. Create Student Record

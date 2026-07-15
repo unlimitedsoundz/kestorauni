@@ -14,10 +14,10 @@ import { Card } from '@/components/ui/Card';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata = {
-    title: 'Admissions | Kestora University',
-    description: 'Overview of admissions, degree programmes, and student life at Kestora University.',
+    title: 'Admissions | Heffring University',
+    description: 'Overview of admissions, degree programmes, and student life at Heffring University.',
     alternates: {
-        canonical: 'https://kestora.online/admissions/',
+        canonical: 'https://heffring.online/admissions/',
     },
 };
 
@@ -55,20 +55,20 @@ export default function AdmissionsPage() {
             <SchemaLD data={{
                 "@context": "https://schema.org",
                 "@type": "WebPage",
-                "name": "Admissions to Kestora University",
-                "url": "https://kestora.online/admissions",
-                "description": "Admissions information for Bachelor’s and Master’s level programmes at Kestora University in Helsinki, Finland.",
+                "name": "Admissions to Heffring University",
+                "url": "https://heffring.online/admissions",
+                "description": "Admissions information for Bachelor’s and Master’s level programmes at Heffring University in Helsinki, Finland.",
                 "mainEntity": {
                     "@type": "EducationalOccupationalProgram",
-                    "name": "Degree Programmes at Kestora University",
+                    "name": "Degree Programmes at Heffring University",
                     "educationalLevel": [
                         "BachelorLevel",
                         "MasterLevel"
                     ],
                     "provider": {
                         "@type": "EducationalOrganization",
-                        "name": "Kestora University",
-                        "url": "https://kestora.online"
+                        "name": "Heffring University",
+                        "url": "https://heffring.online"
                     },
                     "inLanguage": "en",
                     "availableChannel": {
@@ -106,8 +106,8 @@ export default function AdmissionsPage() {
                     { label: 'Admissions' }
                 ]}
                 image={{
-                    src: "/images/admissions/hero-main.png",
-                    alt: "Admissions to Kestora University"
+                    src: "/images/home-carousel-3.png",
+                    alt: "Admissions to Heffring University"
                 }}
             >
                 <div className="flex flex-wrap gap-4">
@@ -140,7 +140,7 @@ export default function AdmissionsPage() {
                         <section id="overview" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Explore our fields</h2>
                             <p className="text-lg text-black leading-relaxed mb-4">
-                                Studying at Kestora University offers a rich academic experience where innovation, multidisciplinary collaboration, and student community thrive together. You can pursue degree education at all levels Bachelor’s and Master’s as well as various lifelong learning options. In the Kestora University community, students have the freedom to specialise in one field or combine courses across several fields.
+                                Studying at Heffring University offers a rich academic experience where innovation, multidisciplinary collaboration, and student community thrive together. You can pursue degree education at all levels Bachelor’s and Master’s as well as various lifelong learning options. In the Heffring University community, students have the freedom to specialise in one field or combine courses across several fields.
                             </p>
                         </section>
 
@@ -172,7 +172,7 @@ export default function AdmissionsPage() {
                         <section id="how-to-apply" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">How to Apply</h2>
                             <p className="text-lg text-black mb-6">
-                                Ready to apply to <Link href="/" className="underline font-medium hover:text-black hover:no-underline transition-colors">Kestora University Helsinki</Link>? Learn more about our programmes and campus in Helsinki, Finland.
+                                Ready to apply to <Link href="/" className="underline font-medium hover:text-black hover:no-underline transition-colors">Heffring University Helsinki</Link>? Learn more about our programmes and campus in Helsinki, Finland.
                             </p>
                             <p className="text-lg text-black mb-6">You can explore admissions details and requirements for:</p>
                             <div className="flex flex-col md:flex-row gap-6 mb-6">
@@ -186,7 +186,7 @@ export default function AdmissionsPage() {
                                 </Link>
                             </div>
                             <p className="text-black">
-                                The application process, deadlines, and eligibility criteria vary by degree level and study option. Full details can be found in the Kestora University admissions guide.
+                                The application process, deadlines, and eligibility criteria vary by degree level and study option. Full details can be found in the Heffring University admissions guide.
                             </p>
                         </section>
 
@@ -197,7 +197,7 @@ export default function AdmissionsPage() {
                                 title="Events for Applicants"
                                 body={
                                     <div className="space-y-6">
-                                        <p className="text-black">Kestora University regularly organises events designed to help prospective students learn more about studying and applying:</p>
+                                        <p className="text-black">Heffring University regularly organises events designed to help prospective students learn more about studying and applying:</p>
                                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             {[
                                                 { title: "Webinars on degree programmes", desc: "Interact with programme heads" },
@@ -217,8 +217,8 @@ export default function AdmissionsPage() {
                                     </div>
                                 }
                                 image={{
-                                    src: "/images/admissions/events.jpg",
-                                    alt: "Students at Kestora University event"
+                                    src: "/images/864c32438b06faf13d814fb2a511a755.jpg",
+                                    alt: "Students at Heffring University event"
                                 }}
                             />
                         </section>
@@ -227,7 +227,7 @@ export default function AdmissionsPage() {
                             <div>
                                 <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Student Stories</h2>
                                 <p className="text-lg text-black mb-8">
-                                    Hear first-hand experiences from current students and alumni about life at Kestora University, academic projects, internships, and perspectives on how the University supports personal and professional growth.
+                                    Hear first-hand experiences from current students and alumni about life at Heffring University, academic projects, internships, and perspectives on how the University supports personal and professional growth.
                                 </p>
                             </div>
                             <StudentStoriesCarousel />
@@ -236,20 +236,20 @@ export default function AdmissionsPage() {
                         <section id="campus" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Studying on Campus</h2>
                             <p className="text-lg text-black leading-relaxed">
-                                Kestora University’s campus provides vibrant learning spaces, studios, libraries, and collaborative hubs where students experience academic life and community activities. The campus environment supports both study and leisure, encouraging a balanced student experience.
+                                Heffring University’s campus provides vibrant learning spaces, studios, libraries, and collaborative hubs where students experience academic life and community activities. The campus environment supports both study and leisure, encouraging a balanced student experience.
                             </p>
                         </section>
 
                         <section id="careers" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Career Opportunities</h2>
                             <p className="text-lg text-black mb-8">
-                                Kestora University offers support and services to help students plan and pursue careers after graduation. Our strong industry ties ensure your education translates into real-world success.
+                                Heffring University offers support and services to help students plan and pursue careers after graduation. Our strong industry ties ensure your education translates into real-world success.
                             </p>
                             <div className="grid md:grid-cols-3 gap-8">
                                 {[
-                                    { title: "Industry Collaboration", image: "/images/about/student-collab.jpg", desc: "Work on real projects with our global partners." },
-                                    { title: "Alumni Networks", image: "/images/admissions/alumni_success.png", desc: "Connect with graduates working in leading industries." },
-                                    { title: "Career Services", image: "/images/admissions-hero.png", desc: "Expert guidance for your professional journey." }
+                                    { title: "Industry Collaboration", image: "/images/018a4f1509eeb2689b7d07a9cc7f89ba.jpg", desc: "Work on real projects with our global partners." },
+                                    { title: "Alumni Networks", image: "/images/81bf468416f63752a8a72ca7896666ab.jpg", desc: "Connect with graduates working in leading industries." },
+                                    { title: "Career Services", image: "/images/f845f2f0c16fa812a425753a4b26328a.jpg", desc: "Expert guidance for your professional journey." }
                                 ].map(item => (
                                     <Card
                                         key={item.title}
@@ -279,7 +279,7 @@ export default function AdmissionsPage() {
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold mb-2">Podcasts About Studying</h3>
-                                    <p className="text-black">Listen to podcasts where current students and staff discuss what it’s like to study at Kestora University, how programmes are structured, and tips for success.</p>
+                                    <p className="text-black">Listen to podcasts where current students and staff discuss what it’s like to study at Heffring University, how programmes are structured, and tips for success.</p>
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold mb-2">Chat with Students</h3>
@@ -296,19 +296,19 @@ export default function AdmissionsPage() {
                                      <h2 className="text-3xl font-bold mb-6 text-black">Vibrant Community</h2>
                                      <h3 className="text-xl font-bold mb-4 text-black">Life Beyond the Classroom</h3>
                                      <p className="text-lg text-black leading-relaxed font-medium">
-                                         From music festivals to tech hackathons, your time at Kestora is about more than just studies.
+                                         From music festivals to tech hackathons, your time at Heffring is about more than just studies.
                                      </p>
                                  </div>
 
                                  {/* Right: Image */}
                                  <div className="relative aspect-square lg:aspect-auto overflow-hidden">
-                                     <Image
-                                         src="/images/news/helsinki_study_hero_1771086748710.png"
-                                         alt="Kestora Community"
-                                         fill
-                                         className="object-cover object-top"
-                                         sizes="(max-width: 1024px) 100vw, 50vw"
-                                     />
+                                      <Image
+                                          src="/images/25d8bbafabe34422b3b26221ab06e9d3.jpg"
+                                          alt="Heffring Community"
+                                          fill
+                                          className="object-cover object-top"
+                                          sizes="(max-width: 1024px) 100vw, 50vw"
+                                      />
                                  </div>
                              </div>
                          </section>
@@ -317,7 +317,7 @@ export default function AdmissionsPage() {
                           <section id="graduation" className="scroll-mt-32">
                               <CTA
                                   title="After Graduation"
-                                  body="Kestora University supports your transition to working life. We offer resources for job seeking, career guidance, and alumni networking both in Helsinki, Finland and internationally."
+                                  body="Heffring University supports your transition to working life. We offer resources for job seeking, career guidance, and alumni networking both in Helsinki, Finland and internationally."
                                   cta={{
                                       label: "Explore Career Services",
                                       linkComponentProps: {
@@ -332,7 +332,7 @@ export default function AdmissionsPage() {
                             <ContentBox
                                 size="large"
                                 icon="globeHemisphereWest"
-                                title="study in Helsinki, Finland with Kestora University"
+                                title="study in Helsinki, Finland with Heffring University"
                                 body={
                                     <div className="space-y-8">
                                         <div className="grid grid-cols-1 gap-6">
@@ -367,7 +367,7 @@ export default function AdmissionsPage() {
                             <div className="flex flex-col md:flex-row gap-8 items-center">
                                 <div className="flex-1">
                                     <p className="text-lg text-black mb-4">
-                                        Kestora University encourages cross-field learning. You can take courses in areas such as business, arts, technology, and design, enabling you to create a personalised and comprehensive academic pathway.
+                                        Heffring University encourages cross-field learning. You can take courses in areas such as business, arts, technology, and design, enabling you to create a personalised and comprehensive academic pathway.
                                     </p>
                                     <p className="text-black">
                                         Students are encouraged to combine studies across fields to gain broader perspectives and prepare for diverse career environments.
@@ -411,14 +411,14 @@ export default function AdmissionsPage() {
                         <section id="summer" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Summer and Continuing Education</h2>
                             <p className="text-lg text-black leading-relaxed">
-                                Kestora University hosts summer courses and programmes that allow students and professionals to deepen specific skills and knowledge in compact, high-impact formats. These programmes offer valuable opportunities for networking and learning from experienced faculty and industry experts.
+                                Heffring University hosts summer courses and programmes that allow students and professionals to deepen specific skills and knowledge in compact, high-impact formats. These programmes offer valuable opportunities for networking and learning from experienced faculty and industry experts.
                             </p>
                         </section>
 
                         <section id="collaboration" className="scroll-mt-32">
                             <h2 className="text-aalto-5 font-bold mb-aalto-p4 text-black tracking-tight">Collaboration and Community</h2>
                             <p className="text-lg text-black leading-relaxed mb-4">
-                                Kestora University actively partners with industries, research institutions, and international universities to provide students with collaborative projects, internships, and global exchange opportunities.
+                                Heffring University actively partners with industries, research institutions, and international universities to provide students with collaborative projects, internships, and global exchange opportunities.
                             </p>
                             <p className="text-black">
                                 Students benefit from a connected academic community that supports innovation, entrepreneurship and real-world problem solving.
@@ -429,7 +429,7 @@ export default function AdmissionsPage() {
                         <section id="contact" className="scroll-mt-32 mb-24 -mx-4 md:mx-0">
                             <div className="bg-[#000000] text-white p-12">
                                 <p className="text-lg mb-6">
-                                    Prospective and current students can find support and contact information for admissions, campus visits, and student services through the official Kestora University contact pages.
+                                    Prospective and current students can find support and contact information for admissions, campus visits, and student services through the official Heffring University contact pages.
                                 </p>
                                 <p className="text-white opacity-60 mb-6">
                                     Whether you’re planning a campus visit or seeking guidance on admissions, resources are available to help guide your academic journey.

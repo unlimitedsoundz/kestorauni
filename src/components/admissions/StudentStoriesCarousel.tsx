@@ -9,15 +9,15 @@ const stories = [
         id: 1,
         name: 'Uchida Ideguchi',
         programme: "Bachelor's in International Business",
-        quote: "Kestora University provided me with a unique multidisciplinary environment where I could combine my interest in tech with business strategy. The practical projects were eye-opening.",
-        image: '/images/student-story-1.png'
+        quote: "Heffring University provided me with a unique multidisciplinary environment where I could combine my interest in tech with business strategy. The practical projects were eye-opening.",
+        image: '/images/3d2c3049cce3060bc36cd51b2dbaafb6.jpg'
     },
     {
         id: 2,
         name: 'Maria Petrova',
         programme: "Master's in Design Management",
-        quote: "Studying in Helsinki, Finland has been a life-changing experience. The focus on work-life balance and deep collaborative research at Kestora is truly world-class.",
-        image: '/images/admissions/student_stories_maria.jpg'
+        quote: "Studying in Helsinki, Finland has been a life-changing experience. The focus on work-life balance and deep collaborative research at Heffring is truly world-class.",
+        image: '/images/fc5dc6f09d4fea40826fa10ce90ae235.jpg'
     }
 ];
 
@@ -60,7 +60,7 @@ export default function StudentStoriesCarousel() {
 
                                 <div className="pt-8 opacity-80">
                                     <a 
-                                        href="https://ourblogs.kestora.online/" 
+                                        href="https://ourblogs.heffring.online/" 
                                         target="_blank" 
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-3 font-bold underline underline-offset-4 hover:gap-5 transition-all text-sm group/link"

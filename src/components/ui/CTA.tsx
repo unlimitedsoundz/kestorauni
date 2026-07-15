@@ -19,7 +19,7 @@ interface CTAProps {
 }
 
 /**
- * Standardized CTA component for Kestora University.
+ * Standardized CTA component for Heffring University.
  * Aliased from @aalto-dx/react-modules.
  * 
  * Recreates the Aalto University CTA layout (col-4-x-7).

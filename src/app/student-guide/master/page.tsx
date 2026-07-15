@@ -8,10 +8,10 @@ import { Card } from '@/components/ui/Card';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata: Metadata = {
-    title: 'Master\'s Students Guide | Kestora University',
-    description: 'Essential steps and instructions for newly admitted Master\'s students at Kestora University. Follow this guide to ensure a smooth start to your studies.',
+    title: 'Master\'s Students Guide | Heffring University',
+    description: 'Essential steps and instructions for newly admitted Master\'s students at Heffring University. Follow this guide to ensure a smooth start to your studies.',
     alternates: {
-        canonical: 'https://kestora.online/student-guide/master/',
+        canonical: 'https://heffring.online/student-guide/master/',
     },
 };
 
@@ -33,7 +33,7 @@ export default function MastersGuidePage() {
                 {/* HERO SECTION */}
                 <Hero
                     title="Master’s Students Guide"
-                    body="Essential steps and instructions for newly admitted Master’s students at Kestora University. Follow this guide to ensure a smooth start to your studies."
+                    body="Essential steps and instructions for newly admitted Master’s students at Heffring University. Follow this guide to ensure a smooth start to your studies."
                     backgroundColor="#dc6ade"
                     tinted
                     lightText={true}
@@ -167,7 +167,7 @@ export default function MastersGuidePage() {
                             <h2 className="text-aalto-5 font-bold mb-10 text-black tracking-tight">6. Apply for Student Housing</h2>
                             <Card
                                 title="Start Your Application"
-                                 body="Apply as soon as you accept your study place. Queue times are long. Kestora assists with the application process for student housing."
+                                 body="Apply as soon as you accept your study place. Queue times are long. Heffring assists with the application process for student housing."
                                 cta={{ label: "Housing Guide", linkComponentProps: { href: "/student-guide/housing-for-students" } }}
                             />
                         </section>

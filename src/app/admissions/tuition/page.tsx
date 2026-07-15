@@ -10,10 +10,10 @@ import { createStaticClient } from '@/lib/supabase/static';
 import TuitionEstimator from '@/components/admissions/TuitionEstimator';
 
 export const metadata = {
-    title: 'Paying the Tuition Fee | Kestora University',
-    description: 'Structure of tuition fees, payment methods (Bank Transfer), and refund policies for international students at Kestora University.',
+    title: 'Paying the Tuition Fee | Heffring University',
+    description: 'Structure of tuition fees, payment methods (Bank Transfer), and refund policies for international students at Heffring University.',
     alternates: {
-        canonical: 'https://kestora.online/admissions/tuition/',
+        canonical: 'https://heffring.online/admissions/tuition/',
     },
 };
 

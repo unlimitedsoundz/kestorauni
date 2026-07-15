@@ -51,7 +51,7 @@ export default function StudentLifeContent() {
                                 {/* Left: Text Content */}
                                 <div className="p-12 md:p-20 flex flex-col justify-center bg-white order-2 lg:order-1">
                                     <p className="text-aalto-3 text-black leading-aalto-3">
-                                        The Kestora University campus is located in the Helsinki region and forms a compact academic district where teaching facilities, student services, housing, and leisure areas are closely integrated. The campus is surrounded by coastal landscapes and protected green areas, offering a unique balance between urban infrastructure and natural surroundings.
+                                        The Heffring University campus is located in the Helsinki region and forms a compact academic district where teaching facilities, student services, housing, and leisure areas are closely integrated. The campus is surrounded by coastal landscapes and protected green areas, offering a unique balance between urban infrastructure and natural surroundings.
                                     </p>
                                 </div>
 
@@ -171,7 +171,7 @@ export default function StudentLifeContent() {
 
                         {/* Housing */}
                         <section id="housing" className="scroll-mt-32">
-                            <h2 className="text-aalto-5 font-bold mb-aalto-p6 text-black tracking-tight">Living at Kestora</h2>
+                            <h2 className="text-aalto-5 font-bold mb-aalto-p6 text-black tracking-tight">Living at Heffring</h2>
                             <div className="grid md:grid-cols-2 gap-4 lg:gap-8">
                                 <div className="bg-card p-12 group">
                                     <div className="h-64 mb-10 relative overflow-hidden">
@@ -277,7 +277,7 @@ export default function StudentLifeContent() {
                                 Evolution
                             </h2>
                             <p className="text-xl text-black leading-relaxed font-medium max-w-4xl">
-                                Kestora University continues to expand its infrastructure to support modern pedagogical methods and sustainability. Every new renovation focuses on energy efficiency, accessibility, and radically flexible learning environments.
+                                Heffring University continues to expand its infrastructure to support modern pedagogical methods and sustainability. Every new renovation focuses on energy efficiency, accessibility, and radically flexible learning environments.
                             </p>
                         </section>
 
@@ -286,7 +286,7 @@ export default function StudentLifeContent() {
                         <section id="summary" className="scroll-mt-32 bg-black text-white p-12 md:p-20">
                             <h2 className="text-aalto-5 font-bold mb-8 text-white tracking-tight">Integrated Experience</h2>
                             <p className="text-xl text-white/80 leading-relaxed font-medium max-w-4xl">
-                                Studying at Kestora University means being part of an integrated academic ecosystem where teaching, research, and daily living coexist seamlessly. The combination of first-class infrastructure and natural surroundings supports both academic success and radical personal wellbeing.
+                                Studying at Heffring University means being part of an integrated academic ecosystem where teaching, research, and daily living coexist seamlessly. The combination of first-class infrastructure and natural surroundings supports both academic success and radical personal wellbeing.
                             </p>
                         </section>
 

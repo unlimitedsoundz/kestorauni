@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -16,15 +16,15 @@ const playfair = { variable: "font-playfair-var" };
 
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://kestora.online'),
+    metadataBase: new URL('https://heffring.online'),
     title: {
-        default: "Kestora University – Helsinki, Finland",
-        template: "%s | Kestora University"
+        default: "Heffring University – Helsinki, Finland",
+        template: "%s | Heffring University"
     },
-    description: "Kestora University is a dynamic and career-focused institution located in Helsinki, Finland. The university is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
-    applicationName: "Kestora University",
+    description: "Heffring University is a dynamic and career-focused institution located in Helsinki, Finland. The university is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
+    applicationName: "Heffring University",
     appleWebApp: {
-        title: "Kestora University",
+        title: "Heffring University",
         statusBarStyle: "default",
         capable: true,
     },
@@ -40,24 +40,24 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://kestora.online',
-        siteName: 'Kestora University',
-        title: 'Kestora University – Helsinki, Finland',
-        description: "Kestora University is a dynamic and career-focused institution located in Helsinki, Finland. The university is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
+        url: 'https://heffring.online',
+        siteName: 'Heffring University',
+        title: 'Heffring University – Helsinki, Finland',
+        description: "Heffring University is a dynamic and career-focused institution located in Helsinki, Finland. The university is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
         images: [
             {
-                url: '/logo-kestora.png',
+                url: '/images/logo-heffring.png',
                 width: 800,
                 height: 600,
-                alt: 'Kestora University Logo',
+                alt: 'Heffring University Logo',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Kestora University – Helsinki, Finland',
-        description: "Kestora University is a dynamic and career-focused institution located in Helsinki, Finland. The university is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
-        images: ['/logo-kestora.png'],
+        title: 'Heffring University – Helsinki, Finland',
+        description: "Heffring University is a dynamic and career-focused institution located in Helsinki, Finland. The university is committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
+        images: ['/images/logo-heffring.png'],
     }
 };
 
@@ -85,16 +85,16 @@ export default function RootLayout({
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "UniversityOrUniversity",
-                            "name": "Kestora University",
-                            "description": "Kestora University is a dynamic and career-focused institution located in Helsinki, Finland.",
-                            "alternateName": "Kestora University Helsinki Campus",
-                            "url": "https://www.kestora.online",
-                            "logo": "https://www.kestora.online/logo-kestora.png",
+                            "name": "Heffring University",
+                            "description": "Heffring University is a dynamic and career-focused institution located in Helsinki, Finland.",
+                            "alternateName": "Heffring University Helsinki Campus",
+                            "url": "https://www.heffring.online",
+                            "logo": "https://www.heffring.online/images/logo-heffring.png",
                             "address": {
                                 "@type": "PostalAddress",
-                                "streetAddress": "Pohjoisesplanadi 51",
+                                "streetAddress": "Kaarrostie 38",
                                 "addressLocality": "Helsinki",
-                                "postalCode": "00150",
+                                "postalCode": "00960",
                                 "addressRegion": "Uusimaa",
                                 "addressCountry": "FI"
                             },
@@ -103,13 +103,13 @@ export default function RootLayout({
                                 "name": "Helsinki, Finland"
                             },
                             "sameAs": [
-                                "https://www.tiktok.com/@kestorauniversity"
+                                "https://www.tiktok.com/@heffringuniversity"
                             ],
                             "contactPoint": {
                                 "@type": "ContactPoint",
                                 "telephone": "+1-613-727-4723",
                                 "contactType": "admissions",
-                                "email": "admissions@kestora.online"
+                                "email": "admissions@heffring.online"
                             }
                         })
                     }}
@@ -129,3 +129,4 @@ export default function RootLayout({
         </html>
     );
 }
+

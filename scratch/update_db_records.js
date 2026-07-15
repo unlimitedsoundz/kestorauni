@@ -12,14 +12,14 @@ function cleanSlug(slug) {
   let s = slug.toLowerCase();
   
   // Handlers for specific slugs
-  s = s.replace(/cannoga-college-ottawa-campus-2026/, 'kestora-university-helsinki-campus-2026');
+  s = s.replace(/cannoga-college-ottawa-campus-2026/, 'heffring-university-helsinki-campus-2026');
   s = s.replace(/spring-break-ottawa-2026/, 'spring-break-helsinki-2026');
   s = s.replace(/study-in-ottawa,\s*canada-masterclass/, 'study-in-helsinki-finland-masterclass');
   s = s.replace(/study-in-ottawa,\s*canada/, 'study-in-helsinki-finland');
   
   // Generic replacements
-  s = s.replace(/cannoga-college/g, 'kestora-university');
-  s = s.replace(/cannoga/g, 'kestora');
+  s = s.replace(/cannoga-college/g, 'heffring-university');
+  s = s.replace(/cannoga/g, 'heffring');
   s = s.replace(/ottawa/g, 'helsinki');
   s = s.replace(/canada/g, 'finland');
   
@@ -39,7 +39,7 @@ function applyReplacements(text) {
   let newText = text;
   
   // 1. Handle domains and emails first
-  newText = newText.replace(/cannogacollege\.ca/gi, 'kestora.online');
+  newText = newText.replace(/cannogacollege\.ca/gi, 'heffring.online');
   
   // 2. Handle specific combinations to avoid double naming
   newText = newText.replace(/Ottawa,\s*Canada/g, 'Helsinki, Finland');
@@ -54,11 +54,11 @@ function applyReplacements(text) {
   newText = newText.replace(/capital\s+city\s+of\s+Canada/gi, 'capital city of Finland');
   
   // 3. General replacements
-  newText = newText.replace(/Cannoga College/g, 'Kestora University');
-  newText = newText.replace(/Cannogo Coillege/g, 'Kestora University');
-  newText = newText.replace(/Cannoga Student Association/g, 'Kestora Student Association');
-  newText = newText.replace(/Cannoga/g, 'Kestora');
-  newText = newText.replace(/cannoga/g, 'kestora');
+  newText = newText.replace(/Cannoga College/g, 'Heffring University');
+  newText = newText.replace(/Cannogo Coillege/g, 'Heffring University');
+  newText = newText.replace(/Cannoga Student Association/g, 'Heffring Student Association');
+  newText = newText.replace(/Cannoga/g, 'Heffring');
+  newText = newText.replace(/cannoga/g, 'heffring');
   
   newText = newText.replace(/Ottawa/g, 'Helsinki, Finland');
   newText = newText.replace(/ottawa/g, 'helsinki, finland');
@@ -167,7 +167,7 @@ async function updateDatabase() {
       }
 
       if (item.institutional_email && item.institutional_email.includes('cannogacollege.ca')) {
-        updates.institutional_email = item.institutional_email.replace(/@cannogacollege\.ca/gi, '@kestora.online');
+        updates.institutional_email = item.institutional_email.replace(/@cannogacollege\.ca/gi, '@heffring.online');
         changed = true;
       }
 

@@ -54,12 +54,12 @@ export const searchablePages: SearchablePage[] = [
     { title: "Student Life", href: "/student-life", category: "Student Life & Guides" },
     { title: "Campus Information", href: "/student-guide", category: "Student Life & Guides" },
 
-    // About Kestora
-    { title: "Our Story", href: "/about-kestora-university", category: "About Kestora" },
-    { title: "Contact Information", href: "/contact", category: "About Kestora" },
-    { title: "News & Events", href: "/news", category: "About Kestora" },
-    { title: "Collaboration", href: "/collaboration", category: "About Kestora" },
-    { title: "Innovation", href: "/innovation", category: "About Kestora" },
+    // About Heffring
+    { title: "Our Story", href: "/about-heffring-university", category: "About Heffring" },
+    { title: "Contact Information", href: "/contact", category: "About Heffring" },
+    { title: "News & Events", href: "/news", category: "About Heffring" },
+    { title: "Collaboration", href: "/collaboration", category: "About Heffring" },
+    { title: "Innovation", href: "/innovation", category: "About Heffring" },
 
     // Legal & Privacy
     { title: "Privacy Policy", href: "/privacy", category: "Legal & Privacy" },

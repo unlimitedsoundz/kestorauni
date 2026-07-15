@@ -11,10 +11,10 @@ import { getPageContentSection } from '@/lib/pageContentConfig';
 
 
 export const metadata = {
-    title: 'Apply to Master’s Programmes | Kestora University',
-    description: 'Application guide for Master’s programmes at Kestora University. Deadlines, eligibility, and steps for 2026 admission.',
+    title: 'Apply to Master’s Programmes | Heffring University',
+    description: 'Application guide for Master’s programmes at Heffring University. Deadlines, eligibility, and steps for 2026 admission.',
     alternates: {
-        canonical: 'https://kestora.online/admissions/master/',
+        canonical: 'https://heffring.online/admissions/master/',
     },
 };
 

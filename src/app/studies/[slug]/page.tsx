@@ -36,10 +36,10 @@ export async function generateMetadata({ params }: Props) {
     }
 
     return {
-        title: `${course.title} — ${course.degreeType} | Kestora University`,
-        description: course.description?.replace(/Kestora C\x6Fllege|SYKLI|College/gi, 'Kestora University').substring(0, 160) || `Study ${course.title} (${course.degreeType}, ${course.credits} credits) at Kestora University.`,
+        title: `${course.title} — ${course.degreeType} | Heffring University`,
+        description: course.description?.replace(/Heffring C\x6Fllege|SYKLI|College/gi, 'Heffring University').substring(0, 160) || `Study ${course.title} (${course.degreeType}, ${course.credits} credits) at Heffring University.`,
         alternates: {
-            canonical: `https://kestora.online/studies/${slug}/`,
+            canonical: `https://heffring.online/studies/${slug}/`,
         },
     };
 }
@@ -100,11 +100,11 @@ export default async function CourseDetailPage({ params }: Props) {
         '@context': 'https://schema.org',
         '@type': 'Course',
         name: course.title,
-        description: course.description?.replace(/Kestora C\x6Fllege/gi, 'Kestora University'),
+        description: course.description?.replace(/Heffring C\x6Fllege/gi, 'Heffring University'),
         provider: {
             '@type': 'EducationalOrganization',
-            name: 'Kestora University',
-            sameAs: 'https://kestora.online'
+            name: 'Heffring University',
+            sameAs: 'https://heffring.online'
         },
         educationalCredentialAwarded: course.degreeType,
         hasCourseInstance: {
@@ -215,7 +215,7 @@ export default async function CourseDetailPage({ params }: Props) {
                                     <h2 className="text-3xl font-bold mb-8 text-black pb-10 border-b-2 border-black uppercase tracking-widest">{section.title}</h2>
                                     <div
                                         className="prose prose-lg text-black max-w-none prose-headings:font-bold prose-a:text-black hover:prose-a:opacity-70 transition-opacity prose-arrows"
-                                        dangerouslySetInnerHTML={{ __html: section.content.replace(/Kestora C\x6Fllege|SYKLI|College/g, 'Kestora University') }}
+                                        dangerouslySetInnerHTML={{ __html: section.content.replace(/Heffring C\x6Fllege|SYKLI|College/g, 'Heffring University') }}
                                     />
                                 </section>
                             ))}
@@ -226,7 +226,7 @@ export default async function CourseDetailPage({ params }: Props) {
                             <section>
                                 <h2 className="text-3xl font-bold mb-8 text-black pb-10 border-b-2 border-black uppercase tracking-widest">Program Overview</h2>
                                 <div className="prose prose-lg text-black max-w-none leading-relaxed prose-arrows">
-                                    <p>{c.description?.replace(/Kestora C\x6Fllege|SYKLI|College/g, 'Kestora University')}</p>
+                                    <p>{c.description?.replace(/Heffring C\x6Fllege|SYKLI|College/g, 'Heffring University')}</p>
                                 </div>
                             </section>
 
@@ -270,7 +270,7 @@ export default async function CourseDetailPage({ params }: Props) {
                                 <h2 className="text-3xl font-bold mb-8 text-black pb-10 border-b-2 border-black uppercase tracking-widest">Career Prospects</h2>
                                 <div className="bg-white p-10 border-l-4 border-black border-y border-r border-black/10">
                                     <p className="text-black font-bold uppercase tracking-widest mb-4">Potential Roles:</p>
-                                    <p className="text-black text-lg leading-relaxed">{c.careerPaths?.replace(/Kestora C\x6Fllege|SYKLI|College/g, 'Kestora University')}</p>
+                                    <p className="text-black text-lg leading-relaxed">{c.careerPaths?.replace(/Heffring C\x6Fllege|SYKLI|College/g, 'Heffring University')}</p>
                                 </div>
                             </section>
                         </>

@@ -98,7 +98,11 @@ export default function RegistrationClient({
                     </div>
                     <h1 className="text-2xl font-black text-black mb-1 leading-none">Course Enrollment</h1>
                     <p className="text-black font-medium">
-                        {window?.semester?.name || 'Academic Term'} • Registration Window:
+                        {(() => {
+                            const name = window?.semester?.name || 'Academic Term';
+                            const year = window?.semester?.start_date ? new Date(window.semester.start_date).getFullYear() : null;
+                            return year && !name.includes(String(year)) ? `${name} ${year}` : name;
+                        })()} • Registration Window:
                         <span className="text-black ml-1">
                             {window?.status || 'Closed'}
                         </span>

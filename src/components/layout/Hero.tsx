@@ -36,7 +36,8 @@ export function Hero({
     imagePosition = 'object-center',
     children 
 }: HeroProps) {
-    const textColorClass = 'text-white';
+    const textColorClass = lightText ? 'text-white' : 'text-black';
+    const bodyColorClass = lightText ? 'text-neutral-200' : 'text-neutral-700';
     return (
         <>
         <section 
@@ -61,12 +62,12 @@ export function Hero({
 
             {/* Content Container */}
             <div className="container mx-auto px-4 md:px-12 lg:px-20 h-full relative z-20 flex items-center justify-start w-full">
-                <div className={`w-full lg:w-3/5 p-8 md:p-12 lg:p-16 flex flex-col space-y-6 text-white text-left items-start ${image ? 'bg-[#000000]/35 backdrop-blur-[2px] lg:bg-transparent lg:backdrop-blur-none' : 'bg-transparent backdrop-blur-none'} rounded-none`}>
+                <div className={`w-full lg:w-3/5 p-8 md:p-12 lg:p-16 flex flex-col space-y-6 ${textColorClass} text-left items-start ${image ? 'bg-[#000000]/35 backdrop-blur-[2px] lg:bg-transparent lg:backdrop-blur-none' : 'bg-transparent backdrop-blur-none'} rounded-none`}>
                     <div className="space-y-4">
                         <h1 className="font-black text-3xl md:text-5xl lg:text-6xl leading-tight tracking-tight">
                             {title}
                         </h1>
-                        <p className="text-lg lg:text-xl text-neutral-200 max-w-xl font-medium leading-relaxed">
+                        <p className={`text-lg lg:text-xl ${bodyColorClass} max-w-xl font-medium leading-relaxed`}>
                             {body}
                         </p>
                     </div>

@@ -31,10 +31,10 @@ export async function generateMetadata({ params }: Props) {
     if (!event) return { title: 'Event Not Found' };
 
     return {
-        title: `${event.title} | Kestora University Events`,
-        description: event.content?.substring(0, 160) || `Join us for ${event.title} at Kestora University.`,
+        title: `${event.title} | Heffring University Events`,
+        description: event.content?.substring(0, 160) || `Join us for ${event.title} at Heffring University.`,
         alternates: {
-            canonical: `https://kestora.online/news/events/${slug}/`,
+            canonical: `https://heffring.online/news/events/${slug}/`,
         },
     };
 }
@@ -72,22 +72,22 @@ export default async function EventDetailPage({ params }: Props) {
         eventStatus: 'https://schema.org/EventScheduled',
         location: {
             '@type': 'Place',
-            name: item.location || 'Kestora University – Helsinki Campus',
+            name: item.location || 'Heffring University – Helsinki Campus',
             address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Pohjoisesplanadi 51',
+                streetAddress: 'Kaarrostie 38',
                 addressLocality: 'Helsinki',
-                postalCode: '00150',
+                postalCode: '00960',
                 addressRegion: 'Uusimaa',
                 addressCountry: 'FI'
             }
         },
         image: item.imageUrl ? [item.imageUrl] : undefined,
-        description: item.content?.substring(0, 160) || `Join us for ${item.title} at Kestora University.`,
+        description: item.content?.substring(0, 160) || `Join us for ${item.title} at Heffring University.`,
         organizer: {
             '@type': 'EducationalOrganization',
-            name: 'Kestora University',
-            url: 'https://kestora.online'
+            name: 'Heffring University',
+            url: 'https://heffring.online'
         }
     };
 

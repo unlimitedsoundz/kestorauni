@@ -8,10 +8,10 @@ import { Card } from '@/components/ui/Card';
 import { ContentBox } from '@/components/ui/ContentBox';
 
 export const metadata: Metadata = {
-    title: 'Bachelor\'s Students Guide | Kestora University',
+    title: 'Bachelor\'s Students Guide | Heffring University',
     description: 'Essential information for students admitted to Bachelor\'s programmes taught in English. Read carefully to ensure a smooth start to your studies.',
     alternates: {
-        canonical: 'https://kestora.online/student-guide/bachelor/',
+        canonical: 'https://heffring.online/student-guide/bachelor/',
     },
 };
 
@@ -55,7 +55,7 @@ export default function BachelorsGuidePage() {
                         <section id="intro" className="scroll-mt-32">
                             <ContentBox
                                 icon="info"
-                                title="Welcome to Kestora University!"
+                                title="Welcome to Heffring University!"
                                 body="This guide covers the critical steps from accepting your offer to arriving on campus. Follow the deadlines closely to secure your study place."
                             />
                         </section>
@@ -137,7 +137,7 @@ export default function BachelorsGuidePage() {
                             <ContentBox
                                 icon="laptop"
                                 title="5. Activate IT Account"
-                                body="After enrolling, you will receive an email to activate your Kestora University IT account. This gives you access to email and learning platforms."
+                                body="After enrolling, you will receive an email to activate your Heffring University IT account. This gives you access to email and learning platforms."
                             />
                         </section>
 
@@ -180,7 +180,7 @@ export default function BachelorsGuidePage() {
                             <div className="grid md:grid-cols-2 gap-8">
                                 <Card
                                     title="Housing"
-                                    body="Apply immediately. Kestora assists with the application process for student housing."
+                                    body="Apply immediately. Heffring assists with the application process for student housing."
                                 />
                                 <Card
                                     title="Financial Aid"

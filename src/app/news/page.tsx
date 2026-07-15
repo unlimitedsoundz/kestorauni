@@ -6,10 +6,10 @@ import { formatToDDMMYYYY } from '@/utils/date';
 import { Calendar, MapPin, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'News & Events | Kestora University',
-    description: 'The latest news, announcements, and upcoming events from Kestora University.',
+    title: 'News & Events | Heffring University',
+    description: 'The latest news, announcements, and upcoming events from Heffring University.',
     alternates: {
-        canonical: 'https://kestora.online/news/',
+        canonical: 'https://heffring.online/news/',
     },
 };
 
@@ -38,7 +38,7 @@ export default async function NewsPage() {
             {/* HERO SECTION */}
 <Hero
                  title="News & Events"
-                 body="Stay up to date with the latest stories, research breakthroughs, and upcoming events from Kestora University."
+                 body="Stay up to date with the latest stories, research breakthroughs, and upcoming events from Heffring University."
                  backgroundColor="#ffeb3b"
                  tinted={false}
                  lightText={false}

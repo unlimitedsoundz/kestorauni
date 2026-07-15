@@ -26,10 +26,10 @@ async function updateAllBlogs() {
     for (const field of fields) {
       if (blog[field] && typeof blog[field] === 'string') {
         let newValue = blog[field];
-        newValue = newValue.replace(/Cannoga College/g, 'Kestora University');
-        newValue = newValue.replace(/Cannoga/gi, 'Kestora');
+        newValue = newValue.replace(/Cannoga College/g, 'Heffring University');
+        newValue = newValue.replace(/Cannoga/gi, 'Heffring');
         newValue = newValue.replace(/ottawa[,\s]*canada/gi, 'Helsinki, Finland');
-        newValue = newValue.replace(/penkka/gi, 'Kestora');
+        newValue = newValue.replace(/penkka/gi, 'Heffring');
         if (newValue !== blog[field]) {
           updates[field] = newValue;
           needsUpdate = true;

@@ -197,10 +197,10 @@ export default function ProfilePage() {
                     <div className="bg-neutral-900 p-6 text-white">
                         <h3 className="text-[10px] font-black text-white/70 mb-2">Account Security</h3>
                         <p className="text-[10px] font-bold leading-relaxed mb-4 tracking-tight text-white/90">
-                            Your account is protected by Kestora University biometric-ready authentication.
+                            Your account is protected by Heffring University biometric-ready authentication.
                         </p>
                         <a
-                            href="mailto:info@kestora.online?subject=Data Update Request"
+                            href="mailto:info@heffring.online?subject=Data Update Request"
                             className="inline-block text-[9px] font-black bg-white/10 hover:bg-white/20 px-4 py-2 rounded transition-all"
                         >
                             Request Data Update

@@ -130,7 +130,7 @@ export default function PortalHeader() {
                 }`}>
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-8">
-                        <Logo className="h-8 md:h-10" />
+                        <Logo className="h-12 md:h-14" />
 
                         <nav className="hidden md:flex items-center gap-1">
                             {isLoggedIn && navItems.map((item) => {

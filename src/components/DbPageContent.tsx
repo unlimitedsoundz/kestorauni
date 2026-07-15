@@ -27,9 +27,9 @@ export default function DbPageContent({
             return text
                 .replace(/Flywire/gi, 'our secure payment portal')
                 .replace(/https:\/\/www\.flywire\.com\//gi, '#')
-                .replace(/mailto:admissions@cannoga\.fi/gi, 'mailto:admissions@kestora.online')
-                .replace(/admissions@cannoga\.fi/gi, 'admissions@kestora.online')
-                .replace(/cannoga\.fi/gi, 'kestora.online')
+                .replace(/mailto:admissions@cannoga\.fi/gi, 'mailto:admissions@heffring.online')
+                .replace(/admissions@cannoga\.fi/gi, 'admissions@heffring.online')
+                .replace(/cannoga\.fi/gi, 'heffring.online')
                 .replace(/https:\/\/www\.ontario\.ca\/page\/apply-ohip-and-get-health-card/gi, 'https://www.kela.fi/web/en')
                 .replace(/Apply for OHIP at ServiceOntario/gi, 'Apply for Kela')
                 .replace(/ServiceOntario/gi, 'Kela');
@@ -59,9 +59,9 @@ export default function DbPageContent({
                         sanitizedContent = sanitizedContent
                             .replace(/Flywire/gi, 'our secure payment portal')
                             .replace(/https:\/\/www\.flywire\.com\//gi, '#')
-                            .replace(/mailto:admissions@cannoga\.fi/gi, 'mailto:admissions@kestora.online')
-                            .replace(/admissions@cannoga\.fi/gi, 'admissions@kestora.online')
-                            .replace(/cannoga\.fi/gi, 'kestora.online')
+                            .replace(/mailto:admissions@cannoga\.fi/gi, 'mailto:admissions@heffring.online')
+                            .replace(/admissions@cannoga\.fi/gi, 'admissions@heffring.online')
+                            .replace(/cannoga\.fi/gi, 'heffring.online')
                             .replace(/https:\/\/www\.ontario\.ca\/page\/apply-ohip-and-get-health-card/gi, 'https://www.kela.fi/web/en')
                             .replace(/Apply for OHIP at ServiceOntario/gi, 'Apply for Kela')
                             .replace(/ServiceOntario/gi, 'Kela');

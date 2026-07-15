@@ -47,8 +47,8 @@ for (const filePath of allFiles) {
   let original = content;
 
   // 1. Replace domain names
-  content = content.replace(/cannogacollege\.ca/gi, 'kestora.online');
-  content = content.replace(/kestora\.fi/gi, 'kestora.online');
+  content = content.replace(/cannogacollege\.ca/gi, 'heffring.online');
+  content = content.replace(/heffring\.fi/gi, 'heffring.online');
 
   // 2. Perform color replacements
   

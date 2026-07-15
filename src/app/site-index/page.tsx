@@ -2,10 +2,10 @@ import { Link } from "@aalto-dx/react-components";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-    title: 'Site Index | Kestora University',
-    description: 'A comprehensive map of all pages and resources on the Kestora University website.',
+    title: 'Site Index | Heffring University',
+    description: 'A comprehensive map of all pages and resources on the Heffring University website.',
     alternates: {
-        canonical: 'https://kestora.online/site-index/',
+        canonical: 'https://heffring.online/site-index/',
     },
 };
 
@@ -44,9 +44,9 @@ const categories = [
         ],
     },
     {
-        title: 'About Kestora',
+        title: 'About Heffring',
         links: [
-            { name: 'Our Story', href: '/about-kestora-university' },
+            { name: 'Our Story', href: '/about-heffring-university' },
             { name: 'Contact Information', href: '/contact' },
             { name: 'News & Events', href: '/news' },
             { name: 'Collaboration', href: '/collaboration' },
@@ -73,7 +73,7 @@ export default function SiteIndexPage() {
                         Site Index
                     </h1>
                     <p className="text-xl text-neutral-600 leading-relaxed">
-                        A comprehensive directory of all public resources, programmes, and informational pages across Kestora University.
+                        A comprehensive directory of all public resources, programmes, and informational pages across Heffring University.
                     </p>
                 </header>
 

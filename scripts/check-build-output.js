@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const schoolFile = 'E:/kestorauniversity/out/schools/health-community/index.html';
-const deptFile = 'E:/kestorauniversity/out/schools/health-community/health-community-dept/index.html';
+const schoolFile = 'E:/heffringuniversity/out/schools/health-community/index.html';
+const deptFile = 'E:/heffringuniversity/out/schools/health-community/health-community-dept/index.html';
 
 const schoolHtml = fs.readFileSync(schoolFile, 'utf8');
 const deptHtml = fs.readFileSync(deptFile, 'utf8');

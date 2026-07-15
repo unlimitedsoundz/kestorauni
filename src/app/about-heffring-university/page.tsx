@@ -6,10 +6,10 @@ import { ArrowRight, MapPin, Calendar } from "@phosphor-icons/react/dist/ssr";
 import { formatToDDMMYYYY } from '@/utils/date';
 
 export const metadata = {
-    title: 'About Kestora University — Our Story, Mission & Helsinki Campus',
-    description: "Kestora University is a dynamic and career-focused institution located in Helsinki, Finland's capital city, committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
+    title: 'About Heffring University — Our Story, Mission & Helsinki Campus',
+    description: "Heffring University is a dynamic and career-focused institution located in Helsinki, Finland's capital city, committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs.",
     alternates: {
-        canonical: 'https://kestora.online/about-kestora-university/',
+        canonical: 'https://heffring.online/about-heffring-university/',
     },
 };
 
@@ -27,25 +27,25 @@ export default async function AboutPage() {
         <div className="min-h-screen bg-white text-black font-sans">
             <BreadcrumbSchema items={[
                 { name: 'Home', item: '/' },
-                { name: 'About Kestora University', item: '/about-kestora-university' }
+                { name: 'About Heffring University', item: '/about-heffring-university' }
             ]} />
 
             <SchemaLD data={{
                 "@context": "https://schema.org",
                 "@type": "AboutPage",
-                "name": "About Kestora University",
-                "url": "https://kestora.online/about-kestora-university",
+                "name": "About Heffring University",
+                "url": "https://heffring.online/about-heffring-university",
                 "mainEntity": {
                     "@type": "EducationalOrganization",
-                    "description": "Kestora University is a dynamic and career-focused institution located in Helsinki, Finland’s capital city.",
-                    "url": "https://kestora.online"
+                    "description": "Heffring University is a dynamic and career-focused institution located in Helsinki, Finland’s capital city.",
+                    "url": "https://heffring.online"
                 }
             }} />
 
             {/* HERO SECTION */}
             <Hero
-                title="About Kestora University"
-                body="Kestora University is a dynamic and career-focused institution located in Helsinki, Finland's capital city, committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs."
+                title="About Heffring University"
+                body="Heffring University is a dynamic and career-focused institution located in Helsinki, Finland's capital city, committed to providing high-quality education through a wide range of Diploma, Degree, and Certificate programs."
                 backgroundColor="#6c531b"
                 tinted
                 lightText={true}
@@ -55,7 +55,7 @@ export default async function AboutPage() {
                 ]}
                 image={{
                     src: "/images/home-carousel-3.png",
-                    alt: "Kestora University – Helsinki Campus main building"
+                    alt: "Heffring University – Helsinki Campus main building"
                 }}
             />
 
@@ -63,19 +63,19 @@ export default async function AboutPage() {
                 {/* Institutional Description Section */}
                 <section className="max-w-4xl mx-auto mb-16 space-y-5 text-lg leading-relaxed">
                     <p className="font-semibold text-xl text-[#000000]">
-                        Kestora University is a forward-looking, career-oriented institution located in Helsinki, the capital city of Finland. The college is dedicated to delivering quality post-secondary education through a range of Certificate, Diploma, and Degree programs designed to equip students with the skills needed in today's global and evolving job market.
+                        Heffring University is a forward-looking, career-oriented institution located in Helsinki, the capital city of Finland. The college is dedicated to delivering quality post-secondary education through a range of Certificate, Diploma, and Degree programs designed to equip students with the skills needed in today's global and evolving job market.
                     </p>
                     <p className="text-neutral-600">
                         The college welcomes both domestic and international students into a diverse and inclusive academic environment that promotes learning, cultural exchange, and professional growth. Academic programs span key fields such as Business Administration, Information Technology, Health Sciences, Hospitality and Tourism, Engineering Foundations, Education, and Social Sciences.
                     </p>
                     <p className="text-neutral-600">
-                        With a focus on practical learning and student success, Kestora University combines academic instruction with hands-on training, industry-relevant projects, and experiential learning opportunities. Students benefit from small class sizes, accessible faculty, and individualized academic support, as well as internship and co-op pathways that enhance employability and real-world readiness.
+                        With a focus on practical learning and student success, Heffring University combines academic instruction with hands-on training, industry-relevant projects, and experiential learning opportunities. Students benefit from small class sizes, accessible faculty, and individualized academic support, as well as internship and co-op pathways that enhance employability and real-world readiness.
                     </p>
                     <p className="text-neutral-600">
                         International students are supported through dedicated services including admissions guidance, study permit assistance, academic advising, career development support, and newcomer integration services to ensure a smooth transition to life and studies in Finland.
                     </p>
                     <p className="font-semibold text-[#000000]">
-                        Kestora University is committed to preparing graduates who are confident, skilled, and ready to contribute meaningfully to both local and global communities.
+                        Heffring University is committed to preparing graduates who are confident, skilled, and ready to contribute meaningfully to both local and global communities.
                     </p>
                 </section>
 
@@ -87,7 +87,7 @@ export default async function AboutPage() {
                             title="Academic Philosophy"
                             body={
                                 <div className="space-y-4">
-                                    <p>Kestora University is guided by a learner-centered approach that emphasizes critical thinking, applied knowledge, and personal development. Inspired by modern global education practices, the college integrates academic theory with practical application to ensure students gain both understanding and real-world competence.</p>
+                                    <p>Heffring University is guided by a learner-centered approach that emphasizes critical thinking, applied knowledge, and personal development. Inspired by modern global education practices, the college integrates academic theory with practical application to ensure students gain both understanding and real-world competence.</p>
                                     <p>The learning model focuses on active engagement, collaboration, and problem-solving, encouraging students to take part in project-based learning and industry-aligned experiences.</p>
                                 </div>
                             }
@@ -119,7 +119,7 @@ export default async function AboutPage() {
                     <div className="mb-16">
                         <div className="cc-section-divider text-center mb-12">
                             <h2 className="cc-h2">Academic Approach</h2>
-                            <p className="cc-label">At Kestora University, learning is built around:</p>
+                            <p className="cc-label">At Heffring University, learning is built around:</p>
                         </div>
                         <ul className="grid md:grid-cols-2 gap-6 mb-12">
                             {[
@@ -143,7 +143,7 @@ export default async function AboutPage() {
                 <section id="graduation" className="scroll-mt-32 mb-16">
                     <CTA
                         title="After Graduation"
-                        body="Kestora University supports your transition to working life. We offer resources for job seeking, career guidance, and alumni networking both in Helsinki, Finland and internationally."
+                        body="Heffring University supports your transition to working life. We offer resources for job seeking, career guidance, and alumni networking both in Helsinki, Finland and internationally."
                         cta={{
                             label: "Explore Career Services",
                             linkComponentProps: {
@@ -257,7 +257,7 @@ export default async function AboutPage() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="cc-card cc-card-body space-y-5">
                             <p className="text-neutral-600 leading-relaxed">
-                                We don't just study the future; we build it. Kestora University maintains strategic partnerships with over 200 global companies and research institutions. Our students have direct access to internships, joint research projects, and innovation labs that bridge the gap between academic theory and market-ready solutions.
+                                We don't just study the future; we build it. Heffring University maintains strategic partnerships with over 200 global companies and research institutions. Our students have direct access to internships, joint research projects, and innovation labs that bridge the gap between academic theory and market-ready solutions.
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-neutral-100">
                                 <ContentBox
@@ -274,10 +274,10 @@ export default async function AboutPage() {
                         </div>
                         <div className="grid grid-cols-2 gap-4">
 {[
-                                 { src: "/images/0f4315c00b2784fbddf4239ce341dd7e.jpg", alt: "Campus life at Kestora University", credit: "Kestora University" },
-                                 { src: "/images/2ea8f4b07a6cd09f34810c687fd924dc.jpg", alt: "Students collaborating on campus", credit: "Kestora University" },
-                                 { src: "/images/5e581c79ed9339bdf506cf8f30e73aaa.jpg", alt: "Modern learning environment", credit: "Kestora University" },
-                                 { src: "/images/8abea6bf09491ed4dcead9bb2d737082.jpg", alt: "Student activities and engagement", credit: "Kestora University" },
+                                 { src: "/images/0f4315c00b2784fbddf4239ce341dd7e.jpg", alt: "Campus life at Heffring University", credit: "Heffring University" },
+                                 { src: "/images/2ea8f4b07a6cd09f34810c687fd924dc.jpg", alt: "Students collaborating on campus", credit: "Heffring University" },
+                                 { src: "/images/5e581c79ed9339bdf506cf8f30e73aaa.jpg", alt: "Modern learning environment", credit: "Heffring University" },
+                                 { src: "/images/8abea6bf09491ed4dcead9bb2d737082.jpg", alt: "Student activities and engagement", credit: "Heffring University" },
                              ].map((img, index) => (
                                  <div key={index} className="relative group rounded-3xl overflow-hidden shadow-lg h-64 md:h-auto md:aspect-square">
                                      <div className="absolute inset-0 bg-black opacity-20 mix-blend-multiply group-hover:opacity-5 transition-opacity z-10 duration-500"></div>
@@ -303,13 +303,13 @@ export default async function AboutPage() {
                             <div className="space-y-4">
                                 <h3 className="text-xl font-bold text-black">Life Beyond the Classroom</h3>
                                 <p>
-                                    From music festivals to tech hackathons, your time at Kestora is about more than just studies. Our campus in Helsinki is a hub of activity where students from over 60 countries collaborate and create.
+                                    From music festivals to tech hackathons, your time at Heffring is about more than just studies. Our campus in Helsinki is a hub of activity where students from over 60 countries collaborate and create.
                                 </p>
                             </div>
                         }
 image={{
                              src: "/images/news/helsinki_study_hero_1771086748710.png",
-                             alt: "Kestora Community"
+                             alt: "Heffring Community"
                          }}
                     />
                 </section>
