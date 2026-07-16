@@ -4,6 +4,14 @@ const router = express.Router();
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+  console.error('FATAL: Missing Supabase env vars. Check Hostinger env panel.');
+  console.error('SUPABASE_URL present:', !!supabaseUrl);
+  console.error('SUPABASE_ANON_KEY present:', !!supabaseKey);
+  process.exit(1);
+}
+
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Helper function to format date
