@@ -252,7 +252,7 @@ serve(async (req) => {
             case 'OFFER_LETTER_READY':
                 studentSubject = "Conditional Admission Offer - Heffring University Next Steps";
                 studentHtml = `
-                    <img src="https://heffring.online/images/scholarships.png" alt="Heffring University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
+                    <img src="https://heffring.online/images/admissions/master-hero.png" alt="Heffring University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
                     <h1 style="text-align: center; font-size: 24px; margin: 20px 0;">Heffring University Admission</h1>
                     <h2 style="text-align: center; font-size: 18px; margin-bottom: 15px;">Congratulations on Your Offer!</h2>
                     <p>Dear ${firstName},</p>
@@ -314,7 +314,7 @@ serve(async (req) => {
                 }
                 studentSubject = "Congratulations on Your Admission to Heffring University – Next Steps";
                 studentHtml = `
-                    <img src="https://heffring.online/images/scholarships.png" alt="Heffring University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
+                    <img src="https://heffring.online/images/admissions/master-hero.png" alt="Heffring University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
                     <h1 style="text-align: center; font-size: 24px; margin: 20px 0;">Heffring University Admission</h1>
                     <h2 style="text-align: center; font-size: 18px; margin-bottom: 15px;">Congratulations!</h2>
                     <p>Dear ${firstName},</p>
@@ -428,7 +428,7 @@ serve(async (req) => {
                 }
                 
                 studentHtml = `
-                    <img src="https://heffring.online/images/scholarships.png" alt="Heffring University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
+                    <img src="https://heffring.online/images/admissions/master-hero.png" alt="Heffring University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
                     <h1>Payment Received</h1>
                     <p>Hello ${firstName}, we have received your payment of <strong>${formattedTotal2}</strong>.</p>
                     <p><strong>Reference:</strong> ${additionalData?.reference || 'N/A'}</p>
@@ -449,7 +449,7 @@ serve(async (req) => {
             case 'TUITION_PAYMENT_VERIFIED':
                 studentSubject = "Payment Verified - Enrollment Confirmed!";
                 studentHtml = `
-                    <img src="https://heffring.online/images/scholarships.png" alt="Heffring University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
+                    <img src="https://heffring.online/images/admissions/master-hero.png" alt="Heffring University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
                     <h1 style="color: #034737; font-size: 24px; margin: 20px 0;">Payment Verified!</h1>
                     <p>Hello ${firstName},</p>
                     <p>Great news! Your tuition payment has been officially verified by our registrar's office.</p>
@@ -489,7 +489,7 @@ serve(async (req) => {
                 studentSubject = "Your Housing Assignment is Ready! - Heffring University";
                 studentHtml = `
                     <div style="text-align: center; margin-bottom: 25px;">
-                        <img src="https://heffring.online/images/scholarships.png" alt="Housing" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" />
+                        <img src="https://heffring.online/images/admissions/master-hero.png" alt="Housing" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" />
                     </div>
                     <h1 style="color: #000; font-size: 24px; margin-bottom: 20px;">Housing Confirmed!</h1>
                     <p>Hello ${firstName},</p>
@@ -557,7 +557,7 @@ serve(async (req) => {
                     word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
                 ).join(' ');
                 const invAmt = additionalData?.amount ? new Intl.NumberFormat('en-IE', { style: 'currency', currency: additionalData?.currency || 'EUR', maximumFractionDigits: 0 }).format(additionalData.amount) : 'TBD';
-                const invHero = "https://heffring.online/images/scholarships.png";
+                const invHero = "https://heffring.online/images/admissions/master-hero.png";
                 const ancillaryFees = Array.isArray(additionalData?.ancillaryFees) ? additionalData.ancillaryFees : [
                     { name: 'Student Activity Fee', amount: 100 },
                     { name: 'Technology Fee', amount: 100 },
@@ -648,7 +648,7 @@ serve(async (req) => {
             <body>
             <div class="email-container" style="font-family: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif; max-width: 600px; margin: 10px auto; padding: 15px 10px; background: #ffffff;">
                 <div style="text-align: center; margin-bottom: 20px;">
-                    <img src="https://heffring.online/images/logo-heffring.png" class="logo" style="width: 100%; height: auto; max-width: 280px;" />
+                    <img src="https://heffring.online/images/logo-heffring.png" class="logo" style="width: 100%; height: auto; max-width: 160px;" />
                 </div>
                 <div style="color: #1a1a1a; line-height: 1.5; font-size: 15px;">
                     ${content}
@@ -658,6 +658,7 @@ serve(async (req) => {
                     <p>&copy; ${new Date().getFullYear()} Heffring University</p>
                     <p style="margin-bottom: 15px;">Helsinki, Finland | +358 09 42721884 | info@heffring.online</p>
                     <div style="margin-top: 15px;">
+                        <a href="https://www.instagram.com/heffringuniversity" style="color: #888; text-decoration: none; margin: 0 8px; font-weight: bold;">Instagram</a>
                         <a href="https://www.tiktok.com/@Heffringuniversity" style="color: #888; text-decoration: none; margin: 0 8px; font-weight: bold;">TikTok</a>
                     </div>
                 </div>

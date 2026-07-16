@@ -1,4 +1,4 @@
-import { Link } from "@aalto-dx/react-components";
+import { Link } from '@/components/ui/Link';
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Hero } from '@/components/layout/Hero';
 import GuideSidebarLayout from '@/components/layout/StudentGuideLayout';

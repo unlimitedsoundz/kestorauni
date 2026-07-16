@@ -43,8 +43,8 @@ export default function HousingAssignedEmail({
                         <Section className="mt-[32px]">
                             <Img
                                 src="https://heffring.online/images/logo-heffring.png"
-                                width="120"
-                                height="120"
+                                width="80"
+                                height="80"
                                 alt="Heffring University"
                                 className="my-0 mx-auto"
                             />
@@ -92,10 +92,16 @@ export default function HousingAssignedEmail({
                         <Text className="text-black text-[14px] leading-[24px]">
                             Student Housing Office
                         </Text>
-                        <Text className="text-black text-[14px] leading-[24px]">
-                            Heffring University
-                        </Text>
-                    </Container>
+                            <Text className="text-black text-[14px] leading-[24px]">
+                                Heffring University
+                            </Text>
+                            <Section className="text-center mt-[10px] mb-[20px]">
+                                <Text className="m-0">
+                                    <Link href="https://www.instagram.com/heffringuniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Instagram</Link>
+                                    <Link href="https://www.tiktok.com/@heffringuniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
+                                </Text>
+                            </Section>
+                        </Container>
                 </Body>
             </Tailwind>
         </Html>

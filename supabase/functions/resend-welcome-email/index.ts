@@ -87,7 +87,7 @@ serve(async (req) => {
 </head>
 <body>
   <div class="container">
-    <img src="https://heffring.online/images/scholarships.png" alt="Heffring University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
+    <img src="https://heffring.online/images/admissions/master-hero.png" alt="Heffring University" style="width: 100%; height: 150px; object-fit: cover; margin-bottom: 20px;" />
     <img src="https://heffring.online/images/logo-heffring.png" alt="Heffring University" class="logo">
     <h1>Welcome to Heffring University</h1>
     <p>Dear ${first_name || 'Student'},</p>
@@ -110,6 +110,7 @@ serve(async (req) => {
     <div class="footer">
       <p style="text-align: center; margin: 0;">&copy; ${new Date().getFullYear()} Heffring University<br>Helsinki, Finland | +358 09 42721884 | info@heffring.online</p>
       <div style="text-align: center; margin-top: 20px;">
+        <a href="https://www.instagram.com/heffringuniversity" style="color: #888; text-decoration: none; margin: 0 10px; font-weight: bold;">Instagram</a>
         <a href="https://www.tiktok.com/@heffringuniversity" style="color: #888; text-decoration: none; margin: 0 10px; font-weight: bold;">TikTok</a>
       </div>
       <br>

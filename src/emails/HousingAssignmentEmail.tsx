@@ -45,8 +45,8 @@ export default function HousingAssignmentEmail({
                         <Section className="mt-[32px]">
                             <Img
                                 src="https://heffring.online/images/logo-heffring.png"
-                                width="120"
-                                height="120"
+                                width="80"
+                                height="80"
                                 alt="Heffring University"
                                 className="my-0 mx-auto dark:invert"
                             />

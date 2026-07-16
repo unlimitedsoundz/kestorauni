@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Link } from '@aalto-dx/react-components';
+import { Link } from '@/components/ui/Link';
 import { CaretLeft, CaretRight, ArrowRight } from '@phosphor-icons/react';
 
 interface Slide {
@@ -24,7 +24,7 @@ const slides: Slide[] = [
     {
         title: "Experience that sets you apart",
         body: "Earn while you learn. Our industry connections connect students with paid, on-the-job training in Helsinki's top tech firms and creative studios.",
-        image: "/images/home-carousel-2.png",
+        image: "/images/home-carousel-2.jpg",
         btnText: "Explore programs",
         btnHref: "/studies"
     },

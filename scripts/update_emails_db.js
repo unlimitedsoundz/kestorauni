@@ -17,8 +17,8 @@ async function updateEmails() {
     } else if (students) {
         let updateCount = 0;
         for (const student of students) {
-            if (student.institutional_email && student.institutional_email.includes('@penkka.fi')) {
-                const newEmail = student.institutional_email.replace('@penkka.fi', '@penkka.fi');
+            if (student.institutional_email && student.institutional_email.includes('@heffring.online')) {
+                const newEmail = student.institutional_email.replace('@heffring.online', '@heffring.online');
                 await supabase
                     .from('students')
                     .update({ institutional_email: newEmail })
@@ -39,8 +39,8 @@ async function updateEmails() {
     } else if (faculty) {
         let updateCount = 0;
         for (const member of faculty) {
-            if (member.email && member.email.includes('@penkka.fi')) {
-                const newEmail = member.email.replace('@penkka.fi', '@penkka.fi');
+            if (member.email && member.email.includes('@heffring.online')) {
+                const newEmail = member.email.replace('@heffring.online', '@heffring.online');
                 await supabase
                     .from('Faculty')
                     .update({ email: newEmail })

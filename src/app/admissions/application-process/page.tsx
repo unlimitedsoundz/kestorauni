@@ -1,7 +1,7 @@
 
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
-import { Link } from "@aalto-dx/react-components";
-import { CTA } from "@aalto-dx/react-modules";
+import { Link } from '@/components/ui/Link';
+import { CTA } from '@/components/ui/CTA';
 import Image from 'next/image';
 import ApplicationFAQ from '@/components/admissions/ApplicationFAQ';
 import GuideSidebarLayout from '@/components/layout/StudentGuideLayout';

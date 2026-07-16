@@ -58,7 +58,7 @@ END $$;
 -- 4. Insert IT Assets (LMS, Email, VPN, Library, Virtual Lab)
 INSERT INTO it_assets (asset_type, name, description, access_url, auto_provision, license_limit) VALUES
 ('LMS', 'Canvas Learning Management System', 'Access course materials, assignments, and grades', 'https://canvas.penkka.fi', true, 10000),
-('EMAIL', 'Student Email Account', 'Official institutional email (@penkka.fi)', 'https://mail.penkka.fi', true, 10000),
+('EMAIL', 'Student Email Account', 'Official institutional email (@heffring.online)', 'https://mail.penkka.fi', true, 10000),
 ('VPN', 'Campus VPN Access', 'Secure remote access to campus resources', 'https://vpn.penkka.fi', true, 10000),
 ('LIBRARY', 'Digital Library Portal', 'Access to academic journals and e-books', 'https://library.penkka.fi', true, 10000),
 ('VIRTUAL_LAB', 'Virtual Computing Labs', 'Remote access to specialized software', 'https://labs.penkka.fi', true, 5000)

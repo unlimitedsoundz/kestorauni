@@ -1,12 +1,12 @@
-import { Link } from "@aalto-dx/react-components";
-import { CTA } from "@aalto-dx/react-modules";
+import { Link } from '@/components/ui/Link';
+import { CTA } from '@/components/ui/CTA';
 import Image from 'next/image';
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import TableOfContents from '@/components/course/TableOfContents';
 import StudentStoriesCarousel from '@/components/admissions/StudentStoriesCarousel';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { SchemaLD } from '@/components/seo/SchemaLD';
-import { Breadcrumbs } from '@aalto-dx/react-modules';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Hero } from '@/components/layout/Hero';
 import DbPageContent from '@/components/DbPageContent';
 import { getPageContentSection } from '@/lib/pageContentConfig';

@@ -1,5 +1,5 @@
 
-import { Link } from "@aalto-dx/react-components";
+import { Link } from '@/components/ui/Link';
 import Image from 'next/image';
 import { ArrowRight, CheckCircle, Globe, Users, BookOpen, Briefcase, GraduationCap, Calendar, MapPin } from '@phosphor-icons/react/dist/ssr';
 import { Hero } from '@/components/layout/Hero';
@@ -10,7 +10,7 @@ import { getPageContentSection } from '@/lib/pageContentConfig';
 import GuideSidebarLayout from '@/components/layout/StudentGuideLayout';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { SchemaLD } from '@/components/seo/SchemaLD';
-import { Breadcrumbs } from '@aalto-dx/react-modules';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 export const metadata = {
     title: 'Bachelor\'s Admissions | Heffring University',

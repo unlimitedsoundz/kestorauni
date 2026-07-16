@@ -45,7 +45,7 @@ export default function NewsletterEmail({
                         {/* Hero Image */}
                         <Section className="p-0">
                             <Img
-                                src="https://heffring.online/images/scholarships.png"
+                                src="https://heffring.online/images/admissions/master-hero.png"
                                 width="600"
                                 height="150"
                                 alt="Scholarships"
@@ -127,7 +127,8 @@ export default function NewsletterEmail({
                             <Section className="text-center">
                                 <Link href="https://heffring.online" className="text-[#333333] no-underline mx-[10px] text-[12px]">Website</Link>
                                 <span className="text-[#dddddd]">|</span>
-                                <a href="https://heffring.online/privacy" className="text-[#333333] no-underline mx-[10px] text-[12px]">Privacy Policy</a>
+                                <Link href="https://www.instagram.com/heffringuniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">Instagram</Link>
+                                <Link href="https://www.tiktok.com/@heffringuniversity" className="text-[#888888] text-[12px] no-underline font-bold mx-[10px]">TikTok</Link>
                             </Section>
                             <Text className="text-[12px] text-[#888888] mt-[20px] mb-0">
                                 &copy; 2026 Heffring University. All rights reserved.

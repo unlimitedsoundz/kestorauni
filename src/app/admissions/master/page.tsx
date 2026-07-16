@@ -1,8 +1,8 @@
-import { Link } from "@aalto-dx/react-components";
+import { Link } from '@/components/ui/Link';
 import Image from 'next/image';
 import { CaretLeft, ArrowRight, Calendar, FileText, CheckCircle, GraduationCap, Globe, Clock, User, Trophy as Award } from '@phosphor-icons/react/dist/ssr';
 import { Hero } from '@/components/layout/Hero';
-import { Breadcrumbs } from '@aalto-dx/react-modules';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import GuideSidebarLayout from '@/components/layout/StudentGuideLayout';
 import AdmissionsCTA from '@/components/admissions/AdmissionsCTA';
 import MasterFAQ from '@/components/admissions/MasterFAQ';

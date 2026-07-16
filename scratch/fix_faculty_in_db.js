@@ -82,10 +82,10 @@ async function fixFaculty() {
         let newEmail = `${emailUser}@cannogacollege.ca`;
 
         // Handle specific overrides if any
-        if (faculty.email === 'aleksei.i@cannoga.fi') {
+        if (faculty.email === 'aleksei.i@heffring.online') {
             newEmail = 'alexander.ivanov@cannogacollege.ca';
             newFullName = 'Prof. Alexander Ivanov';
-        } else if (faculty.email === 'nina.s@cannoga.fi') {
+        } else if (faculty.email === 'nina.s@heffring.online') {
             newEmail = 'nina.sorokin@cannogacollege.ca';
         }
 

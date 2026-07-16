@@ -36,15 +36,15 @@ export default function WelcomeEmail({
                         <Section className="mt-[32px]">
                             <Img
                                 src="https://heffring.online/images/logo-heffring.png" // Replace with actual logo URL
-                                width="120"
-                                height="120"
+                                width="80"
+                                height="80"
                                 alt="Heffring University"
                                 className="my-0 mx-auto dark:invert"
                             />
                         </Section>
                         <Section className="mt-[16px]">
                             <Img
-                                src="https://heffring.online/images/scholarships.png"
+                                src="https://heffring.online/images/admissions/master-hero.png"
                                 width="465"
                                 height="150"
                                 alt="Scholarships"

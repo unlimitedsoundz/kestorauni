@@ -178,7 +178,7 @@ const sections = [
         id: "contact",
         content: `
             <p><strong>Penkka University School of Business – Accounting & Finance Department</strong></p>
-            <p>Email: <a href="mailto:accounting@penkka.com" class="text-black hover:underline">accounting@penkka.com</a></p>
+            <p>Email: <a href="mailto:accounting@heffring.online" class="text-black hover:underline">accounting@heffring.online</a></p>
             <p>Address: Penkka University, Otaniemi Campus, Finland</p>
             <p>Office Hours: Monday–Friday, 9:00–17:00</p>
         `

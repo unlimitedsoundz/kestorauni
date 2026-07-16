@@ -121,7 +121,7 @@ const htmlContent = `<!DOCTYPE html>
                     <tr>
                         <td style="padding:40px; text-align:center; color: #888888; font-size: 12px;">
                             <p style="margin:0; font-weight: bold; color: #333333; text-transform: uppercase; letter-spacing: 1px;">Penkka University</p>
-                            <p style="margin:10px 0;">Admissions Office: admissions@penkka.fi</p>
+                            <p style="margin:10px 0;">Admissions Office: admissions@heffring.online</p>
                             <div style="margin:20px 0; border-top: 1px solid #eeeeee; padding-top: 20px;">
                                 <a href="https://penkka.fi" style="color:#333333; text-decoration: none; margin: 0 10px;">Website</a>
                                 <span style="color: #dddddd;">|</span>
@@ -145,7 +145,7 @@ async function sendBatch() {
     for (const email of emails) {
         try {
             const data = await resend.emails.send({
-                from: "Penkka University <admissions@penkka.fi>",
+                from: "Penkka University <admissions@heffring.online>",
                 to: [email],
                 subject: "Important Update: August 2026 Intake & Next Steps",
                 html: htmlContent

@@ -1,5 +1,5 @@
 ﻿-- SQL script to replace "Cannoga College" and "Penkka University" with "Heffring University", and "Penkka" with "Heffring" in the database
--- Also updates email domain from @penkka.fi to @heffring.online and domain in URLs from penkka.fi to heffring.online
+-- Also updates email domain from @heffring.online to @heffring.online and domain in URLs from penkka.fi to heffring.online
 -- Run this in your Supabase SQL editor or PostgreSQL client
 
 -- Update School table
@@ -51,8 +51,8 @@ SET "imageUrl" = REPLACE("imageUrl", 'penkka.fi', 'heffring.online')
 WHERE "imageUrl" LIKE '%penkka.fi%';
 
 UPDATE "Faculty"
-SET "email" = REPLACE("email", '@penkka.fi', '@heffring.online')
-WHERE "email" LIKE '%@penkka.fi%';
+SET "email" = REPLACE("email", '@heffring.online', '@heffring.online')
+WHERE "email" LIKE '%@heffring.online%';
 
 -- Update Student table
 UPDATE "Student"
@@ -62,8 +62,8 @@ WHERE "name" LIKE '%Cannoga College%' OR "name" LIKE '%Penkka University%' OR "n
 -- Note: We do not update the email in Student table because it might be personal email.
 -- If you want to update the institutional email, you can uncomment the following line:
 -- UPDATE "Student"
--- SET "email" = REPLACE("email", '@penkka.fi', '@heffring.online')
--- WHERE "email" LIKE '%@penkka.fi%';
+-- SET "email" = REPLACE("email", '@heffring.online', '@heffring.online')
+-- WHERE "email" LIKE '%@heffring.online%';
 
 -- Update News table
 UPDATE "News"
@@ -109,8 +109,8 @@ SET "name" = REPLACE(REPLACE(REPLACE("name", 'Cannoga College', 'Heffring Univer
 WHERE "name" LIKE '%Cannoga College%' OR "name" LIKE '%Penkka University%' OR "name" LIKE '%Penkka%';
 
 UPDATE "AdminUser"
-SET "email" = REPLACE("email", '@penkka.fi', '@heffring.online')
-WHERE "email" LIKE '%@penkka.fi%';
+SET "email" = REPLACE("email", '@heffring.online', '@heffring.online')
+WHERE "email" LIKE '%@heffring.online%';
 
 -- Update sections content in Course table (assuming sections is jsonb array with content field)
 UPDATE "Course"

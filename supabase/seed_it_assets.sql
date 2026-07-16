@@ -60,7 +60,7 @@ BEGIN
                     jsonb_build_object(
                         'username', 'student_' || substr(v_student_id, 1, 6),
                         'password', 'Welcome2026!',
-                        'email', 'student@penkka.fi'
+                        'email', 'student@heffring.online'
                     ),
                     NOW(),
                     NOW() + INTERVAL '1 year'

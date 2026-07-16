@@ -1,8 +1,8 @@
 
-import { Link } from "@aalto-dx/react-components";
+import { Link } from '@/components/ui/Link';
 import Image from 'next/image';
 import { CaretRight, Envelope, Phone, MapPin, ShareNetwork, ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { Breadcrumbs } from '@aalto-dx/react-modules';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 export const metadata = {
     title: 'Contact Information | Heffring University Admission Services',
